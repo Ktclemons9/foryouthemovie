@@ -175,6 +175,41 @@
   .picker .err{color:var(--red);font-size:14px;margin-top:10px;min-height:18px}
   @media (max-width:560px){.leaders{grid-template-columns:repeat(2,1fr)}}
 
+
+  /* FLOCK PHOTOS */
+  .flock .fph{width:30px;height:30px;border-radius:50%;overflow:hidden;flex:none;background:#8f6a93;display:flex;align-items:center;justify-content:center;font-size:11px;color:#f7f3ea}
+  .flock .fph img{width:100%;height:100%;object-fit:cover}
+  .flock .fname{width:120px}
+
+  /* LOCKED DOOR */
+  .door.locked img{filter:grayscale(.6) brightness(.45)}
+  .door.locked a{pointer-events:none}
+  .door .lockmsg{display:none;color:var(--muted);letter-spacing:.18em;font-size:13px;margin-top:10px}
+  .door.locked .lockmsg{display:block}
+  .door.locked .openmsg{display:none}
+  .seeagain{display:none;margin-top:10px;background:none;border:1px solid var(--gold);color:var(--gold);border-radius:8px;padding:7px 14px;font-family:inherit;cursor:pointer;letter-spacing:.1em}
+  .reach.gold .seeagain{display:inline-block}
+
+  /* RE REVEAL */
+  .reveal{position:fixed;inset:0;background:#000;z-index:80;display:none;align-items:center;justify-content:center;flex-direction:column;text-align:center;overflow:hidden}
+  .reveal.show{display:flex}
+  .reveal .tap{color:var(--gold);letter-spacing:.3em;font-size:15px;cursor:pointer;background:none;border:1px solid rgba(232,176,74,.5);padding:14px 26px;border-radius:999px;font-family:inherit;animation:pulse 2s infinite}
+  .reveal .stage{display:none;position:absolute;inset:0;align-items:center;justify-content:center;flex-direction:column}
+  .reveal.go .stage{display:flex}
+  .reveal.go .tap{display:none}
+  .reveal .re{position:absolute;inset:0;opacity:0;transition:opacity 3s ease}
+  .reveal .re img{width:100%;height:100%;object-fit:cover;object-position:50% 0;transform:scale(1);transform-origin:50% 9%;transition:transform 14s ease-out;filter:sepia(.35) saturate(1.1) brightness(.85)}
+  .reveal .re::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,transparent 25%,rgba(0,0,0,.85) 70%,#000 100%)}
+  .reveal.go .re{opacity:1}
+  .reveal.go .re img{transform:scale(1.18)}
+  .reveal .words{position:relative;z-index:2;margin-top:auto;padding-bottom:12vh}
+  .reveal .see{font-size:clamp(34px,7vw,64px);color:#f3e2b8;letter-spacing:.08em;opacity:0;transition:opacity 2s ease 3.5s}
+  .reveal .badge{width:110px;margin:22px auto 0;opacity:0;transform:scale(.6);transition:all 1.4s ease 7s}
+  .reveal .cross{margin-top:18px;color:var(--gold);letter-spacing:.3em;font-size:14px;opacity:0;transition:opacity 2s ease 9s}
+  .reveal .cont{margin-top:22px;opacity:0;transition:opacity 1s ease 10.5s;background:var(--gold);color:#1a1206;border:none;border-radius:999px;padding:10px 24px;font-family:inherit;font-weight:500;letter-spacing:.12em;cursor:pointer}
+  .reveal.go .see,.reveal.go .cross,.reveal.go .cont{opacity:1}
+  .reveal.go .badge{opacity:1;transform:scale(1)}
+
   @media (max-width:860px){
     .sidebar{transform:translateX(-100%);transition:transform .25s}
     .sidebar.open{transform:none}
@@ -254,6 +289,7 @@
       <button id="copyLink">Copy my link</button>
     </div>
     <div class="seeyou">I SEE YOU.</div>
+    <button class="seeagain" id="seeAgain">SEE RE AGAIN</button>
   </section>
 
   <div id="feed"></div>
@@ -536,13 +572,28 @@
   </article>
 
   <!-- THE DOOR -->
-  <section class="door" id="door">
-    <a href="https://rethecreator.com"><img src="ResDoor.png" alt="Enter the door"></a>
-    <p>YOUR CROSSING AWAITS</p>
+  <section class="door locked" id="door">
+    <a href="https://rethecreator.com" id="doorLink"><img src="ResDoor.png" alt="The door"></a>
+    <p class="openmsg">YOUR CROSSING AWAITS</p>
+    <p class="lockmsg">ONLY THE COMMITTED MAY CROSS</p>
   </section>
 
   <footer>© 2026 FOR YOU · @foryouthefilm</footer>
 </main>
+
+<div class="reveal" id="reveal">
+  <button class="tap" id="revealTap">SOMEONE IS WATCHING. TAP TO ANSWER.</button>
+  <div class="stage">
+    <div class="re"><img src="re.png" alt=""></div>
+    <div class="words">
+      <div class="see">I see you.</div>
+      <img class="badge" src="badge-committed.png" alt="Committed">
+      <div class="cross">YOUR CROSSING AWAITS</div>
+      <button class="cont" id="revealGo">GO TO THE DOOR</button>
+    </div>
+  </div>
+  <audio id="revealAudio" src="rhyme.mp3" preload="auto"></audio>
+</div>
 
 <div class="overlay" id="picker">
   <div class="picker">
@@ -685,6 +736,9 @@
     fc.textContent = fmt(BASE_FOLLOWERS + fcount);
 
     var card = $('reachCard'), side = $('sideRank');
+    var committed = !!me && rankFor(recruits).name === 'COMMITTED';
+    $('door').classList.toggle('locked', !committed);
+    if (committed && !store('fy_seen_re')) openReveal();
     if (!me) { card.classList.remove('show'); side.classList.remove('show'); return; }
     var r = rankFor(recruits), nx = nextRank(recruits), L = LEADERS[me.leader];
     card.classList.add('show'); side.classList.add('show');
@@ -708,6 +762,29 @@
     this.textContent = 'Copied';
     var b = this; setTimeout(function () { b.textContent = 'Copy my link'; }, 1800);
   };
+
+  // ---------- Re reveal (Committed payoff) ----------
+  var reveal = $('reveal'), rAudio = $('revealAudio');
+  function openReveal() {
+    if (reveal.classList.contains('show')) return;
+    reveal.classList.remove('go');
+    reveal.classList.add('show');
+    store('fy_seen_re', '1');
+  }
+  $('revealTap').onclick = function () {
+    reveal.classList.add('go');
+    try { rAudio.currentTime = 0; var pr = rAudio.play(); if (pr) pr.catch(function () {}); } catch (e) {}
+  };
+  $('revealGo').onclick = function () {
+    reveal.classList.remove('show', 'go');
+    try { rAudio.pause(); } catch (e) {}
+    $('door').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  };
+  $('seeAgain').onclick = openReveal;
+  // test the moment without being Committed: add ?preview=committed to the address
+  if (new URLSearchParams(location.search).get('preview') === 'committed') {
+    setTimeout(function () { reveal.classList.add('show'); }, 400);
+  }
 
   // leader picker
   var picker = $('picker'), grid = $('leaderGrid');
@@ -784,7 +861,7 @@
       var max = Math.max(1, Math.max.apply(null, Object.keys(flocks).map(function (k) { return flocks[k]; })));
       $('flock').innerHTML = '<p class="muted" style="margin-bottom:8px">Whose flock is growing fastest?</p>' +
         Object.keys(LEADERS).map(function (k) {
-          return '<div><span class="fname">' + LEADERS[k].handle + '</span><span class="fbar"><i style="width:' +
+          return '<div><span class="fph"><img src="' + k + '.png" alt="" onerror="this.parentNode.textContent=\'' + LEADERS[k].init + '\'"></span><span class="fname">' + LEADERS[k].handle + '</span><span class="fbar"><i style="width:' +
             Math.round(flocks[k] / max * 100) + '%"></i></span><span class="fnum">' + flocks[k] + '</span></div>';
         }).join('');
     });
