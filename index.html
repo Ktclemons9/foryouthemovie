@@ -31,7 +31,514 @@
   .sidebar{position:fixed;top:0;left:0;bottom:0;width:var(--side);background:#121317;border-right:1px solid var(--line);
     display:flex;flex-direction:column;padding:24px 18px;overflow-y:auto;z-index:20}
   .brand{display:flex;align-items:center;gap:10px;margin-bottom:28px;text-decoration:none}
+  .brand .mini{width:42px;height:42px;<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You · @foryouthefilm</title>
+<meta name="description" content="Online sleuths trying to rescue a lonely artist from a nightmare livestream uncover a predatory digital cult that turns the promise of being seen into a trap.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0e0f12; --panel:#16171c; --panel2:#1c1e24; --line:#2a2c33;
+    --text:#ecebe6; --muted:#9a9ca4; --red:#e5503f; --gold:#e8b04a;
+    --plum:#6b2d6e; --green:#1f9e6e; --side:250px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Jost',system-ui,sans-serif;font-weight:300;color:var(--text);line-height:1.6;
+    background-color:var(--bg);
+    background-image:
+      repeating-linear-gradient(0deg,rgba(255,255,255,.018) 0 1px,transparent 1px 4px),
+      repeating-linear-gradient(90deg,rgba(255,255,255,.012) 0 1px,transparent 1px 6px),
+      radial-gradient(circle at 15% 20%,rgba(255,255,255,.03),transparent 40%),
+      radial-gradient(circle at 85% 70%,rgba(255,255,255,.025),transparent 45%);
+  }
+  a{color:inherit}
+  img{max-width:100%;display:block}
+
+  /* SIDEBAR */
+  .sidebar{position:fixed;top:0;left:0;bottom:0;width:var(--side);background:#121317;border-right:1px solid var(--line);
+    display:flex;flex-direction:column;padding:24px 18px;overflow-y:auto;z-index:20}
+  .brand{display:flex;align-items:center;gap:10px;margin-bottom:28px;text-decoration:none}
   .brand .mini{width:42px;height:42px;border-radius:50%;background:#f7f3ea;overflow:hidden;flex:none}
+  .brand .mini img{width:100%;height:100%;object-fit:contain}
+  .brand span{font-weight:500;letter-spacing:.12em;font-size:15px}
+  .nav a{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:8px;text-decoration:none;color:var(--muted);font-size:15px;letter-spacing:.04em}
+  .nav a:hover{background:var(--panel2);color:var(--text)}
+  .nav .dot{width:7px;height:7px;border-radius:50%;background:var(--line);flex:none}
+  .nav a:hover .dot{background:var(--red)}
+  .side-laurel{margin-top:auto;padding-top:24px}
+  .side-laurel img{width:100%;max-width:200px;margin:0 auto}
+  .side-press{display:block;margin-top:18px;text-align:center;font-size:12px;letter-spacing:.14em;color:var(--muted);text-decoration:none;border:1px solid var(--line);border-radius:8px;padding:8px}
+  .side-press:hover{color:var(--text);border-color:var(--muted)}
+
+  /* MOBILE TOP BAR */
+  .topbar{display:none;position:sticky;top:0;z-index:30;background:#121317;border-bottom:1px solid var(--line);padding:10px 16px;align-items:center;justify-content:space-between}
+  .topbar .brand{margin:0}
+  .menu-btn{background:none;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:6px 12px;font-family:inherit;font-size:14px;cursor:pointer}
+
+  main{margin-left:var(--side);max-width:760px;padding:28px 24px 80px}
+
+  /* LIVE BAR */
+  .livebar{display:flex;justify-content:space-between;align-items:center;font-size:13px;letter-spacing:.14em;color:var(--muted);margin-bottom:18px}
+  .live{display:flex;align-items:center;gap:8px}
+  .rec{width:10px;height:10px;border-radius:50%;background:var(--red);animation:pulse 1.6s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+  /* PROFILE */
+  .profile{background:var(--panel);border:1px solid var(--line);border-left:2px solid var(--red);border-radius:12px;padding:24px;margin-bottom:22px}
+  .profile-top{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+  .avatar{width:118px;height:118px;border-radius:50%;background:#f7f3ea;overflow:hidden;flex:none;border:2px solid var(--gold)}
+  .avatar img{width:100%;height:100%;object-fit:contain;padding:6px}
+  .pname{font-size:28px;font-weight:400;letter-spacing:.06em}
+  .handle{color:var(--muted);font-size:15px}
+  .stats{display:flex;gap:22px;margin:12px 0;font-size:14px;color:var(--muted)}
+  .stats b{color:var(--text);font-weight:500}
+  .follow{background:var(--red);color:#fff;border:none;border-radius:999px;padding:8px 26px;font-family:inherit;font-size:15px;font-weight:500;cursor:pointer;letter-spacing:.05em}
+  .follow.on{background:transparent;border:1px solid var(--muted);color:var(--text)}
+  .bio{margin-top:16px;font-size:16px}
+  .tagline{margin-top:6px;color:var(--gold);letter-spacing:.12em;font-size:13px}
+
+  /* POSTS */
+  .post{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px;margin-bottom:18px;scroll-margin-top:70px}
+  .post-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+  .post-head .mini{width:36px;height:36px;border-radius:50%;background:#f7f3ea;overflow:hidden;flex:none}
+  .post-head .mini img{width:100%;height:100%;object-fit:contain}
+  .post-head .who{font-weight:500;font-size:15px}
+  .post-head .who small{display:block;color:var(--muted);font-weight:300;font-size:13px}
+  .pin{margin-left:auto;font-size:12px;color:var(--muted);letter-spacing:.1em}
+  .num{display:flex;align-items:center;gap:8px;font-size:13px;letter-spacing:.18em;color:var(--muted);margin-bottom:8px}
+  .num .rec{animation:none;width:9px;height:9px}
+  .post h2{font-weight:400;font-size:24px;letter-spacing:.03em;margin-bottom:8px;line-height:1.3}
+  .post p{margin-bottom:10px;font-size:16px}
+  .post .muted{color:var(--muted)}
+  .media{margin:14px 0;border-radius:10px;overflow:hidden;background:#0a0a0c;border:1px solid var(--line)}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:center}
+  .rhyme{font-size:17px;line-height:1.75;margin:10px 0 4px}
+  .rhyme .verse{margin-bottom:16px}
+  .rhyme .end{color:var(--gold)}
+
+  .people{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:16px;margin-top:14px}
+  .person{text-align:center;font-size:14px}
+  .face{position:relative;width:76px;height:76px;margin:0 auto 8px;border-radius:50%;background:#8f6a93;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:400;color:#f7f3ea;letter-spacing:.04em}
+  .face.teal{background:#3b8ea5}
+  .face::after{content:"";position:absolute;right:2px;bottom:2px;width:14px;height:14px;border-radius:50%;background:var(--green);border:2px solid var(--panel)}
+  .person b{display:block;font-weight:500}
+  .person span{color:var(--muted);font-size:13px;line-height:1.4;display:block}
+  .quote{color:var(--gold);font-style:italic}
+
+  .actions{display:flex;gap:22px;border-top:1px solid var(--line);margin-top:14px;padding-top:10px;font-size:14px;color:var(--muted)}
+  .actions button{background:none;border:none;color:inherit;font-family:inherit;font-size:14px;cursor:pointer;padding:0}
+  .actions button:hover{color:var(--text)}
+  .actions .liked{color:var(--red)}
+  .comments{display:none;margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
+  .comments.open{display:block}
+  .c{display:flex;gap:10px;margin-bottom:10px;font-size:14px}
+  .c .ci{width:28px;height:28px;border-radius:50%;background:#8f6a93;flex:none;display:flex;align-items:center;justify-content:center;font-size:11px;color:#f7f3ea}
+  .c b{font-weight:500}
+
+  .btn{display:inline-block;margin-top:6px;background:var(--red);color:#fff;text-decoration:none;border-radius:999px;padding:9px 22px;font-weight:500;font-size:15px;letter-spacing:.04em}
+  .btn.ghost{background:transparent;border:1px solid var(--muted);color:var(--text)}
+  .soon{font-size:13px;color:var(--muted);letter-spacing:.08em;margin-top:6px}
+
+  /* DOOR */
+  .door{margin:40px auto 0;text-align:center;background:#000;border-radius:12px;padding:30px 20px 36px}
+  .door a{display:inline-block;text-decoration:none}
+  .door img{max-width:300px;margin:0 auto;transition:filter .4s}
+  .door a:hover img{filter:drop-shadow(0 0 22px rgba(232,176,74,.55))}
+  .door p{margin-top:16px;color:var(--gold);letter-spacing:.2em;font-size:14px}
+  footer{margin-top:30px;text-align:center;font-size:12px;color:var(--muted);letter-spacing:.12em}
+
+  @media (max-width:860px){
+    .sidebar{transform:translateX(-100%);transition:transform .25s}
+    .sidebar.open{transform:none}
+    .topbar{display:flex}
+    main{margin-left:0;padding:18px 14px 60px}
+    .split{grid-template-columns:1fr}
+    .avatar{width:92px;height:92px}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="#top"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><span>FOR YOU</span></a>
+  <button class="menu-btn" id="menuBtn">Menu</button>
+</div>
+
+<aside class="sidebar" id="sidebar">
+  <a class="brand" href="#top"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt="For You crest"></div><span>FOR YOU</span></a>
+  <nav class="nav">
+    <a href="#feed"><span class="dot"></span>Feed</a>
+    <a href="#story"><span class="dot"></span>The Story</a>
+    <a href="#followme"><span class="dot"></span>Follow Me</a>
+    <a href="#lore"><span class="dot"></span>The Lore</a>
+    <a href="#leaders"><span class="dot"></span>The Leaders</a>
+    <a href="#circle"><span class="dot"></span>The Circle</a>
+    <a href="#offerings"><span class="dot"></span>Offerings</a>
+    <a href="#vestments"><span class="dot"></span>Vestments</a>
+    <a href="#join"><span class="dot"></span>Join Us</a>
+    <a href="#door"><span class="dot"></span>The Door</a>
+  </nav>
+  <div class="side-laurel">
+    <img src="RUNNERUP-FrightsCameraActionHorrorScreenplayContest-2026.png" alt="Runner-up, Best Screenplay, Frights! Camera! Action! 2026">
+    <a class="side-press" href="press.html">PRESS &amp; INDUSTRY</a>
+  </div>
+</aside>
+
+<main id="top">
+
+  <div class="livebar">
+    <div class="live"><span class="rec"></span>LIVE NOW</div>
+    <div><span id="viewers">2,214,907</span> watching</div>
+  </div>
+
+  <section class="profile">
+    <div class="profile-top">
+      <div class="avatar"><img src="Seismic%20Crest%20For%20You_Back.png" alt="For You crest"></div>
+      <div>
+        <div class="pname">FOR YOU</div>
+        <div class="handle">@foryouthefilm</div>
+        <div class="stats"><span><b>17</b> posts</span><span><b id="fcount">2.2M</b> followers</span><span><b>∞</b> committed</span></div>
+        <button class="follow" id="followBtn">Follow</button>
+      </div>
+    </div>
+    <p class="bio">A screenlife horror feature. Who decides what shows up on your For You page?</p>
+    <p class="tagline">LIKE. FOLLOW. SHARE. COMMIT.</p>
+  </section>
+
+  <div id="feed"></div>
+
+  <!-- 1 LOGLINE -->
+  <article class="post">
+    <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div><div class="pin">PINNED</div></div>
+    <div class="num"><span class="rec"></span>1 · FOR YOU</div>
+    <h2>Who decides what shows up on your For You page?</h2>
+    <p>Online sleuths trying to rescue a lonely artist from a nightmare livestream uncover a predatory digital cult that turns the promise of being seen into a trap.</p>
+    <p class="muted">Runner-up, Best Screenplay, Feature Film. Frights! Camera! Action! 2026.</p>
+    <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
+    <div class="comments">
+      <div class="c"><div class="ci">GC</div><div><b>@greycanopy99</b> So happy this is finally being seen 🙏</div></div>
+      <div class="c"><div class="ci">SM</div><div><b>@sweetmagnolia</b> Chosen. Every one of us.</div></div>
+      <div class="c"><div class="ci">XW</div><div><b>@xander_wolfe</b> is anyone else watching this right now?</div></div>
+    </div>
+  </article>
+
+  <!-- 2 STORY -->
+  <article class="post" id="story">
+    <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
+    <div class="num"><span class="rec"></span>2 · THE STORY</div>
+    <div class="split">
+      <div>
+        <h2>Cult leaders have always needed followers.</h2>
+        <p>But what if something was influencing the leaders all along?</p>
+        <p>One night, a livestream. A woman who was promised a better place. A door she was never supposed to refuse. And a handful of strangers watching from their own screens, trying to pull her back before it's too late.</p>
+      </div>
+      <div class="media"><img src="ResDoor.png" alt="A door with light underneath"></div>
+    </div>
+    <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
+    <div class="comments">
+      <div class="c"><div class="ci">EN</div><div><b>@emptynest02</b> I saw the door too. It's beautiful.</div></div>
+      <div class="c"><div class="ci">MG</div><div><b>@marigold_71</b> Your crossing awaits 💛</div></div>
+    </div>
+  </article>
+
+  <!-- 3 FOLLOW ME (RHYME) -->
+  <article class="post" id="followme">
+    <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
+    <div class="num"><span class="rec"></span>3 · FOLLOW ME</div>
+    <h2>Every follower knows the words.</h2>
+    <audio id="rhymeAudio" controls src="rhyme.mp3" style="width:100%;margin:8px 0 4px"></audio>
+    <div class="rhyme">
+      <div class="verse">Knock, knock, knock, the door,<br>Come inside and stay.<br>Follow me, follow me, follow me, follow me,<br><span class="end">Everyone pays Re.</span></div>
+      <div class="verse">Pay, pay, pay your fare,<br>No one gets away.<br>All for you, all for you, all for you, all for you,<br><span class="end">Everyone pays Re.</span></div>
+      <div class="verse">Run, run, run and hide,<br>Shade is at your side.<br>Anyway, anyway, anyway, anyway,<br><span class="end">Everyone pays Re.</span></div>
+      <div class="verse">Shade, shade, shade, you're it,<br>Now you hunt and prey.<br>Follow them, follow them, follow them, follow them,<br><span class="end">Everyone pays Re.</span></div>
+    </div>
+    <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
+    <div class="comments">
+      <div class="c"><div class="ci">AG</div><div><b>@ashgrove_21</b> my kids sing this in the car now 😊</div></div>
+      <div class="c"><div class="ci">SM</div><div><b>@sweetmagnolia</b> We sang it together last night. All of us. 🕯️</div></div>
+      <div class="c"><div class="ci">XW</div><div><b>@xander_wolfe</b> why does everyone know this song</div></div>
+    </div>
+  </article>
+
+  <!-- 4 LORE -->
+  <article class="post" id="lore">
+    <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
+    <div class="num"><span class="rec"></span>4 · THE LORE</div>
+    <h2>Reach Re.</h2>
+    <p>It was there before the internet. Before the pamphlets and the compounds. It stood behind the most famous cult leaders in history, and now it stands behind the people you follow.</p>
+    <p>It doesn't need to find you. Your feed brings you to it.</p>
+    <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
+    <div class="comments">
+      <div class="c"><div class="ci">GC</div><div><b>@greycanopy99</b> He sees all of us. Isn't that wonderful?</div></div>
+      <div class="c"><div class="ci">EN</div><div><b>@emptynest02</b> I see you too 💛</div></div>
+    </div>
+  </article>
+
+  <!-- 5 LEADERS -->
+  <article class="post" id="leaders">
+    <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
+    <div class="num"><span class="rec"></span>5 · FOLLOW THE LEADERS</div>
+    <h2>They look like anyone you'd follow.</h2>
+    <p>A painter. A home chef. Creators with big hearts and bigger followings. Every sign-off ends the same way: <span class="quote">"Follow me. Reach Re."</span></p>
+    <div class="people">
+      <div class="person"><div class="face">EH</div><b>@easelhours</b><span>A soft-spoken young painter. <span class="quote">"Nobody should paint alone."</span></span></div>
+      <div class="person"><div class="face">GB</div><b>@gorillabob</b><span>A big-hearted home chef. <span class="quote">"Nobody eats alone in my kitchen."</span></span></div>
+      <div class="person"><div class="face">NN</div><b>@nightshiftnora</b></div>
+      <div class="person"><div class="face">CC</div><b>@coldcasecass</b></div>
+      <div class="person"><div class="face teal">RR</div><b>@reelwithrusty</b></div>
+      <div class="person"><div class="face">LS</div><b>@lacefrontsandy</b></div>
+    </div>
+    <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
+    <div class="comments">
+      <div class="c"><div class="ci">EH</div><div><b>@easelhours</b> Nobody should paint alone. Follow me. Reach Re. 🎨</div></div>
+      <div class="c"><div class="ci">GB</div><div><b>@gorillabob</b> Plenty of room at my table. Follow me. Reach Re.</div></div>
+    </div>
+  </article>
+
+  <!-- 6 THE REACH -->
+  <article class="post" id="reach">
+    <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
+    <div class="num"><span class="rec"></span>6 · THE REACH</div>
+    <div class="split">
+      <div>
+        <h2>You've been chosen.</h2>
+        <p>Like. Share. Promote. The more you give, the higher you rise. The most devoted earn the Committed button, and with it, an invitation.</p>
+      </div>
+      <div class="media hide-if-missing"><img src="reach-phone.png" alt="The Reach on a phone"></div>
+    </div>
+    <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
+    <div class="comments">
+      <div class="c"><div class="ci">MG</div><div><b>@marigold_71</b> Got my Committed button today!! 😭💛</div></div>
+      <div class="c"><div class="ci">AG</div><div><b>@ashgrove_21</b> so close to mine</div></div>
+    </div>
+  </article>
+
+  <!-- 7 THE FARE -->
+  <article class="post" id="fare">
+    <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
+    <div class="num"><span class="rec"></span>7 · THE FARE</div>
+    <div class="split">
+      <div class="media hide-if-missing"><img src="token.png" alt="The gold token"></div>
+      <div>
+        <h2>Every crossing has a fare.</h2>
+        <p>A gold token. A sealed envelope. Bring yours tonight.</p>
+      </div>
+    </div>
+    <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
+    <div class="comments">
+      <div class="c"><div class="ci">GC</div><div><b>@greycanopy99</b> Envelope's sealed. Ready. 🙏</div></div>
+    </div>
+  </article>
+
+  <!-- 8 THE SHADE -->
+  <article class="post" id="shade">
+    <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
+    <div class="num"><span class="rec"></span>8 · THE SHADE</div>
+    <h2>Look away. Then look back.</h2>
+    <p>Hold on to your token, and something follows you. You'll only see it on your screen. And every time you look back, it's closer.</p>
+    <div class="media hide-if-missing"><img src="shade-hall.png" alt="A hallway that goes on too long"></div>
+    <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
+    <div class="comments">
+      <div class="c"><div class="ci">XW</div><div><b>@xander_wolfe</b> did that hallway just get longer</div></div>
+    </div>
+  </article>
+
+  <!-- 9 THE CIRCLE -->
+  <article class="post" id="circle">
+    <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
+    <div class="num"><span class="rec"></span>9 · KATEY</div>
+    <h2>@itsjustme_katey</h2>
+    <p>An artist who liked and shared every post, because that's how it works. Tonight she goes live.</p>
+    <div class="people">
+      <div class="person"><div class="face">K</div><b>Katey</b><span>Live now</span></div>
+    </div>
+    <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
+    <div class="comments">
+      <div class="c"><div class="ci">EH</div><div><b>@easelhours</b> Proud of you. Nobody should do this alone.</div></div>
+    </div>
+  </article>
+
+  <article class="post">
+    <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
+    <div class="num"><span class="rec"></span>10 · THE SLEUTHS</div>
+    <h2>The ones watching.</h2>
+    <div class="people">
+      <div class="person"><div class="face">LR</div><b>Larry Roland</b><span>Hero of the Denver Miracle. Still chasing it.</span></div>
+      <div class="person"><div class="face">TW</div><b>Trey Williams</b><span>Jokes first. Looks later.</span></div>
+      <div class="person"><div class="face">MD</div><b>Maggie Doyle</b><span>Feels everything. Can't look away.</span></div>
+      <div class="person"><div class="face">ZH</div><b>Zoey Hale</b><span>The internet detective.</span></div>
+      <div class="person"><div class="face teal">CV</div><b>Dr. Calvin Vance</b><span>The cult expert nobody believed.</span></div>
+    </div>
+    <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
+    <div class="comments">
+      <div class="c"><div class="ci">CV</div><div><b>@calvance</b> It likes an audience.</div></div>
+    </div>
+  </article>
+
+  <article class="post">
+    <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
+    <div class="num"><span class="rec"></span>11 · KATEY'S PEOPLE</div>
+    <h2>The people who mean the most to her.</h2>
+    <div class="people">
+      <div class="person"><div class="face">S</div><b>Shannon</b><span>Her best friend since forever. The one person who might still get through.</span></div>
+      <div class="person"><div class="face">A</div><b>Amanda</b><span>Her daughter, twenty, who stopped answering her calls.</span></div>
+      <div class="person"><div class="face">L</div><b>Leo</b><span>The little boy she raised as her own, until she wasn't allowed to see him.</span></div>
+    </div>
+    <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
+    <div class="comments">
+      <div class="c"><div class="ci">SM</div><div><b>@sweetmagnolia</b> Her family will be rewarded. More than they ever dreamed. 💛</div></div>
+    </div>
+  </article>
+
+  <article class="post">
+    <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
+    <div class="num"><span class="rec"></span>12 · THE FOLLOWERS</div>
+    <h2>The most devoted.</h2>
+    <p>Invited into The Reach by the leaders who influenced them most.</p>
+    <div class="people">
+      <div class="person"><div class="face">GC</div><b>@greycanopy99</b></div>
+      <div class="person"><div class="face">SM</div><b>@sweetmagnolia</b></div>
+      <div class="person"><div class="face">EN</div><b>@emptynest02</b></div>
+      <div class="person"><div class="face">MG</div><b>@marigold_71</b></div>
+      <div class="person"><div class="face teal">AG</div><b>@ashgrove_21</b></div>
+      <div class="person"><div class="face">DS</div><b>@dale.sparrow</b></div>
+      <div class="person"><div class="face">SW</div><b>@stillwater_11</b></div>
+    </div>
+    <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
+    <div class="comments">
+      <div class="c"><div class="ci">DS</div><div><b>@dale.sparrow</b> Following.</div></div>
+    </div>
+  </article>
+
+  <article class="post">
+    <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
+    <div class="num"><span class="rec"></span>13 · WHY NOW?</div>
+    <p>We let an algorithm decide what we see, who we trust, and who we follow.</p>
+    <p>Influencers have become the new cult leaders.</p>
+    <p>For You asks what's really choosing what we see.</p>
+    <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
+    <div class="comments"></div>
+  </article>
+
+  <article class="post">
+    <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
+    <div class="num"><span class="rec"></span>14 · THE AUDIENCE</div>
+    <p>Horror fans first, but this one reaches further.</p>
+    <p>Anyone who scrolls, at any age: teens who grew up online, and the adults who followed them there.</p>
+    <p>For You is a horror story for everyone who ever trusted their feed.</p>
+    <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
+    <div class="comments"></div>
+  </article>
+
+  <!-- 15 OFFERINGS -->
+  <article class="post" id="offerings">
+    <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
+    <div class="num"><span class="rec"></span>15 · OFFERINGS</div>
+    <h2>Every crossing has a fare.</h2>
+    <p>Your support funds post-production: the score, the sound, and the festival journey.</p>
+    <a class="btn" href="#offerings">Make an offering</a>
+    <p class="soon">DONATIONS OPEN SOON</p>
+    <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
+    <div class="comments"></div>
+  </article>
+
+  <!-- 16 VESTMENTS -->
+  <article class="post" id="vestments">
+    <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
+    <div class="num"><span class="rec"></span>16 · VESTMENTS</div>
+    <div class="split">
+      <div>
+        <h2>Wear the crest.</h2>
+        <p>The same box the followers receive in the film: the crest shirt, the gold token, and the sealed envelope. Or just the shirt. Or just the token.</p>
+        <a class="btn ghost" href="#vestments">Shop vestments</a>
+        <p class="soon">COMING SOON</p>
+      </div>
+      <div class="media hide-if-missing"><img src="shirt.png" alt="The crest shirt"></div>
+    </div>
+    <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
+    <div class="comments">
+      <div class="c"><div class="ci">MG</div><div><b>@marigold_71</b> wearing mine right now 💛</div></div>
+    </div>
+  </article>
+
+  <!-- 17 JOIN US -->
+  <article class="post" id="join">
+    <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
+    <div class="num"><span class="rec"></span>2.2M WATCHING · JOIN US</div>
+    <h2>Written, cast, and already being built, screen by screen.</h2>
+    <p>We're looking for collaborators: producers, executive producers, artists, and anyone passionate about bringing something new to the screen.</p>
+    <p>Additional funding goes straight to editing, post-production, and a festival run.</p>
+    <a class="btn" href="press.html">Press &amp; Industry</a>
+    <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
+    <div class="comments"></div>
+  </article>
+
+  <!-- THE DOOR -->
+  <section class="door" id="door">
+    <a href="https://rethecreator.com"><img src="ResDoor.png" alt="Enter the door"></a>
+    <p>YOUR CROSSING AWAITS</p>
+  </section>
+
+  <footer>© 2026 FOR YOU · @foryouthefilm</footer>
+</main>
+
+<script>
+  // mobile menu
+  var sb = document.getElementById('sidebar');
+  document.getElementById('menuBtn').onclick = function(){ sb.classList.toggle('open'); };
+  sb.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ sb.classList.remove('open'); }); });
+
+  // follow button
+  var fb = document.getElementById('followBtn');
+  fb.onclick = function(){
+    var on = fb.classList.toggle('on');
+    fb.textContent = on ? 'Following' : 'Follow';
+  };
+
+  // likes and comments
+  document.querySelectorAll('.post').forEach(function(p){
+    var like = p.querySelector('.like'), ctog = p.querySelector('.ctog'), box = p.querySelector('.comments');
+    if (like) like.onclick = function(){
+      var on = like.classList.toggle('liked');
+      like.textContent = on ? '♥ Liked' : '♡ Like';
+    };
+    if (ctog && box) {
+      var n = box.querySelectorAll('.c').length;
+      if (n) ctog.textContent = 'Comment (' + n + ')';
+      ctog.onclick = function(){ box.classList.toggle('open'); };
+    }
+  });
+
+  // share copies the link
+  document.querySelectorAll('.share').forEach(function(b){
+    b.onclick = function(){
+      var url = location.origin + location.pathname;
+      if (navigator.share) { navigator.share({title:'For You', url:url}).catch(function(){}); }
+      else if (navigator.clipboard) { navigator.clipboard.writeText(url); b.textContent = 'Link copied'; }
+    };
+  });
+
+  // hide images (and the rhyme player) until the files are uploaded
+  document.querySelectorAll('.hide-if-missing img').forEach(function(img){
+    img.addEventListener('error', function(){ img.closest('.hide-if-missing').style.display = 'none'; });
+  });
+  var au = document.getElementById('rhymeAudio');
+  au.addEventListener('error', function(){ au.style.display = 'none'; });
+
+  // live viewer count drifts
+  var v = 2214907, el = document.getElementById('viewers');
+  setInterval(function(){ v += Math.floor(Math.random()*90) - 30; el.textContent = v.toLocaleString(); }, 2500);
+</script>
+</body>
+</html>
+border-radius:50%;background:#f7f3ea;overflow:hidden;flex:none}
   .brand .mini img{width:100%;height:100%;object-fit:contain}
   .brand span{font-weight:500;letter-spacing:.12em;font-size:15px}
   .nav a{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:8px;text-decoration:none;color:var(--muted);font-size:15px;letter-spacing:.04em}
