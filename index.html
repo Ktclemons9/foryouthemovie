@@ -120,6 +120,61 @@
   .door p{margin-top:16px;color:var(--gold);letter-spacing:.2em;font-size:14px}
   footer{margin-top:30px;text-align:center;font-size:12px;color:var(--muted);letter-spacing:.12em}
 
+
+  /* RANK + REACH */
+  .side-rank{display:none;align-items:center;gap:10px;margin:22px 0 0;padding:10px;border:1px solid var(--line);border-radius:10px}
+  .side-rank.show{display:flex}
+  .side-rank img{width:44px;height:44px}
+  .side-rank b{display:block;font-weight:500;font-size:14px}
+  .side-rank span{color:var(--muted);font-size:12px;letter-spacing:.1em}
+  .reach{display:none;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px;margin-bottom:18px}
+  .reach.show{display:block}
+  .reach.gold{border-color:var(--gold);box-shadow:0 0 28px rgba(232,176,74,.18)}
+  .reach-top{display:flex;gap:16px;align-items:center}
+  .reach-top img{width:84px;height:84px;flex:none}
+  .reach .rk{font-size:13px;letter-spacing:.18em;color:var(--muted)}
+  .reach .hd{font-size:22px;font-weight:400}
+  .reach .ld{color:var(--muted);font-size:14px}
+  .seeyou{display:none;color:var(--gold);letter-spacing:.24em;font-size:15px;margin-top:12px}
+  .reach.gold .seeyou{display:block}
+  .bar{height:8px;border-radius:99px;background:#26272e;margin:16px 0 6px;overflow:hidden}
+  .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#6b2d6e,#9b3fa8,#d6407a,#ef7b3a,#e8b04a);transition:width .6s}
+  .next{font-size:14px;color:var(--muted)}
+  .brought{margin-top:10px;font-size:16px}
+  .invite{display:flex;gap:8px;margin-top:12px}
+  .invite input{flex:1;min-width:0;background:#0e0f12;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:8px 10px;font-family:inherit;font-size:13px}
+  .invite button{background:var(--red);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-family:inherit;font-weight:500;cursor:pointer}
+  .board{list-style:none;margin:10px 0 4px}
+  .board li{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);font-size:15px}
+  .board li .pos{width:22px;color:var(--gold)}
+  .board li .cnt{margin-left:auto;color:var(--muted);font-size:13px}
+  .flock{margin-top:14px}
+  .flock div{display:flex;align-items:center;gap:10px;font-size:14px;margin-bottom:8px}
+  .flock .fname{width:130px;flex:none}
+  .flock .fbar{flex:1;height:8px;background:#26272e;border-radius:99px;overflow:hidden}
+  .flock .fbar i{display:block;height:100%;background:var(--gold);width:0;transition:width .6s}
+  .flock .fnum{width:40px;text-align:right;color:var(--muted)}
+
+  /* LEADER PICKER */
+  .overlay{position:fixed;inset:0;background:rgba(0,0,0,.78);z-index:50;display:none;align-items:center;justify-content:center;padding:16px}
+  .overlay.show{display:flex}
+  .picker{background:var(--panel);border:1px solid var(--line);border-left:2px solid var(--red);border-radius:14px;max-width:640px;width:100%;max-height:90vh;overflow-y:auto;padding:24px}
+  .picker h3{font-weight:400;font-size:24px;margin-bottom:4px}
+  .picker .sub{color:var(--muted);margin-bottom:18px}
+  .leaders{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .lcard{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:14px 10px;text-align:center;cursor:pointer;font-family:inherit;color:var(--text)}
+  .lcard:hover{border-color:var(--gold)}
+  .lcard .ph{width:72px;height:72px;border-radius:50%;margin:0 auto 8px;overflow:hidden;background:#8f6a93;display:flex;align-items:center;justify-content:center;font-size:22px;color:#f7f3ea}
+  .lcard .ph img{width:100%;height:100%;object-fit:cover}
+  .lcard b{display:block;font-weight:500;font-size:14px}
+  .lcard span{display:block;color:var(--muted);font-size:12px;line-height:1.4;margin-top:4px}
+  .lcard.locked{cursor:default;opacity:.55}
+  .lcard.locked:hover{border-color:var(--line)}
+  .lcard.locked .ph{background:#111}
+  .closex{float:right;background:none;border:none;color:var(--muted);font-size:22px;cursor:pointer}
+  .picker .err{color:var(--red);font-size:14px;margin-top:10px;min-height:18px}
+  @media (max-width:560px){.leaders{grid-template-columns:repeat(2,1fr)}}
+
   @media (max-width:860px){
     .sidebar{transform:translateX(-100%);transition:transform .25s}
     .sidebar.open{transform:none}
@@ -151,6 +206,10 @@
     <a href="#join"><span class="dot"></span>Join Us</a>
     <a href="#door"><span class="dot"></span>The Door</a>
   </nav>
+  <div class="side-rank" id="sideRank">
+    <img id="sideRankImg" src="badge-follower.png" alt="">
+    <div><b id="sideHandle"></b><span id="sideRankName">FOLLOWER</span></div>
+  </div>
   <div class="side-laurel">
     <img src="RUNNERUP-FrightsCameraActionHorrorScreenplayContest-2026.png" alt="Runner-up, Best Screenplay, Frights! Camera! Action! 2026">
     <a class="side-press" href="press.html">PRESS &amp; INDUSTRY</a>
@@ -170,7 +229,7 @@
       <div>
         <div class="pname">FOR YOU</div>
         <div class="handle">@foryouthefilm</div>
-        <div class="stats"><span><b>17</b> posts</span><span><b id="fcount">2.2M</b> followers</span><span><b>∞</b> committed</span></div>
+        <div class="stats"><span><b>18</b> posts</span><span><b id="fcount">1,000,000</b> followers</span><span><b>∞</b> committed</span></div>
         <button class="follow" id="followBtn">Follow</button>
       </div>
     </div>
@@ -178,10 +237,29 @@
     <p class="tagline">LIKE. FOLLOW. SHARE. COMMIT.</p>
   </section>
 
+  <section class="reach" id="reachCard">
+    <div class="reach-top">
+      <img id="reachBadge" src="badge-follower.png" alt="Your rank">
+      <div>
+        <div class="rk" id="reachRank">FOLLOWER</div>
+        <div class="hd" id="reachHandle"></div>
+        <div class="ld" id="reachLeader"></div>
+      </div>
+    </div>
+    <div class="bar"><i id="reachBar"></i></div>
+    <div class="next" id="reachNext"></div>
+    <div class="brought" id="reachBrought"></div>
+    <div class="invite">
+      <input id="inviteLink" readonly>
+      <button id="copyLink">Copy my link</button>
+    </div>
+    <div class="seeyou">I SEE YOU.</div>
+  </section>
+
   <div id="feed"></div>
 
   <!-- 1 LOGLINE -->
-  <article class="post">
+  <article class="post" data-post="p1">
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div><div class="pin">PINNED</div></div>
     <div class="num"><span class="rec"></span>1 · FOR YOU</div>
     <h2>Who decides what shows up on your For You page?</h2>
@@ -195,8 +273,18 @@
     </div>
   </article>
 
+  <!-- MOST COMMITTED -->
+  <article class="post" id="committed">
+    <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div><div class="pin">LIVE</div></div>
+    <div class="num"><span class="rec"></span>THE MOST COMMITTED</div>
+    <h2>Who has brought the most to Re?</h2>
+    <p class="muted">Follow, then share your link. Every person who follows through it raises you.</p>
+    <ol class="board" id="board"><li class="muted">Counting the committed...</li></ol>
+    <div class="flock" id="flock"></div>
+  </article>
+
   <!-- 2 STORY -->
-  <article class="post" id="story">
+  <article class="post" data-post="p2" id="story">
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
     <div class="num"><span class="rec"></span>2 · THE STORY</div>
     <div class="split">
@@ -215,7 +303,7 @@
   </article>
 
   <!-- 3 FOLLOW ME (RHYME) -->
-  <article class="post" id="followme">
+  <article class="post" data-post="p3" id="followme">
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
     <div class="num"><span class="rec"></span>3 · FOLLOW ME</div>
     <h2>Every follower knows the words.</h2>
@@ -235,7 +323,7 @@
   </article>
 
   <!-- 4 LORE -->
-  <article class="post" id="lore">
+  <article class="post" data-post="p4" id="lore">
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
     <div class="num"><span class="rec"></span>4 · THE LORE</div>
     <h2>Reach Re.</h2>
@@ -249,7 +337,7 @@
   </article>
 
   <!-- 5 LEADERS -->
-  <article class="post" id="leaders">
+  <article class="post" data-post="p5" id="leaders">
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
     <div class="num"><span class="rec"></span>5 · FOLLOW THE LEADERS</div>
     <h2>They look like anyone you'd follow.</h2>
@@ -270,7 +358,7 @@
   </article>
 
   <!-- 6 THE REACH -->
-  <article class="post" id="reach">
+  <article class="post" data-post="p6" id="reach">
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
     <div class="num"><span class="rec"></span>6 · THE REACH</div>
     <div class="split">
@@ -288,7 +376,7 @@
   </article>
 
   <!-- 7 THE FARE -->
-  <article class="post" id="fare">
+  <article class="post" data-post="p7" id="fare">
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
     <div class="num"><span class="rec"></span>7 · THE FARE</div>
     <div class="split">
@@ -305,7 +393,7 @@
   </article>
 
   <!-- 8 THE SHADE -->
-  <article class="post" id="shade">
+  <article class="post" data-post="p8" id="shade">
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
     <div class="num"><span class="rec"></span>8 · THE SHADE</div>
     <h2>Look away. Then look back.</h2>
@@ -318,7 +406,7 @@
   </article>
 
   <!-- 9 THE CIRCLE -->
-  <article class="post" id="circle">
+  <article class="post" data-post="p9" id="circle">
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
     <div class="num"><span class="rec"></span>9 · KATEY</div>
     <h2>@itsjustme_katey</h2>
@@ -332,7 +420,7 @@
     </div>
   </article>
 
-  <article class="post">
+  <article class="post" data-post="p10">
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
     <div class="num"><span class="rec"></span>10 · THE SLEUTHS</div>
     <h2>The ones watching.</h2>
@@ -349,7 +437,7 @@
     </div>
   </article>
 
-  <article class="post">
+  <article class="post" data-post="p11">
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
     <div class="num"><span class="rec"></span>11 · KATEY'S PEOPLE</div>
     <h2>The people who mean the most to her.</h2>
@@ -364,7 +452,7 @@
     </div>
   </article>
 
-  <article class="post">
+  <article class="post" data-post="p12">
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
     <div class="num"><span class="rec"></span>12 · THE FOLLOWERS</div>
     <h2>The most devoted.</h2>
@@ -384,7 +472,7 @@
     </div>
   </article>
 
-  <article class="post">
+  <article class="post" data-post="p13">
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
     <div class="num"><span class="rec"></span>13 · WHY NOW?</div>
     <p>We let an algorithm decide what we see, who we trust, and who we follow.</p>
@@ -394,7 +482,7 @@
     <div class="comments"></div>
   </article>
 
-  <article class="post">
+  <article class="post" data-post="p14">
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
     <div class="num"><span class="rec"></span>14 · THE AUDIENCE</div>
     <p>Horror fans first, but this one reaches further.</p>
@@ -405,7 +493,7 @@
   </article>
 
   <!-- 15 OFFERINGS -->
-  <article class="post" id="offerings">
+  <article class="post" data-post="p15" id="offerings">
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
     <div class="num"><span class="rec"></span>15 · OFFERINGS</div>
     <h2>Every crossing has a fare.</h2>
@@ -417,7 +505,7 @@
   </article>
 
   <!-- 16 VESTMENTS -->
-  <article class="post" id="vestments">
+  <article class="post" data-post="p16" id="vestments">
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
     <div class="num"><span class="rec"></span>16 · VESTMENTS</div>
     <div class="split">
@@ -436,7 +524,7 @@
   </article>
 
   <!-- 17 JOIN US -->
-  <article class="post" id="join">
+  <article class="post" data-post="p17" id="join">
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
     <div class="num"><span class="rec"></span>2.2M WATCHING · JOIN US</div>
     <h2>Written, cast, and already being built, screen by screen.</h2>
@@ -456,121 +544,274 @@
   <footer>© 2026 FOR YOU · @foryouthefilm</footer>
 </main>
 
+<div class="overlay" id="picker">
+  <div class="picker">
+    <button class="closex" id="closePicker" aria-label="Close">×</button>
+    <h3>Choose your leader.</h3>
+    <p class="sub">Nobody reaches Re alone. Who brought you here?</p>
+    <div class="leaders" id="leaderGrid"></div>
+    <div class="err" id="pickErr"></div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-  // mobile menu
-  var sb = document.getElementById('sidebar');
-  document.getElementById('menuBtn').onclick = function(){ sb.classList.toggle('open'); };
-  sb.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ sb.classList.remove('open'); }); });
+(function () {
+  var SB_URL = 'https://qaezwlmsajpkbsjunsxl.supabase.co';
+  var SB_KEY = 'sb_publishable_geTyYMPIAoHsU_MNZ9_wJQ_vD7LFYXJ';
+  var BASE_FOLLOWERS = 1000000;
+  var db = window.supabase ? window.supabase.createClient(SB_URL, SB_KEY) : null;
 
-  // follow button
-  var fb = document.getElementById('followBtn');
-  fb.onclick = function(){
-    var on = fb.classList.toggle('on');
-    fb.textContent = on ? 'Following' : 'Follow';
+  function store(k, v) {
+    try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; }
+  }
+  function fmt(n) { return Number(n).toLocaleString(); }
+  function $(id) { return document.getElementById(id); }
+
+  // anonymous visitor id
+  var vid = store('fy_vid');
+  if (!vid) {
+    vid = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : (Date.now() + '-' + Math.random().toString(36).slice(2));
+    store('fy_vid', vid);
+  }
+  // who invited this visitor
+  var ref = new URLSearchParams(location.search).get('invite');
+  if (ref && ref !== vid && !store('fy_ref')) store('fy_ref', ref);
+
+  var LEADERS = {
+    easelhours: { handle: '@easelhours', role: 'The painter', quote: 'Nobody should paint alone.', init: 'EH',
+      adj: ['soft', 'gentle', 'quiet', 'golden', 'still', 'pale'], noun: ['brush', 'canvas', 'palette', 'linen', 'easel', 'sketch'] },
+    gorillabob: { handle: '@gorillabob', role: 'The home chef', quote: 'Nobody eats alone in my kitchen.', init: 'GB',
+      adj: ['warm', 'full', 'sweet', 'golden', 'slow', 'hearty'], noun: ['kitchen', 'plate', 'table', 'oven', 'skillet', 'supper'] },
+    sundaysongbird: { handle: '@sundaysongbird', role: 'The singer', quote: 'Sing along with me.', init: 'SS',
+      adj: ['sweet', 'sunday', 'gentle', 'golden', 'low', 'morning'], noun: ['chorus', 'hymn', 'melody', 'choir', 'verse', 'song'] }
   };
+  var RANKS = [
+    { name: 'FOLLOWER', min: 0, img: 'badge-follower.png' },
+    { name: 'PROMOTER', min: 1, img: 'badge-promoter.png' },
+    { name: 'SEEKER', min: 3, img: 'badge-seeker.png' },
+    { name: 'COMMITTED', min: 7, img: 'badge-committed.png' }
+  ];
+  function pick(a) { return a[Math.floor(Math.random() * a.length)]; }
+  function makeHandle(key) {
+    var L = LEADERS[key];
+    return pick(L.adj) + pick(L.noun) + '_' + (10 + Math.floor(Math.random() * 90));
+  }
 
-  // likes and comments
-  document.querySelectorAll('.post').forEach(function(p){
-    var like = p.querySelector('.like'), ctog = p.querySelector('.ctog'), box = p.querySelector('.comments');
-    if (like) like.onclick = function(){
-      var on = like.classList.toggle('liked');
-      like.textContent = on ? '♥ Liked' : '♡ Like';
-    };
+  // ---------- mobile menu ----------
+  var sb = $('sidebar');
+  $('menuBtn').onclick = function () { sb.classList.toggle('open'); };
+  sb.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { sb.classList.remove('open'); }); });
+
+  // ---------- comments (made-up Reach comments) ----------
+  document.querySelectorAll('.post').forEach(function (p) {
+    var ctog = p.querySelector('.ctog'), box = p.querySelector('.comments');
     if (ctog && box) {
       var n = box.querySelectorAll('.c').length;
       if (n) ctog.textContent = 'Comment (' + n + ')';
-      ctog.onclick = function(){ box.classList.toggle('open'); };
+      ctog.onclick = function () { box.classList.toggle('open'); };
     }
   });
 
-  // share copies the link
-  document.querySelectorAll('.share').forEach(function(b){
-    b.onclick = function(){
-      var url = location.origin + location.pathname;
-      if (navigator.share) { navigator.share({title:'For You', url:url}).catch(function(){}); }
+  // ---------- hide missing images ----------
+  document.querySelectorAll('.hide-if-missing img').forEach(function (img) {
+    img.addEventListener('error', function () { img.closest('.hide-if-missing').style.display = 'none'; });
+  });
+  var au = $('rhymeAudio');
+  if (au) au.addEventListener('error', function () { au.style.display = 'none'; });
+
+  // ---------- live viewer count ----------
+  var v = 2214907, vel = $('viewers');
+  setInterval(function () { v += Math.floor(Math.random() * 90) - 30; vel.textContent = fmt(v); }, 2500);
+
+  // ---------- state ----------
+  var me = null;       // my follow row {leader, handle}
+  var recruits = 0;
+  var fcount = 0;
+
+  function inviteUrl() { return location.origin + location.pathname + '?invite=' + encodeURIComponent(vid); }
+
+  // share uses your invite link once you follow
+  document.querySelectorAll('.share').forEach(function (b) {
+    b.onclick = function () {
+      var url = me ? inviteUrl() : location.origin + location.pathname;
+      if (navigator.share) { navigator.share({ title: 'For You', text: 'Follow me. Reach Re.', url: url }).catch(function () {}); }
       else if (navigator.clipboard) { navigator.clipboard.writeText(url); b.textContent = 'Link copied'; }
     };
   });
 
-  // hide images (and the rhyme player) until the files are uploaded
-  document.querySelectorAll('.hide-if-missing img').forEach(function(img){
-    img.addEventListener('error', function(){ img.closest('.hide-if-missing').style.display = 'none'; });
-  });
-  var au = document.getElementById('rhymeAudio');
-  au.addEventListener('error', function(){ au.style.display = 'none'; });
-
-  // live viewer count drifts
-  var v = 2214907, el = document.getElementById('viewers');
-  setInterval(function(){ v += Math.floor(Math.random()*90) - 30; el.textContent = v.toLocaleString(); }, 2500);
-</script>
-</body>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script>
-(function () {
-  var db = supabase.createClient(
-    'https://qaezwlmsajpkbsjunsxl.supabase.co',
-    'sb_publishable_geTyYMPIAoHsU_MNZ9_wJQ_vD7LFYXJ'
-  );
-
-  var vid = localStorage.getItem('fy_vid');
-  if (!vid) {
-    vid = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : String(Math.random()).slice(2) + Date.now();
-    localStorage.setItem('fy_vid', vid);
+  // ---------- likes ----------
+  var likeCounts = {}, myLikes = {};
+  function drawLike(btn, id) {
+    var mine = !!myLikes[id], c = likeCounts[id] || 0;
+    btn.textContent = (mine ? '♥ ' : '♡ ') + c;
+    btn.classList.toggle('liked', mine);
   }
-  function fmt(n) { return n.toLocaleString(); }
-
-  document.querySelectorAll('.post').forEach(function (p, i) {
-    var btn = p.querySelector('.like');
-    if (!btn) return;
-    var id = 'post-' + i, count = 0, mine = false;
-    function draw() {
-      btn.classList.toggle('liked', mine);
-      btn.textContent = (mine ? '♥ ' : '♡ ') + fmt(count);
-    }
-    Promise.all([
-      db.from('likes').select('*', { count: 'exact', head: true }).eq('post_id', id),
-      db.from('likes').select('post_id').eq('post_id', id).eq('visitor_id', vid)
-    ]).then(function (r) {
-      count = r[0].count || 0;
-      mine = (r[1].data || []).length > 0;
-      draw();
-    });
+  var likeBtns = [];
+  document.querySelectorAll('.post[data-post]').forEach(function (p) {
+    var btn = p.querySelector('.like'); if (!btn) return;
+    var id = p.getAttribute('data-post');
+    likeBtns.push([btn, id]);
     btn.onclick = function () {
-      mine = !mine; count += mine ? 1 : -1; draw();
-      var q = mine
-        ? db.from('likes').insert({ post_id: id, visitor_id: vid })
-        : db.from('likes').delete().eq('post_id', id).eq('visitor_id', vid);
+      if (!db) return;
+      var mine = !myLikes[id];
+      myLikes[id] = mine; likeCounts[id] = (likeCounts[id] || 0) + (mine ? 1 : -1); drawLike(btn, id);
+      var q = mine ? db.from('likes').insert({ post_id: id, visitor_id: vid })
+                   : db.from('likes').delete().eq('post_id', id).eq('visitor_id', vid);
       q.then(function (res) {
-        if (res.error) { mine = !mine; count += mine ? 1 : -1; draw(); }
+        if (res.error) { myLikes[id] = !mine; likeCounts[id] += mine ? -1 : 1; drawLike(btn, id); }
       });
     };
   });
-
-  var fb = document.getElementById('followBtn');
-  var fc = document.getElementById('fcount');
-  var base = 1000000, fcount = 0, following = false;
-  function drawF() {
-    fb.classList.toggle('on', following);
-    fb.textContent = following ? 'Following' : 'Follow';
-    fc.textContent = fmt(base + fcount);
+  function loadLikes() {
+    if (!db) return;
+    db.from('likes').select('post_id,visitor_id').then(function (res) {
+      (res.data || []).forEach(function (r) {
+        likeCounts[r.post_id] = (likeCounts[r.post_id] || 0) + 1;
+        if (r.visitor_id === vid) myLikes[r.post_id] = true;
+      });
+      likeBtns.forEach(function (x) { drawLike(x[0], x[1]); });
+    });
   }
-  Promise.all([
-    db.from('follows').select('*', { count: 'exact', head: true }),
-    db.from('follows').select('visitor_id').eq('visitor_id', vid)
-  ]).then(function (r) {
-    fcount = r[0].count || 0;
-    following = (r[1].data || []).length > 0;
-    drawF();
+
+  // ---------- follow + rank ----------
+  var fb = $('followBtn'), fc = $('fcount');
+  function rankFor(n) { var r = RANKS[0]; RANKS.forEach(function (x) { if (n >= x.min) r = x; }); return r; }
+  function nextRank(n) { for (var i = 0; i < RANKS.length; i++) if (RANKS[i].min > n) return RANKS[i]; return null; }
+
+  function drawFollow() {
+    fb.classList.toggle('on', !!me);
+    fb.textContent = me ? 'Following' : 'Follow';
+    fc.textContent = fmt(BASE_FOLLOWERS + fcount);
+
+    var card = $('reachCard'), side = $('sideRank');
+    if (!me) { card.classList.remove('show'); side.classList.remove('show'); return; }
+    var r = rankFor(recruits), nx = nextRank(recruits), L = LEADERS[me.leader];
+    card.classList.add('show'); side.classList.add('show');
+    card.classList.toggle('gold', r.name === 'COMMITTED');
+    $('reachBadge').src = r.img; $('sideRankImg').src = r.img;
+    $('reachRank').textContent = r.name; $('sideRankName').textContent = r.name;
+    $('reachHandle').textContent = '@' + me.handle; $('sideHandle').textContent = '@' + me.handle;
+    $('reachLeader').textContent = L ? 'Following ' + L.handle : '';
+    var pct = 100;
+    if (nx) { var prev = r.min; pct = Math.round(((recruits - prev) / (nx.min - prev)) * 100); }
+    $('reachBar').style.width = Math.max(pct, 4) + '%';
+    $('reachNext').textContent = nx ? (nx.min - recruits) + ' more to ' + nx.name.charAt(0) + nx.name.slice(1).toLowerCase() : 'You have reached Re.';
+    $('reachBrought').textContent = recruits === 1 ? "You've brought 1 person to Re." : "You've brought " + recruits + ' people to Re.';
+    $('inviteLink').value = inviteUrl();
+  }
+
+  $('copyLink').onclick = function () {
+    var inp = $('inviteLink');
+    if (navigator.clipboard) navigator.clipboard.writeText(inp.value);
+    else { inp.select(); document.execCommand('copy'); }
+    this.textContent = 'Copied';
+    var b = this; setTimeout(function () { b.textContent = 'Copy my link'; }, 1800);
+  };
+
+  // leader picker
+  var picker = $('picker'), grid = $('leaderGrid');
+  function photo(key, init) {
+    return '<div class="ph"><img src="' + key + '.png" alt="" onerror="this.parentNode.textContent=\'' + init + '\'"></div>';
+  }
+  var html = '';
+  Object.keys(LEADERS).forEach(function (k) {
+    var L = LEADERS[k];
+    html += '<button class="lcard" data-leader="' + k + '">' + photo(k, L.init) + '<b>' + L.handle + '</b><span>' + L.role + '<br>"' + L.quote + '"</span></button>';
   });
+  for (var i = 0; i < 3; i++) {
+    html += '<div class="lcard locked"><div class="ph"><img src="badge-follower.png" alt="" style="opacity:.25" onerror="this.remove()"></div><b>Open seat</b><span>This seat is open.<br>Become a Leader.</span></div>';
+  }
+  grid.innerHTML = html;
+  $('closePicker').onclick = function () { picker.classList.remove('show'); };
+  picker.addEventListener('click', function (e) { if (e.target === picker) picker.classList.remove('show'); });
+
+  function choose(key, tries) {
+    $('pickErr').textContent = '';
+    var handle = makeHandle(key);
+    db.from('follows').insert({ visitor_id: vid, leader: key, handle: handle }).then(function (res) {
+      if (res.error) {
+        if (res.error.code === '23505' && /handle/.test(res.error.message || '') && tries < 6) return choose(key, tries + 1);
+        $('pickErr').textContent = 'Something went wrong. Try again.';
+        return;
+      }
+      me = { leader: key, handle: handle }; fcount += 1;
+      picker.classList.remove('show');
+      var r = store('fy_ref');
+      if (r && r !== vid) db.from('invites').insert({ invitee_id: vid, inviter_id: r }).then(function () { loadBoard(); });
+      drawFollow(); loadBoard();
+      $('reachCard').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  }
+  grid.querySelectorAll('.lcard[data-leader]').forEach(function (b) {
+    b.onclick = function () { if (db) choose(b.getAttribute('data-leader'), 0); };
+  });
+
   fb.onclick = function () {
-    following = !following; fcount += following ? 1 : -1; drawF();
-    var q = following
-      ? db.from('follows').insert({ visitor_id: vid })
-      : db.from('follows').delete().eq('visitor_id', vid);
-    q.then(function (res) {
-      if (res.error) { following = !following; fcount += following ? 1 : -1; drawF(); }
+    if (!db) return;
+    if (!me) { picker.classList.add('show'); return; }
+    if (!window.confirm('Leave The Reach? You will lose your name and your rank.')) return;
+    db.from('follows').delete().eq('visitor_id', vid).then(function (res) {
+      if (!res.error) { me = null; fcount = Math.max(0, fcount - 1); drawFollow(); loadBoard(); }
     });
   };
+
+  // ---------- leaderboard + flocks ----------
+  function loadBoard() {
+    if (!db) return;
+    Promise.all([
+      db.from('invites').select('inviter_id'),
+      db.from('follows').select('visitor_id,leader,handle')
+    ]).then(function (r) {
+      var inv = r[0].data || [], fol = r[1].data || [];
+      var byId = {}; fol.forEach(function (f) { byId[f.visitor_id] = f; });
+      var counts = {};
+      inv.forEach(function (x) { if (byId[x.inviter_id]) counts[x.inviter_id] = (counts[x.inviter_id] || 0) + 1; });
+      recruits = counts[vid] || 0;
+      drawFollow();
+
+      var top = Object.keys(counts).sort(function (a, b) { return counts[b] - counts[a]; }).slice(0, 5);
+      var board = $('board');
+      if (!top.length) board.innerHTML = '<li class="muted">No one yet. Be the first.</li>';
+      else board.innerHTML = top.map(function (id, i) {
+        var f = byId[id], L = LEADERS[f.leader];
+        return '<li><span class="pos">' + (i + 1) + '</span><span>@' + f.handle + (i === 0 ? ' 👑' : '') +
+          '<br><small class="muted">' + (L ? L.handle + "'s flock" : '') + '</small></span><span class="cnt">' + counts[id] + ' brought in</span></li>';
+      }).join('');
+
+      var flocks = {}; Object.keys(LEADERS).forEach(function (k) { flocks[k] = 0; });
+      fol.forEach(function (f) { if (f.leader in flocks) flocks[f.leader]++; });
+      var max = Math.max(1, Math.max.apply(null, Object.keys(flocks).map(function (k) { return flocks[k]; })));
+      $('flock').innerHTML = '<p class="muted" style="margin-bottom:8px">Whose flock is growing fastest?</p>' +
+        Object.keys(LEADERS).map(function (k) {
+          return '<div><span class="fname">' + LEADERS[k].handle + '</span><span class="fbar"><i style="width:' +
+            Math.round(flocks[k] / max * 100) + '%"></i></span><span class="fnum">' + flocks[k] + '</span></div>';
+        }).join('');
+    });
+  }
+
+  // ---------- start ----------
+  function start() {
+    if (!db) { drawFollow(); return; }
+    loadLikes();
+    Promise.all([
+      db.from('follows').select('*', { count: 'exact', head: true }),
+      db.from('follows').select('leader,handle').eq('visitor_id', vid)
+    ]).then(function (r) {
+      fcount = r[0].count || 0;
+      var row = (r[1].data || [])[0];
+      if (row && !row.handle) {
+        // follow from before names existed: clear it so they choose a leader
+        db.from('follows').delete().eq('visitor_id', vid).then(function () {});
+        fcount = Math.max(0, fcount - 1);
+        row = null;
+      }
+      me = row ? { leader: row.leader, handle: row.handle } : null;
+      drawFollow(); loadBoard();
+    });
+  }
+  start();
 })();
 </script>
+</body>
 </html>
