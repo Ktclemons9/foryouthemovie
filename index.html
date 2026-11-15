@@ -1,224 +1,225 @@
-Sorry, my last message cut off before the code. Here's the full page again with the lighter background. The only changes are the background, which is now nearly white, and the cards, which are now pure white.
+Got it. Here’s the full page again with your laurel image in place of the gold text, sitting just under the logline.
 
-```html
+html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For You | You've Been Chosen</title>
-<meta name="description" content="Online sleuths trying to rescue a lonely artist from a nightmare livestream uncover a predatory digital cult that turns the promise of being seen into a trap.">
-<style>
-:root {
---cream: #fdfaf4;
---ivory: #ffffff;
---plum: #5a2150;
---magenta: #b8237a;
---gold: #c9962a;
---ink: #3a2a35;
-}
-* { box-sizing: border-box; }
-body {
-margin: 0;
-background: var(--cream);
-color: var(--ink);
-font-family: Georgia, "Times New Roman", serif;
-line-height: 1.7;
-}
-header {
-text-align: center;
-padding: 3rem 1.5rem 2rem;
-}
-.live {
-display: inline-block;
-font-family: Arial, sans-serif;
-font-size: 0.75rem;
-letter-spacing: 0.2em;
-color: #c0392b;
-margin-bottom: 1.5rem;
-}
-.crest {
-width: min(520px, 90vw);
-height: auto;
-}
-.chosen {
-font-size: clamp(1.8rem, 5vw, 2.8rem);
-color: var(--plum);
-margin: 1.5rem 0 0.5rem;
-font-weight: normal;
-letter-spacing: 0.05em;
-}
-.logline {
-max-width: 640px;
-margin: 0 auto 1.5rem;
-font-size: 1.15rem;
-}
-.laurel {
-color: var(--gold);
-font-size: 0.95rem;
-letter-spacing: 0.05em;
-}
-.tagline {
-font-family: Arial, sans-serif;
-font-size: 0.8rem;
-letter-spacing: 0.3em;
-color: var(--magenta);
-margin-top: 2rem;
-}
-section {
-max-width: 860px;
-margin: 0 auto;
-padding: 3.5rem 1.5rem;
-border-top: 1px solid rgba(201, 150, 42, 0.35);
-text-align: center;
-}
-h2 {
-color: var(--plum);
-font-weight: normal;
-font-size: 1.9rem;
-letter-spacing: 0.08em;
-margin: 0 0 0.25rem;
-}
-.sub {
-color: var(--gold);
-font-style: italic;
-margin: 0 0 1.75rem;
-}
-.grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-gap: 1.25rem;
-margin-top: 1.5rem;
-}
-.card {
-background: var(--ivory);
-border: 1px solid rgba(201, 150, 42, 0.4);
-border-radius: 10px;
-padding: 1.5rem 1rem;
-}
-.card h3 {
-color: var(--plum);
-font-weight: normal;
-margin: 0 0 0.5rem;
-font-size: 1.2rem;
-}
-.card p { margin: 0; font-size: 0.95rem; }
-.button {
-display: inline-block;
-margin-top: 1.5rem;
-padding: 0.8rem 2rem;
-background: var(--plum);
-color: var(--ivory);
-text-decoration: none;
-border-radius: 999px;
-font-family: Arial, sans-serif;
-font-size: 0.9rem;
-letter-spacing: 0.1em;
-}
-.button:hover { background: var(--magenta); }
-footer {
-background: #000;
-color: #b08a2a;
-text-align: center;
-padding: 4rem 1.5rem 3rem;
-}
-.door {
-display: inline-block;
-width: 90px;
-height: 150px;
-border: 2px solid #5a4416;
-border-radius: 6px 6px 0 0;
-position: relative;
-margin-bottom: 1.5rem;
-}
-.door::after {
-content: "";
-position: absolute;
-bottom: -2px;
-left: 0;
-right: 0;
-height: 3px;
-background: #e8b830;
-box-shadow: 0 0 25px 8px rgba(232, 184, 48, 0.4);
-animation: flicker 5s infinite;
-}
-footer a {
-color: #e8b830;
-text-decoration: none;
-letter-spacing: 0.2em;
-font-size: 0.9rem;
-}
-.small {
-color: #6b5a3a;
-font-size: 0.75rem;
-margin-top: 2.5rem;
-font-family: Arial, sans-serif;
-}
-@keyframes flicker {
-0%, 100% { opacity: 0.9; }
-46% { opacity: 0.9; }
-48% { opacity: 0.2; }
-50% { opacity: 1; }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For You | You've Been Chosen</title>
+  <meta name="description" content="Online sleuths trying to rescue a lonely artist from a nightmare livestream uncover a predatory digital cult that turns the promise of being seen into a trap.">
+  <style>
+    :root {
+      --cream: #fdfaf4;
+      --ivory: #ffffff;
+      --plum: #5a2150;
+      --magenta: #b8237a;
+      --gold: #c9962a;
+      --ink: #3a2a35;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.7;
+    }
+    header {
+      text-align: center;
+      padding: 3rem 1.5rem 2rem;
+    }
+    .live {
+      display: inline-block;
+      font-family: Arial, sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      color: #c0392b;
+      margin-bottom: 1.5rem;
+    }
+    .crest {
+      width: min(520px, 90vw);
+      height: auto;
+    }
+    .chosen {
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      color: var(--plum);
+      margin: 1.5rem 0 0.5rem;
+      font-weight: normal;
+      letter-spacing: 0.05em;
+    }
+    .logline {
+      max-width: 640px;
+      margin: 0 auto 1.5rem;
+      font-size: 1.15rem;
+    }
+    .laurel-img {
+      width: min(260px, 60vw);
+      height: auto;
+      margin: 0.5rem auto 0;
+      display: block;
+    }
+    .tagline {
+      font-family: Arial, sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.3em;
+      color: var(--magenta);
+      margin-top: 2rem;
+    }
+    section {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem;
+      border-top: 1px solid rgba(201, 150, 42, 0.35);
+      text-align: center;
+    }
+    h2 {
+      color: var(--plum);
+      font-weight: normal;
+      font-size: 1.9rem;
+      letter-spacing: 0.08em;
+      margin: 0 0 0.25rem;
+    }
+    .sub {
+      color: var(--gold);
+      font-style: italic;
+      margin: 0 0 1.75rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+    .card {
+      background: var(--ivory);
+      border: 1px solid rgba(201, 150, 42, 0.4);
+      border-radius: 10px;
+      padding: 1.5rem 1rem;
+    }
+    .card h3 {
+      color: var(--plum);
+      font-weight: normal;
+      margin: 0 0 0.5rem;
+      font-size: 1.2rem;
+    }
+    .card p { margin: 0; font-size: 0.95rem; }
+    .button {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.8rem 2rem;
+      background: var(--plum);
+      color: var(--ivory);
+      text-decoration: none;
+      border-radius: 999px;
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+    }
+    .button:hover { background: var(--magenta); }
+    footer {
+      background: #000;
+      color: #b08a2a;
+      text-align: center;
+      padding: 4rem 1.5rem 3rem;
+    }
+    .door {
+      display: inline-block;
+      width: 90px;
+      height: 150px;
+      border: 2px solid #5a4416;
+      border-radius: 6px 6px 0 0;
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+    .door::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: #e8b830;
+      box-shadow: 0 0 25px 8px rgba(232, 184, 48, 0.4);
+      animation: flicker 5s infinite;
+    }
+    footer a {
+      color: #e8b830;
+      text-decoration: none;
+      letter-spacing: 0.2em;
+      font-size: 0.9rem;
+    }
+    .small {
+      color: #6b5a3a;
+      font-size: 0.75rem;
+      margin-top: 2.5rem;
+      font-family: Arial, sans-serif;
+    }
+    @keyframes flicker {
+      0%, 100% { opacity: 0.9; }
+      46% { opacity: 0.9; }
+      48% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+  </style>
 </head>
 <body>
 
-<header>
-<div class="live">● LIVE</div><br>
-<img class="crest" src="Seismic%20Crest%20For%20You_Back.png" alt="For You crest">
-<h1 class="chosen">You've been chosen.</h1>
-<p class="logline">Online sleuths trying to rescue a lonely artist from a nightmare livestream uncover a predatory digital cult that turns the promise of being seen into a trap.</p>
-<p class="laurel">Runner-Up, Best Screenplay (Feature)<br>Frights! Camera! Action! Festival, Fall 2026</p>
-<p class="tagline">LIKE. FOLLOW. SHARE. COMMIT.</p>
-</header>
+  <header>
+    <div class="live">● LIVE</div><br>
+    <img class="crest" src="Seismic%20Crest%20For%20You_Back.png" alt="For You crest">
+    <h1 class="chosen">You've been chosen.</h1>
+    <p class="logline">Online sleuths trying to rescue a lonely artist from a nightmare livestream uncover a predatory digital cult that turns the promise of being seen into a trap.</p>
+    <img class="laurel-img" src="RUNNERUP-FrightsCameraActionHorrorScreenplayContest-2026.png" alt="Runner-Up, Best Screenplay, Frights! Camera! Action! Horror Screenplay Contest 2026">
+    <p class="tagline">LIKE. FOLLOW. SHARE. COMMIT.</p>
+  </header>
 
-<section>
-<h2>The Story</h2>
-<p class="sub">Who decides what shows up on your For You page?</p>
-<p>Cult leaders have always needed followers. But what if something was influencing the leaders all along? <em>For You</em> is a screenlife horror feature told entirely through screens, following one night, one livestream, and the strangers who try to pull a woman back before her crossing.</p>
-</section>
+  <section>
+    <h2>The Story</h2>
+    <p class="sub">Who decides what shows up on your For You page?</p>
+    <p>Cult leaders have always needed followers. But what if something was influencing the leaders all along? <em>For You</em> is a screenlife horror feature told entirely through screens, following one night, one livestream, and the strangers who try to pull a woman back before her crossing.</p>
+  </section>
 
-<section>
-<h2>The Circle</h2>
-<p class="sub">Those who answered the call</p>
-<div class="grid">
-<div class="card"><h3>Katey</h3><p>Cast announcement coming soon</p></div>
-<div class="card"><h3>Larry</h3><p>Cast announcement coming soon</p></div>
-<div class="card"><h3>Maggie</h3><p>Cast announcement coming soon</p></div>
-<div class="card"><h3>Re</h3><p>Ageless</p></div>
-</div>
-</section>
+  <section>
+    <h2>The Circle</h2>
+    <p class="sub">Those who answered the call</p>
+    <div class="grid">
+      <div class="card"><h3>Katey</h3><p>Cast announcement coming soon</p></div>
+      <div class="card"><h3>Larry</h3><p>Cast announcement coming soon</p></div>
+      <div class="card"><h3>Maggie</h3><p>Cast announcement coming soon</p></div>
+      <div class="card"><h3>Re</h3><p>Ageless</p></div>
+    </div>
+  </section>
 
-<section>
-<h2>Offerings</h2>
-<p class="sub">Every crossing has a fare</p>
-<p>Your support funds post-production: the score, the sound, and the festival journey.</p>
-<a class="button" href="#">Make an Offering</a>
-</section>
+  <section>
+    <h2>Offerings</h2>
+    <p class="sub">Every crossing has a fare</p>
+    <p>Your support funds post-production: the score, the sound, and the festival journey.</p>
+    <a class="button" href="#">Make an Offering</a>
+  </section>
 
-<section>
-<h2>Vestments</h2>
-<p class="sub">What the committed wear</p>
-<div class="grid">
-<div class="card"><h3>The Crest Shirt</h3><p>Coming soon</p></div>
-<div class="card"><h3>The Token</h3><p>Coming soon</p></div>
-<div class="card"><h3>The Full Kit</h3><p>Shirt, token, and envelope. Coming soon</p></div>
-</div>
-</section>
+  <section>
+    <h2>Vestments</h2>
+    <p class="sub">What the committed wear</p>
+    <div class="grid">
+      <div class="card"><h3>The Crest Shirt</h3><p>Coming soon</p></div>
+      <div class="card"><h3>The Token</h3><p>Coming soon</p></div>
+      <div class="card"><h3>The Full Kit</h3><p>Shirt, token, and envelope. Coming soon</p></div>
+    </div>
+  </section>
 
-<section>
-<h2>Join Us</h2>
-<p class="sub">Nobody should do this alone</p>
-<p>Producers, executive producers, artists, crew, and voices for the choir. There is a place for you.</p>
-<a class="button" href="#">Answer the Call</a>
-</section>
+  <section>
+    <h2>Join Us</h2>
+    <p class="sub">Nobody should do this alone</p>
+    <p>Producers, executive producers, artists, crew, and voices for the choir. There is a place for you.</p>
+    <a class="button" href="#">Answer the Call</a>
+  </section>
 
-<footer>
-<div class="door"></div><br>
-<a href="https://rethecreator.com">YOUR CROSSING AWAITS</a>
-<p class="small">© 2026 For You. All rights reserved.</p>
-</footer>
+  <footer>
+    <div class="door"></div><br>
+    <a href="https://rethecreator.com">YOUR CROSSING AWAITS</a>
+    <p class="small">© 2026 For You. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
