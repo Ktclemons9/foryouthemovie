@@ -5,6 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For You · @foryouthefilm</title>
 <meta name="description" content="Online sleuths trying to rescue a lonely artist from a nightmare livestream uncover a predatory digital cult that turns the promise of being seen into a trap.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://foryouthefilm.com/">
+<meta property="og:title" content="You've been chosen.">
+<meta property="og:description" content="Follow me. Reach Re. A screenlife horror film. Choose your leader and climb The Reach.">
+<meta property="og:image" content="https://foryouthefilm.com/share.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="You've been chosen.">
+<meta name="twitter:description" content="Follow me. Reach Re.">
+<meta name="twitter:image" content="https://foryouthefilm.com/share.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -109,6 +120,7 @@
   .c b{font-weight:500}
 
   .btn{display:inline-block;margin-top:6px;background:var(--red);color:#fff;text-decoration:none;border-radius:999px;padding:9px 22px;font-weight:500;font-size:15px;letter-spacing:.04em}
+  .post .btn{margin-right:8px}
   .btn.ghost{background:transparent;border:1px solid var(--muted);color:var(--text)}
   .soon{font-size:13px;color:var(--muted);letter-spacing:.08em;margin-top:6px}
 
@@ -210,6 +222,76 @@
   .reveal.go .see,.reveal.go .cross,.reveal.go .cont{opacity:1}
   .reveal.go .badge{opacity:1;transform:scale(1)}
 
+
+  /* INVITE BANNER */
+  .invite-banner{display:none;background:linear-gradient(135deg,#2a1530,#3a1d2a 55%,#3b2a12);border:1px solid var(--gold);border-radius:12px;padding:22px;margin-bottom:18px;text-align:center}
+  .invite-banner.show{display:block}
+  .invite-banner .ib-top{font-size:13px;letter-spacing:.2em;color:var(--gold);margin-bottom:6px}
+  .invite-banner h2{font-weight:400;font-size:26px;margin-bottom:6px}
+  .invite-banner p{color:#d6cfc0;margin-bottom:14px}
+  .invite-banner button{background:var(--gold);color:#1a1206;border:none;border-radius:999px;padding:12px 28px;font-family:inherit;font-size:16px;font-weight:500;letter-spacing:.06em;cursor:pointer}
+
+  /* HOW IT WORKS */
+  .how{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .how span{display:flex;align-items:center;gap:7px;background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:5px 12px 5px 6px;font-size:13px;letter-spacing:.04em}
+  .how b{width:20px;height:20px;border-radius:50%;background:var(--red);color:#fff;font-size:11px;font-weight:500;display:flex;align-items:center;justify-content:center}
+  .how span:last-child b{background:var(--gold);color:#1a1206}
+
+  /* NAME BUILDER */
+  .step-name{display:none}
+  .picker.naming .step-leader{display:none}
+  .picker.naming .step-name{display:block}
+  .backlink{background:none;border:none;color:var(--muted);font-family:inherit;font-size:14px;cursor:pointer;padding:0;margin-bottom:10px}
+  .wlabel{font-size:12px;letter-spacing:.16em;color:var(--muted);margin:14px 0 8px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chips button{background:var(--panel2);border:1px solid var(--line);color:var(--text);border-radius:999px;padding:6px 14px;font-family:inherit;font-size:14px;cursor:pointer}
+  .chips button.on{background:var(--gold);border-color:var(--gold);color:#1a1206;font-weight:500}
+  #nameNum{background:#0e0f12;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:8px 12px;font-family:inherit;font-size:16px;width:90px}
+  .npreview{margin:20px 0 14px;padding:14px;border:1px dashed var(--gold);border-radius:10px;text-align:center;color:var(--muted)}
+  .npreview b{display:block;color:var(--gold);font-size:24px;font-weight:400;margin-top:4px;word-break:break-all}
+  .nbtns{display:flex;gap:10px;flex-wrap:wrap}
+  .nbtns button{border:none;border-radius:999px;padding:10px 22px;font-family:inherit;font-size:15px;font-weight:500;cursor:pointer}
+  #confirmName{background:var(--red);color:#fff}
+  #surpriseName{background:transparent;border:1px solid var(--muted);color:var(--text)}
+
+
+  .modes{display:flex;gap:6px;background:#0e0f12;border:1px solid var(--line);border-radius:999px;padding:4px;margin:4px 0 6px;width:max-content;max-width:100%}
+  .modes button{background:none;border:none;color:var(--muted);font-family:inherit;font-size:14px;padding:6px 14px;border-radius:999px;cursor:pointer}
+  .modes button.on{background:var(--panel2);color:var(--text)}
+  #myName{background:#0e0f12;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:8px 12px;font-family:inherit;font-size:16px;width:220px;max-width:100%}
+  .row-words{display:none}
+  .picker.words .row-words{display:block}
+  .picker.words .row-myname{display:none}
+
+
+  /* CHOSEN BANNER */
+  .chosen{display:none;background:linear-gradient(135deg,#1d1020,#2e1626 50%,#3a2810);border:1px solid var(--gold);border-radius:14px;padding:24px 22px;margin-bottom:18px;text-align:center;position:relative;overflow:hidden}
+  .chosen.show{display:block}
+  .chosen .ct-top{font-size:12px;letter-spacing:.24em;color:var(--gold)}
+  .chosen h2{font-weight:400;font-size:clamp(30px,6vw,40px);margin:6px 0 10px;letter-spacing:.02em}
+  .chosen .reward{display:flex;gap:14px;align-items:center;justify-content:center;text-align:left;max-width:520px;margin:0 auto 16px}
+  .chosen .reward img{width:64px;height:64px;object-fit:contain;flex:none}
+  .chosen .reward p{margin:0;color:#e4dccb;font-size:16px}
+  .chosen .reward b{color:var(--gold);font-weight:500}
+  .chosen .claim{background:var(--gold);color:#1a1206;border:none;border-radius:999px;padding:14px 34px;font-family:inherit;font-size:17px;font-weight:500;letter-spacing:.06em;cursor:pointer}
+  .chosen .already{margin-top:12px;font-size:13px;color:#b9b2a3;letter-spacing:.06em}
+
+  /* MONTHLY */
+  .monthly{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-bottom:18px}
+  .monthly .mt{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .monthly .mt b{font-weight:500;letter-spacing:.14em;font-size:13px;color:var(--gold)}
+  .monthly .mt span{font-size:13px;color:var(--muted)}
+  .monthly .mbar{height:12px;border-radius:99px;background:#26272e;margin:12px 0 8px;overflow:hidden}
+  .monthly .mbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#6b2d6e,#d6407a,#ef7b3a,#e8b04a);transition:width .8s}
+  .monthly .mline{font-size:15px}
+  .monthly .mprize{font-size:14px;color:var(--muted);margin-top:6px}
+  details.rules{margin-top:10px;font-size:13px;color:var(--muted)}
+  details.rules summary{cursor:pointer;color:var(--text);letter-spacing:.06em}
+  details.rules ul{margin:8px 0 0 18px}
+  details.rules li{margin-bottom:4px}
+  #rewardEmail{background:#0e0f12;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:8px 12px;font-family:inherit;font-size:15px;width:100%;max-width:340px}
+  .emailnote{font-size:12px;color:var(--muted);margin-top:4px}
+
   @media (max-width:860px){
     .sidebar{transform:translateX(-100%);transition:transform .25s}
     .sidebar.open{transform:none}
@@ -247,7 +329,6 @@
   </div>
   <div class="side-laurel">
     <img src="RUNNERUP-FrightsCameraActionHorrorScreenplayContest-2026.png" alt="Runner-up, Best Screenplay, Frights! Camera! Action! 2026">
-    <a class="side-press" href="press.html">PRESS &amp; INDUSTRY</a>
   </div>
 </aside>
 
@@ -257,6 +338,24 @@
     <div class="live"><span class="rec"></span>LIVE NOW</div>
     <div><span id="viewers">2,214,907</span> watching</div>
   </div>
+
+  <section class="chosen" id="chosenBanner">
+    <div class="ct-top">THE REACH IS OPEN</div>
+    <h2>You've been chosen.</h2>
+    <div class="reward">
+      <img src="token.png" alt="" onerror="this.remove()">
+      <p>Bring the most people to Re this month and win <b>a real gold token</b>, mailed to you. The top 10 get <b>their names in the film's end credits.</b></p>
+    </div>
+    <button class="claim" id="claimBtn">Claim your place</button>
+    <div class="already"><span id="alreadyCount">1,000,000</span> have already followed</div>
+  </section>
+
+  <section class="invite-banner" id="inviteBanner">
+    <div class="ib-top">YOU'VE BEEN CHOSEN</div>
+    <h2 id="inviteText">You've been invited to The Reach.</h2>
+    <p>Choose your leader. Take your name. Climb toward Re.</p>
+    <button id="acceptBtn">Accept the invitation</button>
+  </section>
 
   <section class="profile">
     <div class="profile-top">
@@ -270,6 +369,28 @@
     </div>
     <p class="bio">A screenlife horror feature. Who decides what shows up on your For You page?</p>
     <p class="tagline">LIKE. FOLLOW. SHARE. COMMIT.</p>
+    <div class="how"><span><b>1</b>Follow</span><span><b>2</b>Choose your leader</span><span><b>3</b>Bring others</span><span><b>4</b>Reach Re</span></div>
+  </section>
+
+  <section class="monthly" id="monthly">
+    <div class="mt"><b id="monthName">THIS MONTH'S REWARD</b><span id="monthEnds"></span></div>
+    <div class="mbar"><i id="monthBar"></i></div>
+    <div class="mline" id="monthLine">Counting this month's followers...</div>
+    <div class="mprize">#1 recruiter: a real gold token in the mail. Top 10: names in the end credits.</div>
+    <details class="rules">
+      <summary>Reward rules</summary>
+      <ul>
+        <li>Each calendar month is its own contest. It ends at 11:59 PM Eastern on the last day of the month.</li>
+        <li>Rewards are given only if at least 100 new people follow during that month. If the goal isn't met, the rewards roll over to the next month.</li>
+        <li>Rankings count people who follow through your personal invite link during that month.</li>
+        <li>To be eligible, you must add your email when you choose your name. Your email is private and is used only to contact winners.</li>
+        <li>The #1 recruiter receives a gold token by mail. The top 10 are named in the end credits of For You, under the name they choose.</li>
+        <li>Ties go to whoever reached that number first.</li>
+        <li>Open to US residents 18 and older. No purchase necessary. Following is free.</li>
+        <li>Winners are contacted by email within 7 days of the month's end and have 14 days to reply, or the reward passes to the next person.</li>
+        <li>Fake or duplicate accounts are disqualified.</li>
+      </ul>
+    </details>
   </section>
 
   <section class="reach" id="reachCard">
@@ -313,7 +434,7 @@
   <article class="post" id="committed">
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div><div class="pin">LIVE</div></div>
     <div class="num"><span class="rec"></span>THE MOST COMMITTED</div>
-    <h2>Who has brought the most to Re?</h2>
+    <h2>Who has brought the most to Re this month?</h2>
     <p class="muted">Follow, then share your link. Every person who follows through it raises you.</p>
     <ol class="board" id="board"><li class="muted">Counting the committed...</li></ol>
     <div class="flock" id="flock"></div>
@@ -534,8 +655,8 @@
     <div class="num"><span class="rec"></span>15 · OFFERINGS</div>
     <h2>Every crossing has a fare.</h2>
     <p>Your support funds post-production: the score, the sound, and the festival journey.</p>
-    <a class="btn" href="#offerings">Make an offering</a>
-    <p class="soon">DONATIONS OPEN SOON</p>
+    <a class="btn" href="https://buy.stripe.com/14AaEXfnoeMB0YY4gAeZ200" target="_blank" rel="noopener">Make an offering</a>
+    <p class="soon">CHOOSE YOUR OWN AMOUNT · SECURE CHECKOUT BY STRIPE<br>OR SEND THROUGH <a href="https://www.venmo.com/u/foryouthefilm" target="_blank" rel="noopener" style="color:var(--gold)">VENMO @foryouthefilm</a></p>
     <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
     <div class="comments"></div>
   </article>
@@ -547,9 +668,10 @@
     <div class="split">
       <div>
         <h2>Wear the crest.</h2>
-        <p>The same box the followers receive in the film: the crest shirt, the gold token, and the sealed envelope. Or just the shirt. Or just the token.</p>
-        <a class="btn ghost" href="#vestments">Shop vestments</a>
-        <p class="soon">COMING SOON</p>
+        <p>The crest shirt, in long or short sleeve. Coming soon: the same box the followers receive in the film, with the shirt, the gold token, and the sealed envelope.</p>
+        <a class="btn" href="https://buy.stripe.com/aFaaEX5MO8od6ji9AUeZ201" target="_blank" rel="noopener">Long-sleeve · $40</a>
+        <a class="btn ghost" href="https://buy.stripe.com/14A00jgrs1ZPdLKaEYeZ202" target="_blank" rel="noopener">Short-sleeve · $30</a>
+        <p class="soon">SECURE CHECKOUT BY STRIPE</p>
       </div>
       <div class="media hide-if-missing"><img src="shirt.png" alt="The crest shirt"></div>
     </div>
@@ -566,7 +688,6 @@
     <h2>Written, cast, and already being built, screen by screen.</h2>
     <p>We're looking for collaborators: producers, executive producers, artists, and anyone passionate about bringing something new to the screen.</p>
     <p>Additional funding goes straight to editing, post-production, and a festival run.</p>
-    <a class="btn" href="press.html">Press &amp; Industry</a>
     <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
     <div class="comments"></div>
   </article>
@@ -598,9 +719,26 @@
 <div class="overlay" id="picker">
   <div class="picker">
     <button class="closex" id="closePicker" aria-label="Close">×</button>
-    <h3>Choose your leader.</h3>
-    <p class="sub">Nobody reaches Re alone. Who brought you here?</p>
-    <div class="leaders" id="leaderGrid"></div>
+    <div class="step-leader">
+      <h3>Choose your leader.</h3>
+      <p class="sub">Nobody reaches Re alone. Who will you follow?</p>
+      <div class="leaders" id="leaderGrid"></div>
+    </div>
+    <div class="step-name">
+      <button class="backlink" id="backLeaders">← Choose a different leader</button>
+      <h3>Choose your name.</h3>
+      <p class="sub" id="nameSub"></p>
+      <div class="modes"><button type="button" id="modeName" class="on">Use my name</button><button type="button" id="modeWords">Build from words</button></div>
+      <div class="row-myname"><div class="wlabel">YOUR NAME</div><input id="myName" maxlength="12" placeholder="First name, letters only" autocomplete="off"></div>
+      <div class="row-words"><div class="wlabel">FIRST WORD</div><div class="chips" id="adjChips"></div></div>
+      <div class="wlabel" id="nounLabel">YOUR LEADER'S WORD</div><div class="chips" id="nounChips"></div>
+      <div class="wlabel">YOUR NUMBER</div><input id="nameNum" inputmode="numeric" maxlength="3" placeholder="1-999">
+      <div class="wlabel">YOUR EMAIL (OPTIONAL)</div>
+      <input id="rewardEmail" type="email" placeholder="you@example.com" autocomplete="email">
+      <div class="emailnote">Add it to be eligible for the monthly reward. Private. Only used to contact winners.</div>
+      <div class="npreview">Re will know you as<b id="namePreview"></b></div>
+      <div class="nbtns"><button id="confirmName">This is my name</button><button id="surpriseName">Surprise me</button></div>
+    </div>
     <div class="err" id="pickErr"></div>
   </div>
 </div>
@@ -611,6 +749,14 @@
   var SB_URL = 'https://qaezwlmsajpkbsjunsxl.supabase.co';
   var SB_KEY = 'sb_publishable_geTyYMPIAoHsU_MNZ9_wJQ_vD7LFYXJ';
   var BASE_FOLLOWERS = 1000000;
+  var MONTH_GOAL = 100;
+  // start of this month, Eastern time (midnight ET is about 05:00 UTC)
+  var nyParts = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', year: 'numeric', month: 'numeric' }).formatToParts(new Date());
+  var nyY = +nyParts.find(function (p) { return p.type === 'year'; }).value;
+  var nyM = +nyParts.find(function (p) { return p.type === 'month'; }).value;
+  var MONTH_START = new Date(Date.UTC(nyY, nyM - 1, 1, 5)).toISOString();
+  var MONTH_LABEL = new Date(Date.UTC(nyY, nyM - 1, 15)).toLocaleString('en-US', { month: 'long', timeZone: 'UTC' });
+  var MONTH_LAST = new Date(Date.UTC(nyY, nyM, 0)).getUTCDate();
   var db = window.supabase ? window.supabase.createClient(SB_URL, SB_KEY) : null;
 
   function store(k, v) {
@@ -631,11 +777,11 @@
 
   var LEADERS = {
     easelhours: { handle: '@easelhours', role: 'The painter', quote: 'Nobody should paint alone.', init: 'EH',
-      adj: ['soft', 'gentle', 'quiet', 'golden', 'still', 'pale'], noun: ['brush', 'canvas', 'palette', 'linen', 'easel', 'sketch'] },
+      adj: ['soft', 'gentle', 'quiet', 'golden', 'still', 'pale', 'velvet', 'tender', 'amber', 'ivory'], noun: ['brush', 'canvas', 'palette', 'linen', 'easel', 'sketch', 'portrait', 'gallery', 'color', 'frame'] },
     gorillabob: { handle: '@gorillabob', role: 'The home chef', quote: 'Nobody eats alone in my kitchen.', init: 'GB',
-      adj: ['warm', 'full', 'sweet', 'golden', 'slow', 'hearty'], noun: ['kitchen', 'plate', 'table', 'oven', 'skillet', 'supper'] },
+      adj: ['warm', 'full', 'sweet', 'golden', 'slow', 'hearty', 'honey', 'savory', 'cozy', 'butter'], noun: ['kitchen', 'plate', 'table', 'oven', 'skillet', 'supper', 'feast', 'spoon', 'recipe', 'pantry'] },
     sundaysongbird: { handle: '@sundaysongbird', role: 'The singer', quote: 'Sing along with me.', init: 'SS',
-      adj: ['sweet', 'sunday', 'gentle', 'golden', 'low', 'morning'], noun: ['chorus', 'hymn', 'melody', 'choir', 'verse', 'song'] }
+      adj: ['sweet', 'sunday', 'gentle', 'golden', 'low', 'morning', 'silver', 'soft', 'holy', 'bright'], noun: ['chorus', 'hymn', 'melody', 'choir', 'verse', 'song', 'harmony', 'anthem', 'refrain', 'lullaby'] }
   };
   var RANKS = [
     { name: 'FOLLOWER', min: 0, img: 'badge-follower.png' },
@@ -738,6 +884,9 @@
     var card = $('reachCard'), side = $('sideRank');
     var committed = !!me && rankFor(recruits).name === 'COMMITTED';
     $('door').classList.toggle('locked', !committed);
+    $('inviteBanner').classList.toggle('show', !me && !!store('fy_ref'));
+    $('chosenBanner').classList.toggle('show', !me && !store('fy_ref'));
+    $('alreadyCount').textContent = fmt(BASE_FOLLOWERS + fcount);
     if (committed && !store('fy_seen_re')) openReveal();
     if (!me) { card.classList.remove('show'); side.classList.remove('show'); return; }
     var r = rankFor(recruits), nx = nextRank(recruits), L = LEADERS[me.leader];
@@ -803,30 +952,115 @@
   $('closePicker').onclick = function () { picker.classList.remove('show'); };
   picker.addEventListener('click', function (e) { if (e.target === picker) picker.classList.remove('show'); });
 
-  function choose(key, tries) {
+  // name builder
+  var pk = picker.querySelector('.picker');
+  var nb = { key: null, adj: null, noun: null, mode: 'name' };
+  var BLOCK_PARTS = ['fuck','shit','cunt','nigg','nigr','fagg','bitch','whore','slut','rape','porn','penis','vagina','dildo','jizz','nazi','hitler','retard','twat','wank','pussy','cock','dick','asshole','bastard','semen','orgasm','boner','hooker','molest','incest','kkk'];
+  var BLOCK_WHOLE = ['ass','cum','sex','tit','tits','anal','fag','spic','kike','chink','homo','boob','boobs','butt','balls','nude','nudes','hoe','hoes','gay','satan','killer','kill','die','dead'];
+  function blocked(w) {
+    w = (w || '').toLowerCase();
+    if (BLOCK_WHOLE.indexOf(w) > -1) return true;
+    for (var i = 0; i < BLOCK_PARTS.length; i++) if (w.indexOf(BLOCK_PARTS[i]) > -1) return true;
+    return false;
+  }
+  function cleanNum() { return ($('nameNum').value || '').replace(/\D/g, '').slice(0, 3); }
+  function cleanMyName() { return ($('myName').value || '').toLowerCase().replace(/[^a-z]/g, '').slice(0, 12); }
+  function currentName() {
+    var n = cleanNum() || '?';
+    if (nb.mode === 'name') return (cleanMyName() || 'yourname') + '_' + nb.noun + '_' + n;
+    return nb.adj + nb.noun + '_' + n;
+  }
+  function setMode(m) {
+    nb.mode = m;
+    pk.classList.toggle('words', m === 'words');
+    $('modeName').classList.toggle('on', m === 'name');
+    $('modeWords').classList.toggle('on', m === 'words');
+    $('nounLabel').textContent = m === 'name' ? "YOUR LEADER'S WORD" : 'SECOND WORD';
     $('pickErr').textContent = '';
-    var handle = makeHandle(key);
+    drawName();
+  }
+  function drawName() {
+    $('namePreview').textContent = '@' + currentName();
+    document.querySelectorAll('#adjChips button').forEach(function (b) { b.classList.toggle('on', b.textContent === nb.adj); });
+    document.querySelectorAll('#nounChips button').forEach(function (b) { b.classList.toggle('on', b.textContent === nb.noun); });
+  }
+  function chips(el, words, field) {
+    el.innerHTML = '';
+    words.forEach(function (w) {
+      var b = document.createElement('button'); b.type = 'button'; b.textContent = w;
+      b.onclick = function () { nb[field] = w; drawName(); };
+      el.appendChild(b);
+    });
+  }
+  function surprise() {
+    var L = LEADERS[nb.key];
+    nb.adj = pick(L.adj); nb.noun = pick(L.noun);
+    $('nameNum').value = String(1 + Math.floor(Math.random() * 99));
+    drawName();
+  }
+  function openNameStep(key) {
+    nb.key = key;
+    var L = LEADERS[key];
+    $('nameSub').textContent = 'Followers of ' + L.handle + ' carry names like these. Build yours.';
+    chips($('adjChips'), L.adj, 'adj'); chips($('nounChips'), L.noun, 'noun');
+    $('pickErr').textContent = '';
+    surprise();
+    $('myName').value = '';
+    setMode('name');
+    pk.classList.add('naming');
+  }
+  $('nameNum').addEventListener('input', function () { this.value = cleanNum(); drawName(); });
+  $('myName').addEventListener('input', function () { var c = this.value.replace(/[^A-Za-z]/g, '').slice(0, 12); if (c !== this.value) this.value = c; $('pickErr').textContent = ''; drawName(); });
+  $('modeName').onclick = function () { setMode('name'); };
+  $('modeWords').onclick = function () { setMode('words'); };
+  $('surpriseName').onclick = surprise;
+  $('backLeaders').onclick = function () { pk.classList.remove('naming'); $('pickErr').textContent = ''; };
+  function openPicker() { pk.classList.remove('naming'); $('pickErr').textContent = ''; picker.classList.add('show'); }
+
+  $('confirmName').onclick = function () {
+    if (!db) return;
+    var n = cleanNum();
+    if (!n || n === '0') { $('pickErr').textContent = 'Choose a number from 1 to 999.'; return; }
+    var handle;
+    if (nb.mode === 'name') {
+      var nm = cleanMyName();
+      if (nm.length < 2) { $('pickErr').textContent = 'Type your name: 2 to 12 letters.'; return; }
+      if (blocked(nm)) { $('pickErr').textContent = 'Re will not accept that name. Try another.'; return; }
+      handle = nm + '_' + nb.noun + '_' + n;
+    } else {
+      handle = nb.adj + nb.noun + '_' + n;
+    }
+    var emv = ($('rewardEmail').value || '').trim();
+    if (emv && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emv)) { $('pickErr').textContent = 'That email doesn\'t look right. Fix it or leave it blank.'; return; }
+    var key = nb.key, btn = this;
+    btn.disabled = true; $('pickErr').textContent = '';
     db.from('follows').insert({ visitor_id: vid, leader: key, handle: handle }).then(function (res) {
+      btn.disabled = false;
       if (res.error) {
-        if (res.error.code === '23505' && /handle/.test(res.error.message || '') && tries < 6) return choose(key, tries + 1);
-        $('pickErr').textContent = 'Something went wrong. Try again.';
+        if (res.error.code === '23505' && /handle/.test(res.error.message || '')) $('pickErr').textContent = '@' + handle + ' is already taken. Change a word or your number.';
+        else if (res.error.code === '23505') { $('pickErr').textContent = 'You are already following. Refresh the page.'; }
+        else if (res.error.code === '23514') { $('pickErr').textContent = 'Re will not accept that name. Try another.'; }
+        else $('pickErr').textContent = 'Something went wrong. Try again.';
         return;
       }
       me = { leader: key, handle: handle }; fcount += 1;
       picker.classList.remove('show');
+      var em = ($('rewardEmail').value || '').trim();
+      if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) db.from('reward_emails').insert({ visitor_id: vid, email: em.slice(0, 200) }).then(function () {});
+      loadMonth();
       var r = store('fy_ref');
       if (r && r !== vid) db.from('invites').insert({ invitee_id: vid, inviter_id: r }).then(function () { loadBoard(); });
       drawFollow(); loadBoard();
       $('reachCard').scrollIntoView({ behavior: 'smooth', block: 'center' });
     });
-  }
+  };
   grid.querySelectorAll('.lcard[data-leader]').forEach(function (b) {
-    b.onclick = function () { if (db) choose(b.getAttribute('data-leader'), 0); };
+    b.onclick = function () { openNameStep(b.getAttribute('data-leader')); };
   });
 
   fb.onclick = function () {
     if (!db) return;
-    if (!me) { picker.classList.add('show'); return; }
+    if (!me) { openPicker(); return; }
     if (!window.confirm('Leave The Reach? You will lose your name and your rank.')) return;
     db.from('follows').delete().eq('visitor_id', vid).then(function (res) {
       if (!res.error) { me = null; fcount = Math.max(0, fcount - 1); drawFollow(); loadBoard(); }
@@ -837,19 +1071,28 @@
   function loadBoard() {
     if (!db) return;
     Promise.all([
-      db.from('invites').select('inviter_id'),
+      db.from('invites').select('inviter_id,created_at'),
       db.from('follows').select('visitor_id,leader,handle')
     ]).then(function (r) {
       var inv = r[0].data || [], fol = r[1].data || [];
       var byId = {}; fol.forEach(function (f) { byId[f.visitor_id] = f; });
-      var counts = {};
-      inv.forEach(function (x) { if (byId[x.inviter_id]) counts[x.inviter_id] = (counts[x.inviter_id] || 0) + 1; });
-      recruits = counts[vid] || 0;
+      var allTime = {}, counts = {}, reachedAt = {};
+      inv.forEach(function (x) {
+        if (!byId[x.inviter_id]) return;
+        allTime[x.inviter_id] = (allTime[x.inviter_id] || 0) + 1;
+        if (x.created_at && x.created_at >= MONTH_START) {
+          counts[x.inviter_id] = (counts[x.inviter_id] || 0) + 1;
+          if (!reachedAt[x.inviter_id] || x.created_at > reachedAt[x.inviter_id]) reachedAt[x.inviter_id] = x.created_at;
+        }
+      });
+      recruits = allTime[vid] || 0;
       drawFollow();
 
-      var top = Object.keys(counts).sort(function (a, b) { return counts[b] - counts[a]; }).slice(0, 5);
+      var top = Object.keys(counts).sort(function (a, b) {
+        return (counts[b] - counts[a]) || (reachedAt[a] < reachedAt[b] ? -1 : 1);
+      }).slice(0, 10);
       var board = $('board');
-      if (!top.length) board.innerHTML = '<li class="muted">No one yet. Be the first.</li>';
+      if (!top.length) board.innerHTML = '<li class="muted">No one yet this month. Be the first.</li>';
       else board.innerHTML = top.map(function (id, i) {
         var f = byId[id], L = LEADERS[f.leader];
         return '<li><span class="pos">' + (i + 1) + '</span><span>@' + f.handle + (i === 0 ? ' 👑' : '') +
@@ -868,8 +1111,35 @@
   }
 
   // ---------- start ----------
+  $('acceptBtn').onclick = function () { if (db) openPicker(); };
+  $('claimBtn').onclick = function () { if (db) openPicker(); };
+
+  // ---------- this month's reward ----------
+  $('monthName').textContent = MONTH_LABEL.toUpperCase() + "'S REWARD";
+  $('monthEnds').textContent = 'Ends ' + MONTH_LABEL.slice(0, 3) + ' ' + MONTH_LAST;
+  function loadMonth() {
+    if (!db) return;
+    db.from('follows').select('*', { count: 'exact', head: true }).gte('created_at', MONTH_START).then(function (res) {
+      var n = res.count || 0;
+      $('monthBar').style.width = Math.max(3, Math.min(100, Math.round(n / MONTH_GOAL * 100))) + '%';
+      $('monthLine').textContent = n >= MONTH_GOAL
+        ? 'Unlocked. ' + fmt(n) + ' new followers this month. The race is on.'
+        : 'Unlocks at ' + MONTH_GOAL + ' new followers. ' + fmt(n) + ' so far.';
+    });
+  }
+  function loadInviter() {
+    var r = store('fy_ref');
+    if (!db || !r) return;
+    db.from('follows').select('handle').eq('visitor_id', r).then(function (res) {
+      var row = (res.data || [])[0];
+      if (row && row.handle) $('inviteText').textContent = '@' + row.handle + ' invited you to The Reach.';
+    });
+  }
+
   function start() {
     if (!db) { drawFollow(); return; }
+    loadInviter();
+    loadMonth();
     loadLikes();
     Promise.all([
       db.from('follows').select('*', { count: 'exact', head: true }),
