@@ -50,10 +50,12 @@
       margin: 0 auto 1.5rem;
       font-size: 1.15rem;
     }
-    .laurel {
-      color: var(--gold);
-      font-size: 0.95rem;
-      letter-spacing: 0.05em;
+    .laurel-img {
+      width: min(260px, 60vw);
+      height: auto;
+      margin: 0.5rem auto 0;
+      display: block;
+      filter: brightness(0) saturate(100%) invert(58%) sepia(62%) saturate(520%) hue-rotate(8deg) brightness(92%);
     }
     .tagline {
       font-family: Arial, sans-serif;
@@ -119,27 +121,20 @@
       text-align: center;
       padding: 4rem 1.5rem 3rem;
     }
-    .door {
+    .door-link {
       display: inline-block;
-      width: 90px;
-      height: 150px;
-      border: 2px solid #5a4416;
-      border-radius: 6px 6px 0 0;
-      position: relative;
       margin-bottom: 1.5rem;
     }
-    .door::after {
-      content: "";
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: #e8b830;
-      box-shadow: 0 0 25px 8px rgba(232, 184, 48, 0.4);
-      animation: flicker 5s infinite;
+    .door-img {
+      width: min(280px, 70vw);
+      height: auto;
+      display: block;
+      transition: filter 0.6s ease;
     }
-    footer a {
+    .door-link:hover .door-img {
+      filter: drop-shadow(0 0 25px rgba(232, 184, 48, 0.55));
+    }
+    footer a.cross {
       color: #e8b830;
       text-decoration: none;
       letter-spacing: 0.2em;
@@ -151,12 +146,6 @@
       margin-top: 2.5rem;
       font-family: Arial, sans-serif;
     }
-    @keyframes flicker {
-      0%, 100% { opacity: 0.9; }
-      46% { opacity: 0.9; }
-      48% { opacity: 0.2; }
-      50% { opacity: 1; }
-    }
   </style>
 </head>
 <body>
@@ -166,7 +155,7 @@
     <img class="crest" src="Seismic%20Crest%20For%20You_Back.png" alt="For You crest">
     <h1 class="chosen">You've been chosen.</h1>
     <p class="logline">Online sleuths trying to rescue a lonely artist from a nightmare livestream uncover a predatory digital cult that turns the promise of being seen into a trap.</p>
-    <p class="laurel">Runner-Up, Best Screenplay (Feature)<br>Frights! Camera! Action! Festival, Fall 2026</p>
+    <img class="laurel-img" src="RUNNERUP-FrightsCameraActionHorrorScreenplayContest-2026.png" alt="Runner-Up, Best Screenplay, Frights! Camera! Action! Horror Screenplay Contest 2026">
     <p class="tagline">LIKE. FOLLOW. SHARE. COMMIT.</p>
   </header>
 
@@ -212,8 +201,8 @@
   </section>
 
   <footer>
-    <div class="door"></div><br>
-    <a href="https://rethecreator.com">YOUR CROSSING AWAITS</a>
+    <a class="door-link" href="https://rethecreator.com"><img class="door-img" src="ResDoor.png" alt="The door"></a><br>
+    <a class="cross" href="https://rethecreator.com">YOUR CROSSING AWAITS</a>
     <p class="small">© 2026 For You. All rights reserved.</p>
   </footer>
 
