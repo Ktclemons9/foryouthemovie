@@ -292,6 +292,85 @@
   #rewardEmail{background:#0e0f12;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:8px 12px;font-family:inherit;font-size:15px;width:100%;max-width:340px}
   .emailnote{font-size:12px;color:var(--muted);margin-top:4px}
 
+
+  .place{margin-top:6px;font-size:15px;color:var(--gold)}
+  .seeboard{display:inline-block;margin-top:10px;font-size:14px;color:var(--text);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:6px 14px}
+  .seeboard:hover{border-color:var(--gold)}
+
+
+  /* CASTING */
+  .cast{margin-top:16px;border-top:1px solid var(--line);padding-top:16px}
+  .cast h3{font-weight:400;font-size:20px;margin-bottom:4px}
+  .cast label{display:block;font-size:12px;letter-spacing:.14em;color:var(--muted);margin:12px 0 6px}
+  .cast input[type=text],.cast input[type=email],.cast input[type=url],.cast textarea{width:100%;background:#0e0f12;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:9px 12px;font-family:inherit;font-size:15px}
+  .cast textarea{min-height:70px;resize:vertical}
+  .cast .opts label,.cast .adult{display:flex;align-items:flex-start;gap:8px;font-size:15px;letter-spacing:0;color:var(--text);margin:6px 0;text-transform:none}
+  .cast .opts input,.cast .adult input{margin-top:4px;accent-color:#e8b04a}
+  .cast button{margin-top:14px;background:var(--red);color:#fff;border:none;border-radius:999px;padding:11px 26px;font-family:inherit;font-size:15px;font-weight:500;cursor:pointer}
+  .cast .cerr{color:var(--red);font-size:14px;margin-top:8px;min-height:18px}
+  .cast .cdone{display:none;margin-top:12px;padding:16px;border:1px solid var(--gold);border-radius:10px;color:var(--gold);text-align:center}
+  .fblink{display:block;margin-top:12px;text-align:center;font-size:12px;letter-spacing:.14em;color:var(--muted);text-decoration:none;border:1px solid var(--line);border-radius:8px;padding:8px}
+  .fblink:hover{color:var(--text);border-color:var(--muted)}
+
+
+  /* CREDIT TIERS */
+  .credits{margin-top:16px;border-top:1px solid var(--line);padding-top:16px}
+  .credits h3{font-weight:400;font-size:20px;margin-bottom:4px}
+  .tiers{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:12px}
+  .tier{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column}
+  .tier.top{border-color:var(--gold);box-shadow:0 0 22px rgba(232,176,74,.12)}
+  .tier .tp{font-size:26px;font-weight:400;color:var(--gold)}
+  .tier .tn{font-weight:500;font-size:16px;margin:2px 0 6px}
+  .tier .td{font-size:14px;color:var(--muted);flex:1;margin-bottom:12px}
+  .tier a{display:block;text-align:center;background:var(--red);color:#fff;text-decoration:none;border-radius:999px;padding:9px 12px;font-weight:500;font-size:14px}
+  .tier.top a{background:var(--gold);color:#1a1206}
+  .finep{font-size:12px;color:var(--muted);margin-top:10px}
+  @media (max-width:560px){.tiers{grid-template-columns:1fr}}
+
+
+  .fbbtn{display:inline-flex;align-items:center;gap:6px;margin-left:8px;vertical-align:middle;border:1px solid var(--muted);color:var(--text);text-decoration:none;border-radius:999px;padding:7px 16px;font-size:15px;font-weight:500}
+  .fbbtn:hover{border-color:#1877f2;color:#fff;background:#1877f2}
+
+
+  .howto{margin-top:16px;padding:14px 16px;background:#121318;border:1px solid var(--line);border-radius:10px}
+  .ht-title{font-size:12px;letter-spacing:.2em;color:var(--gold);margin-bottom:6px}
+  .howto ol{margin-left:20px;font-size:15px}
+  .howto li{margin-bottom:6px}
+  .howto b{font-weight:500}
+  .ht-goal{margin-top:8px;font-size:14px;color:var(--muted)}
+  .sharebtns{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .sharebtns a,.sharebtns button{background:var(--panel2);border:1px solid var(--line);color:var(--text);text-decoration:none;border-radius:999px;padding:7px 14px;font-family:inherit;font-size:14px;cursor:pointer}
+  .sharebtns a:hover,.sharebtns button:hover{border-color:var(--gold)}
+  #shFb:hover{background:#1877f2;border-color:#1877f2;color:#fff}
+  .mhow{font-size:14px;margin-top:8px;color:#d8d3c8}
+  .mhow b{font-weight:500;color:var(--gold)}
+
+
+  .monthly{border-color:rgba(232,176,74,.55)}
+  .monthly .days{color:var(--red);font-weight:500;letter-spacing:.06em}
+  .mhead{font-weight:400;font-size:clamp(24px,4.6vw,32px);line-height:1.25;margin:8px 0 14px}
+  .prizes{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+  .pz{background:#0c0c0f;border:1px solid var(--line);border-radius:12px;padding:12px;display:flex;flex-direction:column}
+  .pz-img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:8px}
+  .pz-cap{margin-top:10px;font-size:12px;letter-spacing:.2em;color:var(--gold)}
+  .pz-name{font-size:16px;font-weight:500;margin-top:2px}
+  .pz-note{font-size:12px;color:var(--muted);margin-top:4px}
+  .roll{aspect-ratio:1/1;background:#000;border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:10px;overflow:hidden}
+  .roll-h{font-size:11px;letter-spacing:.3em;color:#bfb9ab;margin-bottom:10px}
+  .roll ol{list-style:none;font-size:13px;line-height:1.75;color:#f3eee3;letter-spacing:.04em}
+  .roll li.empty{color:#55545a;font-style:italic}
+  .roll li.me{color:var(--gold)}
+  @media (max-width:560px){.prizes{grid-template-columns:1fr}.roll{aspect-ratio:auto;min-height:260px}}
+
+
+  .doorteaser{display:flex;gap:14px;align-items:center;background:#000;border:1px solid rgba(232,176,74,.35);border-radius:12px;padding:10px 14px;margin-bottom:14px;text-decoration:none;color:var(--text)}
+  .doorteaser img{width:64px;height:64px;object-fit:cover;border-radius:6px;flex:none}
+  .doorteaser span{font-size:14px;color:#d8d3c8}
+  .doorteaser b{color:var(--gold);font-weight:500}
+  .doorteaser:hover{border-color:var(--gold)}
+  .door .locksub{display:none;color:#8a8890;font-size:13px;letter-spacing:.06em;margin-top:6px}
+  .door.locked .locksub{display:block}
+
   @media (max-width:860px){
     .sidebar{transform:translateX(-100%);transition:transform .25s}
     .sidebar.open{transform:none}
@@ -313,6 +392,7 @@
   <a class="brand" href="#top"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt="For You crest"></div><span>FOR YOU</span></a>
   <nav class="nav">
     <a href="#feed"><span class="dot"></span>Feed</a>
+    <a href="#committed"><span class="dot"></span>The Most Committed</a>
     <a href="#story"><span class="dot"></span>The Story</a>
     <a href="#followme"><span class="dot"></span>Follow Me</a>
     <a href="#lore"><span class="dot"></span>The Lore</a>
@@ -320,6 +400,8 @@
     <a href="#circle"><span class="dot"></span>The Circle</a>
     <a href="#offerings"><span class="dot"></span>Offerings</a>
     <a href="#vestments"><span class="dot"></span>Vestments</a>
+    <a href="#credits"><span class="dot"></span>Join the Credits</a>
+    <a href="#beFollower"><span class="dot"></span>Be a Follower</a>
     <a href="#join"><span class="dot"></span>Join Us</a>
     <a href="#door"><span class="dot"></span>The Door</a>
   </nav>
@@ -329,6 +411,7 @@
   </div>
   <div class="side-laurel">
     <img src="RUNNERUP-FrightsCameraActionHorrorScreenplayContest-2026.png" alt="Runner-up, Best Screenplay, Frights! Camera! Action! 2026">
+    <a class="fblink" href="https://www.facebook.com/profile.php?id=61596806482507" target="_blank" rel="noopener">FOLLOW ON FACEBOOK</a>
   </div>
 </aside>
 
@@ -343,8 +426,8 @@
     <div class="ct-top">THE REACH IS OPEN</div>
     <h2>You've been chosen.</h2>
     <div class="reward">
-      <img src="token.png" alt="" onerror="this.remove()">
-      <p>Bring the most people to Re this month and win <b>a real gold token</b>, mailed to you. The top 10 get <b>their names in the film's end credits.</b></p>
+      <img src="prize-token.png" alt="" style="border-radius:50%;object-fit:cover" onerror="this.remove()">
+      <p>Bring the most people to Re by December 31 and win <b>the official For You collector's token</b>, mailed to you. The top 10 get <b>their names in the film's end credits.</b></p>
     </div>
     <button class="claim" id="claimBtn">Claim your place</button>
     <div class="already"><span id="alreadyCount">1,000,000</span> have already followed</div>
@@ -365,6 +448,7 @@
         <div class="handle">@foryouthefilm</div>
         <div class="stats"><span><b>18</b> posts</span><span><b id="fcount">1,000,000</b> followers</span><span><b>∞</b> committed</span></div>
         <button class="follow" id="followBtn">Follow</button>
+        <a class="fbbtn" href="https://www.facebook.com/profile.php?id=61596806482507" target="_blank" rel="noopener" aria-label="For You on Facebook"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-7.5h2.5l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4H8v3h2.6V21h2.9z"/></svg>Facebook</a>
       </div>
     </div>
     <p class="bio">A screenlife horror feature. Who decides what shows up on your For You page?</p>
@@ -373,21 +457,43 @@
   </section>
 
   <section class="monthly" id="monthly">
-    <div class="mt"><b id="monthName">THIS MONTH'S REWARD</b><span id="monthEnds"></span></div>
+    <div class="mt"><b id="monthName">THIS MONTH'S REWARD</b><span class="days" id="monthEnds"></span></div>
+    <h2 class="mhead">Win the official For You collector's token.</h2>
+    <div class="prizes">
+      <div class="pz">
+        <img src="prize-token.png" alt="The official For You collector's token" class="pz-img">
+        <div class="pz-cap">#1 RECRUITER WINS</div>
+        <div class="pz-name">The official For You collector's token, mailed to you</div>
+        <div class="pz-note">Design preview. Final printed token may vary slightly.</div>
+      </div>
+      <div class="pz">
+        <div class="roll">
+          <div class="roll-h">RE'S MOST COMMITTED</div>
+          <ol id="rollList"></ol>
+        </div>
+        <div class="pz-cap">TOP 10 WIN</div>
+        <div class="pz-name">Your name in the film's end credits</div>
+        <div class="pz-note">Credited under the name you choose.</div>
+      </div>
+    </div>
+    <a class="doorteaser" href="#door">
+      <img src="ResDoor.png" alt="">
+      <span><b>Beyond the prizes: the door.</b> Bring 7 people and you reach Committed. The door opens, and only the Committed may cross to Re, where new rewards wait on the other side. Coming soon.</span>
+    </a>
     <div class="mbar"><i id="monthBar"></i></div>
-    <div class="mline" id="monthLine">Counting this month's followers...</div>
-    <div class="mprize">#1 recruiter: a real gold token in the mail. Top 10: names in the end credits.</div>
+    <div class="mline" id="monthLine">Counting this round's followers...</div>
+    <div class="mhow"><b>How to win:</b> Follow, then share your personal invite link. Every person who follows through your link this round counts for you. Add your email when you choose your name so we can reach you if you win.</div>
     <details class="rules">
       <summary>Reward rules</summary>
       <ul>
-        <li>Each calendar month is its own contest. It ends at 11:59 PM Eastern on the last day of the month.</li>
-        <li>Rewards are given only if at least 100 new people follow during that month. If the goal isn't met, the rewards roll over to the next month.</li>
-        <li>Rankings count people who follow through your personal invite link during that month.</li>
+        <li>The launch round runs from November 1 through 11:59 PM Eastern on December 31, 2026. Starting in January 2027, each calendar month is its own round, ending at 11:59 PM Eastern on the last day of the month.</li>
+        <li>Rewards are given only if at least 100 new people follow during the round. If the goal isn't met, the rewards roll over to the next round.</li>
+        <li>Rankings count people who follow through your personal invite link during the round.</li>
         <li>To be eligible, you must add your email when you choose your name. Your email is private and is used only to contact winners.</li>
-        <li>The #1 recruiter receives a gold token by mail. The top 10 are named in the end credits of For You, under the name they choose.</li>
+        <li>The #1 recruiter receives the official For You collector's token by mail. The top 10 are named in the end credits of For You, under the name they choose.</li>
         <li>Ties go to whoever reached that number first.</li>
         <li>Open to US residents 18 and older. No purchase necessary. Following is free.</li>
-        <li>Winners are contacted by email within 7 days of the month's end and have 14 days to reply, or the reward passes to the next person.</li>
+        <li>Winners are contacted by email within 7 days of the round's end and have 14 days to reply, or the reward passes to the next person.</li>
         <li>Fake or duplicate accounts are disqualified.</li>
       </ul>
     </details>
@@ -405,13 +511,40 @@
     <div class="bar"><i id="reachBar"></i></div>
     <div class="next" id="reachNext"></div>
     <div class="brought" id="reachBrought"></div>
+    <div class="place" id="reachPlace"></div>
+    <a class="seeboard" href="#committed">See the leaderboard →</a>
+    <div class="howto">
+      <div class="ht-title">HOW TO CLIMB</div>
+      <ol>
+        <li><b>Share your link</b> below. It's yours alone.</li>
+        <li><b>Post it anywhere:</b> Facebook, an Instagram story, your TikTok bio, or a text to a friend.</li>
+        <li><b>When someone follows through your link,</b> you rise. Clicks don't count. Only people who follow.</li>
+        <li><b>Reach Committed (7 people) and the door opens.</b> Only the Committed may cross to Re, where new rewards wait on the other side. Coming soon.</li>
+      </ol>
+      <div class="ht-goal" id="reachGoal"></div>
+    </div>
     <div class="invite">
       <input id="inviteLink" readonly>
       <button id="copyLink">Copy my link</button>
     </div>
+    <div class="sharebtns">
+      <a id="shFb" target="_blank" rel="noopener">Share on Facebook</a>
+      <a id="shText">Text it</a>
+      <button type="button" id="shMore">More ways to share</button>
+    </div>
     <div class="seeyou">I SEE YOU.</div>
     <button class="seeagain" id="seeAgain">SEE RE AGAIN</button>
   </section>
+
+  <!-- MOST COMMITTED -->
+  <article class="post" id="committed">
+    <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div><div class="pin">LIVE</div></div>
+    <div class="num"><span class="rec"></span>THE MOST COMMITTED</div>
+    <h2>Who has brought the most to Re this round?</h2>
+    <p class="muted">Follow, then share your link. Every person who follows through it raises you.</p>
+    <ol class="board" id="board"><li class="muted">Counting the committed...</li></ol>
+    <div class="flock" id="flock"></div>
+  </article>
 
   <div id="feed"></div>
 
@@ -428,16 +561,6 @@
       <div class="c"><div class="ci">SM</div><div><b>@sweetmagnolia</b> Chosen. Every one of us.</div></div>
       <div class="c"><div class="ci">XW</div><div><b>@xander_wolfe</b> is anyone else watching this right now?</div></div>
     </div>
-  </article>
-
-  <!-- MOST COMMITTED -->
-  <article class="post" id="committed">
-    <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div><div class="pin">LIVE</div></div>
-    <div class="num"><span class="rec"></span>THE MOST COMMITTED</div>
-    <h2>Who has brought the most to Re this month?</h2>
-    <p class="muted">Follow, then share your link. Every person who follows through it raises you.</p>
-    <ol class="board" id="board"><li class="muted">Counting the committed...</li></ol>
-    <div class="flock" id="flock"></div>
   </article>
 
   <!-- 2 STORY -->
@@ -498,10 +621,11 @@
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
     <div class="num"><span class="rec"></span>5 · FOLLOW THE LEADERS</div>
     <h2>They look like anyone you'd follow.</h2>
-    <p>A painter. A home chef. Creators with big hearts and bigger followings. Every sign-off ends the same way: <span class="quote">"Follow me. Reach Re."</span></p>
+    <p>A painter. A home chef. A singer. Creators with big hearts and bigger followings. Every sign-off ends the same way: <span class="quote">"Follow me. Reach Re."</span></p>
     <div class="people">
-      <div class="person"><div class="face">EH</div><b>@easelhours</b><span>A soft-spoken young painter. <span class="quote">"Nobody should paint alone."</span></span></div>
-      <div class="person"><div class="face">GB</div><b>@gorillabob</b><span>A big-hearted home chef. <span class="quote">"Nobody eats alone in my kitchen."</span></span></div>
+      <div class="person"><div class="face" style="overflow:visible"><img src="easelhours.png" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover" onerror="this.parentNode.textContent='EH'"></div><b>@easelhours</b><span>A soft-spoken young painter. <span class="quote">"Nobody should paint alone."</span></span></div>
+      <div class="person"><div class="face" style="overflow:visible"><img src="gorillabob.png" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover" onerror="this.parentNode.textContent='GB'"></div><b>@gorillabob</b><span>A big-hearted home chef. <span class="quote">"Nobody eats alone in my kitchen."</span></span></div>
+      <div class="person"><div class="face" style="overflow:visible"><img src="sundaysongbird.png" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover" onerror="this.parentNode.textContent='SS'"></div><b>@sundaysongbird</b><span>A singer whose followers know every word. <span class="quote">"Sing along with me."</span></span></div>
       <div class="person"><div class="face">NN</div><b>@nightshiftnora</b></div>
       <div class="person"><div class="face">CC</div><b>@coldcasecass</b></div>
       <div class="person"><div class="face teal">RR</div><b>@reelwithrusty</b></div>
@@ -655,7 +779,7 @@
     <div class="num"><span class="rec"></span>15 · OFFERINGS</div>
     <h2>Every crossing has a fare.</h2>
     <p>Your support funds post-production: the score, the sound, and the festival journey.</p>
-    <a class="btn" href="https://buy.stripe.com/14AaEXfnoeMB0YY4gAeZ200" target="_blank" rel="noopener">Make an offering</a>
+    <a class="btn" href="https://buy.stripe.com/aFaaEX5MO8od6ji9AUeZ201" target="_blank" rel="noopener">Make an offering</a>
     <p class="soon">CHOOSE YOUR OWN AMOUNT · SECURE CHECKOUT BY STRIPE<br>OR SEND THROUGH <a href="https://www.venmo.com/u/foryouthefilm" target="_blank" rel="noopener" style="color:var(--gold)">VENMO @foryouthefilm</a></p>
     <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
     <div class="comments"></div>
@@ -668,9 +792,9 @@
     <div class="split">
       <div>
         <h2>Wear the crest.</h2>
-        <p>The crest shirt, in long or short sleeve. Coming soon: the same box the followers receive in the film, with the shirt, the gold token, and the sealed envelope.</p>
-        <a class="btn" href="https://buy.stripe.com/aFaaEX5MO8od6ji9AUeZ201" target="_blank" rel="noopener">Long-sleeve · $40</a>
-        <a class="btn ghost" href="https://buy.stripe.com/14A00jgrs1ZPdLKaEYeZ202" target="_blank" rel="noopener">Short-sleeve · $30</a>
+        <p>The crest shirt, in long or short sleeve. Coming soon: the same box the followers receive in the film, with the shirt, the collector's token, and the sealed envelope.</p>
+        <a class="btn" href="https://buy.stripe.com/14A00jgrs1ZPdLKaEYeZ202" target="_blank" rel="noopener">Long-sleeve · $40</a>
+        <a class="btn ghost" href="https://buy.stripe.com/14AaEXfnoeMB0YY4gAeZ200" target="_blank" rel="noopener">Short-sleeve · $30</a>
         <p class="soon">SECURE CHECKOUT BY STRIPE</p>
       </div>
       <div class="media hide-if-missing"><img src="shirt.png" alt="The crest shirt"></div>
@@ -687,7 +811,43 @@
     <div class="num"><span class="rec"></span>2.2M WATCHING · JOIN US</div>
     <h2>Written, cast, and already being built, screen by screen.</h2>
     <p>We're looking for collaborators: producers, executive producers, artists, and anyone passionate about bringing something new to the screen.</p>
+    <p>Follow the production on <a href="https://www.facebook.com/profile.php?id=61596806482507" target="_blank" rel="noopener" style="color:var(--gold)">Facebook</a>.</p>
     <p>Additional funding goes straight to editing, post-production, and a festival run.</p>
+    <div class="credits" id="credits">
+      <h3>Join the credits.</h3>
+      <p class="muted">Put your name on the film. Every contribution goes straight into making <i>For You</i>.</p>
+      <div class="tiers">
+        <div class="tier"><div class="tp">$25</div><div class="tn">Special Thanks</div><div class="td">Your name in the Special Thanks of the film's credits.</div><a href="https://buy.stripe.com/4gM00j2AC7k93763cweZ206" target="_blank" rel="noopener">Get Special Thanks</a></div>
+        <div class="tier"><div class="tp">$500</div><div class="tn">Associate Producer</div><div class="td">Credited on screen as Associate Producer. Your credit is submitted to IMDb.</div><a href="https://buy.stripe.com/28EcN5dfgcEt2329AUeZ203" target="_blank" rel="noopener">Become an Associate Producer</a></div>
+        <div class="tier"><div class="tp">$1,500</div><div class="tn">Co-Producer</div><div class="td">Credited on screen as Co-Producer. Your credit is submitted to IMDb.</div><a href="https://buy.stripe.com/eVq28r2ACcEt3763cweZ204" target="_blank" rel="noopener">Become a Co-Producer</a></div>
+        <div class="tier top"><div class="tp">$2,500</div><div class="tn">Executive Producer</div><div class="td">Credited on screen as Executive Producer. Your credit is submitted to IMDb.</div><a href="https://buy.stripe.com/6oU3cv2AC5c12325kEeZ205" target="_blank" rel="noopener">Become an Executive Producer</a></div>
+      </div>
+      <p class="finep">Secure checkout by Stripe. You'll enter the name you want in the credits at checkout. Contributions support the production and are not an investment: they include no ownership or share of profits. IMDb decides what it lists; we submit every producer credit.</p>
+    </div>
+
+    <div class="cast" id="beFollower">
+      <h3>Be a Follower.</h3>
+      <p class="muted">Re is looking for followers. Appear in <i>For You</i> as a member of The Reach, filmed from your own home on your own phone, just like in the story.</p>
+      <form id="castForm" novalidate>
+        <label for="cName">YOUR NAME</label><input type="text" id="cName" maxlength="80" autocomplete="name">
+        <label for="cEmail">EMAIL</label><input type="email" id="cEmail" maxlength="200" autocomplete="email">
+        <label for="cCity">CITY AND STATE</label><input type="text" id="cCity" maxlength="80">
+        <label>HOW DO YOU WANT TO TAKE PART?</label>
+        <div class="opts">
+          <label><input type="checkbox" value="On-screen follower"> Be an on-screen follower, filmed at home</label>
+          <label><input type="checkbox" value="Sing the rhyme"> Sing the rhyme for the singalong</label>
+          <label><input type="checkbox" value="Wear the crest"> Wear the crest in photos and videos</label>
+          <label><input type="checkbox" value="Crew"> Help behind the camera</label>
+        </div>
+        <label for="cSocial">YOUR SOCIAL MEDIA (OPTIONAL)</label><input type="text" id="cSocial" maxlength="200" placeholder="Instagram, TikTok or Facebook link">
+        <label for="cNote">ANYTHING ELSE? (OPTIONAL)</label><textarea id="cNote" maxlength="1000"></textarea>
+        <label class="adult"><input type="checkbox" id="cAdult"> I am 18 or older.</label>
+        <button type="submit" id="cSubmit">Answer the call</button>
+        <div class="cerr" id="cErr"></div>
+      </form>
+      <div class="cdone" id="cDone">Re has received you. Watch your email. We'll be in touch.</div>
+      <p class="muted" style="font-size:13px;margin-top:10px">Your details are private and only seen by the production. Anyone who appears on screen will sign a release first.</p>
+    </div>
     <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
     <div class="comments"></div>
   </article>
@@ -697,9 +857,10 @@
     <a href="https://rethecreator.com" id="doorLink"><img src="ResDoor.png" alt="The door"></a>
     <p class="openmsg">YOUR CROSSING AWAITS</p>
     <p class="lockmsg">ONLY THE COMMITTED MAY CROSS</p>
+    <p class="locksub">Reach Committed to unlock. New rewards wait beyond the door.</p>
   </section>
 
-  <footer>© 2026 FOR YOU · @foryouthefilm</footer>
+  <footer>© 2026 FOR YOU · @foryouthefilm · <a href="https://www.facebook.com/profile.php?id=61596806482507" target="_blank" rel="noopener">Facebook</a></footer>
 </main>
 
 <div class="reveal" id="reveal">
@@ -750,13 +911,16 @@
   var SB_KEY = 'sb_publishable_geTyYMPIAoHsU_MNZ9_wJQ_vD7LFYXJ';
   var BASE_FOLLOWERS = 1000000;
   var MONTH_GOAL = 100;
-  // start of this month, Eastern time (midnight ET is about 05:00 UTC)
-  var nyParts = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', year: 'numeric', month: 'numeric' }).formatToParts(new Date());
-  var nyY = +nyParts.find(function (p) { return p.type === 'year'; }).value;
-  var nyM = +nyParts.find(function (p) { return p.type === 'month'; }).value;
-  var MONTH_START = new Date(Date.UTC(nyY, nyM - 1, 1, 5)).toISOString();
-  var MONTH_LABEL = new Date(Date.UTC(nyY, nyM - 1, 15)).toLocaleString('en-US', { month: 'long', timeZone: 'UTC' });
-  var MONTH_LAST = new Date(Date.UTC(nyY, nyM, 0)).getUTCDate();
+  // Round dates, Eastern time (midnight ET is about 05:00 UTC).
+  // Launch round: Nov 1 through Dec 31, 2026. After that, each calendar month is its own round.
+  var nyParts = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', year: 'numeric', month: 'numeric', day: 'numeric' }).formatToParts(new Date());
+  function part(t) { return +nyParts.find(function (p) { return p.type === t; }).value; }
+  var nyY = part('year'), nyM = part('month'), nyD = part('day');
+  var LAUNCH = nyY < 2027;
+  var MONTH_START = LAUNCH ? '2026-11-01T05:00:00.000Z' : new Date(Date.UTC(nyY, nyM - 1, 1, 5)).toISOString();
+  var ROUND_END = LAUNCH ? Date.UTC(2026, 11, 31) : Date.UTC(nyY, nyM, 0);
+  var MONTH_LABEL = LAUNCH ? 'LAUNCH ROUND' : new Date(Date.UTC(nyY, nyM - 1, 15)).toLocaleString('en-US', { month: 'long', timeZone: 'UTC' }).toUpperCase() + "'S ROUND";
+  var DAYS_LEFT = Math.round((ROUND_END - Date.UTC(nyY, nyM - 1, nyD)) / 86400000) + 1;
   var db = window.supabase ? window.supabase.createClient(SB_URL, SB_KEY) : null;
 
   function store(k, v) {
@@ -902,8 +1066,21 @@
     $('reachNext').textContent = nx ? (nx.min - recruits) + ' more to ' + nx.name.charAt(0) + nx.name.slice(1).toLowerCase() : 'You have reached Re.';
     $('reachBrought').textContent = recruits === 1 ? "You've brought 1 person to Re." : "You've brought " + recruits + ' people to Re.';
     $('inviteLink').value = inviteUrl();
+    var shareText = "I've been chosen. Follow me. Reach Re. ";
+    $('shFb').href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(inviteUrl());
+    $('shText').href = 'sms:?&body=' + encodeURIComponent(shareText + inviteUrl());
+    $('reachGoal').textContent = !nx
+      ? 'You reached Committed. Re has seen you, and the door at the bottom of the page is open to you.'
+      : nx.name === 'COMMITTED'
+        ? 'Bring ' + (nx.min - recruits) + ' more to reach Committed. When you do, Re will see you, and the door at the bottom of the page opens.'
+        : 'Bring ' + (nx.min - recruits) + ' more to become a ' + nx.name.charAt(0) + nx.name.slice(1).toLowerCase() + '. At 7, Re sees you and the door opens.';
   }
 
+  $('shMore').onclick = function () {
+    var url = inviteUrl();
+    if (navigator.share) navigator.share({ title: 'For You', text: "I've been chosen. Follow me. Reach Re.", url: url }).catch(function () {});
+    else if (navigator.clipboard) { navigator.clipboard.writeText(url); this.textContent = 'Link copied'; }
+  };
   $('copyLink').onclick = function () {
     var inp = $('inviteLink');
     if (navigator.clipboard) navigator.clipboard.writeText(inp.value);
@@ -1088,11 +1265,24 @@
       recruits = allTime[vid] || 0;
       drawFollow();
 
-      var top = Object.keys(counts).sort(function (a, b) {
+      var ranked = Object.keys(counts).sort(function (a, b) {
         return (counts[b] - counts[a]) || (reachedAt[a] < reachedAt[b] ? -1 : 1);
-      }).slice(0, 10);
+      });
+      var top = ranked.slice(0, 10);
+      var myPos = ranked.indexOf(vid);
+      var rollHtml = '';
+      for (var ri = 0; ri < 10; ri++) {
+        var rid = top[ri];
+        if (rid) rollHtml += '<li' + (rid === vid ? ' class="me"' : '') + '>@' + byId[rid].handle + '</li>';
+        else rollHtml += '<li class="empty">your name here</li>';
+      }
+      $('rollList').innerHTML = rollHtml;
+      if (myPos === 0) $('reachPlace').textContent = "You're #1 this round. Hold it and the collector's token is yours.";
+      else if (myPos > -1 && myPos < 10) $('reachPlace').textContent = "You're #" + (myPos + 1) + " this round. You're in the top 10, so your name is going in the credits. #1 wins the collector's token.";
+      else if (myPos > -1) $('reachPlace').textContent = "You're #" + (myPos + 1) + ' this round. Top 10 get their names in the credits. #1 wins the collector\'s token.';
+      else $('reachPlace').textContent = "Not on the board yet this round. Bring one person to get on it. Top 10 get their names in the credits. #1 wins the collector's token.";
       var board = $('board');
-      if (!top.length) board.innerHTML = '<li class="muted">No one yet this month. Be the first.</li>';
+      if (!top.length) board.innerHTML = '<li class="muted">No one yet this round. Be the first.</li>';
       else board.innerHTML = top.map(function (id, i) {
         var f = byId[id], L = LEADERS[f.leader];
         return '<li><span class="pos">' + (i + 1) + '</span><span>@' + f.handle + (i === 0 ? ' 👑' : '') +
@@ -1115,15 +1305,15 @@
   $('claimBtn').onclick = function () { if (db) openPicker(); };
 
   // ---------- this month's reward ----------
-  $('monthName').textContent = MONTH_LABEL.toUpperCase() + "'S REWARD";
-  $('monthEnds').textContent = 'Ends ' + MONTH_LABEL.slice(0, 3) + ' ' + MONTH_LAST;
+  $('monthName').textContent = MONTH_LABEL + (LAUNCH ? ' · ENDS DEC 31' : '');
+  $('monthEnds').textContent = DAYS_LEFT <= 1 ? 'Last day to win' : DAYS_LEFT + ' days left to win';
   function loadMonth() {
     if (!db) return;
     db.from('follows').select('*', { count: 'exact', head: true }).gte('created_at', MONTH_START).then(function (res) {
       var n = res.count || 0;
       $('monthBar').style.width = Math.max(3, Math.min(100, Math.round(n / MONTH_GOAL * 100))) + '%';
       $('monthLine').textContent = n >= MONTH_GOAL
-        ? 'Unlocked. ' + fmt(n) + ' new followers this month. The race is on.'
+        ? 'Unlocked. ' + fmt(n) + ' new followers this round. The race is on.'
         : 'Unlocks at ' + MONTH_GOAL + ' new followers. ' + fmt(n) + ' so far.';
     });
   }
@@ -1135,6 +1325,29 @@
       if (row && row.handle) $('inviteText').textContent = '@' + row.handle + ' invited you to The Reach.';
     });
   }
+
+  // ---------- Be a Follower casting form ----------
+  $('castForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var err = $('cErr'); err.textContent = '';
+    var name = $('cName').value.trim(), email = $('cEmail').value.trim();
+    var roles = Array.prototype.map.call(document.querySelectorAll('#castForm .opts input:checked'), function (x) { return x.value; });
+    if (!name) { err.textContent = 'Enter your name.'; return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { err.textContent = 'Enter a valid email.'; return; }
+    if (!roles.length) { err.textContent = 'Choose at least one way to take part.'; return; }
+    if (!$('cAdult').checked) { err.textContent = 'You must be 18 or older to apply.'; return; }
+    if (!db) { err.textContent = 'Something went wrong. Try again later.'; return; }
+    var btn = $('cSubmit'); btn.disabled = true; btn.textContent = 'Sending...';
+    db.from('casting').insert({
+      name: name.slice(0, 80), email: email.slice(0, 200), city: $('cCity').value.trim().slice(0, 80),
+      roles: roles.join(', '), social: $('cSocial').value.trim().slice(0, 200),
+      note: $('cNote').value.trim().slice(0, 1000), is_adult: true
+    }).then(function (res) {
+      btn.disabled = false; btn.textContent = 'Answer the call';
+      if (res.error) { err.textContent = 'Something went wrong. Try again.'; return; }
+      $('castForm').style.display = 'none'; $('cDone').style.display = 'block';
+    });
+  });
 
   function start() {
     if (!db) { drawFollow(); return; }
