@@ -522,13 +522,13 @@
     <div class="goalbox">
       <div class="gb-h">THE GOAL: REACH RE</div>
       <div class="ladder static">
-      <div class="lstep" data-rank="0"><img src="badge-follower.png" alt=""><b>Follower</b><span>Join</span></div>
-      <div class="lstep" data-rank="1"><img src="badge-promoter.png" alt=""><b>Promoter</b><span>20 devotion<br>1 friend</span></div>
-      <div class="lstep" data-rank="2"><img src="badge-seeker.png" alt=""><b>Seeker</b><span>60 devotion<br>3 friends</span></div>
-      <div class="lstep" data-rank="3"><img src="badge-committed.png" alt=""><b>Committed</b><span>150 devotion<br>5 friends</span></div>
+      <div class="lstep" data-rank="0"><img src="badge-follower.png" alt=""><b>Follower</b><span>Join · 1 devotion</span></div>
+      <div class="lstep" data-rank="1"><img src="badge-promoter.png" alt=""><b>Promoter</b><span>10 devotion</span></div>
+      <div class="lstep" data-rank="2"><img src="badge-seeker.png" alt=""><b>Seeker</b><span>20 devotion</span></div>
+      <div class="lstep" data-rank="3"><img src="badge-committed.png" alt=""><b>Committed</b><span>40 devotion</span></div>
       <div class="lstep goal" data-rank="3"><img src="ResDoor.png" alt=""><b>Reach Re</b><span>The door opens</span></div>
     </div>
-      <p>Your badge changes as your <b>devotion</b> grows. Earn it by checking in every day, liking posts, and bringing friends in. Reach Committed and the door to Re opens: exclusive access, starting with the trailer before anyone else.</p>
+      <p>Your badge changes as your <b>devotion</b> grows. Earn it by checking in every day and bringing friends in. Reach Committed and the door to Re opens: exclusive access, starting with the trailer before anyone else.</p>
     </div>
     <div class="reward">
       <img src="prize-token.png" alt="" style="border-radius:50%;object-fit:cover" onerror="this.remove()">
@@ -556,17 +556,17 @@
       </div>
     </div>
     <div class="ladder live" id="reachLadder">
-      <div class="lstep" data-rank="0"><img src="badge-follower.png" alt=""><b>Follower</b><span>Join</span></div>
-      <div class="lstep" data-rank="1"><img src="badge-promoter.png" alt=""><b>Promoter</b><span>20 devotion<br>1 friend</span></div>
-      <div class="lstep" data-rank="2"><img src="badge-seeker.png" alt=""><b>Seeker</b><span>60 devotion<br>3 friends</span></div>
-      <div class="lstep" data-rank="3"><img src="badge-committed.png" alt=""><b>Committed</b><span>150 devotion<br>5 friends</span></div>
+      <div class="lstep" data-rank="0"><img src="badge-follower.png" alt=""><b>Follower</b><span>Join · 1 devotion</span></div>
+      <div class="lstep" data-rank="1"><img src="badge-promoter.png" alt=""><b>Promoter</b><span>10 devotion</span></div>
+      <div class="lstep" data-rank="2"><img src="badge-seeker.png" alt=""><b>Seeker</b><span>20 devotion</span></div>
+      <div class="lstep" data-rank="3"><img src="badge-committed.png" alt=""><b>Committed</b><span>40 devotion</span></div>
       <div class="lstep goal" data-rank="3"><img src="ResDoor.png" alt=""><b>Reach Re</b><span>The door opens</span></div>
     </div>
     <div class="devotion">
       <div class="dv-top"><div><span class="dv-l">DEVOTION</span><span class="dv-n" id="devNum">0</span></div>
-        <button type="button" class="ritual" id="checkinBtn">Check in with Re · +3</button></div>
+        <button type="button" class="ritual" id="checkinBtn">Check in with Re · +1</button></div>
       <div class="dv-msg" id="checkinMsg">Come back every day. Each day you check in adds to your devotion.</div>
-      <div class="dv-earn"><b>Earn devotion:</b> +10 for each friend who joins through your link · +3 for each day you check in · +1 for each post you like (up to 18)</div>
+      <div class="dv-earn"><b>Earn devotion:</b> +1 for joining · +1 for each friend who joins through your link · +1 for each day you check in</div>
       <button type="button" class="cardbtn" id="statusCardBtn">Share my status card</button>
     </div>
     <div class="goalline"><b>The goal: Reach Re.</b> At Committed, the door opens and only the Committed may cross, with exclusive access starting with the trailer before anyone else.</div>
@@ -581,7 +581,7 @@
         <li><b>Share your link</b> below. It's yours alone.</li>
         <li><b>Post it anywhere:</b> Facebook, an Instagram story, your TikTok bio, or a text to a friend.</li>
         <li><b>When someone follows through your link,</b> you rise. Clicks don't count. Only people who follow.</li>
-        <li><b>Reach Committed (150 devotion and 5 friends) and the door opens.</b> Only the Committed may cross to Re, where new rewards wait on the other side. Coming soon.</li>
+        <li><b>Reach Committed (40 devotion) and the door opens.</b> Only the Committed may cross to Re, where new rewards wait on the other side. Coming soon.</li>
       </ol>
       <div class="ht-goal" id="reachGoal"></div>
     </div>
@@ -641,7 +641,7 @@
     </div>
     <a class="doorteaser" href="#door">
       <img src="ResDoor.png" alt="">
-      <span><b>Beyond the prizes: the door.</b> Earn 150 devotion and bring 5 friends to reach Committed. The door opens, and only the Committed may cross to Re, where new rewards wait on the other side. Coming soon.</span>
+      <span><b>Beyond the prizes: the door.</b> Earn 40 devotion to reach Committed. The door opens, and only the Committed may cross to Re, where new rewards wait on the other side. Coming soon.</span>
     </a>
     <div class="mbar"><i id="monthBar"></i></div>
     <div class="mline" id="monthLine">Counting this round's followers...</div>
@@ -1126,9 +1126,9 @@
   };
   var RANKS = [
     { name: 'FOLLOWER', pts: 0, friends: 0, img: 'badge-follower.png' },
-    { name: 'PROMOTER', pts: 20, friends: 1, img: 'badge-promoter.png' },
-    { name: 'SEEKER', pts: 60, friends: 3, img: 'badge-seeker.png' },
-    { name: 'COMMITTED', pts: 150, friends: 5, img: 'badge-committed.png' }
+    { name: 'PROMOTER', pts: 10, friends: 0, img: 'badge-promoter.png' },
+    { name: 'SEEKER', pts: 20, friends: 0, img: 'badge-seeker.png' },
+    { name: 'COMMITTED', pts: 40, friends: 0, img: 'badge-committed.png' }
   ];
   function pick(a) { return a[Math.floor(Math.random() * a.length)]; }
   function makeHandle(key) {
@@ -1215,10 +1215,10 @@
 
   // ---------- follow + rank ----------
   var fb = $('followBtn'), fc = $('fcount');
-  // devotion: +10 per friend, +3 per check-in day, +1 per liked post (max 18)
+  // devotion: +1 for joining, +1 per friend, +1 per check-in day
   var checkDays = 0, streak = 0, checkedToday = false;
   function likedCount() { var n = 0; for (var k in myLikes) if (myLikes[k]) n++; return Math.min(n, 18); }
-  function devotion() { return recruits * 10 + checkDays * 3 + likedCount(); }
+  function devotion() { return (me ? 1 : 0) + recruits + checkDays; }
   function meets(x) { return devotion() >= x.pts && recruits >= x.friends; }
   function rankIdx() { var i = 0; RANKS.forEach(function (x, j) { if (meets(x)) i = j; }); return i; }
   function rankFor() { return RANKS[rankIdx()]; }
@@ -1279,7 +1279,7 @@
     $('shText').href = 'sms:?&body=' + encodeURIComponent(shareText + inviteUrl());
     $('reachGoal').textContent = !nx
       ? 'You reached Committed. Re has seen you, and the door at the bottom of the page is open to you.'
-      : 'You need ' + needText(nx) + '. At Committed (150 devotion and 5 friends), Re sees you and the door opens.';
+      : 'You need ' + needText(nx) + '. At Committed (40 devotion), Re sees you and the door opens.';
   }
 
   $('shMore').onclick = function () {
@@ -1532,7 +1532,7 @@
       b.textContent = 'Checked in today'; b.classList.add('done');
       m.innerHTML = 'Re says: <i>"' + line + '"</i> · ' + streak + '-day streak. Come back tomorrow.';
     } else {
-      b.textContent = 'Check in with Re · +3'; b.classList.remove('done');
+      b.textContent = 'Check in with Re · +1'; b.classList.remove('done');
       m.textContent = streak ? 'Your streak is ' + streak + ' day' + (streak === 1 ? '' : 's') + '. Check in today to keep it.' : 'Come back every day. Each day you check in adds to your devotion.';
     }
   }
