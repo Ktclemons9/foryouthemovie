@@ -371,6 +371,95 @@
   .door .locksub{display:none;color:#8a8890;font-size:13px;letter-spacing:.06em;margin-top:6px}
   .door.locked .locksub{display:block}
 
+
+  /* GAME BANNER */
+  .gsteps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:640px;margin:0 auto 16px;text-align:left}
+  .gs{display:flex;gap:10px;align-items:flex-start;background:rgba(0,0,0,.28);border:1px solid rgba(232,176,74,.25);border-radius:10px;padding:10px}
+  .gs b{flex:none;width:26px;height:26px;border-radius:50%;background:var(--gold);color:#1a1206;display:flex;align-items:center;justify-content:center;font-weight:500}
+  .gs span{font-size:14px;color:#e4dccb;line-height:1.4}
+  .gs strong{font-weight:500;color:#fff}
+  @media (max-width:640px){.gsteps{grid-template-columns:1fr}}
+
+  /* ACTIVITY */
+  .activity{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:18px}
+  .act-h{display:flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.2em;color:var(--muted);margin-bottom:8px}
+  #actList{list-style:none}
+  #actList li{font-size:14px;padding:5px 0;border-bottom:1px solid var(--line)}
+  #actList li:last-child{border-bottom:none}
+  #actList b{font-weight:500;color:var(--gold)}
+  #actList small{color:var(--muted);margin-left:6px}
+
+  /* SHARE MODAL */
+  .sharebox{text-align:center}
+  .sb-top{font-size:12px;letter-spacing:.24em;color:var(--gold)}
+  .sharebox h3{font-size:26px;margin:4px 0 8px}
+  .sharebox .sub b{font-weight:500;color:var(--text)}
+  .sb-btns{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0 10px}
+  .sb-btns a,.sb-btns button{display:block;padding:13px 10px;border-radius:12px;font-family:inherit;font-size:15px;font-weight:500;text-decoration:none;cursor:pointer;border:1px solid var(--line);background:var(--panel2);color:var(--text)}
+  .sb-btns .sb-fb{background:#1877f2;border-color:#1877f2;color:#fff}
+  .sb-btns .sb-text{background:var(--gold);border-color:var(--gold);color:#1a1206}
+  #smLink{width:100%;background:#0e0f12;border:1px solid var(--line);color:var(--muted);border-radius:8px;padding:8px 10px;font-family:inherit;font-size:12px}
+  .sb-later{background:none;border:none;color:var(--muted);font-family:inherit;font-size:14px;margin-top:12px;cursor:pointer;text-decoration:underline}
+
+  /* STICKY BAR */
+  .sticky{display:none;position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(14,15,18,.96);border-top:1px solid var(--gold);padding:10px 16px;align-items:center;gap:12px;backdrop-filter:blur(6px)}
+  .sticky.show{display:flex}
+  .sticky img{width:40px;height:40px;flex:none}
+  .st-txt{flex:1;min-width:0;line-height:1.3}
+  .st-txt b{display:block;font-weight:500;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .st-txt span{font-size:12px;color:var(--muted)}
+  #stInvite{flex:none;background:var(--gold);color:#1a1206;border:none;border-radius:999px;padding:10px 18px;font-family:inherit;font-size:15px;font-weight:500;cursor:pointer}
+  body.has-sticky main{padding-bottom:110px}
+  @media (min-width:861px){.sticky{left:var(--side)}}
+
+
+  /* STATUS + LADDER */
+  .reach{border-color:rgba(232,176,74,.45)}
+  .status-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;font-size:12px;letter-spacing:.2em;color:var(--gold);margin-bottom:12px}
+  .status-h span{letter-spacing:.02em;color:var(--muted);font-size:13px}
+  .ladder{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:16px 0 8px;position:relative}
+  .lstep{text-align:center;font-size:12px;line-height:1.3;opacity:.38;transition:opacity .3s}
+  .lstep img{width:52px;height:52px;object-fit:cover;border-radius:50%;margin:0 auto 4px;display:block}
+  .lstep b{display:block;font-weight:500;font-size:12px}
+  .lstep span{color:var(--muted);font-size:11px}
+  .lstep.done{opacity:1}
+  .lstep.current{opacity:1}
+  .lstep.current img{box-shadow:0 0 0 3px var(--gold),0 0 18px rgba(232,176,74,.5)}
+  .lstep.current b{color:var(--gold)}
+  .lstep.next{opacity:.75}
+  .lstep.goal img{border-radius:8px}
+  .ladder.static .lstep{opacity:1}
+  .ladder.static .lstep.goal img{box-shadow:0 0 0 2px var(--gold)}
+  .goalline{font-size:14px;color:#d8d3c8;margin-top:4px}
+  .goalline b{color:var(--gold);font-weight:500}
+  .goalbox{background:rgba(0,0,0,.3);border:1px solid rgba(232,176,74,.3);border-radius:12px;padding:12px;max-width:640px;margin:0 auto 16px}
+  .gb-h{font-size:12px;letter-spacing:.24em;color:var(--gold)}
+  .goalbox p{font-size:14px;color:#e4dccb;margin:6px 0 0}
+  .picker .sub b{font-weight:500;color:var(--text)}
+  @media (max-width:420px){.lstep img{width:42px;height:42px}.lstep b{font-size:11px}}
+
+
+  /* DEVOTION */
+  .devotion{margin:14px 0 8px;padding:14px;border:1px solid rgba(232,176,74,.35);border-radius:12px;background:#121318}
+  .dv-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+  .dv-l{display:block;font-size:11px;letter-spacing:.22em;color:var(--muted)}
+  .dv-n{font-size:34px;font-weight:400;color:var(--gold);line-height:1.1}
+  .ritual{background:var(--gold);color:#1a1206;border:none;border-radius:999px;padding:11px 18px;font-family:inherit;font-size:15px;font-weight:500;cursor:pointer;animation:pulse 2s infinite}
+  .ritual.done{background:transparent;border:1px solid var(--line);color:var(--muted);animation:none;cursor:default}
+  .dv-msg{font-size:14px;margin-top:8px}
+  .dv-msg i{color:var(--gold)}
+  .dv-earn{font-size:12px;color:var(--muted);margin-top:8px}
+  .dv-earn b{color:var(--text);font-weight:500}
+  .cardbtn{margin-top:10px;background:var(--panel2);border:1px solid var(--gold);color:var(--gold);border-radius:999px;padding:8px 16px;font-family:inherit;font-size:14px;cursor:pointer}
+  /* SEALED */
+  .sealed .seal-body{display:none}
+  .sealed .seal-cover{display:flex;align-items:center;gap:14px;padding:18px;border:1px dashed var(--line);border-radius:10px;background:#0c0c0f}
+  .sealed .seal-cover img{width:56px;height:56px;opacity:.6}
+  .sealed .seal-cover p{margin:0;color:var(--muted)}
+  .sealed .seal-cover b{color:var(--text);font-weight:500}
+  .sealed.open .seal-body{display:block}
+  .sealed.open .seal-cover{display:none}
+
   @media (max-width:860px){
     .sidebar{transform:translateX(-100%);transition:transform .25s}
     .sidebar.open{transform:none}
@@ -423,13 +512,29 @@
   </div>
 
   <section class="chosen" id="chosenBanner">
-    <div class="ct-top">THE REACH IS OPEN</div>
-    <h2>You've been chosen.</h2>
+    <div class="ct-top">A GAME FROM THE FILM <i>FOR YOU</i></div>
+    <h2>Invite friends. Win prizes. Reach Re.</h2>
+    <div class="gsteps">
+      <div class="gs"><b>1</b><span><strong>Join free.</strong> Choose a leader and your name.</span></div>
+      <div class="gs"><b>2</b><span><strong>Get your link.</strong> Share it on Facebook, in a text, anywhere.</span></div>
+      <div class="gs"><b>3</b><span><strong>Climb.</strong> Every friend who joins through your link moves you up.</span></div>
+    </div>
+    <div class="goalbox">
+      <div class="gb-h">THE GOAL: REACH RE</div>
+      <div class="ladder static">
+      <div class="lstep" data-rank="0"><img src="badge-follower.png" alt=""><b>Follower</b><span>Join</span></div>
+      <div class="lstep" data-rank="1"><img src="badge-promoter.png" alt=""><b>Promoter</b><span>20 devotion<br>1 friend</span></div>
+      <div class="lstep" data-rank="2"><img src="badge-seeker.png" alt=""><b>Seeker</b><span>60 devotion<br>3 friends</span></div>
+      <div class="lstep" data-rank="3"><img src="badge-committed.png" alt=""><b>Committed</b><span>150 devotion<br>5 friends</span></div>
+      <div class="lstep goal" data-rank="3"><img src="ResDoor.png" alt=""><b>Reach Re</b><span>The door opens</span></div>
+    </div>
+      <p>Your badge changes as your <b>devotion</b> grows. Earn it by checking in every day, liking posts, and bringing friends in. Reach Committed and the door to Re opens: exclusive access, starting with the trailer before anyone else.</p>
+    </div>
     <div class="reward">
       <img src="prize-token.png" alt="" style="border-radius:50%;object-fit:cover" onerror="this.remove()">
-      <p>Bring the most people to Re by December 31 and win <b>the official For You collector's token</b>, mailed to you. The top 10 get <b>their names in the film's end credits.</b></p>
+      <p>Most friends by December 31 wins <b>the official For You collector's token</b>. Top 10 get <b>their names in the film's end credits.</b></p>
     </div>
-    <button class="claim" id="claimBtn">Claim your place</button>
+    <button class="claim" id="claimBtn">Play now. It's free.</button>
     <div class="already"><span id="alreadyCount">1,000,000</span> have already followed</div>
   </section>
 
@@ -438,6 +543,59 @@
     <h2 id="inviteText">You've been invited to The Reach.</h2>
     <p>Choose your leader. Take your name. Climb toward Re.</p>
     <button id="acceptBtn">Accept the invitation</button>
+  </section>
+
+  <section class="reach" id="reachCard">
+    <div class="status-h">YOUR STATUS<span>Your badge changes as your devotion grows.</span></div>
+    <div class="reach-top">
+      <img id="reachBadge" src="badge-follower.png" alt="Your rank">
+      <div>
+        <div class="rk" id="reachRank">FOLLOWER</div>
+        <div class="hd" id="reachHandle"></div>
+        <div class="ld" id="reachLeader"></div>
+      </div>
+    </div>
+    <div class="ladder live" id="reachLadder">
+      <div class="lstep" data-rank="0"><img src="badge-follower.png" alt=""><b>Follower</b><span>Join</span></div>
+      <div class="lstep" data-rank="1"><img src="badge-promoter.png" alt=""><b>Promoter</b><span>20 devotion<br>1 friend</span></div>
+      <div class="lstep" data-rank="2"><img src="badge-seeker.png" alt=""><b>Seeker</b><span>60 devotion<br>3 friends</span></div>
+      <div class="lstep" data-rank="3"><img src="badge-committed.png" alt=""><b>Committed</b><span>150 devotion<br>5 friends</span></div>
+      <div class="lstep goal" data-rank="3"><img src="ResDoor.png" alt=""><b>Reach Re</b><span>The door opens</span></div>
+    </div>
+    <div class="devotion">
+      <div class="dv-top"><div><span class="dv-l">DEVOTION</span><span class="dv-n" id="devNum">0</span></div>
+        <button type="button" class="ritual" id="checkinBtn">Check in with Re · +3</button></div>
+      <div class="dv-msg" id="checkinMsg">Come back every day. Each day you check in adds to your devotion.</div>
+      <div class="dv-earn"><b>Earn devotion:</b> +10 for each friend who joins through your link · +3 for each day you check in · +1 for each post you like (up to 18)</div>
+      <button type="button" class="cardbtn" id="statusCardBtn">Share my status card</button>
+    </div>
+    <div class="goalline"><b>The goal: Reach Re.</b> At Committed, the door opens and only the Committed may cross, with exclusive access starting with the trailer before anyone else.</div>
+    <div class="bar"><i id="reachBar"></i></div>
+    <div class="next" id="reachNext"></div>
+    <div class="brought" id="reachBrought"></div>
+    <div class="place" id="reachPlace"></div>
+    <a class="seeboard" href="#committed">See the leaderboard →</a>
+    <div class="howto">
+      <div class="ht-title">HOW TO CLIMB</div>
+      <ol>
+        <li><b>Share your link</b> below. It's yours alone.</li>
+        <li><b>Post it anywhere:</b> Facebook, an Instagram story, your TikTok bio, or a text to a friend.</li>
+        <li><b>When someone follows through your link,</b> you rise. Clicks don't count. Only people who follow.</li>
+        <li><b>Reach Committed (150 devotion and 5 friends) and the door opens.</b> Only the Committed may cross to Re, where new rewards wait on the other side. Coming soon.</li>
+      </ol>
+      <div class="ht-goal" id="reachGoal"></div>
+    </div>
+    <div class="invite">
+      <input id="inviteLink" readonly>
+      <button id="copyLink">Copy my link</button>
+    </div>
+    <div class="sharebtns">
+      <a id="shFb" target="_blank" rel="noopener">Share on Facebook</a>
+      <a id="shText">Text it</a>
+      <button type="button" id="shMore">More ways to share</button>
+    </div>
+    <div class="seeyou">I SEE YOU.</div>
+    <button class="seeagain" id="seeAgain">SEE RE AGAIN</button>
   </section>
 
   <section class="profile">
@@ -454,6 +612,11 @@
     <p class="bio">A screenlife horror feature. Who decides what shows up on your For You page?</p>
     <p class="tagline">LIKE. FOLLOW. SHARE. COMMIT.</p>
     <div class="how"><span><b>1</b>Follow</span><span><b>2</b>Choose your leader</span><span><b>3</b>Bring others</span><span><b>4</b>Reach Re</span></div>
+  </section>
+
+  <section class="activity" id="activity">
+    <div class="act-h"><span class="rec"></span>RIGHT NOW IN THE REACH</div>
+    <ul id="actList"><li class="muted">Watching the flock...</li></ul>
   </section>
 
   <section class="monthly" id="monthly">
@@ -478,7 +641,7 @@
     </div>
     <a class="doorteaser" href="#door">
       <img src="ResDoor.png" alt="">
-      <span><b>Beyond the prizes: the door.</b> Bring 7 people and you reach Committed. The door opens, and only the Committed may cross to Re, where new rewards wait on the other side. Coming soon.</span>
+      <span><b>Beyond the prizes: the door.</b> Earn 150 devotion and bring 5 friends to reach Committed. The door opens, and only the Committed may cross to Re, where new rewards wait on the other side. Coming soon.</span>
     </a>
     <div class="mbar"><i id="monthBar"></i></div>
     <div class="mline" id="monthLine">Counting this round's followers...</div>
@@ -499,42 +662,7 @@
     </details>
   </section>
 
-  <section class="reach" id="reachCard">
-    <div class="reach-top">
-      <img id="reachBadge" src="badge-follower.png" alt="Your rank">
-      <div>
-        <div class="rk" id="reachRank">FOLLOWER</div>
-        <div class="hd" id="reachHandle"></div>
-        <div class="ld" id="reachLeader"></div>
-      </div>
-    </div>
-    <div class="bar"><i id="reachBar"></i></div>
-    <div class="next" id="reachNext"></div>
-    <div class="brought" id="reachBrought"></div>
-    <div class="place" id="reachPlace"></div>
-    <a class="seeboard" href="#committed">See the leaderboard →</a>
-    <div class="howto">
-      <div class="ht-title">HOW TO CLIMB</div>
-      <ol>
-        <li><b>Share your link</b> below. It's yours alone.</li>
-        <li><b>Post it anywhere:</b> Facebook, an Instagram story, your TikTok bio, or a text to a friend.</li>
-        <li><b>When someone follows through your link,</b> you rise. Clicks don't count. Only people who follow.</li>
-        <li><b>Reach Committed (7 people) and the door opens.</b> Only the Committed may cross to Re, where new rewards wait on the other side. Coming soon.</li>
-      </ol>
-      <div class="ht-goal" id="reachGoal"></div>
-    </div>
-    <div class="invite">
-      <input id="inviteLink" readonly>
-      <button id="copyLink">Copy my link</button>
-    </div>
-    <div class="sharebtns">
-      <a id="shFb" target="_blank" rel="noopener">Share on Facebook</a>
-      <a id="shText">Text it</a>
-      <button type="button" id="shMore">More ways to share</button>
-    </div>
-    <div class="seeyou">I SEE YOU.</div>
-    <button class="seeagain" id="seeAgain">SEE RE AGAIN</button>
-  </section>
+
 
   <!-- MOST COMMITTED -->
   <article class="post" id="committed">
@@ -544,6 +672,29 @@
     <p class="muted">Follow, then share your link. Every person who follows through it raises you.</p>
     <ol class="board" id="board"><li class="muted">Counting the committed...</li></ol>
     <div class="flock" id="flock"></div>
+  </article>
+
+  <article class="post sealed" data-unlock="1" id="lore1">
+    <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div><div class="pin">SEALED</div></div>
+    <div class="num"><span class="rec"></span>UNLOCKS AT PROMOTER</div>
+    <div class="seal-cover"><img src="badge-promoter.png" alt=""><p>This post is sealed. Reach <b>Promoter</b> to open it.</p></div>
+    <div class="seal-body">
+      <h2>The pattern.</h2>
+      <p>Dr. Calvin Vance spent decades tracking one symbol. A pamphlet handed out at a compound. A classified ad in a small-town paper. An old web page nobody remembers making. Decades apart. The same crest.</p>
+      <p>Tonight it's back, under a new tagline: <span class="quote">"Follow me. Reach Re."</span></p>
+    </div>
+  </article>
+
+  <article class="post sealed" data-unlock="2" id="lore2">
+    <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div><div class="pin">SEALED</div></div>
+    <div class="num"><span class="rec"></span>UNLOCKS AT SEEKER</div>
+    <div class="seal-cover"><img src="badge-seeker.png" alt=""><p>This post is sealed. Reach <b>Seeker</b> to open it.</p></div>
+    <div class="seal-body">
+      <h2>The invitation.</h2>
+      <p>Everyone who is chosen receives the same message.</p>
+      <p class="quote">"On the other side, every dream comes true. And everyone you love will be rewarded. Your crossing awaits."</p>
+      <p>Every crossing has a fare.</p>
+    </div>
   </article>
 
   <div id="feed"></div>
@@ -877,6 +1028,29 @@
   <audio id="revealAudio" src="rhyme.mp3" preload="auto"></audio>
 </div>
 
+<div class="overlay" id="shareModal">
+  <div class="picker sharebox">
+    <button class="closex" id="closeShare" aria-label="Close">×</button>
+    <div class="sb-top">THE GAME STARTS NOW</div>
+    <h3 id="shareHi">Welcome.</h3>
+    <p class="sub"><b>Every friend who joins through your link moves you up.</b> Most friends by December 31 wins the collector's token. Top 10 get their names in the credits.</p>
+    <div class="sb-btns">
+      <a id="smFb" target="_blank" rel="noopener" class="sb-fb">Share on Facebook</a>
+      <a id="smText" class="sb-text">Text a friend</a>
+      <button type="button" id="smCopy">Copy my link</button>
+      <button type="button" id="smMore">More ways to share</button>
+    </div>
+    <input id="smLink" readonly>
+    <button type="button" class="sb-later" id="smLater">I'll share later</button>
+  </div>
+</div>
+
+<div class="sticky" id="stickyBar">
+  <img id="stBadge" src="badge-follower.png" alt="">
+  <div class="st-txt"><b id="stName"></b><span id="stLine"></span></div>
+  <button type="button" id="stInvite">Invite friends</button>
+</div>
+
 <div class="overlay" id="picker">
   <div class="picker">
     <button class="closex" id="closePicker" aria-label="Close">×</button>
@@ -894,9 +1068,9 @@
       <div class="row-words"><div class="wlabel">FIRST WORD</div><div class="chips" id="adjChips"></div></div>
       <div class="wlabel" id="nounLabel">YOUR LEADER'S WORD</div><div class="chips" id="nounChips"></div>
       <div class="wlabel">YOUR NUMBER</div><input id="nameNum" inputmode="numeric" maxlength="3" placeholder="1-999">
-      <div class="wlabel">YOUR EMAIL (OPTIONAL)</div>
+      <div class="wlabel">YOUR EMAIL · ONLY NEEDED FOR THE CONTEST</div>
       <input id="rewardEmail" type="email" placeholder="you@example.com" autocomplete="email">
-      <div class="emailnote">Add it to be eligible for the monthly reward. Private. Only used to contact winners.</div>
+      <div class="emailnote">Want to win the collector's token or a spot in the credits? Add your email so we can reach you if you win. Just playing? Leave it blank. It stays private and is only used to contact winners.</div>
       <div class="npreview">Re will know you as<b id="namePreview"></b></div>
       <div class="nbtns"><button id="confirmName">This is my name</button><button id="surpriseName">Surprise me</button></div>
     </div>
@@ -948,10 +1122,10 @@
       adj: ['sweet', 'sunday', 'gentle', 'golden', 'low', 'morning', 'silver', 'soft', 'holy', 'bright'], noun: ['chorus', 'hymn', 'melody', 'choir', 'verse', 'song', 'harmony', 'anthem', 'refrain', 'lullaby'] }
   };
   var RANKS = [
-    { name: 'FOLLOWER', min: 0, img: 'badge-follower.png' },
-    { name: 'PROMOTER', min: 1, img: 'badge-promoter.png' },
-    { name: 'SEEKER', min: 3, img: 'badge-seeker.png' },
-    { name: 'COMMITTED', min: 7, img: 'badge-committed.png' }
+    { name: 'FOLLOWER', pts: 0, friends: 0, img: 'badge-follower.png' },
+    { name: 'PROMOTER', pts: 20, friends: 1, img: 'badge-promoter.png' },
+    { name: 'SEEKER', pts: 60, friends: 3, img: 'badge-seeker.png' },
+    { name: 'COMMITTED', pts: 150, friends: 5, img: 'badge-committed.png' }
   ];
   function pick(a) { return a[Math.floor(Math.random() * a.length)]; }
   function makeHandle(key) {
@@ -1016,7 +1190,7 @@
     btn.onclick = function () {
       if (!db) return;
       var mine = !myLikes[id];
-      myLikes[id] = mine; likeCounts[id] = (likeCounts[id] || 0) + (mine ? 1 : -1); drawLike(btn, id);
+      myLikes[id] = mine; likeCounts[id] = (likeCounts[id] || 0) + (mine ? 1 : -1); drawLike(btn, id); drawFollow();
       var q = mine ? db.from('likes').insert({ post_id: id, visitor_id: vid })
                    : db.from('likes').delete().eq('post_id', id).eq('visitor_id', vid);
       q.then(function (res) {
@@ -1032,13 +1206,28 @@
         if (r.visitor_id === vid) myLikes[r.post_id] = true;
       });
       likeBtns.forEach(function (x) { drawLike(x[0], x[1]); });
+      drawFollow();
     });
   }
 
   // ---------- follow + rank ----------
   var fb = $('followBtn'), fc = $('fcount');
-  function rankFor(n) { var r = RANKS[0]; RANKS.forEach(function (x) { if (n >= x.min) r = x; }); return r; }
-  function nextRank(n) { for (var i = 0; i < RANKS.length; i++) if (RANKS[i].min > n) return RANKS[i]; return null; }
+  // devotion: +10 per friend, +3 per check-in day, +1 per liked post (max 18)
+  var checkDays = 0, streak = 0, checkedToday = false;
+  function likedCount() { var n = 0; for (var k in myLikes) if (myLikes[k]) n++; return Math.min(n, 18); }
+  function devotion() { return recruits * 10 + checkDays * 3 + likedCount(); }
+  function meets(x) { return devotion() >= x.pts && recruits >= x.friends; }
+  function rankIdx() { var i = 0; RANKS.forEach(function (x, j) { if (meets(x)) i = j; }); return i; }
+  function rankFor() { return RANKS[rankIdx()]; }
+  function nextRank() { var i = rankIdx(); return RANKS[i + 1] || null; }
+  function cap(n) { return n.charAt(0) + n.slice(1).toLowerCase(); }
+  function needText(nx) {
+    if (!nx) return '';
+    var parts = [], d = nx.pts - devotion(), f = nx.friends - recruits;
+    if (d > 0) parts.push(d + ' more devotion');
+    if (f > 0) parts.push(f + ' more friend' + (f === 1 ? '' : 's'));
+    return parts.join(' and ') + ' to ' + cap(nx.name);
+  }
 
   function drawFollow() {
     fb.classList.toggle('on', !!me);
@@ -1046,14 +1235,14 @@
     fc.textContent = fmt(BASE_FOLLOWERS + fcount);
 
     var card = $('reachCard'), side = $('sideRank');
-    var committed = !!me && rankFor(recruits).name === 'COMMITTED';
+    var committed = !!me && rankFor().name === 'COMMITTED';
     $('door').classList.toggle('locked', !committed);
     $('inviteBanner').classList.toggle('show', !me && !!store('fy_ref'));
     $('chosenBanner').classList.toggle('show', !me && !store('fy_ref'));
     $('alreadyCount').textContent = fmt(BASE_FOLLOWERS + fcount);
     if (committed && !store('fy_seen_re')) openReveal();
-    if (!me) { card.classList.remove('show'); side.classList.remove('show'); return; }
-    var r = rankFor(recruits), nx = nextRank(recruits), L = LEADERS[me.leader];
+    if (!me) { card.classList.remove('show'); side.classList.remove('show'); drawSticky(); return; }
+    var r = rankFor(), nx = nextRank(), L = LEADERS[me.leader];
     card.classList.add('show'); side.classList.add('show');
     card.classList.toggle('gold', r.name === 'COMMITTED');
     $('reachBadge').src = r.img; $('sideRankImg').src = r.img;
@@ -1061,19 +1250,33 @@
     $('reachHandle').textContent = '@' + me.handle; $('sideHandle').textContent = '@' + me.handle;
     $('reachLeader').textContent = L ? 'Following ' + L.handle : '';
     var pct = 100;
-    if (nx) { var prev = r.min; pct = Math.round(((recruits - prev) / (nx.min - prev)) * 100); }
+    if (nx) {
+      var pd = Math.min(1, (devotion() - r.pts) / (nx.pts - r.pts));
+      var pf = nx.friends > r.friends ? Math.min(1, (recruits - r.friends) / (nx.friends - r.friends)) : 1;
+      pct = Math.round(Math.max(0, Math.min(pd, pf)) * 100);
+    }
     $('reachBar').style.width = Math.max(pct, 4) + '%';
-    $('reachNext').textContent = nx ? (nx.min - recruits) + ' more to ' + nx.name.charAt(0) + nx.name.slice(1).toLowerCase() : 'You have reached Re.';
+    $('reachNext').textContent = nx ? needText(nx) : 'You have reached Re.';
+    $('devNum').textContent = devotion();
+    drawCheckin();
+    document.querySelectorAll('.sealed').forEach(function (p) { p.classList.toggle('open', rankIdx() >= +p.getAttribute('data-unlock')); });
     $('reachBrought').textContent = recruits === 1 ? "You've brought 1 person to Re." : "You've brought " + recruits + ' people to Re.';
+    var curName = r.name;
+    var ci = rankIdx();
+    document.querySelectorAll('#reachLadder .lstep').forEach(function (el) {
+      var idx = +el.getAttribute('data-rank'), isGoal = el.classList.contains('goal');
+      el.classList.toggle('done', idx <= ci);
+      el.classList.toggle('current', isGoal ? ci === 3 : idx === ci);
+      el.classList.toggle('next', !isGoal && idx === ci + 1);
+    });
     $('inviteLink').value = inviteUrl();
+    drawSticky();
     var shareText = "I've been chosen. Follow me. Reach Re. ";
     $('shFb').href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(inviteUrl());
     $('shText').href = 'sms:?&body=' + encodeURIComponent(shareText + inviteUrl());
     $('reachGoal').textContent = !nx
       ? 'You reached Committed. Re has seen you, and the door at the bottom of the page is open to you.'
-      : nx.name === 'COMMITTED'
-        ? 'Bring ' + (nx.min - recruits) + ' more to reach Committed. When you do, Re will see you, and the door at the bottom of the page opens.'
-        : 'Bring ' + (nx.min - recruits) + ' more to become a ' + nx.name.charAt(0) + nx.name.slice(1).toLowerCase() + '. At 7, Re sees you and the door opens.';
+      : 'You need ' + needText(nx) + '. At Committed (150 devotion and 5 friends), Re sees you and the door opens.';
   }
 
   $('shMore').onclick = function () {
@@ -1178,7 +1381,7 @@
   function openNameStep(key) {
     nb.key = key;
     var L = LEADERS[key];
-    $('nameSub').textContent = 'Followers of ' + L.handle + ' carry names like these. Build yours.';
+    $('nameSub').innerHTML = 'This is <b>how you appear in The Reach</b>: on the leaderboard, in the live feed, and in the credits if you win. <b>You need a name to play and to win.</b> It carries a word from <b>' + L.handle + '</b> so everyone knows whose flock you are in.';
     chips($('adjChips'), L.adj, 'adj'); chips($('nounChips'), L.noun, 'noun');
     $('pickErr').textContent = '';
     surprise();
@@ -1228,7 +1431,7 @@
       var r = store('fy_ref');
       if (r && r !== vid) db.from('invites').insert({ invitee_id: vid, inviter_id: r }).then(function () { loadBoard(); });
       drawFollow(); loadBoard();
-      $('reachCard').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(function () { openShare(true); }, 350);
     });
   };
   grid.querySelectorAll('.lcard[data-leader]').forEach(function (b) {
@@ -1244,15 +1447,151 @@
     });
   };
 
+
+  // ---------- share modal + sticky invite bar ----------
+  var shareModal = $('shareModal');
+  function fillShare() {
+    var url = inviteUrl(), txt = "I'm playing the For You game. Join through my link and help me win: ";
+    $('smFb').href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url);
+    $('smText').href = 'sms:?&body=' + encodeURIComponent(txt + url);
+    $('smLink').value = url;
+  }
+  function openShare(first) {
+    if (!me) return;
+    fillShare();
+    $('shareHi').textContent = first ? "You're in, @" + me.handle + '.' : 'Bring someone in, @' + me.handle + '.';
+    shareModal.classList.add('show');
+  }
+  $('closeShare').onclick = $('smLater').onclick = function () { shareModal.classList.remove('show'); };
+  shareModal.addEventListener('click', function (e) { if (e.target === shareModal) shareModal.classList.remove('show'); });
+  $('smCopy').onclick = function () {
+    var b = this; if (navigator.clipboard) navigator.clipboard.writeText(inviteUrl()); else { $('smLink').select(); document.execCommand('copy'); }
+    b.textContent = 'Copied!'; setTimeout(function () { b.textContent = 'Copy my link'; }, 1800);
+  };
+  $('smMore').onclick = function () {
+    if (navigator.share) navigator.share({ title: 'For You', text: "I'm playing the For You game. Join through my link:", url: inviteUrl() }).catch(function () {});
+    else $('smCopy').click();
+  };
+  $('stInvite').onclick = function () { openShare(false); };
+  function drawSticky() {
+    var bar = $('stickyBar');
+    if (!me) { bar.classList.remove('show'); document.body.classList.remove('has-sticky'); return; }
+    var r = rankFor(), nx = nextRank();
+    $('stBadge').src = r.img;
+    $('stName').textContent = '@' + me.handle;
+    $('stLine').textContent = devotion() + ' devotion · ' + recruits + ' friends' + (checkedToday ? '' : ' · Check in today');
+    bar.classList.add('show'); document.body.classList.add('has-sticky');
+  }
+
+  // ---------- live activity ----------
+  function ago(t) {
+    var m = Math.max(1, Math.round((Date.now() - new Date(t).getTime()) / 60000));
+    if (m < 60) return m + 'm ago';
+    var h = Math.round(m / 60); if (h < 24) return h + 'h ago';
+    return Math.round(h / 24) + 'd ago';
+  }
+  function drawActivity(inv, byId) {
+    var rows = inv.filter(function (x) { return byId[x.inviter_id] && x.created_at; })
+      .sort(function (a, b) { return a.created_at < b.created_at ? 1 : -1; }).slice(0, 5);
+    var newest = Object.keys(byId).map(function (k) { return byId[k]; }).filter(function (f) { return f.created_at && f.handle; })
+      .sort(function (a, b) { return a.created_at < b.created_at ? 1 : -1; }).slice(0, 3);
+    var items = [];
+    rows.forEach(function (x) { var f = byId[x.inviter_id], L = LEADERS[f.leader]; items.push({ t: x.created_at, h: '<b>@' + f.handle + '</b> brought someone into ' + (L ? L.handle + "'s flock" : 'The Reach') }); });
+    newest.forEach(function (f) { var L = LEADERS[f.leader]; items.push({ t: f.created_at, h: '<b>@' + f.handle + '</b> joined' + (L ? ' and chose ' + L.handle : '') }); });
+    items.sort(function (a, b) { return a.t < b.t ? 1 : -1; });
+    $('actList').innerHTML = items.length
+      ? items.slice(0, 5).map(function (i) { return '<li>' + i.h + '<small>' + ago(i.t) + '</small></li>'; }).join('')
+      : '<li class="muted">Be the first to bring someone in.</li>';
+  }
+
+
+  // ---------- daily check-in ----------
+  var RE_LINES = ['I see you.', 'Nobody should do this alone.', 'Your crossing awaits.', 'Every crossing has a fare.', 'Follow me.', 'You came back. They always come back.', 'The door remembers you.', 'Someone you love is watching.', 'Bring them with you.', 'Knock, knock, knock, the door.', 'You were chosen for a reason.', 'Closer now.', 'Everyone pays Re.', 'Stay a little longer.'];
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+  var TODAY = nyY + '-' + pad(nyM) + '-' + pad(nyD);
+  function dayShift(str, k) { var d = new Date(str + 'T12:00:00Z'); d.setUTCDate(d.getUTCDate() + k); return d.toISOString().slice(0, 10); }
+  function loadCheckins() {
+    if (!db) return;
+    db.from('checkins').select('day').eq('visitor_id', vid).then(function (res) {
+      if (res.error) return;
+      var days = {}; (res.data || []).forEach(function (r) { days[String(r.day).slice(0, 10)] = 1; });
+      checkDays = Object.keys(days).length;
+      checkedToday = !!days[TODAY];
+      streak = 0; var d = checkedToday ? TODAY : dayShift(TODAY, -1);
+      while (days[d]) { streak++; d = dayShift(d, -1); }
+      drawFollow();
+    });
+  }
+  function drawCheckin() {
+    var b = $('checkinBtn'), m = $('checkinMsg');
+    var line = RE_LINES[(nyD + nyM * 31) % RE_LINES.length];
+    if (checkedToday) {
+      b.textContent = 'Checked in today'; b.classList.add('done');
+      m.innerHTML = 'Re says: <i>"' + line + '"</i> · ' + streak + '-day streak. Come back tomorrow.';
+    } else {
+      b.textContent = 'Check in with Re · +3'; b.classList.remove('done');
+      m.textContent = streak ? 'Your streak is ' + streak + ' day' + (streak === 1 ? '' : 's') + '. Check in today to keep it.' : 'Come back every day. Each day you check in adds to your devotion.';
+    }
+  }
+  $('checkinBtn').onclick = function () {
+    if (!db || !me || checkedToday) return;
+    var b = this; b.disabled = true;
+    db.from('checkins').insert({ visitor_id: vid }).then(function (res) {
+      b.disabled = false;
+      if (res.error && res.error.code !== '23505') { $('checkinMsg').textContent = 'Re could not hear you. Try again in a moment.'; return; }
+      loadCheckins();
+    });
+  };
+
+  // ---------- shareable status card ----------
+  function loadImg(src) { return new Promise(function (ok) { var i = new Image(); i.onload = function () { ok(i); }; i.onerror = function () { ok(null); }; i.src = src; }); }
+  $('statusCardBtn').onclick = function () {
+    if (!me) return;
+    var btn = this; btn.textContent = 'Making your card...';
+    var r = rankFor(), L = LEADERS[me.leader];
+    Promise.all([loadImg(r.img), loadImg('Seismic%20Crest%20For%20You_Back.png')]).then(function (imgs) {
+      var c = document.createElement('canvas'); c.width = 1080; c.height = 1920;
+      var x = c.getContext('2d');
+      var g = x.createLinearGradient(0, 0, 0, 1920); g.addColorStop(0, '#1d1020'); g.addColorStop(.55, '#0e0f12'); g.addColorStop(1, '#2a1d0c');
+      x.fillStyle = g; x.fillRect(0, 0, 1080, 1920);
+      x.strokeStyle = '#e5503f'; x.lineWidth = 6; x.strokeRect(30, 30, 1020, 1860);
+      x.textAlign = 'center';
+      x.fillStyle = '#e5503f'; x.beginPath(); x.arc(400, 170, 14, 0, 7); x.fill();
+      x.fillStyle = '#9a9ca4'; x.font = '500 34px Jost, sans-serif'; x.fillText('LIVE IN THE REACH', 580, 182);
+      x.fillStyle = '#f3e2b8'; x.font = '300 96px Jost, sans-serif'; x.fillText("I've been", 540, 380); x.fillText('chosen.', 540, 490);
+      if (imgs[0]) { x.save(); x.shadowColor = 'rgba(232,176,74,.6)'; x.shadowBlur = 60; x.drawImage(imgs[0], 290, 580, 500, 500); x.restore(); }
+      x.fillStyle = '#e8b04a'; x.font = '500 52px Jost, sans-serif'; x.fillText(r.name, 540, 1170);
+      x.fillStyle = '#ecebe6'; x.font = '400 64px Jost, sans-serif'; x.fillText('@' + me.handle, 540, 1260);
+      x.fillStyle = '#9a9ca4'; x.font = '300 40px Jost, sans-serif'; x.fillText((L ? L.handle + "'s flock" : 'The Reach') + '  ·  ' + devotion() + ' devotion', 540, 1330);
+      x.fillStyle = '#e8b04a'; x.font = '400 56px Jost, sans-serif'; x.fillText('Follow me. Reach Re.', 540, 1520);
+      x.fillStyle = '#ecebe6'; x.font = '300 40px Jost, sans-serif'; x.fillText('Join through my link at foryouthefilm.com', 540, 1600);
+      if (imgs[1]) { x.save(); x.beginPath(); x.arc(540, 1745, 70, 0, 7); x.fillStyle = '#f7f3ea'; x.fill(); x.clip(); x.drawImage(imgs[1], 470, 1675, 140, 140); x.restore(); }
+      var text = "I've been chosen. Join through my link and help me reach Re: " + inviteUrl();
+      try { c.toBlob(function (blob) {
+        btn.textContent = 'Share my status card';
+        if (!blob) return;
+        var file = new File([blob], 'for-you-status.png', { type: 'image/png' });
+        if (navigator.canShare && navigator.canShare({ files: [file] })) {
+          navigator.share({ files: [file], text: text }).catch(function () {});
+        } else {
+          var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'for-you-status.png'; document.body.appendChild(a); a.click(); a.remove();
+          if (navigator.clipboard) navigator.clipboard.writeText(inviteUrl());
+          $('checkinMsg').textContent = 'Card saved. Your link is copied, so paste it with the picture when you post.';
+        }
+      }, 'image/png'); } catch (e) { btn.textContent = 'Share my status card'; $('checkinMsg').textContent = 'Could not make the card on this device. Try again on your phone.'; }
+    });
+  };
+
   // ---------- leaderboard + flocks ----------
   function loadBoard() {
     if (!db) return;
     Promise.all([
       db.from('invites').select('inviter_id,created_at'),
-      db.from('follows').select('visitor_id,leader,handle')
+      db.from('follows').select('visitor_id,leader,handle,created_at')
     ]).then(function (r) {
       var inv = r[0].data || [], fol = r[1].data || [];
       var byId = {}; fol.forEach(function (f) { byId[f.visitor_id] = f; });
+      drawActivity(inv, byId);
       var allTime = {}, counts = {}, reachedAt = {};
       inv.forEach(function (x) {
         if (!byId[x.inviter_id]) return;
@@ -1353,6 +1692,7 @@
     if (!db) { drawFollow(); return; }
     loadInviter();
     loadMonth();
+    loadCheckins();
     loadLikes();
     Promise.all([
       db.from('follows').select('*', { count: 'exact', head: true }),
