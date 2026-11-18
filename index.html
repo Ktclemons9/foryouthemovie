@@ -608,6 +608,14 @@
   .vidbox button{margin-top:14px;background:var(--red);color:#fff;border:none;border-radius:999px;padding:11px 26px;font-family:inherit;font-size:15px;font-weight:500;cursor:pointer}
   .vidbox .cerr{color:var(--red);font-size:14px;margin-top:8px;min-height:18px}
   .vidbox .cdone{display:none;margin-top:12px;padding:16px;border:1px solid var(--gold);border-radius:10px;color:var(--gold);text-align:center}
+  .tickers{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:520px;margin:4px auto 16px}
+  .ticker{display:flex;flex-direction:column;gap:1px;padding:8px 10px;border:1px solid rgba(232,176,74,.35);border-radius:10px;background:rgba(0,0,0,.3);text-decoration:none;color:#e4dccb;text-align:center}
+  .ticker:hover{border-color:var(--gold)}
+  .tk-l{font-size:10px;letter-spacing:.2em;color:var(--gold)}
+  .tk-d{font-size:14px}
+  .tk-d b{color:#fff;font-weight:500}
+  .tk-go{font-size:11px;color:var(--muted)}
+  #grandSection{scroll-margin-top:80px}
 </style>
 </head>
 <body>
@@ -656,10 +664,9 @@
     <h2>Join the cult from <i>For You</i>.</h2>
     <div class="ct-how">Invite friends. Win prizes. Reach Re.</div>
     <p class="ct-tease">Few have reached Re, the Creator. Those who do are never the same.</p>
-    <div class="grandbox">
-      <div class="gp-h">GRAND PRIZE · <b class="ckGrand">--</b> DAYS LEFT</div>
-      <div class="gp-t">Win a speaking role in the film.</div>
-      <p>Bring the most friends by March 1, 2027 and get <b>your own line in <i>For You</i></b>, filmed on your phone or computer, plus the full follower package and your name in the credits.</p>
+    <div class="tickers">
+      <a class="ticker" href="#grandSection"><span class="tk-l">GRAND PRIZE</span><span class="tk-d"><b class="ckGrand">--</b> days left</span><span class="tk-go">See prize →</span></a>
+      <a class="ticker" href="#monthly"><span class="tk-l">THIS ROUND</span><span class="tk-d"><b class="ckRound">--</b> days left</span><span class="tk-go">Collector's token →</span></a>
     </div>
     <button class="claim" id="claimBtn">Play now. It's free.</button>
     <div class="already"><span id="alreadyCount">1,000,000</span> have already followed</div>
@@ -860,7 +867,7 @@
     <h2>Who has brought the most to Re this round?</h2>
     <p class="muted">Follow, then share your link. Every person who follows through it raises you.</p>
     <ol class="board" id="board"><li class="muted">Counting the committed...</li></ol>
-    <div class="grandboard">
+    <div class="grandboard" id="grandSection">
       <div class="gp-h">THE GRAND PRIZE · ALL-TIME · CLOSES MARCH 1, 2027</div>
       <div class="gp-t">Be in the film.</div>
       <p class="muted">This board never resets. Every friend you've brought since launch counts. #1 on March 1 wins a speaking role in <i>For You</i>, the full follower package, and their name in the credits. #2 becomes a leader in The Reach.</p>
