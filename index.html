@@ -616,6 +616,17 @@
   .tk-d b{color:#fff;font-weight:500}
   .tk-go{font-size:11px;color:var(--muted)}
   #grandSection{scroll-margin-top:80px}
+  .filmcard{display:flex;gap:16px;align-items:center;background:var(--panel);border:1px solid var(--line);border-left:2px solid var(--red);border-radius:12px;padding:18px 20px;margin-bottom:18px}
+  .fc-top{display:flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.22em;color:var(--red);margin-bottom:4px}
+  .filmcard h2{font-weight:400;font-size:clamp(22px,4.6vw,28px);margin-bottom:6px}
+  .filmcard p{font-size:15px;color:#d8d3c8;margin-bottom:6px}
+  .filmcard .fc-game{color:var(--gold)}
+  .fc-link{font-size:14px;color:var(--text);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:5px 14px;display:inline-block;margin-top:2px}
+  .fc-link:hover{border-color:var(--gold)}
+  .fc-laurel{width:130px;flex:none}
+  @media (max-width:560px){.filmcard{flex-direction:column-reverse;text-align:center}.fc-top{justify-content:center}.fc-laurel{width:150px}}
+  .filmcard .fc-by{font-style:italic;color:#f3e2b8}
+  .filmcard .fc-support{font-size:14px;color:#cfc6b4}
 </style>
 </head>
 <body>
@@ -658,6 +669,19 @@
     <div class="live"><span class="rec"></span>LIVE NOW</div>
     <div><span id="viewers">2,214,907</span> watching</div>
   </div>
+
+  <section class="filmcard" id="filmCard">
+    <div class="fc-text">
+      <div class="fc-top"><span class="rec"></span>NOW FILMING</div>
+      <h2><i>For You</i> is a feature film.</h2>
+      <p class="fc-by">From the mind of writer-director Keshia Clemons.</p>
+      <p>A screenlife horror film from an award-winning screenplay. Online sleuths try to rescue a lonely artist from a nightmare livestream, and uncover a digital cult that turns the promise of being seen into a trap.</p>
+      <p class="fc-game">The game below is your way into its world.</p>
+      <p class="fc-support">Playing is free, and it's the easiest way to support an independent film and the artists making it. Every friend you bring helps get <i>For You</i> seen.</p>
+      <a class="fc-link" href="#story">Read the story →</a>
+    </div>
+    <img class="fc-laurel" src="RUNNERUP-FrightsCameraActionHorrorScreenplayContest-2026.png" alt="Runner-up, Best Screenplay, Frights! Camera! Action! 2026" onerror="this.remove()">
+  </section>
 
   <section class="chosen" id="chosenBanner">
     <div class="ct-top">A FREE GAME FROM THE UPCOMING HORROR FILM</div>
