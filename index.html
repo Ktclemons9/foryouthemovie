@@ -625,8 +625,43 @@
   .fc-link:hover{border-color:var(--gold)}
   .fc-laurel{width:130px;flex:none}
   @media (max-width:560px){.filmcard{flex-direction:column-reverse;text-align:center}.fc-top{justify-content:center}.fc-laurel{width:150px}}
-  .filmcard .fc-by{font-style:italic;color:#f3e2b8}
+  .fc-by{font-style:italic;color:#f3e2b8}
   .filmcard .fc-support{font-size:14px;color:#cfc6b4}
+  .yourpath{margin-top:14px;padding:10px 12px;border-left:2px solid var(--gold);background:rgba(232,176,74,.06);border-radius:0 10px 10px 0;font-size:14px;color:#ecdcb6}
+  .yourpath b{display:block;font-size:11px;letter-spacing:.22em;color:var(--gold);font-weight:500;margin-bottom:2px}
+  .yourpath a{color:var(--gold)}
+  .rewarded{color:var(--gold);font-size:16px}
+  .vidbox.nobar{border-top:none;padding-top:0;margin-top:8px}
+  details.formfold{margin-top:14px;border:1px solid var(--line);border-radius:12px;background:#121318}
+  details.formfold summary{cursor:pointer;list-style:none;padding:12px 16px;font-size:15px;color:var(--gold);display:flex;justify-content:space-between;align-items:center}
+  details.formfold summary::-webkit-details-marker{display:none}
+  details.formfold summary::after{content:'▾';font-size:16px;transition:transform .2s}
+  details.formfold[open] summary::after{transform:rotate(180deg)}
+  details.formfold > form,details.formfold > .cdone,details.formfold > p{margin-left:16px;margin-right:16px}
+  details.formfold > form{padding-bottom:14px}
+  details.formfold > p:last-child{padding-bottom:14px}
+  .mintro{font-size:15px;color:#d8d3c8;margin:-4px 0 14px}
+  .mintro b{color:var(--gold);font-weight:500}
+  /* see-more folds */
+  details.seefold{margin:12px 0}
+  details.seefold > summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:6px;color:var(--gold);font-size:15px;padding:8px 14px;border:1px solid rgba(232,176,74,.35);border-radius:999px}
+  details.seefold > summary::-webkit-details-marker{display:none}
+  details.seefold > summary::after{content:'▾';transition:transform .2s}
+  details.seefold[open] > summary{margin-bottom:12px}
+  details.seefold[open] > summary::after{transform:rotate(180deg)}
+  details.seefold.small > summary{font-size:13px;padding:6px 12px}
+  .seemore-p{display:none}
+  .post.expanded .seemore-p{display:block}
+  .seemore-btn{background:none;border:none;color:var(--gold);font-family:inherit;font-size:15px;padding:0;margin:2px 0 8px;cursor:pointer}
+  .post.expanded .seemore-btn{display:none}
+  .sharegrid.clamped > :nth-child(n+7){display:none}
+  .moreapps{margin-top:8px;background:none;border:none;color:var(--gold);font-family:inherit;font-size:14px;cursor:pointer;padding:0}
+  .reveal .fewseen{color:#f3e2b8;font-style:italic;font-size:17px;margin:8px 0 0;opacity:0;transition:opacity 2s ease 5.5s}
+  .reveal.go .fewseen{opacity:1}
+  .creditdrop.quiet{padding:0;border:none;background:none}
+  .creditdrop.quiet details.formfold{margin-top:0}
+  .creditdrop.quiet .cf-in{padding:0 16px 16px}
+  .creditdrop.quiet .cf-in h2{font-weight:400;font-size:22px;margin:4px 0 6px}
 </style>
 </head>
 <body>
@@ -674,7 +709,6 @@
     <div class="fc-text">
       <div class="fc-top"><span class="rec"></span>NOW FILMING</div>
       <h2><i>For You</i> is a feature film.</h2>
-      <p class="fc-by">From the mind of writer-director Keshia Clemons.</p>
       <p>A screenlife horror film from an award-winning screenplay. Online sleuths try to rescue a lonely artist from a nightmare livestream, and uncover a digital cult that turns the promise of being seen into a trap.</p>
       <p class="fc-game">The game below is your way into its world.</p>
       <p class="fc-support">Playing is free, and it's the easiest way to support an independent film and the artists making it. Every friend you bring helps get <i>For You</i> seen.</p>
@@ -690,7 +724,7 @@
     <p class="ct-tease">Few have reached Re, the Creator. Those who do are never the same.</p>
     <div class="tickers">
       <a class="ticker" href="#grandSection"><span class="tk-l">GRAND PRIZE</span><span class="tk-d"><b class="ckGrand">--</b> days left</span><span class="tk-go">See prize →</span></a>
-      <a class="ticker" href="#monthly"><span class="tk-l">THIS ROUND</span><span class="tk-d"><b class="ckRound">--</b> days left</span><span class="tk-go">Collector's token →</span></a>
+      <a class="ticker" href="#monthly"><span class="tk-l" id="tkRound">ROUND 1 · THE FARE</span><span class="tk-d"><b class="ckRound">--</b> days left</span><span class="tk-go">Collector's token →</span></a>
     </div>
     <button class="claim" id="claimBtn">Play now. It's free.</button>
     <div class="already"><span id="alreadyCount">1,000,000</span> have already followed</div>
@@ -708,15 +742,15 @@
       <div class="lstep" data-rank="1"><img src="badge-promoter.png" alt=""><b>Promoter</b><span>10 devotion</span></div>
       <div class="lstep" data-rank="2"><img src="badge-seeker.png" alt=""><b>Seeker</b><span>20 devotion</span></div>
       <div class="lstep" data-rank="3"><img src="badge-committed.png" alt=""><b>Committed</b><span>40 devotion</span></div>
-      <div class="lstep goal" data-rank="3"><img src="ResDoor.png" alt=""><b>Reach Re</b><span>The door opens</span></div>
+      <div class="lstep goal" data-rank="3"><img src="ResDoor.png" alt=""><b>Reach Re</b><span>Learn who Re is</span></div>
     </div>
-      <p>Your badge changes as your <b>devotion</b> grows. Earn it by bringing friends in, checking in every day, and finding the signs Re hides in the feed. At Committed, the door opens. Only the Committed may cross, and what waits on the other side is for them alone.</p>
+      <p>Your badge changes as your <b>devotion</b> grows. Earn it by bringing friends in, checking in every day, and finding the signs Re hides in the feed. At Committed, the door opens. Only the Committed may cross, and on the other side they learn who Re really is: the story the film can't tell.</p>
     </div>
       <div class="reward">
       <img src="prize-token.png" alt="" style="border-radius:50%;object-fit:cover" onerror="this.remove()">
       <p><b>Every round:</b> most friends wins <b>the official For You collector's token</b>. The top 3 can have <b>their names in the film's end credits.</b></p>
     </div>
-      <div class="clocks"><span><b class="ckRound">--</b> days left in the launch round</span></div>
+      <div class="clocks"><span><b class="ckRound">--</b> days left in Round 1: The Fare</span></div>
       <p class="hw-more">#2 on March 1 becomes a leader in The Reach. Full details are in the reward rules below.</p>
     </details>
     <button type="button" class="backin" data-backin>Already playing? Get back in</button>
@@ -747,19 +781,22 @@
       <div class="lstep" data-rank="1"><img src="badge-promoter.png" alt=""><b>Promoter</b><span>10 devotion</span></div>
       <div class="lstep" data-rank="2"><img src="badge-seeker.png" alt=""><b>Seeker</b><span>20 devotion</span></div>
       <div class="lstep" data-rank="3"><img src="badge-committed.png" alt=""><b>Committed</b><span>40 devotion</span></div>
-      <div class="lstep goal" data-rank="3"><img src="ResDoor.png" alt=""><b>Reach Re</b><span>The door opens</span></div>
+      <div class="lstep goal" data-rank="3"><img src="ResDoor.png" alt=""><b>Reach Re</b><span>Learn who Re is</span></div>
     </div>
     <div class="devotion">
       <div class="dv-top"><div><span class="dv-l">DEVOTION</span><span class="dv-n" id="devNum">0</span></div>
         <button type="button" class="ritual" id="checkinBtn">Check in with Re · +1</button></div>
       <div class="dv-msg" id="checkinMsg">Come back every day. Each day you check in adds to your devotion.</div>
+      <details class="seefold small"><summary>How devotion works</summary>
       <div class="dv-earn"><b>Earn devotion:</b> +1 for joining · +1 for each friend who joins through your link · +1 for each day you check in · +1 for each sign of Re you find in the feed</div>
       <div class="dv-sign">Re hides one sign <span class="sigil">✦</span> somewhere in the feed every day. Find it and tap it.</div>
+      </details>
       <button type="button" class="cardbtn" id="statusCardBtn">Share my status card</button>
       <div class="cardnote" id="cardNote"></div>
     </div>
     <div class="leaderword" id="leaderWord"></div>
     <div class="clocks small"><span><b class="ckRound">--</b> days left in this round</span><span><b class="ckGrand">--</b> days until the grand prize closes</span></div>
+    <details class="seefold small" id="returnFold"><summary>Your return link and email</summary>
     <div class="returnbox" id="returnBox">
       <div class="rb-h">YOUR PRIVATE RETURN LINK</div>
       <p>Open this link on any phone or computer to get back to your follower. Save it somewhere safe and keep it private: anyone with it can play as you.</p>
@@ -773,6 +810,7 @@
       <div class="rb-ok" id="rbOk">✓ Your email is confirmed. You count toward prizes, and you can get back in from any device.</div>
       <div class="rb-msg" id="rbMsg"></div>
     </div>
+    </details>
     <div class="seeyou">I SEE YOU.</div>
     <button class="seeagain" id="seeAgain">SEE RE AGAIN</button>
   </section>
@@ -797,12 +835,13 @@
   <section class="reach" id="climbCard">
     <div class="status-h">YOUR CLIMB<span>Every friend and every day brings you closer to Re.</span></div>
     <div class="brought" id="reachBrought"></div>
-    <div class="goalline"><b>The goal: Reach Re.</b> At Committed, the door opens. Only the Committed may cross, and what waits on the other side is for them alone.</div>
+    <div class="goalline"><b>The goal: Reach Re.</b> At Committed, the door opens. Only the Committed may cross, and on the other side they learn who Re really is: the story the film can't tell.</div>
     <div class="bar"><i id="reachBar"></i></div>
     <div class="next" id="reachNext"></div>
     <div class="place" id="reachPlace"></div>
     <div class="place" id="grandPlace"></div>
     <a class="seeboard" href="#committed">See the leaderboards →</a>
+    <details class="seefold small"><summary>How to climb</summary>
     <div class="howto">
       <div class="ht-title">HOW TO CLIMB</div>
       <ol>
@@ -810,11 +849,12 @@
         <li><b>Post it anywhere:</b> Facebook, an Instagram story, your TikTok bio, or a text to a friend.</li>
         <li><b>When a friend follows through your link, or you check in each day, you rise closer to Re.</b> Clicks don't count. Only people who follow.</li>
         <li><b>Find Re's signs.</b> Re hides signs in the feed. Find them for extra devotion. A new one appears every day.</li>
-        <li><b>Reach Committed (40 devotion) and the door opens.</b> Only the Committed may cross, and what waits on the other side is for them alone.</li>
+        <li><b>Reach Committed (40 devotion) and the door opens.</b> Only the Committed may cross, and on the other side they learn who Re really is: the story the film can't tell.</li>
       </ol>
       <p class="ht-flock" id="htFlock">Every friend you bring joins your leader's flock. The bigger the flock, the closer you both come to Re, the Creator.</p>
       <div class="ht-goal" id="reachGoal"></div>
     </div>
+    </details>
     <div class="invite">
       <input id="inviteLink" readonly>
       <button id="copyLink">Copy my link</button>
@@ -840,6 +880,10 @@
   <section class="monthly" id="monthly">
     <div class="mt"><b id="monthName">THIS MONTH'S REWARD</b><span class="days" id="monthEnds"></span></div>
     <h2 class="mhead">Win the official For You collector's token.</h2>
+    <p class="mintro" id="mIntro"><b>The first game.</b> Every crossing has a fare, and in the film, the fare is the token. Bring the most friends by December 31 and the token is yours. New rounds, with new rewards, begin every month after.</p>
+    <div class="mbar"><i id="monthBar"></i></div>
+    <div class="mline" id="monthLine">Counting this round's followers...</div>
+    <details class="seefold"><summary>See the prizes and how to win</summary>
     <div class="prizes">
       <div class="pz">
         <img src="prize-token.png" alt="The official For You collector's token" class="pz-img">
@@ -859,15 +903,14 @@
     </div>
     <a class="doorteaser" href="#door">
       <img src="ResDoor.png" alt="">
-      <span><b>Beyond the prizes: the door.</b> Earn 40 devotion to reach Committed. The door opens. Only the Committed may cross, and what waits on the other side is for them alone.</span>
+      <span><b>Beyond the prizes: the door.</b> Earn 40 devotion to reach Committed. The door opens. Only the Committed may cross, and on the other side they learn who Re really is: the story the film can't tell.</span>
     </a>
-    <div class="mbar"><i id="monthBar"></i></div>
-    <div class="mline" id="monthLine">Counting this round's followers...</div>
+
     <div class="mhow"><b>How to win:</b> Follow, then share your personal invite link. Every person who follows through your link this round counts for you. Add your email when you choose your name so we can reach you if you win.</div>
     <details class="rules">
       <summary>Reward rules</summary>
       <ul>
-        <li>The launch round runs from November 1 through 11:59 PM Eastern on December 31, 2026. Starting in January 2027, each calendar month is its own round, ending at 11:59 PM Eastern on the last day of the month.</li>
+        <li>Round 1, The Fare, runs from November 1 through 11:59 PM Eastern on December 31, 2026. Starting in January 2027, each calendar month is its own numbered round (Round 2 is January), ending at 11:59 PM Eastern on the last day of the month.</li>
         <li>Rewards are given only if at least 100 new people follow during the round. If the goal isn't met, the rewards roll over to the next round.</li>
         <li>Rankings count people who follow through your personal invite link during the round.</li>
         <li>To be eligible, add your email when you choose your name, or later in Your Status. Your email is only used to contact winners and to help you get back into the game. We never sell it, share it, or send ads.</li>
@@ -880,6 +923,8 @@
         <li>Every winner is reviewed before prizes go out. Fake or duplicate accounts are removed and disqualified.</li>
       </ul>
     </details>
+  
+    </details>
   </section>
 
 
@@ -891,6 +936,7 @@
     <h2>Who has brought the most to Re this round?</h2>
     <p class="muted">Follow, then share your link. Every person who follows through it raises you.</p>
     <ol class="board" id="board"><li class="muted">Counting the committed...</li></ol>
+    <details class="seefold"><summary>See the grand prize, Flock Wars and the Followers Wall</summary>
     <div class="grandboard" id="grandSection">
       <div class="gp-h">THE GRAND PRIZE · ALL-TIME · CLOSES MARCH 1, 2027</div>
       <div class="gp-t">Be in the film.</div>
@@ -901,6 +947,7 @@
     <div class="flock" id="flock"></div>
     <div class="wall-h">THE FOLLOWERS WALL · NEWEST IN THE REACH</div>
     <div class="wall" id="wall"></div>
+    </details>
   </article>
 
   <article class="post sealed" data-unlock="1" id="lore1">
@@ -956,7 +1003,6 @@
     <p class="muted" id="reWeekSub">A new word from Re appears every week.</p>
   </article>
 
-  <!-- 1 LOGLINE -->
   <article class="post" data-post="p1">
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div><div class="pin">PINNED</div></div>
     <div class="num"><span class="rec"></span>1 · FOR YOU</div>
@@ -972,18 +1018,19 @@
     </div>
   </article>
 
-  <!-- 2 STORY -->
   <article class="post" data-post="p2" id="story">
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
     <div class="num"><span class="rec"></span>2 · THE STORY</div>
     <div class="split">
       <div>
         <h2>Cult leaders have always needed followers.</h2>
+    <p class="fc-by">From the mind of writer-director Keshia Clemons.</p>
         <p>But what if something was influencing the leaders all along?</p>
         <p>One night, a livestream. A woman who was promised a better place. A door she was never supposed to refuse. And a handful of strangers watching from their own screens, trying to pull her back before it's too late.</p>
       </div>
       <div class="media"><img src="ResDoor.png" alt="A door with light underneath"></div>
     </div>
+    <div class="yourpath"><b>YOUR PATH</b><span>Katey started exactly where you are. One follow. One like. One share. That's how it works.</span></div>
     <button type="button" class="sign" data-sign="1" aria-label="A sign of Re">✦</button>
     <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
     <div class="comments">
@@ -992,14 +1039,114 @@
     </div>
   </article>
 
-  <!-- BE A FOLLOWER (casting) -->
+  <article class="post" data-post="p9" id="circle">
+    <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
+    <div class="num"><span class="rec"></span>3 · KATEY</div>
+    <h2>@itsjustme_katey</h2>
+    <p>An artist who liked and shared every post, because that's how it works. Tonight she goes live.</p>
+    <div class="people">
+      <div class="person"><div class="face">K</div><b>Katey</b><span>Live now</span></div>
+    </div>
+    <div class="poll" data-poll="katey" data-q="Which leader do you think Katey followed?" data-opts="@easelhours|@gorillabob|@sundaysongbird|@dragonprincess" data-answer="@easelhours" data-after="She followed @easelhours. &quot;Nobody should paint alone.&quot; That's what he told her."></div>
+    <div class="yourpath"><b>YOUR PATH</b><span>Katey liked every post and shared every post, and she earned the Committed button. Your badge is on the same path.</span></div>
+    <button type="button" class="sign" data-sign="8" aria-label="A sign of Re">✦</button>
+    <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
+    <div class="comments">
+      <div class="c"><div class="ci">EH</div><div><b>@easelhours</b> Proud of you. Nobody should do this alone.</div></div>
+    </div>
+  </article>
+
+  <article class="post" data-post="p5" id="leaders">
+    <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
+    <div class="num"><span class="rec"></span>4 · FOLLOW THE LEADERS</div>
+    <h2>They look like anyone you'd follow.</h2>
+    <p>A painter. A home chef. A singer. A cosplayer. Creators with big hearts and bigger followings. Every sign-off ends the same way: <span class="quote">"Follow me. Reach Re."</span></p>
+    <div class="people">
+      <div class="person"><div class="face" style="overflow:visible"><img src="easelhours.png" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover" onerror="this.parentNode.textContent='EH'"></div><b>@easelhours</b><span>A soft-spoken young painter. <span class="quote">"Nobody should paint alone."</span></span></div>
+      <div class="person"><div class="face" style="overflow:visible"><img src="gorillabob.png" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover" onerror="this.parentNode.textContent='GB'"></div><b>@gorillabob</b><span>A big-hearted home chef. <span class="quote">"Nobody eats alone in my kitchen."</span></span></div>
+      <div class="person"><div class="face" style="overflow:visible"><img src="sundaysongbird.png" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover" onerror="this.parentNode.textContent='SS'"></div><b>@sundaysongbird</b><span>A singer whose followers know every word. <span class="quote">"Sing along with me."</span></span></div>
+      <div class="person"><div class="face" style="overflow:visible"><img src="dragonprincess.png" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover" onerror="this.parentNode.textContent='DP'"></div><b>@dragonprincess</b><span>A British fantasy cosplayer. <span class="quote">"Bow before the flame."</span></span></div>
+      <div class="person"><div class="face">NN</div><b>@nightshiftnora</b></div>
+      <div class="person"><div class="face">CC</div><b>@coldcasecass</b></div>
+      <div class="person"><div class="face teal">RR</div><b>@reelwithrusty</b></div>
+      <div class="person"><div class="face">LS</div><b>@lacefrontsandy</b></div>
+    </div>
+    <div class="yourpath" data-path="leader"><b>YOUR PATH</b><span>Pick a leader and you join their flock. Every friend you bring through your link grows it, and brings you both closer to Re.</span></div>
+    <button type="button" class="sign" data-sign="4" aria-label="A sign of Re">✦</button>
+    <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
+    <div class="comments">
+      <div class="c"><div class="ci">EH</div><div><b>@easelhours</b> Nobody should paint alone. Follow me. Reach Re. 🎨</div></div>
+      <div class="c"><div class="ci">GB</div><div><b>@gorillabob</b> Plenty of room at my table. Follow me. Reach Re.</div></div>
+    </div>
+  </article>
+
+  <article class="post" data-post="p4" id="lore">
+    <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
+    <div class="num"><span class="rec"></span>5 · THE LORE</div>
+    <h2>Re, the Creator.</h2>
+    <p>It was there before the internet. Before the pamphlets and the compounds. It stood behind the most famous cult leaders in history, and now it stands behind the people you follow.</p>
+    <p>It doesn't need to find you. Your feed brings you to it.</p>
+    <p class="muted">He keeps an hour. Few have found it.</p>
+    <p class="muted">He has never shown his face to the public. He chooses who sees him.</p>
+    <div class="yourpath"><b>YOUR PATH</b><span>No one reaches Re alone. Your leader is the way in.</span></div>
+    <button type="button" class="sign" data-sign="3" aria-label="A sign of Re">✦</button>
+    <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
+    <div class="comments">
+      <div class="c"><div class="ci">GC</div><div><b>@greycanopy99</b> He sees all of us. Isn't that wonderful?</div></div>
+      <div class="c"><div class="ci">EN</div><div><b>@emptynest02</b> I see you too 💛</div></div>
+    </div>
+  </article>
+
+  <article class="post" data-post="p3" id="followme">
+    <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
+    <div class="num"><span class="rec"></span>6 · FOLLOW ME</div>
+    <h2>Every follower knows the words.</h2>
+    <audio id="rhymeAudio" controls src="rhyme.mp3" style="width:100%;margin:8px 0 4px"></audio>
+    <div class="rhyme">
+      <div class="verse">Knock, knock, knock, the door,<br>Come inside and stay.<br>Follow me, follow me, follow me, follow me,<br><span class="end">Everyone pays Re.</span></div>
+      <div class="verse">Pay, pay, pay your fare,<br>No one gets away.<br>All for you, all for you, all for you, all for you,<br><span class="end">Everyone pays Re.</span></div>
+      <div class="verse">Run, run, run and hide,<br>Shade is at your side.<br>Anyway, anyway, anyway, anyway,<br><span class="end">Everyone pays Re.</span></div>
+      <div class="verse">Shade, shade, shade, you're it,<br>Now you hunt and prey.<br>Follow them, follow them, follow them, follow them,<br><span class="end">Everyone pays Re.</span></div>
+    </div>
+    <div class="yourpath"><b>YOUR PATH</b><span>Every follower knows the words. Share them, and you share the way to Re.</span></div>
+    <button type="button" class="sign" data-sign="2" aria-label="A sign of Re">✦</button>
+    <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
+    <div class="comments">
+      <div class="c"><div class="ci">AG</div><div><b>@ashgrove_21</b> my kids sing this in the car now 😊</div></div>
+      <div class="c"><div class="ci">SM</div><div><b>@sweetmagnolia</b> We sang it together last night. All of us. 🕯️</div></div>
+      <div class="c"><div class="ci">XW</div><div><b>@xander_wolfe</b> why does everyone know this song</div></div>
+    </div>
+  </article>
+
+  <article class="post" data-post="p6" id="reach">
+    <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
+    <div class="num"><span class="rec"></span>7 · THE REACH</div>
+    <div class="split">
+      <div>
+        <h2>You've been chosen.</h2>
+    <p class="rewarded">The most committed followers are rewarded.</p>
+        <p>Like. Share. Promote. The more you give, the higher you rise. The most devoted earn the Committed button, and with it, an invitation.</p>
+      </div>
+      <div class="media hide-if-missing"><img src="reach-phone.png" alt="The Reach on a phone"></div>
+    </div>
+    <div class="yourpath" data-path="rank"><b>YOUR PATH</b><span>Your badge is your rank in The Reach. Climb it, and you're rewarded.</span></div>
+    <button type="button" class="sign" data-sign="5" aria-label="A sign of Re">✦</button>
+    <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
+    <div class="comments">
+      <div class="c"><div class="ci">MG</div><div><b>@marigold_71</b> Got my Committed button today!! 😭💛</div></div>
+      <div class="c"><div class="ci">AG</div><div><b>@ashgrove_21</b> so close to mine</div></div>
+    </div>
+  </article>
+
   <article class="post" id="castPost">
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div><div class="pin">CASTING</div></div>
-    <div class="num"><span class="rec"></span>BE IN THE FILM</div>
+    <div class="num"><span class="rec"></span>THE MOST COMMITTED ARE REWARDED</div>
     <div class="cast nobar" id="beFollower">
       <h3>Be a Follower.</h3>
-      <p class="muted">Everyone playing is already one of Re's followers. Now be one on screen. Appear in <i>For You</i> in the background as a member of The Reach, filmed from your own home on your own phone or computer, just like in the story.</p>
+      <p class="muted">The most committed followers are rewarded, and some will appear on screen. Everyone playing is already one of Re's followers. Now be one in the film. Appear in <i>For You</i> in the background as a member of The Reach, filmed from your own home on your own phone or computer, just like in the story.</p>
       <div class="twoways"><div><b>Way 1: Be a Follower on screen.</b> Sign up below to be considered as one of Re's followers in the background. The production chooses who's cast.</div><div><b>Way 2: Win a speaking role.</b> The player who brings the most friends by March 1, 2027 wins a guaranteed speaking role, with their own line, plus the full follower package and their name in the credits. <a href="#committed">See the grand prize board</a>.</div></div>
+      <details class="formfold">
+        <summary>Sign up to be considered</summary>
       <form id="castForm" novalidate>
         <label for="cName">YOUR NAME</label><input type="text" id="cName" maxlength="80" autocomplete="name">
         <label for="cEmail">EMAIL</label><input type="email" id="cEmail" maxlength="200" autocomplete="email">
@@ -1018,112 +1165,40 @@
         <div class="cerr" id="cErr"></div>
       </form>
       <div class="cdone" id="cDone">Re has received you. Watch your email. We'll be in touch.</div>
+      </details>
       <p class="muted" style="font-size:13px;margin-top:10px">Your details are private and only seen by the production. Anyone who appears on screen will sign a release first.</p>
 
-      <div class="vidbox" id="shareVideo">
-        <h3>Share your video.</h3>
-        <p class="muted">Have a video that could live in The Reach's feed? A creator-style clip, a scroll-stopping moment, something only you could post. Send us the link to your post on TikTok, Instagram, YouTube, Facebook or anywhere else.</p>
-        <p class="vid-thanks">If your video is used in <i>For You</i>, you'll get a <b>Special Thanks credit</b> in the film.</p>
-        <form id="vidForm" novalidate>
-          <label for="vLink">LINK TO YOUR VIDEO</label><input type="url" id="vLink" maxlength="500" placeholder="https://">
-          <label for="vHandle">YOUR USERNAME ON THAT APP</label><input type="text" id="vHandle" maxlength="80" placeholder="@yourname">
-          <label for="vEmail">EMAIL</label><input type="email" id="vEmail" maxlength="200" autocomplete="email">
-          <label for="vNote">ANYTHING WE SHOULD KNOW? (OPTIONAL)</label><textarea id="vNote" maxlength="600"></textarea>
-          <label class="adult"><input type="checkbox" id="vOwn"> This is my video, I'm 18 or older, and I agree it can be used in <i>For You</i>.</label>
-          <button type="submit" id="vSubmit">Send my video</button>
-          <div class="cerr" id="vErr"></div>
-        </form>
-        <div class="cdone" id="vDone">Re has seen your video. If we'd like to use it, we'll email you.</div>
-        <p class="muted" style="font-size:13px;margin-top:10px">If we'd like to use your video, we'll email you for the original file, since videos saved from social apps carry a watermark. We'll check that the post is yours before using anything.</p>
-      </div>
+
     </div>
   </article>
 
-  <!-- 3 FOLLOW ME (RHYME) -->
-  <article class="post" data-post="p3" id="followme">
+  <article class="post" data-post="p7" id="fare">
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
-    <div class="num"><span class="rec"></span>3 · FOLLOW ME</div>
-    <h2>Every follower knows the words.</h2>
-    <audio id="rhymeAudio" controls src="rhyme.mp3" style="width:100%;margin:8px 0 4px"></audio>
-    <div class="rhyme">
-      <div class="verse">Knock, knock, knock, the door,<br>Come inside and stay.<br>Follow me, follow me, follow me, follow me,<br><span class="end">Everyone pays Re.</span></div>
-      <div class="verse">Pay, pay, pay your fare,<br>No one gets away.<br>All for you, all for you, all for you, all for you,<br><span class="end">Everyone pays Re.</span></div>
-      <div class="verse">Run, run, run and hide,<br>Shade is at your side.<br>Anyway, anyway, anyway, anyway,<br><span class="end">Everyone pays Re.</span></div>
-      <div class="verse">Shade, shade, shade, you're it,<br>Now you hunt and prey.<br>Follow them, follow them, follow them, follow them,<br><span class="end">Everyone pays Re.</span></div>
-    </div>
-    <button type="button" class="sign" data-sign="2" aria-label="A sign of Re">✦</button>
-    <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
-    <div class="comments">
-      <div class="c"><div class="ci">AG</div><div><b>@ashgrove_21</b> my kids sing this in the car now 😊</div></div>
-      <div class="c"><div class="ci">SM</div><div><b>@sweetmagnolia</b> We sang it together last night. All of us. 🕯️</div></div>
-      <div class="c"><div class="ci">XW</div><div><b>@xander_wolfe</b> why does everyone know this song</div></div>
-    </div>
-  </article>
-
-
-  <!-- 4 LORE -->
-  <article class="post" data-post="p4" id="lore">
-    <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
-    <div class="num"><span class="rec"></span>4 · THE LORE</div>
-    <h2>Re, the Creator.</h2>
-    <p>It was there before the internet. Before the pamphlets and the compounds. It stood behind the most famous cult leaders in history, and now it stands behind the people you follow.</p>
-    <p>It doesn't need to find you. Your feed brings you to it.</p>
-    <p class="muted">He keeps an hour. Few have found it.</p>
-    <button type="button" class="sign" data-sign="3" aria-label="A sign of Re">✦</button>
-    <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
-    <div class="comments">
-      <div class="c"><div class="ci">GC</div><div><b>@greycanopy99</b> He sees all of us. Isn't that wonderful?</div></div>
-      <div class="c"><div class="ci">EN</div><div><b>@emptynest02</b> I see you too 💛</div></div>
-    </div>
-  </article>
-
-  <!-- 5 LEADERS -->
-  <article class="post" data-post="p5" id="leaders">
-    <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
-    <div class="num"><span class="rec"></span>5 · FOLLOW THE LEADERS</div>
-    <h2>They look like anyone you'd follow.</h2>
-    <p>A painter. A home chef. A singer. A cosplayer. Creators with big hearts and bigger followings. Every sign-off ends the same way: <span class="quote">"Follow me. Reach Re."</span></p>
-    <div class="people">
-      <div class="person"><div class="face" style="overflow:visible"><img src="easelhours.png" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover" onerror="this.parentNode.textContent='EH'"></div><b>@easelhours</b><span>A soft-spoken young painter. <span class="quote">"Nobody should paint alone."</span></span></div>
-      <div class="person"><div class="face" style="overflow:visible"><img src="gorillabob.png" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover" onerror="this.parentNode.textContent='GB'"></div><b>@gorillabob</b><span>A big-hearted home chef. <span class="quote">"Nobody eats alone in my kitchen."</span></span></div>
-      <div class="person"><div class="face" style="overflow:visible"><img src="sundaysongbird.png" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover" onerror="this.parentNode.textContent='SS'"></div><b>@sundaysongbird</b><span>A singer whose followers know every word. <span class="quote">"Sing along with me."</span></span></div>
-      <div class="person"><div class="face" style="overflow:visible"><img src="dragonprincess.png" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover" onerror="this.parentNode.textContent='DP'"></div><b>@dragonprincess</b><span>A British fantasy cosplayer. <span class="quote">"Bow before the flame."</span></span></div>
-      <div class="person"><div class="face">NN</div><b>@nightshiftnora</b></div>
-      <div class="person"><div class="face">CC</div><b>@coldcasecass</b></div>
-      <div class="person"><div class="face teal">RR</div><b>@reelwithrusty</b></div>
-      <div class="person"><div class="face">LS</div><b>@lacefrontsandy</b></div>
-    </div>
-    <button type="button" class="sign" data-sign="4" aria-label="A sign of Re">✦</button>
-    <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
-    <div class="comments">
-      <div class="c"><div class="ci">EH</div><div><b>@easelhours</b> Nobody should paint alone. Follow me. Reach Re. 🎨</div></div>
-      <div class="c"><div class="ci">GB</div><div><b>@gorillabob</b> Plenty of room at my table. Follow me. Reach Re.</div></div>
-    </div>
-  </article>
-
-  <!-- 6 THE REACH -->
-  <article class="post" data-post="p6" id="reach">
-    <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
-    <div class="num"><span class="rec"></span>6 · THE REACH</div>
+    <div class="num"><span class="rec"></span>8 · THE FARE</div>
     <div class="split">
+      <div class="media hide-if-missing"><img src="token.png" alt="The gold token"></div>
       <div>
-        <h2>You've been chosen.</h2>
-        <p>Like. Share. Promote. The more you give, the higher you rise. The most devoted earn the Committed button, and with it, an invitation.</p>
+        <h2>Every crossing has a fare.</h2>
+        <p>A gold token. A sealed envelope. Bring yours tonight.</p>
       </div>
-      <div class="media hide-if-missing"><img src="reach-phone.png" alt="The Reach on a phone"></div>
     </div>
-    <button type="button" class="sign" data-sign="5" aria-label="A sign of Re">✦</button>
+    <div class="yourpath"><b>YOUR PATH</b><span>The Committed receive the shirt, the invitation and the token. At Committed, the door opens for you too.</span></div>
+    <button type="button" class="sign" data-sign="6" aria-label="A sign of Re">✦</button>
     <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
     <div class="comments">
-      <div class="c"><div class="ci">MG</div><div><b>@marigold_71</b> Got my Committed button today!! 😭💛</div></div>
-      <div class="c"><div class="ci">AG</div><div><b>@ashgrove_21</b> so close to mine</div></div>
+      <div class="c"><div class="ci">GC</div><div><b>@greycanopy99</b> Envelope's sealed. Ready. 🙏</div></div>
     </div>
   </article>
 
-  <!-- 16 VESTMENTS -->
+  <article class="post pollpost">
+    <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div><div class="pin">POLL</div></div>
+    <div class="num"><span class="rec"></span>THE FOLLOWERS ARE VOTING</div>
+    <div class="poll" data-poll="door" data-q="The door is open. The light is warm. Would you go through?" data-opts="Yes, I'd go through|No, I'd stay|I'd look first" data-after="Find out what's on the other side in For You."></div>
+  </article>
+
   <article class="post" data-post="p16" id="vestments">
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
-    <div class="num"><span class="rec"></span>16 · VESTMENTS</div>
+    <div class="num"><span class="rec"></span>9 · VESTMENTS</div>
     <div class="split">
       <div>
         <h2>Wear the crest.</h2>
@@ -1140,38 +1215,14 @@
     </div>
   </article>
 
-  <!-- 7 THE FARE -->
-  <article class="post" data-post="p7" id="fare">
-    <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
-    <div class="num"><span class="rec"></span>7 · THE FARE</div>
-    <div class="split">
-      <div class="media hide-if-missing"><img src="token.png" alt="The gold token"></div>
-      <div>
-        <h2>Every crossing has a fare.</h2>
-        <p>A gold token. A sealed envelope. Bring yours tonight.</p>
-      </div>
-    </div>
-    <button type="button" class="sign" data-sign="6" aria-label="A sign of Re">✦</button>
-    <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
-    <div class="comments">
-      <div class="c"><div class="ci">GC</div><div><b>@greycanopy99</b> Envelope's sealed. Ready. 🙏</div></div>
-    </div>
-  </article>
-
-  <article class="post pollpost">
-    <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div><div class="pin">POLL</div></div>
-    <div class="num"><span class="rec"></span>THE FOLLOWERS ARE VOTING</div>
-    <div class="poll" data-poll="door" data-q="The door is open. The light is warm. Would you go through?" data-opts="Yes, I'd go through|No, I'd stay|I'd look first" data-after="Find out what's on the other side in For You."></div>
-  </article>
-
-  <!-- 8 THE SHADE -->
   <article class="post" data-post="p8" id="shade">
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
-    <div class="num"><span class="rec"></span>8 · THE SHADE</div>
+    <div class="num"><span class="rec"></span>10 · THE SHADE</div>
     <h2>Look away. Then look back.</h2>
     <p>Hold on to your token, and something follows you. You'll only see it on your screen. And every time you look back, it's closer.</p>
     <p class="quote">Re's Shade hunts those who keep what isn't theirs. It never stops. It only gets closer.</p>
     <div class="media hide-if-missing"><img src="shade-hall.png" alt="A hallway that goes on too long"></div>
+    <div class="yourpath"><b>YOUR PATH</b><span>Re gives freely. What he gives must be returned.</span></div>
     <button type="button" class="sign" data-sign="7" aria-label="A sign of Re">✦</button>
     <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
     <div class="comments">
@@ -1190,27 +1241,9 @@
     </div>
   </article>
 
-  <!-- 9 THE CIRCLE -->
-  <article class="post" data-post="p9" id="circle">
-    <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
-    <div class="num"><span class="rec"></span>9 · KATEY</div>
-    <h2>@itsjustme_katey</h2>
-    <p>An artist who liked and shared every post, because that's how it works. Tonight she goes live.</p>
-    <div class="people">
-      <div class="person"><div class="face">K</div><b>Katey</b><span>Live now</span></div>
-    </div>
-    <div class="poll" data-poll="katey" data-q="Which leader do you think Katey followed?" data-opts="@easelhours|@gorillabob|@sundaysongbird|@dragonprincess" data-answer="@easelhours" data-after="She followed @easelhours. &quot;Nobody should paint alone.&quot; That's what he told her."></div>
-    <button type="button" class="sign" data-sign="8" aria-label="A sign of Re">✦</button>
-    <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
-    <div class="comments">
-      <div class="c"><div class="ci">EH</div><div><b>@easelhours</b> Proud of you. Nobody should do this alone.</div></div>
-    </div>
-  </article>
-
-
   <article class="post" data-post="p10">
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
-    <div class="num"><span class="rec"></span>10 · THE SLEUTHS</div>
+    <div class="num"><span class="rec"></span>11 · THE SLEUTHS</div>
     <h2>The ones watching.</h2>
     <div class="people">
       <div class="person"><div class="face">LR</div><b>Larry Roland</b><span>Hero of the Denver Miracle. Still chasing it.</span></div>
@@ -1220,6 +1253,7 @@
       <div class="person"><div class="face teal" style="overflow:visible"><img src="cal.png" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover" onerror="this.parentNode.textContent='CV'"></div><b>Dr. Calvin Vance</b><span>The cult expert nobody believed.</span></div>
     </div>
     <div class="poll" data-poll="sleuths" data-q="Who do you think gets to Katey first?" data-opts="Larry|Trey|Maggie|Zoey|Dr. Vance" data-after="Find out in For You."></div>
+    <div class="yourpath"><b>YOUR PATH</b><span>They're watching her. Someone is watching you climb.</span></div>
     <button type="button" class="sign" data-sign="9" aria-label="A sign of Re">✦</button>
     <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
     <div class="comments">
@@ -1227,9 +1261,34 @@
     </div>
   </article>
 
+  <article class="post" id="videoPost">
+    <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div><div class="pin">SHARE CONTENT</div></div>
+    <div class="num"><span class="rec"></span>BE PART OF THE FEED</div>
+    <p class="muted">The ones watching scroll past hundreds of videos a night. Yours could be one of them.</p>
+      <div class="vidbox nobar" id="shareVideo">
+        <h3>Share your video.</h3>
+        <p class="muted">Have a video that could live in The Reach's feed? A creator-style clip, a scroll-stopping moment, something only you could post. Send us the link to your post on TikTok, Instagram, YouTube, Facebook or anywhere else.</p>
+        <p class="vid-thanks">If your video is used in <i>For You</i>, you'll get a <b>Special Thanks credit</b> in the film.</p>
+        <details class="formfold">
+          <summary>Send us your video link</summary>
+        <form id="vidForm" novalidate>
+          <label for="vLink">LINK TO YOUR VIDEO</label><input type="url" id="vLink" maxlength="500" placeholder="https://">
+          <label for="vHandle">YOUR USERNAME ON THAT APP</label><input type="text" id="vHandle" maxlength="80" placeholder="@yourname">
+          <label for="vEmail">EMAIL</label><input type="email" id="vEmail" maxlength="200" autocomplete="email">
+          <label for="vNote">ANYTHING WE SHOULD KNOW? (OPTIONAL)</label><textarea id="vNote" maxlength="600"></textarea>
+          <label class="adult"><input type="checkbox" id="vOwn"> This is my video, I'm 18 or older, and I agree it can be used in <i>For You</i>.</label>
+          <button type="submit" id="vSubmit">Send my video</button>
+          <div class="cerr" id="vErr"></div>
+        </form>
+        <div class="cdone" id="vDone">Re has seen your video. If we'd like to use it, we'll email you.</div>
+        <p class="muted" style="font-size:13px;margin-top:10px">If we'd like to use your video, we'll email you for the original file, since videos saved from social apps carry a watermark. We'll check that the post is yours before using anything.</p>
+        </details>
+      </div>
+  </article>
+
   <article class="post" data-post="p11">
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
-    <div class="num"><span class="rec"></span>11 · KATEY'S PEOPLE</div>
+    <div class="num"><span class="rec"></span>12 · KATEY'S PEOPLE</div>
     <h2>The people who mean the most to her.</h2>
     <div class="people">
       <div class="person"><div class="face">S</div><b>Shannon</b><span>Her best friend since forever. The one person who might still get through.</span></div>
@@ -1245,7 +1304,7 @@
 
   <article class="post" data-post="p12">
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
-    <div class="num"><span class="rec"></span>12 · THE FOLLOWERS</div>
+    <div class="num"><span class="rec"></span>13 · THE FOLLOWERS</div>
     <h2>The most devoted.</h2>
     <p>Invited into The Reach by the leaders who influenced them most.</p>
     <div class="people">
@@ -1257,6 +1316,7 @@
       <div class="person"><div class="face">DS</div><b>@dale.sparrow</b></div>
       <div class="person"><div class="face">SW</div><b>@stillwater_11</b></div>
     </div>
+    <div class="yourpath"><b>YOUR PATH</b><span>Your name could be on the Followers Wall. <a href="#committed">See who's there now →</a></span></div>
     <button type="button" class="sign" data-sign="11" aria-label="A sign of Re">✦</button>
     <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
     <div class="comments">
@@ -1266,7 +1326,7 @@
 
   <article class="post" data-post="p13">
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
-    <div class="num"><span class="rec"></span>13 · WHY NOW?</div>
+    <div class="num"><span class="rec"></span>14 · WHY NOW?</div>
     <p>We let an algorithm decide what we see, who we trust, and who we follow.</p>
     <p>Influencers have become the new cult leaders.</p>
     <p>For You asks what's really choosing what we see.</p>
@@ -1275,10 +1335,9 @@
     <div class="comments"></div>
   </article>
 
-
   <article class="post" data-post="p14">
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
-    <div class="num"><span class="rec"></span>14 · THE AUDIENCE</div>
+    <div class="num"><span class="rec"></span>15 · THE AUDIENCE</div>
     <p>Horror fans first, but this one reaches further.</p>
     <p>Anyone who scrolls, at any age: teens who grew up online, and the adults who followed them there.</p>
     <p>For You is a horror story for everyone who ever trusted their feed.</p>
@@ -1290,7 +1349,7 @@
   <!-- 15 OFFERINGS -->
   <article class="post" data-post="p15" id="offerings">
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
-    <div class="num"><span class="rec"></span>15 · OFFERINGS</div>
+    <div class="num"><span class="rec"></span>16 · OFFERINGS</div>
     <h2>Every crossing has a fare.</h2>
     <p>Your support funds post-production: the score, the sound, and the festival journey.</p>
     <a class="btn" href="https://buy.stripe.com/aFaaEX5MO8od6ji9AUeZ201" target="_blank" rel="noopener">Make an offering</a>
@@ -1315,17 +1374,21 @@
 
 
   <!-- JOIN THE CREDITS (producer levels, at the bottom) -->
-  <article class="post creditdrop" id="credits">
-    <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div><div class="pin">JOIN THE CREDITS</div></div>
-    <h2>Put your name on the film.</h2>
-    <p class="muted">For the most devoted. Every contribution goes straight into making <i>For You</i>.</p>
-    <div class="tiers">
+  <article class="post creditdrop quiet" id="credits">
+    <details class="formfold" id="creditsFold">
+      <summary>Want your name in the credits?</summary>
+      <div class="cf-in">
+        <h2>Put your name on the film.</h2>
+        <p class="muted">For the most devoted. Every contribution goes straight into making <i>For You</i>.</p>
+        <div class="tiers">
       <div class="tier"><div class="tp">$25</div><div class="tn">Special Thanks</div><div class="td">Your name in the Special Thanks of the film's credits.</div><a href="https://buy.stripe.com/4gM00j2AC7k93763cweZ206" target="_blank" rel="noopener">Get Special Thanks</a></div>
       <div class="tier"><div class="tp">$500</div><div class="tn">Associate Producer</div><div class="td">Credited on screen as Associate Producer. Your credit is submitted to IMDb.</div><a href="https://buy.stripe.com/28EcN5dfgcEt2329AUeZ203" target="_blank" rel="noopener">Become an Associate Producer</a></div>
       <div class="tier"><div class="tp">$1,500</div><div class="tn">Co-Producer</div><div class="td">Credited on screen as Co-Producer. Your credit is submitted to IMDb.</div><a href="https://buy.stripe.com/eVq28r2ACcEt3763cweZ204" target="_blank" rel="noopener">Become a Co-Producer</a></div>
       <div class="tier top"><div class="tp">$2,500</div><div class="tn">Executive Producer</div><div class="td">Credited on screen as Executive Producer. Your credit is submitted to IMDb.</div><a href="https://buy.stripe.com/6oU3cv2AC5c12325kEeZ205" target="_blank" rel="noopener">Become an Executive Producer</a></div>
     </div>
-    <p class="finep">Secure checkout by Stripe. You'll enter the name you want in the credits at checkout. Contributions support the production and are not an investment: they include no ownership or share of profits. IMDb decides what it lists; we submit every producer credit.</p>
+        <p class="finep">Secure checkout by Stripe. You'll enter the name you want in the credits at checkout. Contributions support the production and are not an investment: they include no ownership or share of profits. IMDb decides what it lists; we submit every producer credit.</p>
+      </div>
+    </details>
   </article>
 
   <!-- THE DOOR -->
@@ -1333,7 +1396,8 @@
     <a href="https://rethecreator.com" id="doorLink"><img src="ResDoor.png" alt="The door"></a>
     <p class="openmsg">YOUR CROSSING AWAITS</p>
     <p class="lockmsg">ONLY THE COMMITTED MAY CROSS</p>
-    <p class="locksub">Reach Committed to unlock. What waits on the other side is for the Committed alone.</p>
+    <p class="locksub">Re does not show his face to just anyone. Only the Committed have earned the right to see him.</p>
+    <p class="locksub">Reach Committed to unlock. Behind the door: who Re really is, where he came from, and everything the film can't tell you.</p>
   </section>
 
   <footer>© 2026 FOR YOU · @foryouthefilm · <a href="https://www.facebook.com/profile.php?id=61596806482507" target="_blank" rel="noopener">Facebook</a></footer>
@@ -1345,6 +1409,7 @@
     <div class="re"><img src="re.png" alt=""></div>
     <div class="words">
       <div class="see">I see you.</div>
+      <div class="fewseen">Few have seen this face. Now you have.</div>
       <img class="badge" src="badge-committed.png" alt="Committed">
       <div class="cross">YOUR CROSSING AWAITS</div>
       <button class="cont" id="revealGo">GO TO THE DOOR</button>
@@ -1435,7 +1500,8 @@
   var LAUNCH = nyY < 2027;
   var MONTH_START = LAUNCH ? '2026-11-01T05:00:00.000Z' : new Date(Date.UTC(nyY, nyM - 1, 1, 5)).toISOString();
   var ROUND_END = LAUNCH ? Date.UTC(2026, 11, 31) : Date.UTC(nyY, nyM, 0);
-  var MONTH_LABEL = LAUNCH ? 'LAUNCH ROUND' : new Date(Date.UTC(nyY, nyM - 1, 15)).toLocaleString('en-US', { month: 'long', timeZone: 'UTC' }).toUpperCase() + "'S ROUND";
+  var ROUND_NUM = LAUNCH ? 1 : (nyY - 2027) * 12 + nyM + 1;
+  var MONTH_LABEL = LAUNCH ? 'ROUND 1 · THE FARE' : 'ROUND ' + ROUND_NUM + ' · ' + new Date(Date.UTC(nyY, nyM - 1, 15)).toLocaleString('en-US', { month: 'long', timeZone: 'UTC' }).toUpperCase();
   var DAYS_LEFT = Math.round((ROUND_END - Date.UTC(nyY, nyM - 1, nyD)) / 86400000) + 1;
   var db = window.supabase ? window.supabase.createClient(SB_URL, SB_KEY) : null;
   // Grand prize: all-time, Nov 1 2026 through 11:59 PM ET March 1 2027
@@ -1536,7 +1602,7 @@
     sundaysongbird: 'Listen to my flock sing. Re heard every voice.',
     dragonprincess: 'My court rises. Bow, everyone else.'
   };
-  var RE_WEEKLY = ['I see you. I have always seen you.', 'You keep coming back. Good.', 'Some of you are closer than you think.', 'Everyone you bring to me brings you closer.', 'The door is patient. I am not.', 'Your leaders speak for me. Listen to them.', 'Every crossing has a fare. Remember yours.', 'Someone you love is about to be chosen.', 'Do not look away. It is closer when you do.', 'The Committed will hear my voice first.', 'You were chosen for a reason. Soon you will know it.', 'I keep one hour each night. Find it.'];
+  var RE_WEEKLY = ['I see you. I have always seen you.', 'You keep coming back. Good.', 'Some of you are closer than you think.', 'Everyone you bring to me brings you closer.', 'The door is patient. I am not.', 'Your leaders speak for me. Listen to them.', 'Every crossing has a fare. Remember yours.', 'Someone you love is about to be chosen.', 'Do not look away. It is closer when you do.', 'The Committed will hear my voice first.', 'You were chosen for a reason. Soon you will know it.', 'I keep one hour each night. Find it.', 'Not everyone gets to see me. Will you?', 'I show my face only to those who earn it.'];
   var RANKS = [
     { name: 'FOLLOWER', pts: 0, friends: 0, img: 'badge-follower.png' },
     { name: 'PROMOTER', pts: 10, friends: 0, img: 'badge-promoter.png' },
@@ -1696,6 +1762,9 @@
     card.classList.add('show'); climbC.classList.add('show'); side.classList.add('show');
     card.classList.toggle('gold', r.name === 'COMMITTED');
     drawLeaderWord(); drawReturn(); drawStreak(); drawSigns();
+    var pl = document.querySelector('[data-path="leader"] span'), pr = document.querySelector('[data-path="rank"] span');
+    if (pl && L) pl.textContent = 'You chose ' + L.handle + '. Every friend you bring through your link grows the flock, and brings you both closer to Re.';
+    if (pr) pr.textContent = "You're a " + r.name.charAt(0) + r.name.slice(1).toLowerCase() + ' in The Reach. ' + (r.name === 'COMMITTED' ? 'The door is open. Learn who Re really is.' : 'Climb higher, and you\'re rewarded.');
     $('reachBadge').src = r.img; $('sideRankImg').src = r.img;
     $('reachRank').textContent = r.name; $('sideRankName').textContent = r.name;
     $('reachHandle').textContent = '@' + me.handle; $('sideHandle').textContent = '@' + me.handle;
@@ -1905,12 +1974,18 @@
   function buildShareGrid(el) {
     if (!el || !me) return;
     var u = encodeURIComponent(inviteUrl()), t = encodeURIComponent(SHARE_TEXT);
-    var h = ['Instagram', 'TikTok', 'Snapchat'].map(function (n) { return '<button type="button" class="pic" data-pic="' + n + '">' + n + '<small>CARD</small></button>'; }).join('');
-    h += PLATFORMS.map(function (p) {
-      var href = p[1](u, t), ext = /^https/.test(href);
-      return '<a href="' + href + '"' + (ext ? ' target="_blank" rel="noopener"' : '') + '>' + p[0] + '</a>';
-    }).join('');
+    function pic(n) { return '<button type="button" class="pic" data-pic="' + n + '">' + n + '<small>CARD</small></button>'; }
+    function lnk(p) { var href = p[1](u, t), ext = /^https/.test(href); return '<a href="' + href + '"' + (ext ? ' target="_blank" rel="noopener"' : '') + '>' + p[0] + '</a>'; }
+    var byName = {}; PLATFORMS.forEach(function (p) { byName[p[0]] = p; });
+    var first = ['Facebook', 'Text', 'WhatsApp', 'Messenger'];
+    var h = pic('Instagram') + pic('TikTok') + first.map(function (n) { return lnk(byName[n]); }).join('') + pic('Snapchat') +
+      PLATFORMS.filter(function (p) { return first.indexOf(p[0]) < 0; }).map(lnk).join('');
     el.innerHTML = h;
+    el.classList.add('clamped');
+    var mb = el.nextElementSibling && el.nextElementSibling.classList.contains('moreapps') ? el.nextElementSibling : null;
+    if (!mb) { mb = document.createElement('button'); mb.type = 'button'; mb.className = 'moreapps'; el.parentNode.insertBefore(mb, el.nextSibling); }
+    mb.textContent = 'More apps ▾'; mb.style.display = '';
+    mb.onclick = function () { el.classList.remove('clamped'); mb.style.display = 'none'; };
     el.querySelectorAll('[data-pic]').forEach(function (b) {
       b.onclick = function () { shareCard(PIC_TIPS[b.getAttribute('data-pic')]); };
     });
@@ -2359,6 +2434,26 @@
     });
   }
 
+  // ---------- "See more" on long posts: show two paragraphs, fold the rest ----------
+  document.querySelectorAll('main .post[data-post]').forEach(function (post) {
+    var ps = Array.prototype.filter.call(post.children, function (c) { return c.tagName === 'P' && !c.classList.contains('fc-by') && !c.classList.contains('rewarded'); });
+    if (ps.length < 3) return;
+    ps.slice(2).forEach(function (p) { p.classList.add('seemore-p'); });
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'seemore-btn'; b.textContent = 'See more ▾';
+    b.onclick = function () { post.classList.add('expanded'); };
+    ps[1].parentNode.insertBefore(b, ps[1].nextSibling);
+  });
+  $('confirmNudge').addEventListener('click', function () { $('returnFold').open = true; });
+
+  // count how many people open the credits fold (no personal info, just a tap count)
+  document.querySelectorAll('a[href="#credits"]').forEach(function (l) { l.addEventListener('click', function () { $('creditsFold').open = true; }); });
+  var creditsCounted = false;
+  $('creditsFold').addEventListener('toggle', function () {
+    if (!this.open || creditsCounted || !db) return;
+    creditsCounted = true;
+    db.from('clicks').insert({ what: 'credits' }).then(function () {});
+  });
+
   // ---------- countdowns, Re's word, Re's hour, leaks ----------
   document.querySelectorAll('.ckRound').forEach(function (e) { e.textContent = Math.max(DAYS_LEFT, 0); });
   document.querySelectorAll('.ckGrand').forEach(function (e) { if (GRAND_OPEN) e.textContent = GRAND_DAYS; else e.parentNode.style.display = 'none'; });
@@ -2393,6 +2488,8 @@
 
   // ---------- this month's reward ----------
   $('monthName').textContent = MONTH_LABEL + (LAUNCH ? ' · ENDS DEC 31' : '');
+  $('tkRound').textContent = MONTH_LABEL;
+  if (!LAUNCH) $('mIntro').innerHTML = '<b>Round ' + ROUND_NUM + '.</b> Bring the most friends this month and the collector\'s token is yours. A new round begins every month.';
   $('monthEnds').textContent = DAYS_LEFT <= 1 ? 'Last day to win' : DAYS_LEFT + ' days left to win';
   function loadMonth() {
     if (!db) return;
