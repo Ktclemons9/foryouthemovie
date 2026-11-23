@@ -1802,7 +1802,9 @@
     var wc = WEEK_COUNTS || {};
     var others = keys.filter(function (x) { return x !== k; }).sort(function (a, b) { return (wc[b] || 0) - (wc[a] || 0); });
     var rival = (wc[others[0]] || 0) > 0 ? others[0] : others[dn % others.length];
-    var pool = DAILY_LEADER[k], line = pool[Math.floor(dn / keys.length) % pool.length].replace(/\{rival\}/g, LEADERS[rival].handle);
+    var pool = DAILY_LEADER[k];
+    if (!((wc[rival] || 0) > (wc[k] || 0))) pool = pool.filter(function (t) { return t.indexOf('{rival}') < 0; });
+    var line = pool[Math.floor(dn / keys.length) % pool.length].replace(/\{rival\}/g, LEADERS[rival].handle);
     $('dlAv').innerHTML = '<img src="' + k + '.png" alt="" onerror="this.parentNode.textContent=\'' + L.init + '\'">';
     $('dlWho').innerHTML = L.handle + '<small>' + L.role + '</small>';
     $('dlLine').textContent = '"' + line + '"';
@@ -1813,7 +1815,7 @@
     var cta = $('dlCta');
     if (me && me.leader === k) cta.textContent = 'Your leader is calling. Share your link';
     else if (me) cta.textContent = 'Defend ' + (LEADERS[me.leader] ? LEADERS[me.leader].handle : 'your leader') + '. Share your link';
-    else cta.textContent = 'Join ' + L.handle + "'s flock";
+    else cta.textContent = 'Choose your leader';
     cta.onclick = function () {
       if (me) { var c = $('climbCard'); if (c) c.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
       else { var b = $('claimBtn'); if (b) b.click(); }
@@ -2035,7 +2037,7 @@
     var others = Object.keys(LEADERS).filter(function (k) { return k !== me.leader; });
     var wc = WEEK_COUNTS || {}, mine = wc[me.leader] || 0;
     var order = Object.keys(LEADERS).sort(function (a, b) { return (wc[b] || 0) - (wc[a] || 0); });
-    var ahead = WEEK_COUNTS && order[0] === me.leader && mine > 0;
+    var ahead = WEEK_COUNTS && order[0] === me.leader && mine > (wc[order[1]] || 0);
     var rival;
     if (ahead) rival = order[1];
     else {
@@ -2043,6 +2045,8 @@
       rival = above.length ? above[above.length - 1] : others[weekNum() % others.length];
     }
     var lines = ahead ? set.ahead : set.behind;
+    if (!ahead && !(wc[rival] > mine)) lines = (DAILY_LEADER[me.leader] || []).filter(function (t) { return t.indexOf('{rival}') < 0; });
+    if (!lines.length) { el.classList.remove('show'); return; }
     var line = lines[weekNum() % lines.length].replace(/\{rival\}/g, LEADERS[rival].handle);
     el.innerHTML = '<img src="' + me.leader + '.png" alt="" onerror="this.remove()"><div><small>THIS WEEK FROM ' + L.handle.toUpperCase() + '</small><i>"' + line + '"</i></div>';
     el.classList.add('show');
@@ -2261,7 +2265,7 @@
     return '<div class="ph"><img src="' + key + '.png" alt="" onerror="this.parentNode.textContent=\'' + init + '\'"></div>';
   }
   var html = '';
-  Object.keys(LEADERS).forEach(function (k) {
+  Object.keys(LEADERS).map(function (k) { return [Math.random(), k]; }).sort(function (a, b) { return a[0] - b[0]; }).map(function (x) { return x[1]; }).forEach(function (k) {
     var L = LEADERS[k];
     html += '<button class="lcard" data-leader="' + k + '">' + photo(k, L.init) + '<b>' + L.handle + '</b><span>' + L.role + '<br>"' + L.quote + '"</span>' + (L.promise ? '<em class="lpromise">' + L.promise + '</em>' : '') + '</button>';
   });
@@ -2569,6 +2573,8 @@
     WEEK_COUNTS = wk; drawLeaderWord(); drawDailyLeader();
     var best = Object.keys(wk).sort(function (a, b) { return wk[b] - wk[a]; })[0];
     var el = $('flockWar');
+    var tiedTop = Object.keys(wk).filter(function (k) { return wk[k] === wk[best]; });
+    if (best && wk[best] && tiedTop.length > 1) { el.innerHTML = '<div class="fw-h">FLOCK WARS</div>' + tiedTop.map(function (k) { return LEADERS[k].handle; }).join(' and ').replace(/ and (?=[^ ]+ and )/g, ', ') + ' are tied for the lead with ' + wk[best] + ' each. One more friend breaks the tie. Bring yours.'; return; }
     if (!best || !wk[best]) { el.innerHTML = '<div class="fw-h">FLOCK WARS</div>No flock has pulled ahead yet. Re promised the biggest flock something none of the others will get. Bring a friend and put your leader on top.'; return; }
     var L = LEADERS[best];
     el.innerHTML = '<div class="fw-h">FLOCK WARS · THE LEADING FLOCK</div><div class="fw-row"><img src="' + best + '.png" alt="" onerror="this.remove()"><div><b>' + L.handle + '</b> · ' + wk[best] + ' brought in so far<br><i class="quote">"' + SHOUTS[best] + '"</i><br><small class="muted">Re promised the biggest flock something none of the others will get.</small></div></div>';
