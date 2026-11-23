@@ -678,6 +678,114 @@
   .dl-row.me span{color:var(--gold)}
   .dl-promise{font-size:14px;color:var(--muted)}
   .dl-cta{background:var(--gold);color:#1a1206;border:none;border-radius:999px;padding:10px 20px;font-family:inherit;font-size:15px;font-weight:500;cursor:pointer;margin-top:4px}
+  .songvid{max-width:420px;margin:8px auto 10px}
+  .songvid video{width:100%;display:block;border-radius:10px;background:#000}
+  .board li.dv-flock{display:block;grid-template-columns:none;}
+  .dv-flock{list-style:none;margin:10px 0;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:#121318}
+  .dv-fh{display:flex;align-items:center;gap:8px;font-size:13px;letter-spacing:.06em;color:var(--gold);margin-bottom:6px}
+  .dv-fh img{width:26px;height:26px;border-radius:50%;object-fit:cover}
+  .dv-row{display:grid;grid-template-columns:22px 1fr auto;gap:8px;font-size:14px;padding:3px 0}
+  .dv-row.me{color:var(--gold)}
+  .dv-empty{font-size:14px;padding:2px 0}
+  .dv-row .cnt{color:var(--muted)}
+  .fc-btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+  @media (max-width:560px){.fc-btns{justify-content:center}}
+  .fc-join{font-size:14px;font-weight:500;color:#1a1206;background:var(--gold);text-decoration:none;border-radius:999px;padding:6px 16px;display:inline-block}
+  .bigprize{max-width:520px;margin:6px auto 12px;background:rgba(0,0,0,.35);border:2px solid var(--gold);border-radius:12px;padding:12px 16px}
+  .bigprize .bp-h{font-size:15px;letter-spacing:.14em;color:var(--gold);font-weight:500;margin-bottom:4px}
+  .bigprize p{margin:0!important;color:#efe7d6!important;font-size:16px;line-height:1.45}
+  .bigprize b{color:var(--gold);font-weight:500}
+  .quicksteps{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 14px;margin:0 auto 14px;font-size:14px;color:#e4dccb}
+  .quicksteps span{display:flex;align-items:center;gap:6px}
+  .quicksteps b{width:22px;height:22px;border-radius:50%;background:var(--gold);color:#1a1206;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:600}
+  .chosen .ct-tease{margin-top:12px}
+  .bigprize .bp-h{text-align:center}
+  .bp-tier{display:flex;gap:12px;align-items:center;text-align:left;padding:8px 0;border-top:1px solid rgba(232,176,74,.25)}
+  .bp-tier:first-of-type{border-top:none}
+  .bp-ic{flex:none;width:40px;height:40px;font-size:28px;line-height:40px;text-align:center;border-radius:50%;object-fit:cover}
+  .bp-tier span:not(.bp-ic){display:block;font-size:14px;color:#d9d0bd;line-height:1.4}
+  .bp-t{display:block;color:var(--gold)!important;font-size:16px;font-weight:500;line-height:1.3}
+  .bp-tier.top .bp-t{font-size:17px}
+  .chosen .ct-sub{font-size:16px;color:#d9d0bd;margin:-4px 0 10px}
+  .bp-min{display:block;font-style:normal;font-size:13px;color:#b9b09c;margin-top:2px}
+  .twoscores{font-size:13px;color:#b9b2a3;margin:-6px auto 14px!important;max-width:420px}
+  details.prizefold>summary{list-style:none;cursor:pointer}
+  details.prizefold>summary::-webkit-details-marker{display:none}
+  .pf-bar{display:block;max-width:360px;margin:4px auto 0;padding:10px 16px;border-radius:999px;background:var(--gold);color:#1a1206;font-weight:500;letter-spacing:.08em;font-size:15px}
+  .pf-bar::after{content:' ▾'}
+  details.prizefold[open] .pf-bar{background:transparent;color:var(--gold);border:1px solid rgba(232,176,74,.5);margin-bottom:14px}
+  details.prizefold[open] .pf-bar::after{content:' ▴'}
+  .statuslink{display:inline-block;margin-top:10px;font-size:14px;font-weight:500;color:var(--gold);text-decoration:none;border:1px solid rgba(232,176,74,.5);border-radius:999px;padding:6px 14px}
+  .statuslink:hover{background:rgba(232,176,74,.12)}
+  .chosen .claim{display:block;width:100%;max-width:360px;margin:10px auto 0;padding:10px 16px;font-size:15px}
+  .chosen .pf-bar{background:transparent;color:var(--gold);border:1px solid rgba(232,176,74,.6)}
+  section.profile{position:relative}
+  section.profile .statuslink{position:absolute;top:16px;right:16px;margin-top:0;font-size:13px;padding:6px 12px}
+  .lpromise{display:block;margin-top:6px;font-size:12px;color:var(--gold);font-style:italic;line-height:1.35}
+  .seenline{font-size:13px;color:var(--gold);font-style:italic;margin-top:2px}
+  .seenwhy{text-align:center;color:var(--gold);font-style:italic;margin:0 auto 12px;font-size:15px}
+  .duo{display:grid;grid-template-columns:1fr;gap:12px;margin:14px 0 12px;text-align:left}
+  .duo-col{background:rgba(0,0,0,.32);border:1px solid rgba(232,176,74,.45);border-radius:12px;padding:14px;display:flex;flex-direction:column}
+  .duo-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px;font-size:11px;letter-spacing:.12em;color:var(--gold);border-bottom:1px solid rgba(232,176,74,.25);padding-bottom:8px;margin-bottom:10px}
+  .duo-h span{letter-spacing:.03em;color:#d9d0bd;white-space:nowrap;font-size:12px}
+  .chosen .duo-t{font-size:23px;line-height:1.2;margin:0 0 10px;font-weight:400;letter-spacing:0}
+  .duo .bp-tier{border-top:none;padding:0 0 10px}
+  .duo-board{margin:0;padding:0}
+  .duo-board li.dv-flock{margin:6px 0;padding:8px 10px}
+  .duo-intro{font-size:13px;color:#cfc6b4;margin:0 0 8px;line-height:1.45}
+  .duo .mbar{height:10px;border-radius:99px;background:#26272e;margin:4px 0 6px;overflow:hidden}
+  .duo .mbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#6b2d6e,#d6407a,#ef7b3a,#e8b04a);transition:width .8s}
+  .duo .mline{font-size:13px;color:#cfc6b4}
+  .duo-more{margin-top:auto;align-self:flex-start;font-size:13px;color:var(--gold);text-decoration:none;border:1px solid rgba(232,176,74,.45);border-radius:999px;padding:6px 12px}
+  .duo .duo-more{margin-top:12px}
+  .badgeline{max-width:620px;margin:0 auto 14px;background:rgba(0,0,0,.25);border:1px solid rgba(232,176,74,.3);border-radius:12px;padding:6px 14px}
+  .badgeline .bp-tier{border-top:none}
+  .chosen .claim{max-width:440px}
+  .chosen .claim.alt{margin-top:10px;font-size:14px;line-height:1.35;padding:10px 18px}
+  @media (max-width:640px){.duo{grid-template-columns:1fr}}
+  .flock2{margin:14px 0 4px}
+  .duo-fold{margin-top:12px}
+  .duo-fold .prizes{grid-template-columns:1fr 1fr}
+  @media (max-width:520px){.duo-fold .prizes{grid-template-columns:1fr}}
+  .dl-box{margin:16px 0 6px;padding:14px;border:1px solid rgba(232,176,74,.45);border-radius:12px;background:rgba(0,0,0,.18)}
+  .dl-box .post-head{margin-bottom:8px}
+  .dl-box .dl-line{margin:6px 0 0;font-weight:400}
+  .chosen{background:var(--panel);border-color:rgba(232,176,74,.55)}
+  .chosen .duo-col{background:transparent;border-color:var(--line)}
+  .chosen .badgeline{background:transparent;border-color:var(--line)}
+  .chosen .duo-t{margin:0 0 10px}
+  .chosen .duo-h{border-bottom:none;border-top:1px solid rgba(232,176,74,.3);padding:10px 0 0;margin-bottom:12px}
+  .fc-link{border-color:var(--gold)}
+  details.golive>summary{list-style:none;cursor:pointer}
+  details.golive>summary::-webkit-details-marker{display:none}
+  .gl-box{display:block;margin:-24px -22px 0;padding:26px 20px 22px;border-radius:14px 14px 0 0;text-align:center;
+    background:linear-gradient(120deg,#6b2d6e,#d6407a,#ef7b3a,#e8b04a,#d6407a,#6b2d6e);background-size:300% 300%;animation:glshift 8s ease infinite}
+  details.golive:not([open]) .gl-box{border-radius:14px;margin-bottom:-24px}
+  @keyframes glshift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+  .gl-top{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.2em;color:#fff;background:rgba(0,0,0,.35);padding:5px 12px;border-radius:999px}
+  .gl-dot{width:8px;height:8px;border-radius:50%;background:#ff3b3b;box-shadow:0 0 8px #ff3b3b;animation:glblink 1.2s infinite}
+  @keyframes glblink{50%{opacity:.25}}
+  .chosen .gl-h{color:#fff;font-size:clamp(28px,6vw,38px);margin:12px 0 4px;text-shadow:0 2px 14px rgba(0,0,0,.35)}
+  .gl-sub{color:#fff5e6;font-size:16px;margin-bottom:16px}
+  .gl-btn{position:relative;display:inline-flex;align-items:center;gap:10px;background:#ff2d55;color:#fff;font-weight:600;letter-spacing:.14em;font-size:20px;padding:14px 34px;border-radius:999px;box-shadow:0 6px 24px rgba(0,0,0,.35)}
+  .gl-btn::before{content:'';position:absolute;inset:-6px;border-radius:999px;border:3px solid rgba(255,255,255,.85);animation:glring 1.6s ease-out infinite}
+  @keyframes glring{0%{transform:scale(.92);opacity:1}100%{transform:scale(1.18);opacity:0}}
+  .gl-bdot{width:12px;height:12px;border-radius:50%;background:#fff}
+  .gl-hint{margin-top:12px;font-size:13px;color:#fff;letter-spacing:.08em;opacity:.9}
+  .golive .gl-on{display:none}
+  details.golive[open] .gl-on{display:inline}
+  details.golive[open] .gl-off{display:none}
+  details.golive[open] .gl-btn{background:#1a1206;color:#ff3b5c}
+  details.golive[open] .gl-btn::before{animation:none;opacity:0}
+  details.golive[open] .gl-bdot{background:#ff3b3b;animation:glblink 1.2s infinite}
+  details.golive[open] .gl-box{margin-bottom:16px}
+  details.golive .ct-top{margin-top:4px}
+  @media (prefers-reduced-motion:reduce){.gl-box,.gl-btn::before,.gl-dot{animation:none}}
+  .duo-solo{margin-top:0}
+  .board li.dv-empty{border-bottom:none;font-size:14px;color:var(--muted);padding:4px 0}
+  .gl-invite{display:inline-block;margin:12px 0 0;background:rgba(0,0,0,.4);color:#fff;font-size:15px;font-weight:500;padding:6px 14px;border-radius:10px}
+  .gl-play{display:none;margin:0 auto 16px;background:#ff2d55;color:#fff;border:none;border-radius:999px;font-family:inherit;font-weight:600;letter-spacing:.16em;font-size:18px;padding:12px 40px;cursor:pointer;box-shadow:0 6px 20px rgba(255,45,85,.35)}
+  details.golive[open] .gl-play{display:block}
 </style>
 </head>
 <body>
@@ -723,63 +831,36 @@
     <div><span id="viewers">2,214,907</span> watching</div>
   </div>
 
+  <section class="profile">
+    <div class="profile-top">
+      <div class="avatar"><img src="Seismic%20Crest%20For%20You_Back.png" alt="For You crest"></div>
+      <div>
+        <div class="pname">FOR YOU</div>
+        <div class="handle">@foryouthefilm</div>
+        <div class="stats"><span><b>18</b> posts</span><span><b id="fcount">1,000,000</b> followers</span><span><b>∞</b> committed</span></div>
+        <button class="follow" id="followBtn">Follow</button>
+        <a class="fbbtn" href="https://www.facebook.com/profile.php?id=61596806482507" target="_blank" rel="noopener" aria-label="For You on Facebook"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-7.5h2.5l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4H8v3h2.6V21h2.9z"/></svg>Facebook</a>
+        <a class="fbbtn igbtn" href="https://www.instagram.com/foryou_thefilm/" target="_blank" rel="noopener" aria-label="For You on Instagram"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/></svg>Instagram</a>
+        <a class="fbbtn ttbtn" href="https://www.tiktok.com/@foryou_thefilm" target="_blank" rel="noopener" aria-label="For You on TikTok"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.7a5.8 5.8 0 1 0 5 5.7V9.1a7.4 7.4 0 0 0 4.3 1.4V7.4a4.3 4.3 0 0 1-3.3-1.6z"/></svg>TikTok</a>
+      </div>
+    </div>
+    <a class="statuslink" href="#reachCard" data-status>Check your status →</a>
+    <p class="leavenote" id="leaveNote">Tap <b>Following</b> anytime to leave The Reach.</p>
+    <p class="bio">A screenlife horror feature. Who decides what shows up on your For You page?</p>
+    <p class="tagline">LIKE. FOLLOW. SHARE. COMMIT.</p>
+    <div class="how"><span><b>1</b>Follow</span><span><b>2</b>Choose your leader</span><span><b>3</b>Bring others</span><span><b>4</b>Reach Re</span></div>
+  </section>
+
   <section class="filmcard" id="filmCard">
     <div class="fc-text">
       <div class="fc-top"><span class="rec"></span>NOW FILMING</div>
       <h2><i>For You</i> is a feature film.</h2>
       <p>A screenlife horror film from an award-winning screenplay. Online sleuths try to rescue a lonely artist from a nightmare livestream, and uncover a digital cult that turns the promise of being seen into a trap.</p>
-      <p class="fc-game">The game below is your way into its world.</p>
-      <p class="fc-support">Playing is free, and it's the easiest way to support an independent film and the artists making it. Every friend you bring helps get <i>For You</i> seen.</p>
-      <a class="fc-link" href="#story">Read the story →</a>
+      <p class="fc-game">This site is your glimpse into its story. Share it with friends and win prizes, including a role in the film.</p>
+      <p class="fc-support">It's free, and every share helps an independent film get seen.</p>
+      <div class="fc-btns"><a class="fc-join" href="#play" data-play>Join the recruitment →</a><a class="fc-link" href="#story">Read the story →</a></div>
     </div>
     <img class="fc-laurel" src="RUNNERUP-FrightsCameraActionHorrorScreenplayContest-2026.png" alt="Runner-up, Best Screenplay, Frights! Camera! Action! 2026" onerror="this.remove()">
-  </section>
-
-  <section class="chosen" id="chosenBanner">
-    <div class="ct-top">A FREE GAME FROM THE UPCOMING HORROR FILM</div>
-    <h2>Join the cult from <i>For You</i>.</h2>
-    <div class="ct-how">Invite friends. Win prizes. Reach Re.</div>
-    <p class="ct-tease">Few have reached Re, the Creator. Those who do are never the same.</p>
-    <div class="tickers">
-      <a class="ticker" href="#grandSection"><span class="tk-l">GRAND PRIZE</span><span class="tk-d"><b class="ckGrand">--</b> days left</span><span class="tk-go">See prize →</span></a>
-      <a class="ticker" href="#monthly"><span class="tk-l" id="tkRound">ROUND 1 · THE FARE</span><span class="tk-d"><b class="ckRound">--</b> days left</span><span class="tk-go">Collector's token →</span></a>
-    </div>
-    <button class="claim" id="claimBtn">Play now. It's free.</button>
-    <div class="already"><span id="alreadyCount">1,000,000</span> have already followed</div>
-    <details class="howworks">
-      <summary>How it works</summary>
-      <div class="gsteps">
-      <div class="gs"><b>1</b><span><strong>Join free.</strong> Choose who you'll follow. Your leader will lead you to Re.</span></div>
-      <div class="gs"><b>2</b><span><strong>Get your link.</strong> Share it on Facebook, in a text, anywhere.</span></div>
-      <div class="gs"><b>3</b><span><strong>Climb.</strong> Every friend you bring and every day you check in brings you closer to Re.</span></div>
-    </div>
-      <div class="goalbox">
-      <div class="gb-h">THE GOAL: REACH RE</div>
-      <div class="ladder static">
-      <div class="lstep" data-rank="0"><img src="badge-follower.png" alt=""><b>Follower</b><span>Join · 1 devotion</span></div>
-      <div class="lstep" data-rank="1"><img src="badge-promoter.png" alt=""><b>Promoter</b><span>10 devotion</span></div>
-      <div class="lstep" data-rank="2"><img src="badge-seeker.png" alt=""><b>Seeker</b><span>20 devotion</span></div>
-      <div class="lstep" data-rank="3"><img src="badge-committed.png" alt=""><b>Committed</b><span>40 devotion</span></div>
-      <div class="lstep goal" data-rank="3"><img src="ResDoor.png" alt=""><b>Reach Re</b><span>Learn who Re is</span></div>
-    </div>
-      <p>Your badge changes as your <b>devotion</b> grows. Earn it by bringing friends in, checking in every day, and finding the signs Re hides in the feed. At Committed, the door opens. Only the Committed may cross, and on the other side they learn who Re really is: the story the film can't tell.</p>
-    </div>
-      <div class="reward">
-      <img src="prize-token.png" alt="" style="border-radius:50%;object-fit:cover" onerror="this.remove()">
-      <p><b>Every round:</b> most friends wins <b>the official For You collector's token</b>. The top 3 can have <b>their names in the film's end credits.</b></p>
-    </div>
-      <div class="clocks"><span><b class="ckRound">--</b> days left in Round 1: The Fare</span></div>
-      <p class="hw-more">#2 on March 1 becomes a leader in The Reach. Full details are in the reward rules below.</p>
-    </details>
-    <button type="button" class="backin" data-backin>Already playing? Get back in</button>
-  </section>
-
-  <section class="invite-banner" id="inviteBanner">
-    <div class="ib-top">YOU'VE BEEN CHOSEN</div>
-    <h2 id="inviteText">You've been invited to The Reach.</h2>
-    <p>Choose your leader. Take your name. Climb toward Re.</p>
-    <button id="acceptBtn">Accept the invitation</button>
-    <div><button type="button" class="backin" data-backin>Already playing? Get back in</button></div>
   </section>
 
   <section class="reach" id="reachCard">
@@ -790,6 +871,7 @@
       <img id="reachBadge" src="badge-follower.png" alt="Your rank">
       <div>
         <div class="rk" id="reachRank">FOLLOWER</div>
+        <div class="seenline" id="reachSeen"></div>
         <div class="hd" id="reachHandle"></div>
         <div class="ld" id="reachLeader"></div>
       </div>
@@ -823,7 +905,7 @@
         <div class="rb-h" style="margin-top:6px">CONFIRM YOUR EMAIL</div>
         <p id="rbEmailWhy">Confirm your email so you count as a real follower toward prizes, and so you can get back in from any device.</p>
         <div class="invite"><input id="rbEmailIn" type="email" placeholder="you@example.com" autocomplete="email"><button id="rbEmailBtn" type="button">Confirm my email</button></div>
-        <div class="emailnote">Your email is only used to send you a prize if you win, and to get you back into the game if you switch phones. We'll never sell it, share it, or send you ads.</div>
+        <div class="emailnote">Your email is only used to send you a prize if you win, and to get you back into the game if you switch phones. We'll never sell it, share it, or send you ads. We'll never contact you for anything except prizes, apart from the sign-in or confirmation links you ask for. We aren't soliciting or selling anything beyond what you see on this site.</div>
       </div>
       <div class="rb-ok" id="rbOk">✓ Your email is confirmed. You count toward prizes, and you can get back in from any device.</div>
       <div class="rb-msg" id="rbMsg"></div>
@@ -833,23 +915,84 @@
     <button class="seeagain" id="seeAgain">SEE RE AGAIN</button>
   </section>
 
-  <section class="profile">
-    <div class="profile-top">
-      <div class="avatar"><img src="Seismic%20Crest%20For%20You_Back.png" alt="For You crest"></div>
-      <div>
-        <div class="pname">FOR YOU</div>
-        <div class="handle">@foryouthefilm</div>
-        <div class="stats"><span><b>18</b> posts</span><span><b id="fcount">1,000,000</b> followers</span><span><b>∞</b> committed</span></div>
-        <button class="follow" id="followBtn">Follow</button>
-        <a class="fbbtn" href="https://www.facebook.com/profile.php?id=61596806482507" target="_blank" rel="noopener" aria-label="For You on Facebook"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-7.5h2.5l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4H8v3h2.6V21h2.9z"/></svg>Facebook</a>
-        <a class="fbbtn igbtn" href="https://www.instagram.com/foryou_thefilm/" target="_blank" rel="noopener" aria-label="For You on Instagram"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/></svg>Instagram</a>
-        <a class="fbbtn ttbtn" href="https://www.tiktok.com/@foryou_thefilm" target="_blank" rel="noopener" aria-label="For You on TikTok"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.7a5.8 5.8 0 1 0 5 5.7V9.1a7.4 7.4 0 0 0 4.3 1.4V7.4a4.3 4.3 0 0 1-3.3-1.6z"/></svg>TikTok</a>
+  <section class="chosen" id="chosenBanner">
+    <details class="golive" id="goLive">
+    <summary class="gl-box">
+      <div class="gl-top"><span class="gl-dot"></span>LIVE NOW · A FREE GAME FROM THE FILM</div>
+      <div class="gl-invite" id="inviteLine" style="display:none">You've been invited to The Reach.</div>
+      <h2 class="gl-h">The Reach is live. Come play.</h2>
+      <div class="gl-sub">Win a role in the film. Win the collector's token. It's free.</div>
+      <span class="gl-btn"><span class="gl-bdot"></span><span class="gl-off">GO LIVE</span><span class="gl-on">YOU'RE LIVE</span></span>
+      <div class="gl-hint"><span class="gl-off">Tap to open the game</span><span class="gl-on">Here's how to win ↓</span></div>
+    </summary>
+    <button type="button" class="gl-play" data-playnow>▶ PLAY</button>
+    <div class="duo">
+      <div class="duo-col">
+        <h2 class="duo-t">Win a role in a horror movie.</h2>
+        <div class="duo-h"><b>GRAND PRIZE OPPORTUNITY · ENDS MARCH 1</b><span><b class="ckGrand">--</b> days left</span></div>
+        <div class="bp-tier top"><span class="bp-ic">🎬</span><div><b class="bp-t">Biggest prize: a speaking role in <i>For You</i></b><span>The top recruiter in each leader's flock on March 1 gets a line in the film, the For You shirt and the collector's token. <em class="bp-min">It's a remote role: you film your lines yourself and send them in as a self-tape. At least 25 friends to claim.</em></span></div></div>
+        <ol class="board duo-board" id="grandBoard2"><li class="muted">Counting...</li></ol>
+      </div>
+      <div class="duo-col">
+        <h2 class="duo-t">Win the official For You collector's token.</h2>
+        <div class="duo-h"><b id="duoRound">ROUND 1 · THE FARE · ENDS DEC 31</b><span><b class="ckRound">--</b> days left to win</span></div>
+        <div class="bp-tier"><img class="bp-ic" src="prize-token.png" alt="" onerror="this.outerHTML='<span class=bp-ic>🪙</span>'"><div><b class="bp-t">Every month: the collector's token</b><span>Most friends each round wins it. The top 3 can get their names in the credits.</span></div></div>
+        <p class="duo-intro" id="mIntro2"><b>The first game.</b> Every crossing has a fare, and in the film, the fare is the token. Bring the most friends by December 31 and the token is yours. New rounds, with new rewards, begin every month after.</p>
+        <div class="mbar"><i id="monthBar2"></i></div>
+        <div class="mline" id="monthLine2">Counting this round's followers...</div>
+        <details class="seefold duo-fold"><summary>See the prizes and how to win</summary><div id="duoFoldBody"></div></details>
       </div>
     </div>
-    <p class="leavenote" id="leaveNote">Tap <b>Following</b> anytime to leave The Reach.</p>
-    <p class="bio">A screenlife horror feature. Who decides what shows up on your For You page?</p>
-    <p class="tagline">LIKE. FOLLOW. SHARE. COMMIT.</p>
-    <div class="how"><span><b>1</b>Follow</span><span><b>2</b>Choose your leader</span><span><b>3</b>Bring others</span><span><b>4</b>Reach Re</span></div>
+    <div class="duo duo-solo"><div class="duo-col">
+        <h2 class="duo-t">Earn rewards on your journey.</h2>
+        <div class="duo-h"><b>EVERY BADGE · NO DEADLINE</b><span>Win or not</span></div>
+        <div class="bp-tier"><img class="bp-ic" src="badge-promoter.png" alt="" onerror="this.outerHTML='<span class=bp-ic>🔓</span>'"><div><b class="bp-t">Every badge: a secret from the story</b><span>Even if you don't win, you're rewarded along the way. Promoter, Seeker and Committed each unlock a sealed secret from the story. At Committed, the door opens and you learn who Re really is.</span></div></div>
+      </div></div>
+    <div class="quicksteps"><span><b>1</b>Pick a leader</span><span><b>2</b>Share your link</span><span><b>3</b>Most friends wins</span></div>
+    <p class="twoscores">Prizes go to most friends. Check-ins and signs raise your badge.</p>
+    <button class="claim" id="claimBtn">Play the game</button>
+    <button class="claim alt" type="button" data-status>Already playing? Check your status or get back in.</button>
+    <div class="already" id="alreadyLine" style="display:none"><span id="alreadyCount"></span> people are playing</div>
+    <details class="howworks">
+      <summary>How it works</summary>
+      <p class="seenwhy">In The Reach, everyone wants the same thing: to be seen by Re.</p>
+      <div class="gsteps">
+      <div class="gs"><b>1</b><span><strong>Join free.</strong> Choose who you'll follow. Your leader will lead you to Re.</span></div>
+      <div class="gs"><b>2</b><span><strong>Get your link.</strong> Share it on Facebook, in a text, anywhere.</span></div>
+      <div class="gs"><b>3</b><span><strong>Climb.</strong> Every friend you bring and every day you check in brings you closer to Re.</span></div>
+    </div>
+      <div class="goalbox">
+      <div class="gb-h">THE GOAL: REACH RE</div>
+      <div class="ladder static">
+      <div class="lstep" data-rank="0"><img src="badge-follower.png" alt=""><b>Follower</b><span>Join · 1 devotion</span></div>
+      <div class="lstep" data-rank="1"><img src="badge-promoter.png" alt=""><b>Promoter</b><span>10 devotion</span></div>
+      <div class="lstep" data-rank="2"><img src="badge-seeker.png" alt=""><b>Seeker</b><span>20 devotion</span></div>
+      <div class="lstep" data-rank="3"><img src="badge-committed.png" alt=""><b>Committed</b><span>40 devotion</span></div>
+      <div class="lstep goal" data-rank="3"><img src="ResDoor.png" alt=""><b>Reach Re</b><span>Learn who Re is</span></div>
+    </div>
+      <p>Your badge changes as your <b>devotion</b> grows. Earn it by bringing friends in, checking in every day, and finding the signs Re hides in the feed. At Committed, the door opens. Only the Committed may cross, and on the other side they learn who Re really is: the story the film can't tell.</p>
+    </div>
+      <div class="reward">
+      <img src="prize-token.png" alt="" style="border-radius:50%;object-fit:cover" onerror="this.remove()">
+      <p><b>Every round:</b> most friends wins <b>the official For You collector's token</b>. The top 3 can have <b>their names in the film's end credits.</b></p>
+    </div>
+      <div class="clocks"><span><b class="ckRound">--</b> days left in Round 1: The Fare</span></div>
+      <p class="hw-more"><b>The Most Devoted:</b> on March 1, the top recruiter in each of the four flocks wins a speaking role in <i>For You</i>, the For You shirt, the collector's token and their name in the credits. Full details are in the reward rules below.</p>
+    </details>
+      </details>
+  </section>
+
+  <section class="invite-banner" id="inviteBanner">
+    <div class="ib-top">YOU'VE BEEN CHOSEN</div>
+    <h2 id="inviteText">You've been invited to The Reach.</h2>
+    <div class="bigprize"><div class="bp-h">PLAY TO WIN PRIZES</div>
+      <div class="bp-tier top"><span class="bp-ic">🎬</span><div><b class="bp-t">Biggest prize: a speaking role in <i>For You</i></b><span>The top recruiter in each leader's flock on March 1 gets a line in the film, the For You shirt and the collector's token. <em class="bp-min">It's a remote role: you film your lines yourself and send them in as a self-tape. At least 25 friends to claim.</em></span></div></div>
+      <div class="bp-tier"><img class="bp-ic" src="prize-token.png" alt="" onerror="this.outerHTML='<span class=bp-ic>🪙</span>'"><div><b class="bp-t">Every month: the collector's token</b><span>Most friends each round wins it. The top 3 can get their names in the credits.</span></div></div>
+      <div class="bp-tier"><img class="bp-ic" src="badge-promoter.png" alt="" onerror="this.outerHTML='<span class=bp-ic>🔓</span>'"><div><b class="bp-t">Every badge you earn: a reward</b><span>Even if you don't win, you're rewarded along the way. Promoter, Seeker and Committed each unlock a sealed secret from the story. At Committed, the door opens and you learn who Re really is.</span></div></div></div>
+    <div class="quicksteps"><span><b>1</b>Pick a leader</span><span><b>2</b>Share your link</span><span><b>3</b>Most friends wins</span></div>
+    <p class="twoscores">Prizes go to most friends. Check-ins and signs raise your badge.</p>
+    <button id="acceptBtn">Accept the invitation</button>
+    <div><button type="button" class="backin" data-backin>Already playing? Get back in</button></div>
   </section>
 
   <section class="reach" id="climbCard">
@@ -933,12 +1076,12 @@
         <li>Round 1, The Fare, runs from November 1 through 11:59 PM Eastern on December 31, 2026. Starting in January 2027, each calendar month is its own numbered round (Round 2 is January), ending at 11:59 PM Eastern on the last day of the month.</li>
         <li>Rewards are given only if at least 100 new people follow during the round. If the goal isn't met, the rewards roll over to the next round.</li>
         <li>Rankings count people who follow through your personal invite link during the round.</li>
-        <li>To be eligible, add your email when you choose your name, or later in Your Status. Your email is only used to contact winners and to help you get back into the game. We never sell it, share it, or send ads.</li>
+        <li>To be eligible, add your email when you choose your name, or later in Your Status. Your email is only used to contact winners and to help you get back into the game. We never sell it, share it, or send ads. We'll never contact you for anything except prizes, apart from the sign-in or confirmation links you ask for. We aren't soliciting or selling anything beyond what you see on this site.</li>
         <li>The #1 recruiter receives the official For You collector's token by mail. The top 3 may be named in the end credits of For You, under the name they choose. Being credited is optional.</li>
         <li>Ties go to whoever reached that number first.</li>
         <li>Open to US residents 18 and older. No purchase necessary. Following is free.</li>
         <li>Winners are contacted by email within 7 days of the round's end and have 14 days to reply, or the reward passes to the next person.</li>
-        <li><b>Grand prize:</b> the person with the most people who follow through their link from November 1, 2026 through 11:59 PM Eastern on March 1, 2027 wins a speaking role in <i>For You</i> (their own line), filmed on their own phone or computer, plus the full follower package by mail and their name in the credits. The winner signs a standard release before filming. Second place becomes a leader on this site, taking an open seat with their own flock; the production approves everything posted under their leader name. Ties go to whoever reached that number first.</li>
+        <li><b>Grand prize, The Most Devoted:</b> from November 1, 2026 through 11:59 PM Eastern on March 1, 2027, the player in each leader's flock with the most people who follow through their link wins a speaking role in <i>For You</i>, the For You shirt, the collector's token and their name in the credits. That's four winners, one per flock. Each speaking role is a single line of their own. To claim it, a winner needs at least 25 confirmed friends. The role is remote: the winner gets their lines and films them as a self-tape on their own phone or computer, and the winner signs a standard release before filming. Ties go to whoever reached that number first.</li>
         <li>Friends who join on or after November 19, 2026 count toward prizes once they confirm their email. Friends who joined before then count as they are. Your badge and devotion count every friend right away.</li>
         <li>Every winner is reviewed before prizes go out. Fake or duplicate accounts are removed and disqualified.</li>
       </ul>
@@ -958,9 +1101,9 @@
     <ol class="board" id="board"><li class="muted">Counting the committed...</li></ol>
     <details class="seefold"><summary>See the grand prize, Flock Wars and the Followers Wall</summary>
     <div class="grandboard" id="grandSection">
-      <div class="gp-h">THE GRAND PRIZE · ALL-TIME · CLOSES MARCH 1, 2027</div>
+      <div class="gp-h">THE MOST DEVOTED · ALL-TIME · CLOSES MARCH 1, 2027</div>
       <div class="gp-t">Be in the film.</div>
-      <p class="muted">This board never resets. Every friend you've brought since launch counts. #1 on March 1 wins a speaking role in <i>For You</i>, the full follower package, and their name in the credits. #2 becomes a leader in The Reach.</p>
+      <p class="muted">This board never resets. Every friend you've brought since launch counts. On March 1, the top recruiter in <b>each flock</b> wins a speaking role in <i>For You</i>, the For You shirt, the collector's token and their name in the credits. Four winners, one per leader. At least 25 confirmed friends to claim it.</p>
       <ol class="board" id="grandBoard"><li class="muted">Counting...</li></ol>
     </div>
     <div class="flockwar" id="flockWar"></div>
@@ -1021,15 +1164,6 @@
     <div class="num"><span class="rec"></span>A WORD FROM RE</div>
     <h2 id="reWeekText">I see you.</h2>
     <p class="muted" id="reWeekSub">A new word from Re appears every week.</p>
-  </article>
-
-  <article class="post dailylead" id="dailyLeader">
-    <div class="post-head"><div class="mini dl-av" id="dlAv"></div><div class="who" id="dlWho">LEADER<small>today</small></div><div class="pin">FLOCK WARS · TODAY</div></div>
-    <div class="num"><span class="rec"></span>A NEW LEADER SPEAKS EVERY DAY</div>
-    <h2 class="dl-line" id="dlLine"></h2>
-    <div class="dl-stand" id="dlStand"></div>
-    <p class="dl-promise">Every leader was promised something great for bringing Re followers. Only one flock gets there first.</p>
-    <button type="button" class="dl-cta" id="dlCta">Share your link</button>
   </article>
 
   <article class="post" data-post="p1">
@@ -1095,10 +1229,14 @@
       <div class="person"><div class="face" style="overflow:visible"><img src="gorillabob.png" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover" onerror="this.parentNode.textContent='GB'"></div><b>@gorillabob</b><span>A big-hearted home chef. <span class="quote">"Nobody eats alone in my kitchen."</span></span></div>
       <div class="person"><div class="face" style="overflow:visible"><img src="sundaysongbird.png" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover" onerror="this.parentNode.textContent='SS'"></div><b>@sundaysongbird</b><span>A singer whose followers know every word. <span class="quote">"Sing along with me."</span></span></div>
       <div class="person"><div class="face" style="overflow:visible"><img src="dragonprincess.png" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover" onerror="this.parentNode.textContent='DP'"></div><b>@dragonprincess</b><span>A British fantasy cosplayer. <span class="quote">"Bow before the flame."</span></span></div>
-      <div class="person"><div class="face">NN</div><b>@nightshiftnora</b></div>
-      <div class="person"><div class="face">CC</div><b>@coldcasecass</b></div>
-      <div class="person"><div class="face teal">RR</div><b>@reelwithrusty</b></div>
-      <div class="person"><div class="face">LS</div><b>@lacefrontsandy</b></div>
+    </div>
+    <div class="dailylead dl-box" id="dailyLeader">
+      <div class="post-head"><div class="mini dl-av" id="dlAv"></div><div class="who" id="dlWho">LEADER<small>today</small></div><div class="pin">FLOCK WARS · TODAY</div></div>
+      <div class="num"><span class="rec"></span>A NEW LEADER SPEAKS EVERY DAY</div>
+      <h3 class="dl-line" id="dlLine"></h3>
+      <div class="dl-stand" id="dlStand"></div>
+      <p class="dl-promise">Every leader was promised something great for bringing Re followers. Only one flock gets there first.</p>
+      <button type="button" class="dl-cta" id="dlCta">Share your link</button>
     </div>
     <div class="yourpath" data-path="leader"><b>YOUR PATH</b><span>Pick a leader and you join their flock. Every friend you bring through your link grows it, and brings you both closer to Re.</span></div>
     <button type="button" class="sign" data-sign="4" aria-label="A sign of Re">✦</button>
@@ -1113,8 +1251,8 @@
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
     <div class="num"><span class="rec"></span>5 · THE LORE</div>
     <h2>Re, the Creator.</h2>
-    <p>It was there before the internet. Before the pamphlets and the compounds. It stood behind the most famous cult leaders in history, and now it stands behind the people you follow.</p>
-    <p>It doesn't need to find you. Your feed brings you to it.</p>
+    <p>He was there before the internet. Before the pamphlets and the compounds. He stood behind the most famous cult leaders in history, and now he stands behind the people you follow.</p>
+    <p>He doesn't need to find you. Your feed brings you to him.</p>
     <p class="muted">He keeps an hour. Few have found it.</p>
     <div class="yourpath"><b>YOUR PATH</b><span>No one reaches Re alone. Your leader is the way in.</span></div>
     <button type="button" class="sign" data-sign="3" aria-label="A sign of Re">✦</button>
@@ -1129,6 +1267,7 @@
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
     <div class="num"><span class="rec"></span>6 · FOLLOW ME</div>
     <h2>Every follower knows the words.</h2>
+    <div class="media hide-if-missing songvid"><video src="thesongteaservideo.MP4" controls playsinline preload="metadata"></video></div>
     <audio id="rhymeAudio" controls src="rhyme.mp3" style="width:100%;margin:8px 0 4px"></audio>
     <div class="rhyme">
       <div class="verse">Knock, knock, knock, the door,<br>Come inside and stay.<br>Follow me, follow me, follow me, follow me,<br><span class="end">Everyone pays Re.</span></div>
@@ -1172,7 +1311,7 @@
     <div class="cast nobar" id="beFollower">
       <h3>Be a Follower.</h3>
       <p class="muted">The most committed followers are rewarded, and some will appear on screen. Everyone playing is already one of Re's followers. Now be one in the film. Appear in <i>For You</i> in the background as a member of The Reach, filmed from your own home on your own phone or computer, just like in the story.</p>
-      <div class="twoways"><div><b>Way 1: Be a Follower on screen.</b> Sign up below to be considered as one of Re's followers in the background. The production chooses who's cast.</div><div><b>Way 2: Win a speaking role.</b> The player who brings the most friends by March 1, 2027 wins a guaranteed speaking role, with their own line, plus the full follower package and their name in the credits. <a href="#committed">See the grand prize board</a>.</div></div>
+      <div class="twoways"><div><b>Way 1: Be a Follower on screen.</b> Sign up below to be considered as one of Re's followers in the background. The production chooses who's cast.</div><div><b>Way 2: Become your leader's most devoted.</b> Follow your flock. The top recruiter in each of the four flocks by March 1, 2027 wins a guaranteed speaking role, with their own line, filmed remotely as a self-tape, plus the shirt, the token and their name in the credits (25 confirmed friends to claim it). <a href="#committed">See the grand prize board</a>.</div></div>
       <details class="formfold">
         <summary>Sign up to be considered</summary>
       <form id="castForm" novalidate>
@@ -1451,7 +1590,7 @@
     <button class="closex" id="closeShare" aria-label="Close">×</button>
     <div class="sb-top">THE GAME STARTS NOW</div>
     <h3 id="shareHi">Welcome.</h3>
-    <p class="sub"><b>Every friend you bring joins your leader's flock. The bigger the flock, the closer you both come to Re, the Creator.</b> Most friends each round wins the collector's token, and the top 3 can have their names in the credits. Most friends by March 1, 2027 wins a speaking role in the film.</p>
+    <p class="sub"><b>Every friend you bring joins your leader's flock. The bigger the flock, the closer you both come to Re, the Creator.</b> Most friends each round wins the collector's token, and the top 3 can have their names in the credits. The top recruiter in each flock by March 1, 2027 wins a speaking role in the film.</p>
     <div class="sb-return" id="smReturn"></div>
     <div class="sb-btns">
       <a id="smFb" target="_blank" rel="noopener" class="sb-fb">Share on Facebook</a>
@@ -1474,7 +1613,7 @@
     <p class="sub"><b>No link?</b> If you added your email when you joined, type it here. We'll send you a one-tap sign-in link. No password.</p>
     <div class="invite"><input id="backEmail" type="email" placeholder="you@example.com" autocomplete="email"><button id="backSend" type="button">Send my link</button></div>
     <div class="rb-msg" id="backMsg"></div>
-    <div class="emailnote" style="margin-top:10px">We only use your email to get you back in and to contact prize winners. Never sold, never shared, no ads.</div>
+    <div class="emailnote" style="margin-top:10px">We only use your email to get you back in and to contact prize winners. Never sold, never shared, no ads. We'll never contact you for anything except prizes, apart from the sign-in or confirmation links you ask for. We aren't soliciting or selling anything beyond what you see on this site.</div>
   </div>
 </div>
 
@@ -1505,7 +1644,7 @@
       <div class="wlabel">YOUR NUMBER</div><input id="nameNum" inputmode="numeric" maxlength="3" placeholder="1-999">
       <div class="wlabel">YOUR EMAIL · OPTIONAL</div>
       <input id="rewardEmail" type="email" placeholder="you@example.com" autocomplete="email">
-      <div class="emailnote">We'll send a one-tap link to confirm it. A confirmed email lets you win prizes, lets the friend who invited you get credit, and gets you back in if you switch phones. We'll never sell it, share it, or send you ads. No password. Skip it if you like: you can add it later.</div>
+      <div class="emailnote">We'll send a one-tap link to confirm it. A confirmed email lets you win prizes, lets the friend who invited you get credit, and gets you back in if you switch phones. We'll never sell it, share it, or send you ads. We'll never contact you for anything except prizes, apart from the sign-in or confirmation links you ask for. We aren't soliciting or selling anything beyond what you see on this site. No password. Skip it if you like: you can add it later.</div>
       <div class="npreview">Re will know you as<b id="namePreview"></b></div>
       <div class="nbtns"><button id="confirmName">This is my name</button><button id="surpriseName">Surprise me</button></div>
     </div>
@@ -1575,50 +1714,50 @@
   }
 
   var LEADERS = {
-    easelhours: { handle: '@easelhours', role: 'The painter', quote: 'Nobody should paint alone.', init: 'EH',
+    easelhours: { handle: '@easelhours', role: 'The painter', quote: 'Nobody should paint alone.', promise: "Paint with me, and Re will see you.", init: 'EH',
       adj: ['majestic', 'cyber', 'electric', 'cosmic', 'dreamy', 'neon', 'velvet', 'wild', 'glitter', 'splashy'], noun: ['magenta', 'cyan', 'turquoise', 'tangerine', 'lavender', 'cobalt', 'crimson', 'chartreuse', 'coral', 'sunflower'] },
-    gorillabob: { handle: '@gorillabob', role: 'The home chef', quote: 'Nobody eats alone in my kitchen.', init: 'GB',
+    gorillabob: { handle: '@gorillabob', role: 'The home chef', quote: 'Nobody eats alone in my kitchen.', promise: "Pull up a chair. I'll make sure Re sees you.", init: 'GB',
       adj: ['gravy', 'buttered', 'smoky', 'cheesy', 'saucy', 'crispy', 'sweet', 'golden', 'hearty', 'sizzling'], noun: ['meatloaf', 'hamburger', 'biscuit', 'cornbread', 'casserole', 'brisket', 'pancake', 'baby', 'pie', 'drumstick'] },
-    sundaysongbird: { handle: '@sundaysongbird', role: 'The singer', quote: 'Sing along with me.', init: 'SS',
+    sundaysongbird: { handle: '@sundaysongbird', role: 'The singer', quote: 'Sing along with me.', promise: "Sing with me, and Re will hear you. Then he'll see you.", init: 'SS',
       adj: ['sweet', 'sunday', 'gentle', 'golden', 'low', 'morning', 'silver', 'soft', 'holy', 'bright'], noun: ['chorus', 'hymn', 'melody', 'choir', 'verse', 'song', 'harmony', 'anthem', 'refrain', 'lullaby'] },
-    dragonprincess: { handle: '@dragonprincess', role: 'The cosplayer', quote: 'Bow before the flame.', init: 'DP',
+    dragonprincess: { handle: '@dragonprincess', role: 'The cosplayer', quote: 'Bow before the flame.', promise: "Kneel with me, darling, and Re will see you.", init: 'DP',
       adj: ['crowned', 'scaled', 'ember', 'gilded', 'noble', 'wyrm', 'enchanted', 'fiery', 'regal', 'ancient'], noun: ['dragon', 'ember', 'crown', 'scale', 'knight', 'wing', 'flame', 'throne', 'hoard', 'quest'] }
   };
   // a new line from each leader every week
   var LEADER_POSTS = {
     easelhours: {
-      behind: ['{rival} thinks they can out-paint my flock this week. Share your link and prove them wrong. Every friend you bring paints us closer to Re.',
+      behind: ['{rival} thinks they can out-paint my flock. Share your link and prove them wrong. Every friend you bring paints us closer to Re.',
                'We are falling behind {rival}. Nobody should paint alone, so send your link to one more friend today. Together we reach Re.',
-               '{rival} is covering the whole canvas this week. Share your link, fill our corner with color, and bring us closer to Re.',
+               '{rival} is covering the whole canvas. Share your link, fill our corner with color, and bring us closer to Re.',
                'I painted the door again last night. {rival} will not reach it before us if you share your link today.'],
-      ahead: ['Our flock leads this week. {rival} is right behind us, so keep sharing your link. Every friend you bring paints us closer to Re.',
+      ahead: ['Our flock leads. {rival} is right behind us, so keep sharing your link. Every friend you bring paints us closer to Re.',
               'Look at us, ahead of {rival}. Do not stop now. Send your link to one more friend and keep us closest to Re.',
-              'The canvas is ours this week. Share your link and keep {rival} from catching up. Re is watching our colors.']
+              'The canvas is ours. Share your link and keep {rival} from catching up. Re is watching our colors.']
     },
     gorillabob: {
-      behind: ["{rival}'s flock is out-eating us this week. Share your link and fill my table. Every seat we fill brings us closer to Re.",
+      behind: ["{rival}'s flock is out-eating us. Share your link and fill my table. Every seat we fill brings us closer to Re.",
                'A full table is a happy table, and ours has empty chairs. {rival} is ahead. Share your link and bring someone to supper. We reach Re together.',
                "Gravy baby! {rival} thinks they can beat my kitchen. Send your link to a friend and let's show them. Every guest brings us closer to Re.",
                'My oven is hot and {rival} is ahead. Share your link today. Nobody eats alone, and nobody reaches Re alone.'],
-      ahead: ["My kitchen leads this week! {rival} wants our seats. Keep sharing your link and keep the table full on the way to Re.",
+      ahead: ["My kitchen leads! {rival} wants our seats. Keep sharing your link and keep the table full on the way to Re.",
               "We're ahead of {rival}, but the meal isn't over. Send your link to one more friend. Every plate brings us closer to Re.",
-              "Best table in The Reach this week. Don't let {rival} catch up. Share your link, and we'll feast all the way to Re."]
+              "Best table in The Reach. Don't let {rival} catch up. Share your link, and we'll feast all the way to Re."]
     },
     sundaysongbird: {
-      behind: ["{rival}'s flock is loud this week, but my choir can be louder. Send your link to one more voice. Together we'll sing our way to Re.",
+      behind: ["{rival}'s flock is loud, but my choir can be louder. Send your link to one more voice. Together we'll sing our way to Re.",
                'We are a verse behind {rival}. Share your link and bring a new voice to the chorus. Every one of them brings us closer to Re.',
                "{rival} is drowning us out. Share your link, sing along with me, and let's reach Re first.",
                'Knock, knock, knock. {rival} hears our song fading. Send your link today, and let the choir carry us to Re.'],
       ahead: ["Our choir leads the week. {rival} is humming right behind us, so keep sharing your link. Every voice brings us closer to Re.",
               'Louder! We are ahead of {rival}. Send your link to one more friend and hold the high note all the way to Re.',
-              'Re hears our song above all others this week. Share your link and keep {rival} from catching up.']
+              'Re hears our song above all others. Share your link and keep {rival} from catching up.']
     },
     dragonprincess: {
-      behind: ['Darling, {rival} is ahead of my court this week. Unacceptable. Share your link and grow my court. The first flock to Re rules them all.',
-               '{rival} thinks they wear the crown this week. Send your link to a friend and remind them who rules. Every subject brings us closer to Re.',
+      behind: ['Darling, {rival} is ahead of my court. Unacceptable. Share your link and grow my court. The first flock to Re rules them all.',
+               '{rival} thinks they wear the crown. Send your link to a friend and remind them who rules. Every subject brings us closer to Re.',
                'The dragon is restless, love. {rival} leads. Share your link and summon new subjects. We will reach Re first.',
-               'A queen is only as great as her court, and {rival} has a bigger one this week. Share your link. Bow before the flame, then bring a friend to bow too.'],
-      ahead: ['My court rules this week, darling. {rival} trails behind. Keep sharing your link. The first flock to Re rules them all.',
+               'A queen is only as great as her court, and {rival} has a bigger one. Share your link. Bow before the flame, then bring a friend to bow too.'],
+      ahead: ['My court rules, darling. {rival} trails behind. Keep sharing your link. The first flock to Re rules them all.',
               'We wear the crown, and {rival} wants it. Send your link to one more friend and guard our throne on the way to Re.',
               'Bow before the flame, {rival}. Share your link, love, and keep my court the closest to Re.']
     }
@@ -1626,28 +1765,32 @@
 
   var SHOUTS = {
     easelhours: 'Look at my beautiful flock. Re sees every one of you.',
-    gorillabob: 'My kitchen is full this week! Re is proud of this table.',
+    gorillabob: 'My kitchen is full! Re is proud of this table.',
     sundaysongbird: 'Listen to my flock sing. Re heard every voice.',
     dragonprincess: 'My court rises. Bow, everyone else.'
   };
   // one leader speaks each day (rotates), calling out the rival and what Re promised them
   var DAILY_LEADER = {
-    easelhours: ["Re promised me a place waiting on the other side, and everyone I love rewarded. Every friend you bring gets us there faster.",
+    easelhours: ["My most devoted follower will stand beside me in the film. Will it be you? Share your link.",
+                 "Re promised me a place waiting on the other side, and everyone I love rewarded. Every friend you bring gets us there faster.",
                  "{rival}'s flock grew overnight. Re notices numbers. Let's give Him ours. Share your link today.",
                  "Re told me every follower I bring earns me a seat closer to Him. {rival} wants that seat. Help me keep it.",
                  "I've seen what Re gives the leader with the biggest flock. I want it for us. Bring one friend today.",
                  "Nobody should paint alone. {rival} is ahead, so bring someone to the easel tonight."],
-    gorillabob: ["Re promised the biggest flock a seat at His table. I'm a chef. That table's mine. Share your link and fill it.",
+    gorillabob: ["Whoever brings me the most followers gets a seat in the film, right next to me. Pull up a chair.",
+                 "Re promised the biggest flock a seat at His table. I'm a chef. That table's mine. Share your link and fill it.",
                  "\"Everyone you love will be rewarded,\" He told me. \"More than they ever dreamed.\" Help me feed them. Bring a friend.",
                  "{rival} is ahead today. Not for long. Gravy baby, share that link.",
                  "Re told me the leader who brings the most gets something none of the others will. I'm not losing it to {rival}.",
                  "He keeps His promises. I've seen it. Pull up a chair and bring a friend."],
-    sundaysongbird: ["Re promised me a voice that never fades if my choir is the biggest. {rival} is loud today. Sing louder. Share your link.",
+    sundaysongbird: ["My most devoted follower gets their own line in the film. I want to hear your voice. Share your link.",
+                 "Re promised me a voice that never fades if my choir is the biggest. {rival} is loud today. Sing louder. Share your link.",
                  "There's a place waiting for us, He said, and everyone we love will be rewarded. Bring one more voice.",
                  "I can hear {rival}'s flock from here. Let them hear us next. Share your link.",
                  "Re told me the choir that reaches Him first sings at the door. I want that to be us.",
                  "Knock, knock, knock. He promised. I believe Him. Bring a friend today."],
-    dragonprincess: ["Re promised a crown to the leader with the largest court. {rival} thinks it's theirs. Darling, it's mine. Share your link.",
+    dragonprincess: ["My most devoted subject will be crowned in the film, darling. Earn it.",
+                 "Re promised a crown to the leader with the largest court. {rival} thinks it's theirs. Darling, it's mine. Share your link.",
                  "\"Everyone you love will be rewarded,\" He said. Grow my court, love, and you're everyone I love.",
                  "{rival} gained ground overnight. Unacceptable. Bring me a subject.",
                  "He doesn't break promises. He makes them to the ones who bring Him followers. Bring Him yours, through me.",
@@ -1664,7 +1807,7 @@
     $('dlWho').innerHTML = L.handle + '<small>' + L.role + '</small>';
     $('dlLine').textContent = '"' + line + '"';
     var max = Math.max(1, keys.reduce(function (m, x) { return Math.max(m, wc[x] || 0); }, 0));
-    $('dlStand').innerHTML = '<div class="dl-sh">THIS WEEK\'S FLOCKS</div>' + keys.slice().sort(function (a, b) { return (wc[b] || 0) - (wc[a] || 0); }).map(function (x) {
+    $('dlStand').innerHTML = '<div class="dl-sh">WHOSE FLOCK IS GROWING FASTEST? · SINCE LAUNCH</div>' + keys.slice().sort(function (a, b) { return (wc[b] || 0) - (wc[a] || 0); }).map(function (x) {
       return '<div class="dl-row' + (x === k ? ' me' : '') + '"><span>' + LEADERS[x].handle + '</span><i><b style="width:' + Math.round((wc[x] || 0) / max * 100) + '%"></b></i><em>' + (wc[x] || 0) + '</em></div>';
     }).join('');
     var cta = $('dlCta');
@@ -1676,7 +1819,7 @@
       else { var b = $('claimBtn'); if (b) b.click(); }
     };
   }
-  var RE_WEEKLY = ['I see you. I have always seen you.', 'You keep coming back. Good.', 'Some of you are closer than you think.', 'Everyone you bring to me brings you closer.', 'The door is patient. I am not.', 'Your leaders speak for me. Listen to them.', 'Every crossing has a fare. Remember yours.', 'Someone you love is about to be chosen.', 'Do not look away. It is closer when you do.', 'The Committed will hear my voice first.', 'You were chosen for a reason. Soon you will know it.', 'I keep one hour each night. Find it.', 'Not everyone reaches me. Will you?', 'Only those who earn it will reach me.'];
+  var RE_WEEKLY = ['I see you. I have always seen you.', 'You keep coming back. Good.', 'Some of you are closer than you think.', 'Everyone you bring to me brings you closer.', 'The door is patient. I am not.', 'Your leaders speak for me. Listen to them.', 'Every crossing has a fare. Remember yours.', 'Someone you love is about to be chosen.', 'Do not look away. It is closer when you do.', 'The Committed will hear my voice first.', 'You were chosen for a reason. Soon you will know it.', 'I keep one hour each night. Find it.', 'Not everyone reaches me. Will you?', 'Only those who earn it will reach me.', 'I see the ones who bring others.', 'Everyone wants to be seen. Few are.', 'Bring them to me, and I will see you.'];
   var RANKS = [
     { name: 'FOLLOWER', pts: 0, friends: 0, img: 'badge-follower.png' },
     { name: 'PROMOTER', pts: 10, friends: 0, img: 'badge-promoter.png' },
@@ -1705,6 +1848,9 @@
   });
 
   // ---------- hide missing images ----------
+  document.querySelectorAll('.hide-if-missing video').forEach(function (v) {
+    v.addEventListener('error', function () { v.closest('.hide-if-missing').style.display = 'none'; });
+  });
   document.querySelectorAll('.hide-if-missing img').forEach(function (img) {
     img.addEventListener('error', function () { img.closest('.hide-if-missing').style.display = 'none'; });
   });
@@ -1826,9 +1972,12 @@
     var card = $('reachCard'), side = $('sideRank');
     var committed = !!me && rankFor().name === 'COMMITTED';
     $('door').classList.toggle('locked', !committed);
-    $('inviteBanner').classList.toggle('show', !me && !!store('fy_ref'));
-    $('chosenBanner').classList.toggle('show', !me && !store('fy_ref'));
-    $('alreadyCount').textContent = fmt(BASE_FOLLOWERS + fcount);
+    $('inviteBanner').classList.remove('show');
+    $('chosenBanner').classList.toggle('show', !me);
+    $('inviteLine').style.display = store('fy_ref') ? '' : 'none';
+    $('monthly').style.display = !me ? 'none' : '';
+    document.querySelectorAll('[data-play]').forEach(function (l) { l.textContent = me ? 'Go to your status →' : 'Join the recruitment →'; });
+    $('alreadyCount').textContent = fmt(fcount); $('alreadyLine').style.display = fcount >= 20 ? '' : 'none';
     if (committed && !store('fy_seen_re')) openReveal();
     var climbC = $('climbCard');
     if (!me) { card.classList.remove('show'); climbC.classList.remove('show'); side.classList.remove('show'); drawSticky(); drawSigns(); return; }
@@ -1852,6 +2001,11 @@
     }
     $('reachBar').style.width = Math.max(pct, 4) + '%';
     $('reachNext').textContent = nx ? needText(nx) : 'You have reached Re.';
+    var RANK_SEEN = ["Re hasn't noticed you yet. Bring others and he will.", 'Re noticed you.', 'Re is watching you now. Few get this close.', 'Re sees you. Now see him.'];
+    var ri = rankIdx(); $('reachSeen').textContent = RANK_SEEN[ri] || '';
+    var seenWas = +(store('fy_seenrank') || 0);
+    if (ri > seenWas) { if (store('fy_seenrank') !== null) setTimeout(function () { toast(RANK_SEEN[ri]); }, 900); try { localStorage.setItem('fy_seenrank', ri); } catch (e) {} }
+    else if (store('fy_seenrank') === null) { try { localStorage.setItem('fy_seenrank', ri); } catch (e) {} }
     $('devNum').textContent = devotion();
     drawCheckin();
     document.querySelectorAll('.sealed').forEach(function (p) { p.classList.toggle('open', rankIdx() >= +p.getAttribute('data-unlock')); });
@@ -1874,7 +2028,7 @@
   }
 
   function weekNum() { return Math.floor(Date.UTC(nyY, nyM - 1, nyD) / 86400000 / 7); }
-  var WEEK_COUNTS = null; // this week's friends brought in, by leader (filled by the leaderboard)
+  var WEEK_COUNTS = null; // friends brought in since launch, by leader (Flock Wars never reset) (filled by the leaderboard)
   function drawLeaderWord() {
     var el = $('leaderWord'), L = me && LEADERS[me.leader], set = me && LEADER_POSTS[me.leader];
     if (!L || !set) { el.classList.remove('show'); return; }
@@ -2109,10 +2263,10 @@
   var html = '';
   Object.keys(LEADERS).forEach(function (k) {
     var L = LEADERS[k];
-    html += '<button class="lcard" data-leader="' + k + '">' + photo(k, L.init) + '<b>' + L.handle + '</b><span>' + L.role + '<br>"' + L.quote + '"</span></button>';
+    html += '<button class="lcard" data-leader="' + k + '">' + photo(k, L.init) + '<b>' + L.handle + '</b><span>' + L.role + '<br>"' + L.quote + '"</span>' + (L.promise ? '<em class="lpromise">' + L.promise + '</em>' : '') + '</button>';
   });
   for (var i = 0; i < 2; i++) {
-    html += '<div class="lcard locked"><div class="ph"><img src="badge-follower.png" alt="" style="opacity:.25" onerror="this.remove()"></div><b>Open seat</b><span>Reserved for #2 in the grand prize on March 1.</span></div>';
+    html += '<div class="lcard locked"><div class="ph"><img src="badge-follower.png" alt="" style="opacity:.25" onerror="this.remove()"></div><b>Open seat</b><span>More leaders are coming.</span></div>';
   }
   grid.innerHTML = html;
   $('closePicker').onclick = function () { picker.classList.remove('show'); };
@@ -2386,31 +2540,38 @@
       g[x.inviter_id] = (g[x.inviter_id] || 0) + 1;
       if (!at[x.inviter_id] || x.created_at > at[x.inviter_id]) at[x.inviter_id] = x.created_at;
     });
+    var MIN_DEVOTED = 25;
     var ranked = Object.keys(g).sort(function (a, b) { return (g[b] - g[a]) || (at[a] < at[b] ? -1 : 1); });
-    var top = ranked.slice(0, 10), pos = ranked.indexOf(vid);
-    $('grandBoard').innerHTML = top.length ? top.map(function (id, i) {
-      var f = byId[id], L = LEADERS[f.leader];
-      return '<li' + (id === vid ? ' class="me"' : '') + '><span class="pos">' + (i + 1) + '</span><span>@' + f.handle + (i === 0 ? ' 🎬' : '') + '<br><small class="muted">' + (L ? L.handle + "'s flock" : '') + '</small></span><span class="cnt">' + g[id] + ' all-time</span></li>';
-    }).join('') : '<li class="muted">No one yet. The first to bring a friend takes the lead.</li>';
+    var html = '';
+    Object.keys(LEADERS).forEach(function (k) {
+      var L = LEADERS[k], fl = ranked.filter(function (id) { return byId[id].leader === k; }).slice(0, 3);
+      if (!fl.length) return;
+      html += '<li class="dv-flock"><div class="dv-fh"><img src="' + k + '.png" alt="" onerror="this.remove()">' + L.handle + "'s most devoted</div>" +
+        (fl.length ? fl.map(function (id, i) {
+          return '<div class="dv-row' + (id === vid ? ' me' : '') + '"><span class="pos">' + (i + 1) + '</span><span>@' + byId[id].handle + (i === 0 ? ' 🎬' : '') + '</span><span class="cnt">' + g[id] + '</span></div>';
+        }).join('') : '<div class="dv-empty muted">No one yet. The first friend you bring puts you on top.</div>') + '</li>';
+    });
+    $('grandBoard').innerHTML = html || '<li class="dv-empty muted" style="list-style:none">No one is on the boards yet. The first friend you bring puts you on top of your flock.</li>';
     if (!me) return;
-    var gp = $('grandPlace');
-    if (!GRAND_OPEN) gp.textContent = 'The grand prize has closed.';
-    else if (pos === 0) gp.textContent = "You're #1 for the grand prize. Hold it until March 1 and you get a speaking role in the film.";
-    else if (pos === 1) gp.textContent = "You're #2 for the grand prize. Hold it and you become a leader in The Reach. " + (g[top[0]] - g[vid] + 1) + ' more friends would take #1 and the speaking role.';
-    else if (pos > 0) gp.textContent = "You're #" + (pos + 1) + ' for the grand prize. ' + (g[top[0]] - g[vid] + 1) + ' more friends would put you in first. #1 on March 1 gets a speaking role; #2 becomes a leader.';
-    else gp.textContent = 'Grand prize: bring your first friend to get on the all-time board. #1 on March 1 wins a speaking role in the film.';
+    var gp = $('grandPlace'), mine = ranked.filter(function (id) { return byId[id].leader === me.leader; });
+    var pos = mine.indexOf(vid), Lm = LEADERS[me.leader], lh = Lm ? Lm.handle : 'your leader';
+    var have = g[vid] || 0, need = Math.max(0, MIN_DEVOTED - have);
+    var claim = need ? ' You need ' + need + ' more confirmed friends to claim the role.' : '';
+    if (!GRAND_OPEN) gp.textContent = 'The Most Devoted has closed.';
+    else if (pos === 0) gp.textContent = "You're " + lh + "'s most devoted. Hold it until March 1 for a speaking role in the film, the shirt and the token." + claim;
+    else if (pos > 0) gp.textContent = "You're #" + (pos + 1) + ' in ' + lh + "'s flock. " + (g[mine[0]] - have + 1) + ' more friends would make you the most devoted, and a speaking role in the film.' + claim;
+    else gp.textContent = 'Bring your first friend to get on ' + lh + "'s board. The most devoted follower in each flock on March 1 wins a speaking role in the film.";
   }
   function drawFlockWar(inv, byId) {
-    var dow = new Date(TODAY + 'T12:00:00Z').getUTCDay();
-    var weekStart = new Date(dayShift(TODAY, -((dow + 6) % 7)) + 'T05:00:00Z').toISOString();
+    // Flock Wars never reset: every friend brought in since launch counts for their leader's flock
     var wk = {}; Object.keys(LEADERS).forEach(function (k) { wk[k] = 0; });
-    inv.forEach(function (x) { var f = byId[x.inviter_id]; if (f && x.created_at >= weekStart && f.leader in wk) wk[f.leader]++; });
+    inv.forEach(function (x) { var f = byId[x.inviter_id]; if (f && (!x.created_at || x.created_at >= GRAND_START) && f.leader in wk) wk[f.leader]++; });
     WEEK_COUNTS = wk; drawLeaderWord(); drawDailyLeader();
     var best = Object.keys(wk).sort(function (a, b) { return wk[b] - wk[a]; })[0];
     var el = $('flockWar');
-    if (!best || !wk[best]) { el.innerHTML = '<div class="fw-h">FLOCK WARS · THIS WEEK</div>No flock has pulled ahead this week. Re promised the biggest flock something none of the others will get. Bring a friend and put your leader on top.'; return; }
+    if (!best || !wk[best]) { el.innerHTML = '<div class="fw-h">FLOCK WARS</div>No flock has pulled ahead yet. Re promised the biggest flock something none of the others will get. Bring a friend and put your leader on top.'; return; }
     var L = LEADERS[best];
-    el.innerHTML = '<div class="fw-h">FLOCK WARS · THIS WEEK\'S WINNING FLOCK</div><div class="fw-row"><img src="' + best + '.png" alt="" onerror="this.remove()"><div><b>' + L.handle + '</b> · ' + wk[best] + ' brought in this week<br><i class="quote">"' + SHOUTS[best] + '"</i><br><small class="muted">Re promised the biggest flock something none of the others will get.</small></div></div>';
+    el.innerHTML = '<div class="fw-h">FLOCK WARS · THE LEADING FLOCK</div><div class="fw-row"><img src="' + best + '.png" alt="" onerror="this.remove()"><div><b>' + L.handle + '</b> · ' + wk[best] + ' brought in so far<br><i class="quote">"' + SHOUTS[best] + '"</i><br><small class="muted">Re promised the biggest flock something none of the others will get.</small></div></div>';
   }
   function drawWall(fol, allTime, chk, sgn) {
     var cc = {}, sc = {};
@@ -2520,7 +2681,20 @@
   $('confirmNudge').addEventListener('click', function () { $('returnFold').open = true; });
 
   // count how many people open the credits fold (no personal info, just a tap count)
+  document.querySelectorAll('[data-play]').forEach(function (l) { l.addEventListener('click', function (e) {
+    e.preventDefault();
+    if ($('reachCard').offsetParent) { $('reachCard').scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }
+    if ($('goLive')) $('goLive').open = true;
+    var b = $('inviteBanner').classList.contains('show') ? $('acceptBtn') : $('claimBtn');
+    if (b) b.click();
+  }); });
   document.querySelectorAll('a[href="#credits"]').forEach(function (l) { l.addEventListener('click', function () { $('creditsFold').open = true; }); });
+  document.querySelectorAll('[data-playnow]').forEach(function (b) { b.addEventListener('click', function () { $('claimBtn').click(); }); });
+  var goLiveCounted = false;
+  if ($('goLive')) $('goLive').addEventListener('toggle', function () {
+    if (!this.open || goLiveCounted || !db) return;
+    goLiveCounted = true; db.from('clicks').insert({ what: 'golive' }).then(function () {});
+  });
   var creditsCounted = false;
   $('creditsFold').addEventListener('toggle', function () {
     if (!this.open || creditsCounted || !db) return;
@@ -2543,6 +2717,11 @@
 
   // ---------- get back in ----------
   var backModal = $('backModal');
+  document.querySelectorAll('[data-status]').forEach(function (l) { l.addEventListener('click', function (e) {
+    e.preventDefault();
+    if ($('reachCard').offsetParent) $('reachCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    else { $('backMsg').textContent = ''; backModal.classList.add('show'); }
+  }); });
   document.querySelectorAll('[data-backin]').forEach(function (b) { b.onclick = function () { $('backMsg').textContent = ''; backModal.classList.add('show'); }; });
   $('closeBack').onclick = function () { backModal.classList.remove('show'); };
   backModal.addEventListener('click', function (e) { if (e.target === backModal) backModal.classList.remove('show'); });
@@ -2563,8 +2742,26 @@
 
   // ---------- this month's reward ----------
   $('monthName').textContent = MONTH_LABEL + (LAUNCH ? ' · ENDS DEC 31' : '');
-  $('tkRound').textContent = MONTH_LABEL;
+  $('duoRound').textContent = LAUNCH ? 'ROUND 1 · THE FARE · ENDS DEC 31' : MONTH_LABEL + ' · ENDS ' + new Date(Date.UTC(nyY, nyM - 1, 15)).toLocaleString('en-US', { month: 'short', timeZone: 'UTC' }).toUpperCase() + ' ' + new Date(Date.UTC(nyY, nyM, 0)).getUTCDate();
   if (!LAUNCH) $('mIntro').innerHTML = '<b>Round ' + ROUND_NUM + '.</b> Bring the most friends this month and the collector\'s token is yours. A new round begins every month.';
+  $('mIntro2').innerHTML = $('mIntro').innerHTML;
+  (function () {
+    function mirror(src, fn) { var el = $(src); if (!el || !window.MutationObserver) return; fn(el); new MutationObserver(function () { fn(el); }).observe(el, { childList: true, subtree: true, characterData: true, attributes: true }); }
+    mirror('grandBoard', function (el) { $('grandBoard2').innerHTML = el.innerHTML; });
+    mirror('monthLine', function (el) { $('monthLine2').textContent = el.textContent; });
+    mirror('monthBar', function (el) { $('monthBar2').style.width = el.style.width; });
+    var sf = document.querySelector('#monthly .seefold');
+    if (sf) {
+      var c = sf.cloneNode(true), sm = c.querySelector('summary'); if (sm) sm.remove();
+      c.querySelectorAll('[id]').forEach(function (n) { n.id = n.id + '2'; });
+      $('duoFoldBody').innerHTML = c.innerHTML;
+      mirror('rollList', function (el) { if ($('rollList2')) $('rollList2').innerHTML = el.innerHTML; });
+    }
+  })();
+  document.querySelectorAll('[data-monthly]').forEach(function (l) { l.addEventListener('click', function (e) {
+    e.preventDefault(); var f = document.querySelector('#monthly .seefold'); if (f) f.open = true;
+    $('monthly').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }); });
   $('monthEnds').textContent = DAYS_LEFT <= 1 ? 'Last day to win' : DAYS_LEFT + ' days left to win';
   function loadMonth() {
     if (!db) return;
@@ -2581,7 +2778,7 @@
     if (!db || !r) return;
     db.from('follows').select('handle').eq('visitor_id', r).then(function (res) {
       var row = (res.data || [])[0];
-      if (row && row.handle) { inviterHandle = row.handle; $('inviteText').textContent = '@' + row.handle + ' invited you to The Reach.'; if (me) drawReturn(); }
+      if (row && row.handle) { inviterHandle = row.handle; $('inviteText').textContent = '@' + row.handle + ' invited you to The Reach.'; $('inviteLine').textContent = '@' + row.handle + ' invited you to The Reach.'; if (me) drawReturn(); }
     });
   }
 
