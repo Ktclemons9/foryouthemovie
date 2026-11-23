@@ -665,6 +665,19 @@
   .igbtn:hover{border-color:#d6407a;background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);color:#fff}
   .ttbtn:hover{border-color:#25f4ee;background:#000;color:#fff}
   .fbbtn{margin-top:6px}
+  .dailylead{border-color:rgba(232,176,74,.45)}
+  .dailylead .dl-av{overflow:hidden}
+  .dailylead .dl-av img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+  .dailylead .dl-line{font-style:italic;color:#f3e2b8;font-size:clamp(19px,3.6vw,23px);line-height:1.4}
+  .dl-stand{margin:14px 0 10px;padding:12px;border:1px solid var(--line);border-radius:10px;background:#121318}
+  .dl-sh{font-size:11px;letter-spacing:.2em;color:var(--muted);margin-bottom:6px}
+  .dl-row{display:grid;grid-template-columns:140px 1fr 28px;gap:8px;align-items:center;font-size:13px;margin:5px 0}
+  .dl-row i{height:6px;border-radius:99px;background:#26272e;overflow:hidden}
+  .dl-row b{display:block;height:100%;background:linear-gradient(90deg,#6b2d6e,#d6407a,#e8b04a)}
+  .dl-row em{font-style:normal;color:var(--muted);text-align:right}
+  .dl-row.me span{color:var(--gold)}
+  .dl-promise{font-size:14px;color:var(--muted)}
+  .dl-cta{background:var(--gold);color:#1a1206;border:none;border-radius:999px;padding:10px 20px;font-family:inherit;font-size:15px;font-weight:500;cursor:pointer;margin-top:4px}
 </style>
 </head>
 <body>
@@ -1010,6 +1023,15 @@
     <p class="muted" id="reWeekSub">A new word from Re appears every week.</p>
   </article>
 
+  <article class="post dailylead" id="dailyLeader">
+    <div class="post-head"><div class="mini dl-av" id="dlAv"></div><div class="who" id="dlWho">LEADER<small>today</small></div><div class="pin">FLOCK WARS · TODAY</div></div>
+    <div class="num"><span class="rec"></span>A NEW LEADER SPEAKS EVERY DAY</div>
+    <h2 class="dl-line" id="dlLine"></h2>
+    <div class="dl-stand" id="dlStand"></div>
+    <p class="dl-promise">Every leader was promised something great for bringing Re followers. Only one flock gets there first.</p>
+    <button type="button" class="dl-cta" id="dlCta">Share your link</button>
+  </article>
+
   <article class="post" data-post="p1">
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div><div class="pin">PINNED</div></div>
     <div class="num"><span class="rec"></span>1 · FOR YOU</div>
@@ -1094,7 +1116,6 @@
     <p>It was there before the internet. Before the pamphlets and the compounds. It stood behind the most famous cult leaders in history, and now it stands behind the people you follow.</p>
     <p>It doesn't need to find you. Your feed brings you to it.</p>
     <p class="muted">He keeps an hour. Few have found it.</p>
-    <p class="muted">He has never shown his face to the public. He chooses who sees him.</p>
     <div class="yourpath"><b>YOUR PATH</b><span>No one reaches Re alone. Your leader is the way in.</span></div>
     <button type="button" class="sign" data-sign="3" aria-label="A sign of Re">✦</button>
     <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
@@ -1226,7 +1247,7 @@
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
     <div class="num"><span class="rec"></span>10 · THE SHADE</div>
     <h2>Look away. Then look back.</h2>
-    <p>Hold on to your token, and something follows you. You'll only see it on your screen. And every time you look back, it's closer.</p>
+    <p>Hold on to your token, and something follows you. Every time you look back, it's closer.</p>
     <p class="quote">Re's Shade hunts those who keep what isn't theirs. It never stops. It only gets closer.</p>
     <div class="media hide-if-missing"><img src="shade-hall.png" alt="A hallway that goes on too long"></div>
     <div class="yourpath"><b>YOUR PATH</b><span>Re gives freely. What he gives must be returned.</span></div>
@@ -1403,7 +1424,7 @@
     <a href="https://rethecreator.com" id="doorLink"><img src="ResDoor.png" alt="The door"></a>
     <p class="openmsg">YOUR CROSSING AWAITS</p>
     <p class="lockmsg">ONLY THE COMMITTED MAY CROSS</p>
-    <p class="locksub">Re does not show his face to just anyone. Only the Committed have earned the right to see him.</p>
+    <p class="locksub">Re doesn't let just anyone reach him. Only the Committed have earned it.</p>
     <p class="locksub">Reach Committed to unlock. Behind the door: who Re really is, where he came from, and everything the film can't tell you.</p>
   </section>
 
@@ -1416,7 +1437,7 @@
     <div class="re"><img src="re.png" alt=""></div>
     <div class="words">
       <div class="see">I see you.</div>
-      <div class="fewseen">Few have seen this face. Now you have.</div>
+      <div class="fewseen">Few ever reach him. Now you have.</div>
       <img class="badge" src="badge-committed.png" alt="Committed">
       <div class="cross">YOUR CROSSING AWAITS</div>
       <button class="cont" id="revealGo">GO TO THE DOOR</button>
@@ -1609,7 +1630,53 @@
     sundaysongbird: 'Listen to my flock sing. Re heard every voice.',
     dragonprincess: 'My court rises. Bow, everyone else.'
   };
-  var RE_WEEKLY = ['I see you. I have always seen you.', 'You keep coming back. Good.', 'Some of you are closer than you think.', 'Everyone you bring to me brings you closer.', 'The door is patient. I am not.', 'Your leaders speak for me. Listen to them.', 'Every crossing has a fare. Remember yours.', 'Someone you love is about to be chosen.', 'Do not look away. It is closer when you do.', 'The Committed will hear my voice first.', 'You were chosen for a reason. Soon you will know it.', 'I keep one hour each night. Find it.', 'Not everyone gets to see me. Will you?', 'I show my face only to those who earn it.'];
+  // one leader speaks each day (rotates), calling out the rival and what Re promised them
+  var DAILY_LEADER = {
+    easelhours: ["Re promised me a place waiting on the other side, and everyone I love rewarded. Every friend you bring gets us there faster.",
+                 "{rival}'s flock grew overnight. Re notices numbers. Let's give Him ours. Share your link today.",
+                 "Re told me every follower I bring earns me a seat closer to Him. {rival} wants that seat. Help me keep it.",
+                 "I've seen what Re gives the leader with the biggest flock. I want it for us. Bring one friend today.",
+                 "Nobody should paint alone. {rival} is ahead, so bring someone to the easel tonight."],
+    gorillabob: ["Re promised the biggest flock a seat at His table. I'm a chef. That table's mine. Share your link and fill it.",
+                 "\"Everyone you love will be rewarded,\" He told me. \"More than they ever dreamed.\" Help me feed them. Bring a friend.",
+                 "{rival} is ahead today. Not for long. Gravy baby, share that link.",
+                 "Re told me the leader who brings the most gets something none of the others will. I'm not losing it to {rival}.",
+                 "He keeps His promises. I've seen it. Pull up a chair and bring a friend."],
+    sundaysongbird: ["Re promised me a voice that never fades if my choir is the biggest. {rival} is loud today. Sing louder. Share your link.",
+                 "There's a place waiting for us, He said, and everyone we love will be rewarded. Bring one more voice.",
+                 "I can hear {rival}'s flock from here. Let them hear us next. Share your link.",
+                 "Re told me the choir that reaches Him first sings at the door. I want that to be us.",
+                 "Knock, knock, knock. He promised. I believe Him. Bring a friend today."],
+    dragonprincess: ["Re promised a crown to the leader with the largest court. {rival} thinks it's theirs. Darling, it's mine. Share your link.",
+                 "\"Everyone you love will be rewarded,\" He said. Grow my court, love, and you're everyone I love.",
+                 "{rival} gained ground overnight. Unacceptable. Bring me a subject.",
+                 "He doesn't break promises. He makes them to the ones who bring Him followers. Bring Him yours, through me.",
+                 "The first flock to Re gets something the others never will. Bow before the flame, then share your link."]
+  };
+  function dayNum() { return Math.floor(Date.UTC(nyY, nyM - 1, nyD) / 86400000); }
+  function drawDailyLeader() {
+    var keys = Object.keys(LEADERS), dn = dayNum(), k = keys[dn % keys.length], L = LEADERS[k];
+    var wc = WEEK_COUNTS || {};
+    var others = keys.filter(function (x) { return x !== k; }).sort(function (a, b) { return (wc[b] || 0) - (wc[a] || 0); });
+    var rival = (wc[others[0]] || 0) > 0 ? others[0] : others[dn % others.length];
+    var pool = DAILY_LEADER[k], line = pool[Math.floor(dn / keys.length) % pool.length].replace(/\{rival\}/g, LEADERS[rival].handle);
+    $('dlAv').innerHTML = '<img src="' + k + '.png" alt="" onerror="this.parentNode.textContent=\'' + L.init + '\'">';
+    $('dlWho').innerHTML = L.handle + '<small>' + L.role + '</small>';
+    $('dlLine').textContent = '"' + line + '"';
+    var max = Math.max(1, keys.reduce(function (m, x) { return Math.max(m, wc[x] || 0); }, 0));
+    $('dlStand').innerHTML = '<div class="dl-sh">THIS WEEK\'S FLOCKS</div>' + keys.slice().sort(function (a, b) { return (wc[b] || 0) - (wc[a] || 0); }).map(function (x) {
+      return '<div class="dl-row' + (x === k ? ' me' : '') + '"><span>' + LEADERS[x].handle + '</span><i><b style="width:' + Math.round((wc[x] || 0) / max * 100) + '%"></b></i><em>' + (wc[x] || 0) + '</em></div>';
+    }).join('');
+    var cta = $('dlCta');
+    if (me && me.leader === k) cta.textContent = 'Your leader is calling. Share your link';
+    else if (me) cta.textContent = 'Defend ' + (LEADERS[me.leader] ? LEADERS[me.leader].handle : 'your leader') + '. Share your link';
+    else cta.textContent = 'Join ' + L.handle + "'s flock";
+    cta.onclick = function () {
+      if (me) { var c = $('climbCard'); if (c) c.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      else { var b = $('claimBtn'); if (b) b.click(); }
+    };
+  }
+  var RE_WEEKLY = ['I see you. I have always seen you.', 'You keep coming back. Good.', 'Some of you are closer than you think.', 'Everyone you bring to me brings you closer.', 'The door is patient. I am not.', 'Your leaders speak for me. Listen to them.', 'Every crossing has a fare. Remember yours.', 'Someone you love is about to be chosen.', 'Do not look away. It is closer when you do.', 'The Committed will hear my voice first.', 'You were chosen for a reason. Soon you will know it.', 'I keep one hour each night. Find it.', 'Not everyone reaches me. Will you?', 'Only those who earn it will reach me.'];
   var RANKS = [
     { name: 'FOLLOWER', pts: 0, friends: 0, img: 'badge-follower.png' },
     { name: 'PROMOTER', pts: 10, friends: 0, img: 'badge-promoter.png' },
@@ -2338,12 +2405,12 @@
     var weekStart = new Date(dayShift(TODAY, -((dow + 6) % 7)) + 'T05:00:00Z').toISOString();
     var wk = {}; Object.keys(LEADERS).forEach(function (k) { wk[k] = 0; });
     inv.forEach(function (x) { var f = byId[x.inviter_id]; if (f && x.created_at >= weekStart && f.leader in wk) wk[f.leader]++; });
-    WEEK_COUNTS = wk; drawLeaderWord();
+    WEEK_COUNTS = wk; drawLeaderWord(); drawDailyLeader();
     var best = Object.keys(wk).sort(function (a, b) { return wk[b] - wk[a]; })[0];
     var el = $('flockWar');
-    if (!best || !wk[best]) { el.innerHTML = '<div class="fw-h">FLOCK WARS · THIS WEEK</div>No flock has pulled ahead this week. Bring a friend and put your leader on top.'; return; }
+    if (!best || !wk[best]) { el.innerHTML = '<div class="fw-h">FLOCK WARS · THIS WEEK</div>No flock has pulled ahead this week. Re promised the biggest flock something none of the others will get. Bring a friend and put your leader on top.'; return; }
     var L = LEADERS[best];
-    el.innerHTML = '<div class="fw-h">FLOCK WARS · THIS WEEK\'S WINNING FLOCK</div><div class="fw-row"><img src="' + best + '.png" alt="" onerror="this.remove()"><div><b>' + L.handle + '</b> · ' + wk[best] + ' brought in this week<br><i class="quote">"' + SHOUTS[best] + '"</i></div></div>';
+    el.innerHTML = '<div class="fw-h">FLOCK WARS · THIS WEEK\'S WINNING FLOCK</div><div class="fw-row"><img src="' + best + '.png" alt="" onerror="this.remove()"><div><b>' + L.handle + '</b> · ' + wk[best] + ' brought in this week<br><i class="quote">"' + SHOUTS[best] + '"</i><br><small class="muted">Re promised the biggest flock something none of the others will get.</small></div></div>';
   }
   function drawWall(fol, allTime, chk, sgn) {
     var cc = {}, sc = {};
@@ -2464,6 +2531,7 @@
   // ---------- countdowns, Re's word, Re's hour, leaks ----------
   document.querySelectorAll('.ckRound').forEach(function (e) { e.textContent = Math.max(DAYS_LEFT, 0); });
   document.querySelectorAll('.ckGrand').forEach(function (e) { if (GRAND_OPEN) e.textContent = GRAND_DAYS; else e.parentNode.style.display = 'none'; });
+  drawDailyLeader();
   $('reWeekText').textContent = '"' + RE_WEEKLY[weekNum() % RE_WEEKLY.length] + '"';
   if (nyHour === 3) $('reHour').classList.add('show');
   if (BTS_DROPS.length) {
