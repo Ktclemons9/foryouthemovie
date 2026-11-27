@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support For You | Put your name on a horror film</title>
+<meta name="description" content="For You is an independent screenlife horror film, filming now. Support it from $25 and see your name in the credits.">
+<meta property="og:title" content="Put your name on a horror film | For You">
+<meta property="og:description" content="For You is an independent screenlife horror film, filming now. Support it from $25 and see your name in the credits.">
+<meta property="og:image" content="https://foryouthefilm.com/share.png">
+<meta property="og:url" content="https://foryouthefilm.com/support.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0e0f12;--panel:#16171c;--panel2:#1c1e24;--line:#2a2c33;--text:#ecebe6;--muted:#9a9ca4;--red:#e5503f;--gold:#e8b04a}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:'Jost',system-ui,sans-serif;font-weight:300;line-height:1.6}
+  a{color:var(--gold)}
+  .wrap{max-width:980px;margin:0 auto;padding:0 20px}
+  header.top{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;max-width:980px;margin:0 auto}
+  .brand{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;letter-spacing:.2em;font-weight:500}
+  .brand img{width:38px;height:38px;border-radius:50%;background:#f5f1e8;object-fit:contain}
+  .toplink{font-size:14px;color:var(--text);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:6px 14px}
+
+  .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:28px 0 40px}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.22em;color:var(--red)}
+  .eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--red);animation:blink 1.4s infinite}
+  @keyframes blink{50%{opacity:.25}}
+  h1{font-weight:400;font-size:clamp(36px,6vw,56px);line-height:1.08;margin:12px 0 14px}
+  h1 em{color:var(--gold);font-style:normal}
+  .lede{font-size:18px;color:#d9d6cc;margin:0 0 20px}
+  .ctas{display:flex;flex-wrap:wrap;gap:10px}
+  .btn{display:inline-block;background:var(--gold);color:#1a1206;text-decoration:none;font-weight:500;border-radius:999px;padding:12px 24px;font-size:16px}
+  .btn.ghost{background:transparent;color:var(--gold);border:1px solid var(--gold)}
+  .from{font-size:14px;color:var(--muted);margin-top:12px}
+  .hero-img{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/5;background:#000}
+  .hero-img img{width:100%;height:100%;object-fit:cover;display:block}
+  .laurel{display:flex;align-items:center;gap:12px;margin-top:20px}
+  .laurel img{height:64px;width:auto}
+  .laurel span{font-size:14px;color:var(--muted);line-height:1.4}
+
+  section.block{padding:44px 0;border-top:1px solid var(--line)}
+  .kicker{font-size:12px;letter-spacing:.22em;color:var(--gold);margin-bottom:8px}
+  h2{font-weight:400;font-size:clamp(28px,4.4vw,38px);line-height:1.15;margin:0 0 16px}
+  .story p{font-size:17px;color:#dcd9cf;max-width:680px}
+  .story .end{color:var(--gold);font-weight:500;font-size:19px}
+  .byline{font-style:italic;color:var(--gold);opacity:.85;margin-top:-6px}
+
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px}
+  .card b{display:block;color:var(--gold);font-weight:500;font-size:17px;margin-bottom:6px}
+  .card p{margin:0;color:#cfccc2;font-size:15px}
+  .num{font-size:34px;color:var(--gold);font-weight:400;line-height:1}
+
+  .tier{max-width:440px;background:linear-gradient(160deg,#1c1e24,#16171c);border:2px solid var(--gold);border-radius:18px;padding:24px}
+  .tier .price{font-size:44px;color:var(--gold);font-weight:400;line-height:1}
+  .tier .name{font-size:22px;font-weight:500;margin:6px 0 8px}
+  .tier ul{margin:0 0 18px;padding-left:18px;color:#d6d3c9}
+  .tier li{margin:4px 0}
+  .tier .btn{display:block;text-align:center}
+  .fine{font-size:13px;color:var(--muted);max-width:680px}
+
+  .producer{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
+  .why{list-style:none;padding:0;margin:0}
+  .why li{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+  .why li:last-child{border-bottom:none}
+  .why .ic{flex:none;width:34px;height:34px;border-radius:50%;background:rgba(232,176,74,.15);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:16px}
+  .why b{display:block;font-weight:500;color:var(--text)}
+  .why span{color:#cfccc2;font-size:15px}
+  .contact{background:var(--panel);border:1px solid rgba(232,176,74,.5);border-radius:16px;padding:22px}
+  .contact p{color:#d6d3c9}
+  .contact .ctas{flex-direction:column}
+  .contact .btn{text-align:center}
+
+  .more{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+  footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);font-size:13px;text-align:center}
+  footer a{color:var(--muted)}
+
+  @media (max-width:760px){
+    .hero{grid-template-columns:1fr;padding-top:10px}
+    .hero-img{order:-1;aspect-ratio:16/11}
+    .grid3,.producer{grid-template-columns:1fr}
+  }
+  @media (prefers-reduced-motion:reduce){.eyebrow i{animation:none}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <a class="brand" href="index.html"><img src="Seismic%20Crest%20For%20You_Back.png" alt="" onerror="this.remove()">FOR YOU</a>
+  <a class="toplink" href="index.html">Play the game →</a>
+</header>
+
+<main class="wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <div class="eyebrow"><i></i>NOW FILMING · AN INDEPENDENT HORROR FILM</div>
+      <h1>Put your name on a <em>horror film.</em></h1>
+      <p class="lede"><i>For You</i> is a screenlife horror feature from an award-winning screenplay, filming now. Help finish it and see your name roll in the credits.</p>
+      <div class="ctas">
+        <a class="btn" href="#thanks">Get your name in the credits</a>
+        <a class="btn ghost" href="#story">Read the story</a>
+      </div>
+      <div class="from">Special Thanks credit from $25.</div>
+      <div class="laurel"><img src="RUNNERUP-FrightsCameraActionHorrorScreenplayContest-2026.png" alt="" onerror="this.remove()"><span>Runner-up, Best Screenplay, Feature Film<br>Frights! Camera! Action! 2026</span></div>
+    </div>
+    <div class="hero-img"><img src="ResDoor.png" alt="A door with light underneath"></div>
+  </section>
+
+  <!-- STORY -->
+  <section class="block story" id="story">
+    <div class="kicker">THE STORY</div>
+    <h2>All she had to do was pay the fare.</h2>
+    <p class="byline">From the mind of writer-director Keshia Clemons.</p>
+    <p>Katey liked, shared and commented on every post from her favorite creator, because if you show up enough, somebody finally sees you. Then the invitation came: the trip of a lifetime, and a chance to be seen. The fare was a single gold token.</p>
+    <p>She held onto it. Just in case.</p>
+    <p>She wakes up somewhere she doesn't recognize. The doors don't lead where they should, something is hunting her, and the only thing still working is her livestream.</p>
+    <p>A handful of internet sleuths find her feed. Larry, the hero of the Denver Miracle, and his team can see everything, but nothing they send gets through. She keeps asking if anyone is there. Someone named Re keeps answering.</p>
+    <p>Every clue leads to a group that's been scrubbed from the internet: The Reach. And the one man who tried to warn the world says it was never about the leaders. Something has always stood behind them, and tonight it wants what Katey kept.</p>
+    <p class="end">They can see her. Now they have to reach her before it does.</p>
+  </section>
+
+  <!-- WHY -->
+  <section class="block">
+    <div class="kicker">WHY FOR YOU</div>
+    <h2>An independent horror film, already in motion.</h2>
+    <div class="grid3">
+      <div class="card"><b>An award-winning script</b><p>Runner-up for Best Screenplay at Frights! Camera! Action! 2026, now being brought to the screen.</p></div>
+      <div class="card"><b>Told entirely on screens</b><p>Screenlife horror plays out through livestreams, chats and feeds, the same screens you're reading this on.</p></div>
+      <div class="card"><b>Already underway</b><p>The script is complete, the cast is in place, and footage is being shot now.</p></div>
+    </div>
+  </section>
+
+  <!-- WHERE IT GOES -->
+  <section class="block">
+    <div class="kicker">WHERE YOUR SUPPORT GOES</div>
+    <h2>Every dollar goes into finishing the film.</h2>
+    <div class="grid3">
+      <div class="card"><div class="num">01</div><b>Editing</b><p>Cutting hours of screen recordings into a story that grips you and won't let go.</p></div>
+      <div class="card"><div class="num">02</div><b>Post-production</b><p>Sound design, music, color and visual effects. The things that make horror land.</p></div>
+      <div class="card"><div class="num">03</div><b>Festival run</b><p>Submissions and screenings, so <i>For You</i> reaches audiences beyond the screen.</p></div>
+    </div>
+  </section>
+
+  <!-- SPECIAL THANKS -->
+  <section class="block" id="thanks">
+    <div class="kicker">PUT YOUR NAME ON THE FILM</div>
+    <h2>Join the credits.</h2>
+    <div class="tier">
+      <div class="price">$25</div>
+      <div class="name">Special Thanks</div>
+      <ul>
+        <li>Your name in the Special Thanks section of the film's credits</li>
+        <li>Part of an independent horror film from script to screen</li>
+        <li>You choose how your name appears at checkout</li>
+      </ul>
+      <a class="btn" href="https://buy.stripe.com/4gM00j2AC7k93763cweZ206" target="_blank" rel="noopener">Get Special Thanks</a>
+    </div>
+    <p class="fine">Secure checkout by Stripe. Contributions support the production and are not an investment: they include no ownership, equity or share of profits.</p>
+  </section>
+
+  <!-- PRODUCER -->
+  <section class="block" id="producer">
+    <div class="kicker">PRODUCER CREDITS</div>
+    <h2>Want a bigger role behind the scenes?</h2>
+    <div class="producer">
+      <ul class="why">
+        <li><span class="ic">🎬</span><div><b>A credit that lasts</b><span>A producer credit stays on the film for good, on screen and with every screening.</span></div></li>
+        <li><span class="ic">★</span><div><b>Build your film portfolio</b><span>For actors, creatives and anyone growing a career in film, a producer credit on a horror feature is a real line on your résumé. Credits are submitted to IMDb, which decides what it lists.</span></div></li>
+        <li><span class="ic">🎟</span><div><b>Part of the journey</b><span>Follow the film from production to festivals, with a closer look at how an indie horror feature gets made.</span></div></li>
+        <li><span class="ic">✦</span><div><b>Genuinely fun</b><span>Horror fans love a good origin story. "I helped produce a horror movie" is a great one.</span></div></li>
+      </ul>
+      <div class="contact">
+        <h3 style="margin:0 0 8px;font-weight:500">Let's talk.</h3>
+        <p>Producer credits are arranged one on one, so we can find the right fit for you and for the film. Send a message and Keshia will get back to you.</p>
+        <div class="ctas">
+          <a class="btn" href="https://www.facebook.com/profile.php?id=61596806482507" target="_blank" rel="noopener">Message us on Facebook</a>
+          <a class="btn ghost" href="https://www.instagram.com/foryou_thefilm/" target="_blank" rel="noopener">Message us on Instagram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OTHER WAYS -->
+  <section class="block">
+    <div class="kicker">OTHER WAYS TO HELP</div>
+    <h2>Every share counts too.</h2>
+    <p style="color:#d6d3c9;max-width:680px">Give any amount you like, wear the shirt, or play the game on our site and bring your friends. Every share helps an independent film get seen.</p>
+    <div class="more">
+      <a class="btn" href="https://buy.stripe.com/aFaaEX5MO8od6ji9AUeZ201" target="_blank" rel="noopener">Give any amount</a>
+      <a class="btn ghost" href="https://buy.stripe.com/14AaEXfnoeMB0YY4gAeZ200" target="_blank" rel="noopener">Shirt · $30</a>
+      <a class="btn ghost" href="https://buy.stripe.com/14A00jgrs1ZPdLKaEYeZ202" target="_blank" rel="noopener">Long-sleeve · $40</a>
+      <a class="btn ghost" href="index.html">Play the game</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    © 2026 FOR YOU · From the mind of writer-director Keshia Clemons<br>
+    <a href="https://www.facebook.com/profile.php?id=61596806482507" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.instagram.com/foryou_thefilm/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.tiktok.com/@foryou_thefilm" target="_blank" rel="noopener">TikTok</a> · <a href="index.html">foryouthefilm.com</a><br>
+    Contributions are not an investment and include no ownership, equity or share of profits. IMDb decides what it lists.
+  </div>
+</footer>
+
+</body>
+</html>
