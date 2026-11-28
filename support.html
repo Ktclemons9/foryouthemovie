@@ -293,8 +293,7 @@
           uf.style.display = 'none'; msg.style.color = ''; msg.textContent = "You're on the list. We'll be in touch.";
         });
       });
-      if (get('fy_visit_support')) show();
-      else db.from('visits').insert({ visitor_id: vid, page: 'support' }).then(function () { set('fy_visit_support', '1'); show(); });
+      db.from('visits').insert({ visitor_id: vid, page: 'support' }).then(show, show);
     }
   } catch (e) {}
 })();

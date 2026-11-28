@@ -56,8 +56,8 @@
 
   <div id="dash" style="display:none">
     <div class="grid">
-      <div class="card"><div class="n" id="homeVisits">0</div><div class="l">Site visitors</div></div>
-      <div class="card"><div class="n" id="supportVisits">0</div><div class="l">Support page visitors</div></div>
+      <div class="card"><div class="n" id="homeVisits">0</div><div class="l">Site visits</div><div class="s" id="homeVisitors"></div></div>
+      <div class="card"><div class="n" id="supportVisits">0</div><div class="l">Support page visits</div><div class="s" id="supportVisitors"></div></div>
       <div class="card"><div class="n" id="players">0</div><div class="l">Players (picked a leader)</div><div class="s" id="players7"></div></div>
       <div class="card"><div class="n" id="conv">0%</div><div class="l">Visitors who became players</div></div>
       <div class="card"><div class="n" id="friends">0</div><div class="l">Friends brought in</div></div>
@@ -73,7 +73,7 @@
     <div class="bars" id="flocks"></div>
 
     <h2>Last 14 days</h2>
-    <table><thead><tr><th>Day</th><th>Site visitors</th><th>Support visitors</th><th>New players</th></tr></thead><tbody id="daily"></tbody></table>
+    <table><thead><tr><th>Day</th><th>Site visits</th><th>Support visits</th><th>New players</th></tr></thead><tbody id="daily"></tbody></table>
 
     <p class="note">Real numbers only: the public site adds 1,000,000 to followers and 100 to committed. Emails and names never appear here. To see the updates email list, run <code>select email, created_at from updates order by created_at desc;</code> in Supabase.</p>
   </div>
@@ -99,9 +99,11 @@
       $('lock').style.display = 'none'; $('dash').style.display = ''; $('refresh').style.display = ''; $('logout').style.display = '';
       $('homeVisits').textContent = fmt(d.home_visits);
       $('supportVisits').textContent = fmt(d.support_visits);
+      $('homeVisitors').textContent = fmt(d.home_visitors) + ' unique visitors';
+      $('supportVisitors').textContent = fmt(d.support_visitors) + ' unique visitors';
       $('players').textContent = fmt(d.players);
       $('players7').textContent = '+' + fmt(d.players_7d) + ' in the last 7 days';
-      $('conv').textContent = d.home_visits ? Math.round(d.players / d.home_visits * 100) + '%' : '0%';
+      $('conv').textContent = d.home_visitors ? Math.round(d.players / d.home_visitors * 100) + '%' : '0%';
       $('friends').textContent = fmt(d.friends_brought);
       $('confirmed').textContent = fmt(d.confirmed);
       $('updates').textContent = fmt(d.updates_emails);

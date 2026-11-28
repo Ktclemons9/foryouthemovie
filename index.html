@@ -3023,8 +3023,7 @@
   function loadVisits() {
     if (!db || !db.rpc) return;
     var done = function () { db.rpc('visit_count', { p_page: 'home' }).then(function (r) { if (r && !r.error && r.data != null) { visitTotal = +r.data; fc.textContent = fmt(BASE_FOLLOWERS + visitTotal); } }); };
-    if (store('fy_visit_home')) return done();
-    db.from('visits').insert({ visitor_id: vid, page: 'home' }).then(function () { store('fy_visit_home', '1'); done(); });
+    db.from('visits').insert({ visitor_id: vid, page: 'home' }).then(done, done);
   }
 
   function start() {
