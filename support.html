@@ -115,6 +115,15 @@
   .stickycta .btn{padding:9px 18px;font-size:15px}
   @media (max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
   @media (prefers-reduced-motion:reduce){.ticker .run,.stat::after,.btn.pulse,.tier{animation:none}.reveal{opacity:1;transform:none}}
+  .viewstat{margin-top:14px;display:inline-flex;gap:6px;font-size:15px;color:#cfccc2;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:7px 16px}
+  .viewstat b{color:var(--text);font-weight:600}
+  .upbox{margin-top:22px;max-width:620px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px}
+  .upbox b{display:block;font-weight:500;font-size:18px}
+  .upbox span{display:block;color:#cfccc2;font-size:15px;margin:4px 0 10px}
+  .upbox form{display:flex;gap:8px;flex-wrap:wrap}
+  .upbox input{flex:1;min-width:200px;background:var(--bg);border:1px solid var(--line);color:var(--text);border-radius:999px;padding:11px 16px;font-family:inherit;font-size:15px}
+  .upbox .btn{border:none;cursor:pointer;font-family:inherit}
+  .upmsg{font-size:14px;margin-top:8px;color:var(--gold);min-height:18px}
 </style>
 </head>
 <body>
@@ -139,6 +148,7 @@
         <a class="btn ghost" href="#story">Read the story</a>
       </div>
       <div class="from">Special Thanks credit from $25.</div>
+      <div class="viewstat" id="viewStat" style="display:none"><b id="viewCount">1,000,000</b> followers · <b id="commitCount">100</b> committed</div>
       <div class="laurel"><img src="RUNNERUP-FrightsCameraActionHorrorScreenplayContest-2026.png" alt="" onerror="this.remove()"><span>Runner-up, Best Screenplay, Feature Film<br>Frights! Camera! Action! 2026</span></div>
     </div>
     <div class="hero-img"><img src="ResDoor.png" alt="A door with light underneath"></div>
@@ -161,7 +171,7 @@
     <p>She held onto it. Just in case.</p>
     <p>She wakes up somewhere she doesn't recognize. The doors don't lead where they should, something is hunting her, and the only thing still working is her livestream.</p>
     <p>A handful of internet sleuths find her feed. Larry, the hero of the Denver Miracle, and his team can see everything, but nothing they send gets through. She keeps asking if anyone is there. Someone named Re keeps answering.</p>
-    <p>Every clue leads to a group that's been scrubbed from the internet: The Reach. And the one man who tried to warn the world says it was never about the leaders. Something has always stood behind them, and tonight it wants what Katey kept.</p>
+    <p>Every clue leads to a group that's been scrubbed from the internet: The Reach. One man has spent years trying to warn the world that cults were never about their leaders. Something has always stood behind them, and tonight it wants what Katey kept.</p>
     <p class="end">They can see her. Now they have to reach her before it does.</p>
   </section>
 
@@ -237,6 +247,12 @@
       <a class="btn ghost" href="https://buy.stripe.com/14A00jgrs1ZPdLKaEYeZ202" target="_blank" rel="noopener">Long-sleeve · $40</a>
       <a class="btn ghost" href="index.html">Play the game</a>
     </div>
+    <div class="upbox" id="updates">
+      <b>Get updates on <i>For You</i>.</b>
+      <span>The teaser, festival screenings and the premiere. A few emails a year, nothing else.</span>
+      <form id="upForm" novalidate><input type="email" id="upEmail" maxlength="200" placeholder="Your email" autocomplete="email" aria-label="Your email"><button class="btn" id="upBtn" type="submit">Keep me posted</button></form>
+      <div id="upMsg" class="upmsg"></div>
+    </div>
   </section>
 
 </main>
@@ -251,6 +267,38 @@
 
 <div class="stickycta" id="stickyCta"><span>Your name in the credits · <b style="color:var(--gold)">$25</b></span><a class="btn" href="https://buy.stripe.com/4gM00j2AC7k93763cweZ206" target="_blank" rel="noopener">Get Special Thanks</a></div>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(function () {
+  try {
+    var db = window.supabase && window.supabase.createClient('https://qaezwlmsajpkbsjunsxl.supabase.co', 'sb_publishable_geTyYMPIAoHsU_MNZ9_wJQ_vD7LFYXJ');
+    if (db) {
+      var get = function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } };
+      var set = function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} };
+      var vid = get('fy_vid');
+      if (!vid) { vid = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : (Date.now() + '-' + Math.random().toString(36).slice(2)); set('fy_vid', vid); }
+      var show = function () { db.rpc('visit_count', { p_page: 'support' }).then(function (r) {
+        if (!r || r.error || r.data == null) return;
+        var el = document.getElementById('viewCount'), base = 1000000, to = +r.data, t0 = null;
+        document.getElementById('viewStat').style.display = '';
+        (function step(t) { if (!t0) t0 = t; var k = Math.min(1, (t - t0) / 1200); el.textContent = (base + Math.round(to * (1 - Math.pow(1 - k, 3)))).toLocaleString(); if (k < 1) requestAnimationFrame(step); })(performance.now());
+      }); };
+      db.from('follows').select('*', { count: 'exact', head: true }).then(function (r) { if (r && !r.error && r.count != null) document.getElementById('commitCount').textContent = (100 + Number(r.count)).toLocaleString(); });
+      var uf = document.getElementById('upForm');
+      if (uf) uf.addEventListener('submit', function (e) {
+        e.preventDefault(); var em = document.getElementById('upEmail').value.trim(), msg = document.getElementById('upMsg');
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) { msg.style.color = '#e5503f'; msg.textContent = 'Enter a valid email.'; return; }
+        db.from('updates').insert({ email: em.toLowerCase().slice(0, 200), source: 'support' }).then(function (r) {
+          if (r.error && r.error.code !== '23505' && !/duplicate|unique/i.test(r.error.message || '')) { msg.style.color = '#e5503f'; msg.textContent = 'Something went wrong. Try again.'; return; }
+          uf.style.display = 'none'; msg.style.color = ''; msg.textContent = "You're on the list. We'll be in touch.";
+        });
+      });
+      if (get('fy_visit_support')) show();
+      else db.from('visits').insert({ visitor_id: vid, page: 'support' }).then(function () { set('fy_visit_support', '1'); show(); });
+    }
+  } catch (e) {}
+})();
+</script>
 <script>
 (function () {
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>For You · Team Dashboard</title>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0e0f12;--panel:#16171c;--panel2:#1c1e24;--line:#2a2c33;--text:#ecebe6;--muted:#9a9ca4;--red:#e5503f;--gold:#e8b04a}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:'Jost',system-ui,sans-serif;font-weight:300;line-height:1.5}
+  .wrap{max-width:900px;margin:0 auto;padding:24px 18px 60px}
+  header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}
+  h1{font-weight:400;font-size:26px;margin:0}
+  h1 small{display:block;font-size:12px;letter-spacing:.2em;color:var(--gold)}
+  a{color:var(--gold)}
+  .btn{background:var(--gold);color:#1a1206;border:none;border-radius:999px;padding:10px 20px;font-family:inherit;font-weight:500;font-size:15px;cursor:pointer}
+  .ghost{background:none;border:1px solid var(--line);color:var(--muted);border-radius:999px;padding:6px 14px;font-family:inherit;cursor:pointer}
+  .lock{max-width:420px;margin:40px auto;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px}
+  .lock input{width:100%;margin:10px 0 12px;background:var(--bg);border:1px solid var(--line);color:var(--text);border-radius:10px;padding:11px 12px;font-family:inherit;font-size:16px}
+  .err{color:var(--red);font-size:14px;min-height:20px}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px}
+  .card .n{font-size:32px;font-weight:500;color:var(--gold);line-height:1.1}
+  .card .l{font-size:13px;color:var(--muted);margin-top:4px}
+  .card .s{font-size:12px;color:var(--text);margin-top:6px}
+  h2{font-weight:400;font-size:18px;margin:28px 0 10px}
+  .bars .row{display:grid;grid-template-columns:150px 1fr 40px;align-items:center;gap:10px;margin:8px 0;font-size:15px}
+  .bar{height:12px;background:#26272e;border-radius:99px;overflow:hidden}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,#6b2d6e,#d6407a,#ef7b3a,#e8b04a)}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:right}
+  th:first-child,td:first-child{text-align:left}
+  th{color:var(--muted);font-weight:400;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+  .note{font-size:13px;color:var(--muted);margin-top:24px}
+  @media (max-width:700px){.grid{grid-template-columns:repeat(2,1fr)}.bars .row{grid-template-columns:120px 1fr 32px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1><small>FOR YOU · TEAM ONLY</small>Dashboard</h1>
+    <div><button class="ghost" id="refresh" style="display:none">Refresh</button> <button class="ghost" id="logout" style="display:none">Lock</button></div>
+  </header>
+
+  <div class="lock" id="lock">
+    <b>Enter your dashboard phrase</b>
+    <p style="color:var(--muted);font-size:14px;margin:6px 0 0">The secret phrase you set in for-you-dashboard.sql.</p>
+    <input type="password" id="key" autocomplete="current-password" placeholder="Your phrase">
+    <div class="err" id="err"></div>
+    <button class="btn" id="go">Open dashboard</button>
+  </div>
+
+  <div id="dash" style="display:none">
+    <div class="grid">
+      <div class="card"><div class="n" id="homeVisits">0</div><div class="l">Site visitors</div></div>
+      <div class="card"><div class="n" id="supportVisits">0</div><div class="l">Support page visitors</div></div>
+      <div class="card"><div class="n" id="players">0</div><div class="l">Players (picked a leader)</div><div class="s" id="players7"></div></div>
+      <div class="card"><div class="n" id="conv">0%</div><div class="l">Visitors who became players</div></div>
+      <div class="card"><div class="n" id="friends">0</div><div class="l">Friends brought in</div></div>
+      <div class="card"><div class="n" id="confirmed">0</div><div class="l">Confirmed emails</div></div>
+      <div class="card"><div class="n" id="updates">0</div><div class="l">Updates list signups</div></div>
+      <div class="card"><div class="n" id="golive">0</div><div class="l">GO LIVE taps</div></div>
+      <div class="card"><div class="n" id="kdoor">0</div><div class="l">Opened Katey's door</div></div>
+      <div class="card"><div class="n" id="credits">0</div><div class="l">Producer credit clicks</div></div>
+      <div class="card"><div class="n" id="videos">0</div><div class="l">Videos submitted</div><div class="s" id="pending"></div></div>
+    </div>
+
+    <h2>Players by flock</h2>
+    <div class="bars" id="flocks"></div>
+
+    <h2>Last 14 days</h2>
+    <table><thead><tr><th>Day</th><th>Site visitors</th><th>Support visitors</th><th>New players</th></tr></thead><tbody id="daily"></tbody></table>
+
+    <p class="note">Real numbers only: the public site adds 1,000,000 to followers and 100 to committed. Emails and names never appear here. To see the updates email list, run <code>select email, created_at from updates order by created_at desc;</code> in Supabase.</p>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(function () {
+  var db = window.supabase && window.supabase.createClient('https://qaezwlmsajpkbsjunsxl.supabase.co', 'sb_publishable_geTyYMPIAoHsU_MNZ9_wJQ_vD7LFYXJ');
+  var $ = function (id) { return document.getElementById(id); };
+  var get = function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } };
+  var set = function (k, v) { try { v === null ? localStorage.removeItem(k) : localStorage.setItem(k, v); } catch (e) {} };
+  var fmt = function (n) { return Number(n || 0).toLocaleString(); };
+  var NAMES = { easelhours: '@easelhours', gorillabob: '@gorillabob', sundaysongbird: '@sundaysongbird', dragonprincess: '@dragonprincess' };
+
+  function load(key) {
+    $('err').textContent = '';
+    if (!db) { $('err').textContent = 'Could not connect. Check your internet and try again.'; return; }
+    db.rpc('dashboard_stats', { p_key: key }).then(function (r) {
+      if (r.error || !r.data) { $('err').textContent = 'That phrase did not work.'; set('fy_dash', null); $('lock').style.display = ''; $('dash').style.display = 'none'; return; }
+      set('fy_dash', key);
+      var d = typeof r.data === 'string' ? JSON.parse(r.data) : r.data;
+      $('lock').style.display = 'none'; $('dash').style.display = ''; $('refresh').style.display = ''; $('logout').style.display = '';
+      $('homeVisits').textContent = fmt(d.home_visits);
+      $('supportVisits').textContent = fmt(d.support_visits);
+      $('players').textContent = fmt(d.players);
+      $('players7').textContent = '+' + fmt(d.players_7d) + ' in the last 7 days';
+      $('conv').textContent = d.home_visits ? Math.round(d.players / d.home_visits * 100) + '%' : '0%';
+      $('friends').textContent = fmt(d.friends_brought);
+      $('confirmed').textContent = fmt(d.confirmed);
+      $('updates').textContent = fmt(d.updates_emails);
+      $('golive').textContent = fmt(d.golive_taps);
+      $('credits').textContent = fmt(d.credits_clicks);
+      $('kdoor').textContent = fmt(d.kdoor_opens);
+      $('videos').textContent = fmt(d.videos_total);
+      $('pending').textContent = d.videos_pending ? d.videos_pending + ' waiting for your approval' : 'None waiting';
+      var bl = d.by_leader || {}, max = Math.max(1, Math.max.apply(null, Object.keys(NAMES).map(function (k) { return bl[k] || 0; })));
+      $('flocks').innerHTML = Object.keys(NAMES).sort(function (a, b) { return (bl[b] || 0) - (bl[a] || 0); }).map(function (k) {
+        var n = bl[k] || 0; return '<div class="row"><span>' + NAMES[k] + '</span><span class="bar"><i style="width:' + Math.round(n / max * 100) + '%"></i></span><span style="text-align:right">' + n + '</span></div>';
+      }).join('');
+      $('daily').innerHTML = (d.daily || []).map(function (x) {
+        var dt = new Date(x.day + 'T12:00:00'); var label = dt.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+        return '<tr><td>' + label + '</td><td>' + fmt(x.home) + '</td><td>' + fmt(x.support) + '</td><td>' + fmt(x.players) + '</td></tr>';
+      }).join('');
+    });
+  }
+  $('go').addEventListener('click', function () { var k = $('key').value.trim(); if (k) load(k); });
+  $('key').addEventListener('keydown', function (e) { if (e.key === 'Enter') $('go').click(); });
+  $('refresh').addEventListener('click', function () { var k = get('fy_dash'); if (k) load(k); });
+  $('logout').addEventListener('click', function () { set('fy_dash', null); location.reload(); });
+  var saved = get('fy_dash'); if (saved) load(saved);
+})();
+</script>
+</body>
+</html>

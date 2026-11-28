@@ -800,6 +800,69 @@
   .dv-flock.lead{border-color:rgba(232,176,74,.7)}
   .cr-contact{justify-content:flex-start;margin:6px 0 12px}
   .tiers.st-only{grid-template-columns:1fr;max-width:320px}
+  .prole{display:block;font-style:normal;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin:2px 0 4px}
+  .vwall{margin-top:18px}
+  .vw-h{font-size:12px;letter-spacing:.18em;color:var(--gold);margin-bottom:10px}
+  .vw-wrap{position:relative}
+  .vw-track{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:2px 2px 10px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .vw-track::-webkit-scrollbar{display:none}
+  .vw-slide{flex:0 0 260px;scroll-snap-align:start;background:var(--panel2);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .vw-frame{position:relative;width:100%;aspect-ratio:9/16;background:#000}
+  .vw-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .vw-link{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;position:absolute;inset:0;color:var(--gold);text-decoration:none;font-size:15px;text-align:center;padding:16px}
+  .vw-link b{font-size:40px}
+  .vw-by{padding:8px 12px;font-size:13px;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .vw-arrow{position:absolute;top:42%;z-index:2;width:38px;height:38px;border-radius:50%;border:1px solid rgba(232,176,74,.6);background:rgba(14,15,18,.85);color:var(--gold);font-size:24px;line-height:1;cursor:pointer}
+  .vw-arrow.prev{left:-6px}.vw-arrow.next{right:-6px}
+  .vw-count{font-size:12px;color:var(--muted);text-align:center}
+  .sup-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
+  .sup-card{background:var(--panel2);border:1px solid rgba(232,176,74,.45);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:8px}
+  .sup-h{color:var(--gold);font-weight:500;font-size:17px}
+  .sup-p{font-size:14px;color:#cfccc2;flex:1}
+  .sup-card .btn{text-align:center;margin:0}
+  .sup-alt{font-size:12px;color:var(--muted);text-align:center}
+  .sup-alt a{color:var(--gold)}
+  .sup-page{display:block;text-align:center;margin:14px 0 6px;padding:11px 16px;border:1px solid var(--gold);border-radius:999px;color:var(--gold);text-decoration:none;font-weight:500}
+  @media (max-width:560px){.sup-grid{grid-template-columns:1fr}}
+  .nav-h{font-size:11px;letter-spacing:.2em;color:var(--gold);padding:14px 10px 4px}
+  .nav-h:first-child{padding-top:4px}
+  .updates-card .upform{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 4px}
+  .updates-card input{flex:1;min-width:200px;background:#0e0f12;border:1px solid var(--line);color:var(--text);border-radius:999px;padding:10px 16px;font-family:inherit;font-size:15px}
+  .updates-card .btn{margin:0;background:var(--gold);color:#1a1206}
+  .updates-card .cdone{display:none}
+  .nav a{padding:7px 10px;font-size:14.5px}
+  .optin{display:flex;align-items:flex-start;gap:8px;margin:8px 0 4px;font-size:13px;color:#cfccc2;cursor:pointer;text-align:left;line-height:1.4}
+  .optin input{margin-top:2px;accent-color:var(--gold);flex:none;width:16px;height:16px}
+  .storyfold{margin:0 0 16px;border:1px solid rgba(232,176,74,.45);border-radius:12px;background:rgba(232,176,74,.06);text-align:left}
+  .storyfold>summary{list-style:none;cursor:pointer;padding:12px 16px;color:var(--gold);font-weight:500;font-size:15px}
+  .storyfold>summary::-webkit-details-marker{display:none}
+  .storyfold>summary::after{content:' ▾'}
+  .storyfold[open]>summary::after{content:' ▴'}
+  .sf-in{padding:0 16px 14px}
+  .sf-in p{font-size:15px;line-height:1.55;color:#e4e1d6;margin:0 0 10px}
+  .sf-you{background:rgba(0,0,0,.25);border-left:3px solid var(--gold);padding:10px 12px;border-radius:6px}
+  .sf-you b{color:var(--gold);font-weight:500}
+  .sf-by{font-style:italic;color:var(--gold)!important;opacity:.85;font-size:14px!important}
+  .kdoor{text-align:center;margin:28px 0;padding:28px 20px 30px;border:1px solid var(--line);border-radius:16px;background:radial-gradient(ellipse at 50% 35%,rgba(232,176,74,.12),transparent 60%),var(--panel)}
+  .kd-knock{font-size:12px;letter-spacing:.3em;color:var(--red)}
+  .kd-img{position:relative;display:block;margin:16px auto 18px;width:180px;height:240px;border:none;padding:0;background:#000;border-radius:10px;overflow:hidden;cursor:pointer;perspective:600px}
+  .kd-img img{width:100%;height:100%;object-fit:cover;transform-origin:left center;transition:transform 1s ease,filter 1s ease}
+  .kd-light{position:absolute;inset:0;background:radial-gradient(ellipse at 30% 60%,rgba(255,215,140,.95),rgba(232,176,74,.4) 40%,transparent 70%);opacity:0;transition:opacity 1s ease;pointer-events:none}
+  .kdoor.open .kd-img img{transform:rotateY(-70deg);filter:brightness(.7)}
+  .kdoor.open .kd-light{opacity:1}
+  .kdoor h2{margin:0 0 8px}
+  .kdoor p{max-width:460px;margin:0 auto 16px;color:#cfccc2}
+  .kd-go{background:var(--gold);color:#1a1206;border:none;border-radius:999px;padding:11px 26px;font-family:inherit;font-weight:500;font-size:16px;cursor:pointer}
+  @media (prefers-reduced-motion:reduce){.kd-img img,.kd-light{transition:none}}
+  .actions .backgame:hover{color:var(--gold)}
+  .backgame .bg-me{display:none}
+  body.is-player .backgame .bg-new{display:none}
+  body.is-player .backgame .bg-me{display:inline}
+  .fc-center{justify-content:center!important}
+  .filmcard .kdoor{margin:22px 0 4px;padding:20px 16px 22px;border-radius:14px}
+  .filmcard .kd-img{width:140px;height:186px;margin:12px auto 14px}
+  .filmcard .kdoor h3{font-weight:500;font-size:20px;margin:0 0 6px;color:var(--text)}
+  .filmcard .kdoor p{font-size:15px}
 </style>
 </head>
 <body>
@@ -812,18 +875,29 @@
 <aside class="sidebar" id="sidebar">
   <a class="brand" href="#top"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt="For You crest"></div><span>FOR YOU</span></a>
   <nav class="nav">
-    <a href="#feed"><span class="dot"></span>Feed</a>
-    <a href="#committed"><span class="dot"></span>The Most Committed</a>
+    <div class="nav-h">START HERE</div>
     <a href="#story"><span class="dot"></span>The Story</a>
-    <a href="#followme"><span class="dot"></span>Follow Me</a>
-    <a href="#lore"><span class="dot"></span>The Lore</a>
+    <a href="#chosenBanner" data-play><span class="dot"></span>Play the Game</a>
+    <a href="#committed"><span class="dot"></span>The Most Committed</a>
+    <div class="nav-h">THE WORLD OF FOR YOU</div>
+    <a href="#kdoor"><span class="dot"></span>Katey's Door</a>
+    <a href="#circle"><span class="dot"></span>Katey</a>
     <a href="#leaders"><span class="dot"></span>The Leaders</a>
-    <a href="#circle"><span class="dot"></span>The Circle</a>
-    <a href="#offerings"><span class="dot"></span>Offerings</a>
-    <a href="#vestments"><span class="dot"></span>Vestments</a>
-    <a href="#credits"><span class="dot"></span>Join the Credits</a>
-    <a href="#beFollower"><span class="dot"></span>Be a Follower</a>
-    <a href="#join"><span class="dot"></span>Join Us</a>
+    <a href="#lore"><span class="dot"></span>Re, the Creator</a>
+    <a href="#followme"><span class="dot"></span>The Song</a>
+    <a href="#reach"><span class="dot"></span>The Reach</a>
+    <a href="#fare"><span class="dot"></span>The Fare</a>
+    <a href="#shade"><span class="dot"></span>The Shade</a>
+    <a href="#sleuths"><span class="dot"></span>The Sleuths</a>
+    <a href="#kpeople"><span class="dot"></span>Katey's People</a>
+    <a href="#algorithm"><span class="dot"></span>The Algorithm</a>
+    <div class="nav-h">GET INVOLVED</div>
+    <a href="#beFollower"><span class="dot"></span>Be in the Film</a>
+    <a href="#videoPost"><span class="dot"></span>Share Your Video</a>
+    <a href="#vestments"><span class="dot"></span>Wear the Crest</a>
+    <a href="#offerings"><span class="dot"></span>Support the Film</a>
+    <a href="#updates"><span class="dot"></span>Get Updates</a>
+    <div class="nav-h">&nbsp;</div>
     <a href="#door"><span class="dot"></span>The Door</a>
   </nav>
   <div class="side-rank" id="sideRank">
@@ -851,7 +925,7 @@
       <div>
         <div class="pname">FOR YOU</div>
         <div class="handle">@foryouthefilm</div>
-        <div class="stats"><span><b>18</b> posts</span><span><b id="fcount">1,000,000</b> followers</span><span><b>∞</b> committed</span></div>
+        <div class="stats"><span><b>15</b> posts</span><span><b id="fcount">1,000,000</b> followers</span><span><b id="ccount">100</b> committed</span></div>
         <button class="follow" id="followBtn">Follow</button>
         <a class="fbbtn" href="https://www.facebook.com/profile.php?id=61596806482507" target="_blank" rel="noopener" aria-label="For You on Facebook"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-7.5h2.5l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4H8v3h2.6V21h2.9z"/></svg>Facebook</a>
         <a class="fbbtn igbtn" href="https://www.instagram.com/foryou_thefilm/" target="_blank" rel="noopener" aria-label="For You on Instagram"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/></svg>Instagram</a>
@@ -872,8 +946,14 @@
       <p>A screenlife horror film from an award-winning screenplay. Online sleuths try to rescue a lonely artist from a nightmare livestream, and uncover a digital cult that turns the promise of being seen into a trap.</p>
       <p class="fc-game">This site is your glimpse into its story. Share it with friends and win prizes, including a role in the film.</p>
       <p class="fc-support">It's free, and every share helps an independent film get seen.</p>
-      <p class="fc-first">👇 Start with the story. The game won't make sense without it.</p>
-      <div class="fc-btns"><a class="fc-join" href="#story">Read the story →</a><a class="fc-link" href="#play" data-play>Join the recruitment →</a></div>
+      <div class="fc-btns fc-center"><a class="fc-join" href="#play" data-play>Join the recruitment →</a></div>
+      <div class="kdoor" id="kdoor">
+        <div class="kd-knock">KNOCK, KNOCK</div>
+        <button type="button" class="kd-img" id="kdBtn" aria-label="Open Katey's door"><img src="ResDoor.png" alt=""><span class="kd-light"></span></button>
+        <h3>Open the door to Katey's story.</h3>
+        <p>Everything in The Reach started with her. Step through and see how she was chosen, who led her there, and what's waiting on the other side.</p>
+        <button type="button" class="kd-go" id="kdGo">Open the door</button>
+      </div>
     </div>
     <img class="fc-laurel" src="RUNNERUP-FrightsCameraActionHorrorScreenplayContest-2026.png" alt="Runner-up, Best Screenplay, Frights! Camera! Action! 2026" onerror="this.remove()">
   </section>
@@ -920,7 +1000,8 @@
         <div class="rb-h" style="margin-top:6px">CONFIRM YOUR EMAIL</div>
         <p id="rbEmailWhy">Confirm your email so you count as a real follower toward prizes, and so you can get back in from any device.</p>
         <div class="invite"><input id="rbEmailIn" type="email" placeholder="you@example.com" autocomplete="email"><button id="rbEmailBtn" type="button">Confirm my email</button></div>
-        <div class="emailnote">Your email is only used to send you a prize if you win, and to get you back into the game if you switch phones. We'll never sell it, share it, or send you ads. We'll never contact you for anything except prizes, apart from the sign-in or confirmation links you ask for. We aren't soliciting or selling anything beyond what you see on this site.</div>
+        <label class="optin"><input type="checkbox" id="rbUpdates"> <span>Also send me updates on the film: the teaser, festival screenings and the premiere.</span></label>
+        <div class="emailnote">Your email is only used to send you a prize if you win, and to get you back into the game if you switch phones. We'll never sell it, share it, or send you ads. We'll never contact you for anything except prizes, apart from the sign-in or confirmation links you ask for, and film updates if you opt in. We aren't soliciting or selling anything beyond what you see on this site.</div>
       </div>
       <div class="rb-ok" id="rbOk">✓ Your email is confirmed. You count toward prizes, and you can get back in from any device.</div>
       <div class="rb-msg" id="rbMsg"></div>
@@ -930,34 +1011,7 @@
     <button class="seeagain" id="seeAgain">SEE RE AGAIN</button>
   </section>
 
-  <article class="post" data-post="p2" id="story">
-    <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
-    <div class="num"><span class="rec"></span>START HERE · THE STORY</div>
-    <div class="readfirst"><b>READ THIS FIRST</b><span>Everything in the game comes from Katey's story: the leaders, the badges, the token, Re. It takes about a minute, and the rest of the site will make sense.</span></div>
-    <div class="split">
-      <div>
-        <h2>All she had to do was pay the fare.</h2>
-    <p class="fc-by">From the mind of writer-director Keshia Clemons.</p>
-        <p>Katey liked, shared and commented on every post from her favorite creator, because if you show up enough, somebody finally sees you. Then the invitation came: the trip of a lifetime, and a chance to be seen. The fare was a single gold token.</p>
-        <p>She held onto it. Just in case.</p>
-        <p>She wakes up somewhere she doesn't recognize. The doors don't lead where they should, something is hunting her, and the only thing still working is her livestream.</p>
-        <p>A handful of internet sleuths find her feed. Larry, the hero of the Denver Miracle, and his team can see everything, but nothing they send gets through. She keeps asking if anyone is there. Someone named Re keeps answering.</p>
-        <p>Every clue leads to a group that's been scrubbed from the internet: The Reach. And the one man who tried to warn the world says it was never about the leaders. Something has always stood behind them, and tonight it wants what Katey kept.</p>
-        <p class="storyend">They can see her. Now they have to reach her before it does.</p>
-      </div>
-      <div class="media"><img src="ResDoor.png" alt="A door with light underneath"></div>
-    </div>
-    <div class="yourpath"><b>YOUR PATH</b><span>Katey started exactly where you are. One follow. One like. One share. That's how it works.</span></div>
-    <a class="fc-join story-next" href="#chosenBanner" data-storynext>Now step into The Reach ↓</a>
-    <button type="button" class="sign" data-sign="1" aria-label="A sign of Re">✦</button>
-    <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
-    <div class="comments">
-      <div class="c"><div class="ci">EN</div><div><b>@emptynest02</b> I saw the door too. It's beautiful.</div></div>
-      <div class="c"><div class="ci">MG</div><div><b>@marigold_71</b> Your crossing awaits 💛</div></div>
-    </div>
-  </article>
-
-  <section class="chosen" id="chosenBanner">
+<section class="chosen" id="chosenBanner">
     <details class="golive" id="goLive">
     <summary class="gl-box">
       <div class="gl-top"><span class="gl-dot"></span>LIVE NOW · A FREE GAME FROM THE FILM</div>
@@ -965,9 +1019,18 @@
       <h2 class="gl-h">The Reach is live. Come play.</h2>
       <div class="gl-sub">Win a role in the film. Win the collector's token. It's free.</div>
       <span class="gl-btn"><span class="gl-bdot"></span><span class="gl-off">GO LIVE</span><span class="gl-on">YOU'RE LIVE</span></span>
-      <div class="gl-hint"><span class="gl-off">Tap to open the game · New here? Read the story above first</span><span class="gl-on">Here's how to win ↓</span></div>
+      <div class="gl-hint"><span class="gl-off">Tap to open the game</span><span class="gl-on">Here's how to win ↓</span></div>
     </summary>
     <button type="button" class="gl-play" data-playnow>▶ PLAY</button>
+    <details class="storyfold" id="story">
+      <summary>Why play? The story in 30 seconds</summary>
+      <div class="sf-in">
+        <p>Katey liked, shared and commented on every post from her favorite creator, because if you show up enough, somebody finally sees you. Then she was chosen: the trip of a lifetime, and a chance to be seen. The fare was a single gold token. She held onto it. Just in case.</p>
+        <p>Now something is hunting her, her livestream is her only lifeline, and a handful of internet sleuths are racing to reach her. Behind it all is Re, the one who promises followers they'll finally be seen.</p>
+        <p class="sf-you"><b>What's in it for you?</b> In The Reach, the most devoted get seen. Here, they really do: bring the most friends to the winning flock and you get a speaking line in <i>For You</i>. Every badge you earn unlocks a piece of the story no one else gets to see.</p>
+        <p class="sf-by">From the mind of writer-director Keshia Clemons.</p>
+      </div>
+    </details>
     <div class="duo">
       <div class="duo-col">
         <h2 class="duo-t">Win a role in a horror movie.</h2>
@@ -1118,7 +1181,7 @@
         <li>Round 1, The Fare, runs from November 1 through 11:59 PM Eastern on December 31, 2026. Starting in January 2027, each calendar month is its own numbered round (Round 2 is January), ending at 11:59 PM Eastern on the last day of the month.</li>
         <li>Rewards are given only if at least 100 new people follow during the round. If the goal isn't met, the rewards roll over to the next round.</li>
         <li>Rankings count people who follow through your personal invite link during the round.</li>
-        <li>To be eligible, add your email when you choose your name, or later in Your Status. Your email is only used to contact winners and to help you get back into the game. We never sell it, share it, or send ads. We'll never contact you for anything except prizes, apart from the sign-in or confirmation links you ask for. We aren't soliciting or selling anything beyond what you see on this site.</li>
+        <li>To be eligible, add your email when you choose your name, or later in Your Status. Your email is only used to contact winners and to help you get back into the game. We never sell it, share it, or send ads. We'll never contact you for anything except prizes, apart from the sign-in or confirmation links you ask for, and film updates if you opt in. We aren't soliciting or selling anything beyond what you see on this site.</li>
         <li>The #1 recruiter receives the official For You collector's token by mail. The top 3 may be named in the end credits of For You, under the name they choose. Being credited is optional.</li>
         <li>Ties go to whoever reached that number first.</li>
         <li>Open to US residents 18 and older. No purchase necessary. Following is free.</li>
@@ -1208,10 +1271,10 @@
     <p class="muted" id="reWeekSub">A new word from Re appears every week.</p>
   </article>
 
-  <article class="post" data-post="p1">
+<article class="post" data-post="p1" id="post1">
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div><div class="pin">PINNED</div></div>
     <div class="num"><span class="rec"></span>1 · FOR YOU</div>
-    <h2>Who decides what shows up on your For You page?</h2>
+    <h2>Be careful who you follow.</h2>
     <p>Online sleuths trying to rescue a lonely artist from a nightmare livestream uncover a predatory digital cult that turns the promise of being seen into a trap.</p>
     <p class="muted">Runner-up, Best Screenplay, Feature Film. Frights! Camera! Action! 2026.</p>
     <button type="button" class="sign" data-sign="0" aria-label="A sign of Re">✦</button>
@@ -1228,7 +1291,7 @@
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
     <div class="num"><span class="rec"></span>2 · KATEY</div>
     <h2>@itsjustme_katey</h2>
-    <p>A painter starting over. She liked, shared and commented on every post from her favorite creator, because if you show up enough, somebody finally sees you. Tonight she goes live.</p>
+    <p>A painter starting over. She liked, shared and commented on every post from her favorite creator, because if you show up enough, somebody finally sees you. Tonight she goes live, and somebody is finally watching. She just doesn't know who.</p>
     <div class="people">
       <div class="person"><div class="face">K</div><b>Katey</b><span>Live now</span></div>
     </div>
@@ -1244,8 +1307,9 @@
   <article class="post" data-post="p5" id="leaders">
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
     <div class="num"><span class="rec"></span>3 · FOLLOW THE LEADERS</div>
-    <h2>They look like anyone you'd follow.</h2>
-    <p>A painter. A home chef. A singer. A cosplayer. Creators with big hearts and bigger followings. Every sign-off ends the same way: <span class="quote">"Follow me. Reach Re."</span></p>
+    <h2>One post can reach millions.</h2>
+    <p>Today's influencers can reach more people in a day than any cult leader could in a lifetime. Katey followed one of them. These four lead flocks of their own.</p>
+    <p>A painter. A home chef. A singer. A cosplayer. They look like anyone you'd follow: big hearts, bigger followings. And every sign-off ends the same way: <span class="quote">"Follow me. Reach Re."</span></p>
     <div class="people">
       <div class="person"><div class="face" style="overflow:visible"><img src="easelhours.png" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover" onerror="if(this.parentNode)this.parentNode.textContent='EH'"></div><b>@easelhours</b><span>A soft-spoken young painter. <span class="quote">"Nobody should paint alone."</span></span></div>
       <div class="person"><div class="face" style="overflow:visible"><img src="gorillabob.png" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover" onerror="if(this.parentNode)this.parentNode.textContent='GB'"></div><b>@gorillabob</b><span>A big-hearted home chef. <span class="quote">"Nobody eats alone in my kitchen."</span></span></div>
@@ -1273,9 +1337,9 @@
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
     <div class="num"><span class="rec"></span>4 · THE LORE</div>
     <h2>Re, the Creator.</h2>
-    <p>Every cult that led its followers to their end had a leader. None of them were in charge. Behind every one stood Re, the Creator, and The Reach has followed him for centuries.</p>
-    <p>His name has been scrubbed from everything online. Dr. Calvin Vance has spent his life trying to warn the world, and almost no one believed him.</p>
-    <p>The leaders who recruited for Re once needed newspaper ads and pamphlets to find followers. Now they have your feed, and his reach is bigger than ever.</p>
+    <p>Why do some creators gain millions of followers while others post for years and never get seen? In The Reach, the answer is Re. Follow the right person and you get seen. Bring others, and Re lifts you higher.</p>
+    <p>It isn't new. Every cult that led its followers to their end had a leader, but none of them were in charge. Behind every one stood Re, and The Reach has followed him for centuries.</p>
+    <p>The leaders who recruited for him once needed newspaper ads and pamphlets. Now they have your feed, and his reach is bigger than ever.</p>
     <p class="muted">He keeps an hour. Few have found it.</p>
     <div class="yourpath"><b>YOUR PATH</b><span>No one reaches Re alone. Your leader is the way in.</span></div>
     <button type="button" class="sign" data-sign="3" aria-label="A sign of Re">✦</button>
@@ -1290,6 +1354,8 @@
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
     <div class="num"><span class="rec"></span>5 · FOLLOW ME</div>
     <h2>Every follower knows the words.</h2>
+    <p>You've known about Re longer than you think. He's always been there. You just weren't paying attention.</p>
+    <p>His story has been passed down like a nursery rhyme, from one flock to the next, for as long as anyone can remember. A knock at the door. A fare to pay. And no one ever gets away. It's a story as old as time, and once you hear it, you'll never stop hearing it.</p>
     <div class="media hide-if-missing songvid"><video src="thesongteaservideo.MP4" controls playsinline preload="metadata"></video></div>
     <audio id="rhymeAudio" controls src="rhyme.mp3" style="width:100%;margin:8px 0 4px"></audio>
     <div class="rhyme">
@@ -1315,7 +1381,9 @@
       <div>
         <h2>You've been chosen.</h2>
     <p class="rewarded">The most committed followers are rewarded.</p>
-        <p>Like. Share. Promote. The more you give, the higher you rise. The most devoted earn the Committed button, and with it, an invitation.</p>
+        <p>Everyone remembers the ferryman from Greek myth: one coin, one crossing. No one remembers the other one.</p>
+        <p>He carried souls too, until the world forgot him. No coins, no stories, no one who saw him. Re has wanted revenge ever since, and he knows exactly what to promise: you'll be seen. You'll never be forgotten. Whatever you need to hear, he'll say it, as long as you follow him.</p>
+        <p>Today the fare is a like, a share, a follow. The more you give, the higher you rise. The most devoted earn the Committed button, and with it, an invitation and a gold token: the fare.</p>
       </div>
       <div class="media hide-if-missing"><img src="reach-phone.png" alt="The Reach on a phone"></div>
     </div>
@@ -1369,7 +1437,9 @@
       <div class="media hide-if-missing"><img src="token.png" alt="The gold token"></div>
       <div>
         <h2>Every crossing has a fare.</h2>
-        <p>A gold token. A sealed envelope. The trip of a lifetime.</p>
+        <p>A gold token. The trip of a lifetime.</p>
+        <p>The token is how you prove you're committed. Re never takes anyone who hasn't agreed to go, and you agree by paying the fare.</p>
+        <p>Followers pay it with two words: <i>"For you."</i> They think they're saying it to the people they love. They're not. They're saying it to Re.</p>
         <p>Once you start, you have to go through with it. That's the one rule.</p>
       </div>
     </div>
@@ -1377,7 +1447,7 @@
     <button type="button" class="sign" data-sign="6" aria-label="A sign of Re">✦</button>
     <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
     <div class="comments">
-      <div class="c"><div class="ci">GC</div><div><b>@greycanopy99</b> Envelope's sealed. Ready. 🙏</div></div>
+      <div class="c"><div class="ci">GC</div><div><b>@greycanopy99</b> Token's in my pocket. Ready. 🙏</div></div>
     </div>
   </article>
 
@@ -1393,7 +1463,8 @@
     <div class="split">
       <div>
         <h2>Wear the crest.</h2>
-        <p>The crest shirt, in long or short sleeve. Coming soon: the same box the followers receive in the film, with the shirt, the collector's token, and the sealed envelope.</p>
+        <p>In The Reach, the Committed wear the crest. It's how the world knows they were chosen, and how they find each other.</p>
+        <p>Show you belong. The crest shirt, the same one the followers wear in the film, in long or short sleeve.</p>
         <a class="btn" href="https://buy.stripe.com/14A00jgrs1ZPdLKaEYeZ202" target="_blank" rel="noopener">Long-sleeve · $40</a>
         <a class="btn ghost" href="https://buy.stripe.com/14AaEXfnoeMB0YY4gAeZ200" target="_blank" rel="noopener">Short-sleeve · $30</a>
         <p class="soon">SECURE CHECKOUT BY STRIPE</p>
@@ -1409,11 +1480,12 @@
   <article class="post" data-post="p8" id="shade">
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
     <div class="num"><span class="rec"></span>9 · THE SHADE</div>
-    <h2>Look away. Then look back.</h2>
-    <p>Hold on to your token, and something follows you. Every time you look back, it's closer.</p>
-    <p class="quote">Re's Shade hunts those who keep what isn't theirs. It never stops. It only gets closer.</p>
+    <h2>Never keep what isn't yours.</h2>
+    <p>Re never takes. His followers give, and they give willingly. That's the bargain: once you start, you can't stop.</p>
+    <p>Change your mind and hold on to your token, and something comes for you.</p>
+    <p class="quote">Re's Shade hunts those who keep what isn't theirs. It never stops.</p>
     <div class="media hide-if-missing"><img src="shade-hall.png" alt="A hallway that goes on too long"></div>
-    <div class="yourpath"><b>YOUR PATH</b><span>Re gives freely. What he gives must be returned.</span></div>
+    <div class="yourpath"><b>YOUR PATH</b><span>In The Reach, you give willingly. Just don't stop.</span></div>
     <button type="button" class="sign" data-sign="7" aria-label="A sign of Re">✦</button>
     <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
     <div class="comments">
@@ -1432,35 +1504,36 @@
     </div>
   </article>
 
-  <article class="post" data-post="p10">
+  <article class="post" data-post="p10" id="sleuths">
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
     <div class="num"><span class="rec"></span>10 · THE SLEUTHS</div>
     <h2>The ones watching.</h2>
-    <p>Katey's live feed is her only lifeline, and these strangers are the ones who find it. Larry dives into her archive, post by post, looking for anyone who got close to her. The others chase every clue they can find with almost nothing to go on, until they reach Amanda, the daughter who knows what The Reach is.</p>
+    <p>On the night Katey begins her crossing, she goes live. Her only lifeline is a small group of internet sleuths who spend their nights solving the cases no one else cares about.</p>
+    <p>Led by Larry, they race to find her with almost nothing to go on: her old posts and her livestream.</p>
     <div class="people">
-      <div class="person"><div class="face">LR</div><b>Larry Roland</b><span>Hero of the Denver Miracle. Still chasing it.</span></div>
-      <div class="person"><div class="face">TW</div><b>Trey Williams</b><span>Jokes first. Looks later.</span></div>
-      <div class="person"><div class="face">MD</div><b>Maggie Doyle</b><span>Feels everything. Can't look away.</span></div>
-      <div class="person"><div class="face">ZH</div><b>Zoey Hale</b><span>The internet detective.</span></div>
-      <div class="person"><div class="face teal" style="overflow:visible"><img src="cal.png" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover" onerror="if(this.parentNode)this.parentNode.textContent='CV'"></div><b>Dr. Calvin Vance</b><span>The cult expert nobody believed.</span></div>
+      <div class="person"><div class="face">LR</div><b>Larry Roland</b><em class="prole">The Lead</em><span>Found a missing girl alive from ten seconds of blurry video. He hasn't stopped looking since.</span></div>
+      <div class="person"><div class="face">TW</div><b>Trey Williams</b><em class="prole">The Joker</em><span>Cracks jokes to keep the team going, even on the worst nights.</span></div>
+      <div class="person"><div class="face">MD</div><b>Maggie Doyle</b><em class="prole">The Empath</em><span>Feels everything. When Katey asks if anyone is there, Maggie can't look away.</span></div>
+      <div class="person"><div class="face">ZH</div><b>Zoey Hale</b><em class="prole">The Digger</em><span>If you've ever been online, she can find you. Doesn't scare easily.</span></div>
+      <div class="person"><div class="face teal" style="overflow:visible"><img src="cal.png" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover" onerror="if(this.parentNode)this.parentNode.textContent='CV'"></div><b>Dr. Calvin Vance</b><em class="prole">The Expert</em><span>Spent decades tracking The Reach. Almost no one believed him.</span></div>
     </div>
-    <div class="poll" data-poll="sleuths" data-q="Who do you think gets to Katey first?" data-opts="Larry|Trey|Maggie|Zoey|Dr. Vance" data-after="Find out in For You."></div>
+    <div class="poll" data-poll="sleuths" data-q="If you went live tonight and needed help, who would you want watching?" data-opts="Larry|Trey|Maggie|Zoey|Dr. Vance" data-after="Find out in For You."></div>
     <div class="yourpath"><b>YOUR PATH</b><span>They're watching her. Someone is watching you climb.</span></div>
     <button type="button" class="sign" data-sign="9" aria-label="A sign of Re">✦</button>
     <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
     <div class="comments">
-      <div class="c"><div class="ci">CV</div><div><b>@calvance</b> It likes an audience.</div></div>
+      <div class="c"><div class="ci">CV</div><div><b>@calvance</b> He likes an audience.</div></div>
     </div>
   </article>
 
   <article class="post" id="videoPost">
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div><div class="pin">SHARE CONTENT</div></div>
     <div class="num"><span class="rec"></span>BE PART OF THE FEED</div>
-    <p class="muted">The ones watching scroll past hundreds of videos a night. Yours could be one of them.</p>
+    <p class="muted">In <i>For You</i>, the feed never stops: hundreds of videos scrolling past on every screen. Some of them could be yours.</p>
       <div class="vidbox nobar" id="shareVideo">
-        <h3>Share your video.</h3>
-        <p class="muted">Have a video that could live in The Reach's feed? A creator-style clip, a scroll-stopping moment, something only you could post. Send us the link to your post on TikTok, Instagram, YouTube, Facebook or anywhere else.</p>
-        <p class="vid-thanks">If your video is used in <i>For You</i>, you'll get a <b>Special Thanks credit</b> in the film.</p>
+        <h3>Be seen in the film.</h3>
+        <p class="muted">Everyone is welcome. Post a clip the way a creator would: a talent, a tutorial, a funny moment, something only you could post. Then send us the link from TikTok, Instagram, YouTube, Facebook or anywhere else.</p>
+        <p class="vid-thanks">If we use it, your video becomes part of <i>For You</i>, and your name goes in the <b>Special Thanks</b>.</p>
         <details class="formfold">
           <summary>Send us your video link</summary>
         <form id="vidForm" novalidate>
@@ -1476,12 +1549,23 @@
         <p class="muted" style="font-size:13px;margin-top:10px">If we'd like to use your video, we'll email you for the original file, since videos saved from social apps carry a watermark. We'll check that the post is yours before using anything.</p>
         </details>
       </div>
+      <div class="vwall" id="videoWall" style="display:none">
+        <div class="vw-h">FROM THE FEED · VIDEOS FROM THE FLOCK</div>
+        <div class="vw-wrap">
+          <button type="button" class="vw-arrow prev" id="vwPrev" aria-label="Previous video">‹</button>
+          <div class="vw-track" id="vwTrack"></div>
+          <button type="button" class="vw-arrow next" id="vwNext" aria-label="Next video">›</button>
+        </div>
+        <div class="vw-count" id="vwCount"></div>
+      </div>
   </article>
 
-  <article class="post" data-post="p11">
+  <article class="post" data-post="p11" id="kpeople">
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
     <div class="num"><span class="rec"></span>11 · KATEY'S PEOPLE</div>
     <h2>The people who mean the most to her.</h2>
+    <p>Re works through the people you love most. Every "for you" is said with someone in mind, and that's exactly how he gets in.</p>
+    <p>But those same people hold the only way back. No one survives The Reach alone. The only way out is when the people who love you most show up.</p>
     <div class="people">
       <div class="person"><div class="face">S</div><b>Shannon</b><span>Her best friend since forever. The one person who might still get through.</span></div>
       <div class="person"><div class="face">A</div><b>Amanda</b><span>Her daughter, twenty, who stopped answering her calls.</span></div>
@@ -1494,11 +1578,13 @@
     </div>
   </article>
 
-  <article class="post" data-post="p12">
+  <article class="post" data-post="p12" id="followers">
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
     <div class="num"><span class="rec"></span>12 · THE FOLLOWERS</div>
     <h2>The most devoted.</h2>
-    <p>Invited into The Reach by the leaders who influenced them most.</p>
+    <p>Like every cult that ever existed, The Reach is full of people who wanted to be part of something bigger.</p>
+    <p>Re doesn't make them all the same promise. He doesn't have to. His leaders do the recruiting, and each one tells their flock whatever brings them in: a family, a purpose, a seat at the table.</p>
+    <p>But one message never changes, no matter who brought you in: reaching Re will be the best thing that ever happens to you.</p>
     <div class="people">
       <div class="person"><div class="face">GC</div><b>@greycanopy99</b></div>
       <div class="person"><div class="face">SM</div><b>@sweetmagnolia</b></div>
@@ -1516,70 +1602,52 @@
     </div>
   </article>
 
-  <article class="post" data-post="p13">
+  <article class="post" data-post="p13" id="algorithm">
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
-    <div class="num"><span class="rec"></span>13 · WHY NOW?</div>
-    <p>We let an algorithm decide what we see, who we trust, and who we follow.</p>
-    <p>Influencers have become the new cult leaders.</p>
-    <p>For You asks what's really choosing what we see.</p>
+    <div class="num"><span class="rec"></span>13 · THE ALGORITHM</div>
+    <h2>Who picks what you see?</h2>
+    <p>We let an algorithm decide what we see, who we trust and who we follow. We never ask who's behind it.</p>
+    <p>In The Reach, it has a name. Every video that stops your scroll, every creator who feels made just for you, every post on your For You page: Re chose it. He decides who gets seen, and who gets brought to him.</p>
     <button type="button" class="sign" data-sign="12" aria-label="A sign of Re">✦</button>
     <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
     <div class="comments"></div>
   </article>
 
-  <article class="post" data-post="p14">
-    <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
-    <div class="num"><span class="rec"></span>14 · THE AUDIENCE</div>
-    <p>Horror fans first, but this one reaches further.</p>
-    <p>Anyone who scrolls, at any age: teens who grew up online, and the adults who followed them there.</p>
-    <p>For You is a horror story for everyone who ever trusted their feed.</p>
-    <button type="button" class="sign" data-sign="13" aria-label="A sign of Re">✦</button>
-    <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
-    <div class="comments"></div>
-  </article>
-
-  <!-- 15 OFFERINGS -->
+<!-- 15 OFFERINGS -->
   <article class="post" data-post="p15" id="offerings">
     <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
-    <div class="num"><span class="rec"></span>15 · OFFERINGS</div>
-    <h2>Every crossing has a fare.</h2>
-    <p>Your support funds post-production: the score, the sound, and the festival journey.</p>
-    <a class="btn" href="https://buy.stripe.com/aFaaEX5MO8od6ji9AUeZ201" target="_blank" rel="noopener">Make an offering</a>
-    <p class="soon">CHOOSE YOUR OWN AMOUNT · SECURE CHECKOUT BY STRIPE<br>OR SEND THROUGH <a href="https://www.venmo.com/u/foryouthefilm" target="_blank" rel="noopener" style="color:var(--gold)">VENMO @foryouthefilm</a></p>
-    <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
-    <div class="comments"></div>
-  </article>
-
-
-
-  <!-- 17 JOIN US -->
-  <article class="post" data-post="p17" id="join">
-    <div class="post-head"><div class="mini"><img src="Seismic%20Crest%20For%20You_Back.png" alt=""></div><div class="who">FOR YOU<small>@foryouthefilm</small></div></div>
-    <div class="num"><span class="rec"></span>2.2M WATCHING · JOIN US</div>
-    <h2>Written, cast, and already being built, screen by screen.</h2>
-    <p>We're looking for collaborators: producers, executive producers, artists, and anyone passionate about bringing something new to the screen.</p>
-    <p>Follow the production on <a href="https://www.facebook.com/profile.php?id=61596806482507" target="_blank" rel="noopener" style="color:var(--gold)">Facebook</a>, <a href="https://www.instagram.com/foryou_thefilm/" target="_blank" rel="noopener" style="color:var(--gold)">Instagram</a> and <a href="https://www.tiktok.com/@foryou_thefilm" target="_blank" rel="noopener" style="color:var(--gold)">TikTok</a>.</p>
-    <p>Additional funding goes straight to editing, post-production, and a festival run. <a href="support.html" style="color:var(--gold)">Support the film and put your name in the credits</a>.</p>
-    <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
-    <div class="comments"></div>
-  </article>
-
-
-  <!-- JOIN THE CREDITS (producer levels, at the bottom) -->
-  <article class="post creditdrop quiet" id="credits">
-    <details class="formfold" id="creditsFold">
-      <summary>Want your name in the credits?</summary>
-      <div class="cf-in">
-        <h2>Put your name on the film.</h2>
-        <div class="tiers st-only">
-      <div class="tier"><div class="tp">$25</div><div class="tn">Special Thanks</div><div class="td">Your name in the Special Thanks of the film's credits.</div><a href="https://buy.stripe.com/4gM00j2AC7k93763cweZ206" target="_blank" rel="noopener">Get Special Thanks</a></div>
+    <div class="num"><span class="rec"></span>14 · SUPPORT THE FILM</div>
+    <h2>Re asks for everything. We're asking for a little.</h2>
+    <p>Stepping out of The Reach for a moment: <i>For You</i> is a real independent film, written, cast and already being built, screen by screen, by a small team who believe in it.</p>
+    <p>Your support funds post-production: the score, the sound and the festival journey. Pick the way that fits you.</p>
+    <div class="sup-grid">
+      <div class="sup-card"><div class="sup-h">Make an offering</div><div class="sup-p">Any amount you choose. No token required.</div><a class="btn" href="https://buy.stripe.com/aFaaEX5MO8od6ji9AUeZ201" target="_blank" rel="noopener">Give any amount</a><div class="sup-alt">or Venmo <a href="https://www.venmo.com/u/foryouthefilm" target="_blank" rel="noopener">@foryouthefilm</a></div></div>
+      <div class="sup-card" id="credits"><div class="sup-h">Special Thanks · $25</div><div class="sup-p">Your name in the Special Thanks of the film's credits.</div><a class="btn" href="https://buy.stripe.com/4gM00j2AC7k93763cweZ206" target="_blank" rel="noopener">Get Special Thanks</a><div class="sup-alt">You choose your credit name at checkout</div></div>
     </div>
-        <p class="finep">Secure checkout by Stripe. You'll enter the name you want in the credits at checkout. Contributions support the production and are not an investment.</p>
-        <p><b>Producer credits:</b> interested in a producer credit or joining the production? Reach out directly and let's talk. <a href="support.html#producer" style="color:var(--gold)">Why a producer credit is worth having →</a></p>
+    <details class="formfold" id="creditsFold">
+      <summary>Interested in a producer credit?</summary>
+      <div class="cf-in">
+        <p>Producer credits and joining the production are arranged one on one. Reach out and let's talk. <a href="support.html#producer" style="color:var(--gold)">Why a producer credit is worth having →</a></p>
         <div class="fc-btns cr-contact"><a class="fc-join" href="https://www.facebook.com/profile.php?id=61596806482507" target="_blank" rel="noopener">Message us on Facebook</a><a class="fc-link" href="https://www.instagram.com/foryou_thefilm/" target="_blank" rel="noopener">Message us on Instagram</a></div>
-        <p class="muted">Want to help in another way? You can <a href="#offerings" style="color:var(--gold)">make an offering of any amount</a> or <a href="#vestments" style="color:var(--gold)">get the For You shirt</a>. Every bit goes straight into making <i>For You</i>.</p>
       </div>
     </details>
+    <a class="sup-page" href="support.html">See everything on our support page →</a>
+    <p class="finep">Secure checkout by Stripe. Contributions support the production and are not an investment. Follow the production on <a href="https://www.facebook.com/profile.php?id=61596806482507" target="_blank" rel="noopener" style="color:var(--gold)">Facebook</a>, <a href="https://www.instagram.com/foryou_thefilm/" target="_blank" rel="noopener" style="color:var(--gold)">Instagram</a> and <a href="https://www.tiktok.com/@foryou_thefilm" target="_blank" rel="noopener" style="color:var(--gold)">TikTok</a>.</p>
+    <div class="actions"><button class="like">♡ Like</button><button class="ctog">Comment</button><button class="share">Share</button></div>
+    <div class="comments"></div>
+  </article>
+
+  <article class="post updates-card" id="updates">
+    <div class="num"><span class="rec"></span>STAY IN THE LOOP</div>
+    <h2>Get updates on <i>For You</i>.</h2>
+    <p>Not ready to join a flock? Get the news as it happens: the teaser, festival screenings and the premiere. A few emails a year, nothing else.</p>
+    <form class="upform" id="upForm" novalidate>
+      <input type="email" id="upEmail" maxlength="200" placeholder="Your email" autocomplete="email" aria-label="Your email">
+      <button type="submit" class="btn" id="upBtn">Keep me posted</button>
+    </form>
+    <div class="cerr" id="upErr"></div>
+    <div class="cdone" id="upDone">You're on the list. We'll be in touch.</div>
+    <p class="finep">We only use your email for film updates. Never sold, never shared, no ads.</p>
   </article>
 
   <!-- THE DOOR -->
@@ -1591,7 +1659,7 @@
     <p class="locksub">Reach Committed to unlock. Behind the door: who Re really is, where he came from, and everything the film can't tell you.</p>
   </section>
 
-  <footer>© 2026 FOR YOU · @foryouthefilm · <a href="https://www.facebook.com/profile.php?id=61596806482507" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.instagram.com/foryou_thefilm/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.tiktok.com/@foryou_thefilm" target="_blank" rel="noopener">TikTok</a></footer>
+  <footer>© 2026 FOR YOU · @foryouthefilm · <a href="https://www.facebook.com/profile.php?id=61596806482507" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.instagram.com/foryou_thefilm/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.tiktok.com/@foryou_thefilm" target="_blank" rel="noopener">TikTok</a> · <a href="dashboard.html" rel="nofollow">Team</a></footer>
 </main>
 
 <div class="reveal" id="reveal">
@@ -1637,7 +1705,7 @@
     <p class="sub"><b>No link?</b> If you added your email when you joined, type it here. We'll send you a one-tap sign-in link. No password.</p>
     <div class="invite"><input id="backEmail" type="email" placeholder="you@example.com" autocomplete="email"><button id="backSend" type="button">Send my link</button></div>
     <div class="rb-msg" id="backMsg"></div>
-    <div class="emailnote" style="margin-top:10px">We only use your email to get you back in and to contact prize winners. Never sold, never shared, no ads. We'll never contact you for anything except prizes, apart from the sign-in or confirmation links you ask for. We aren't soliciting or selling anything beyond what you see on this site.</div>
+    <div class="emailnote" style="margin-top:10px">We only use your email to get you back in and to contact prize winners. Never sold, never shared, no ads. We'll never contact you for anything except prizes, apart from the sign-in or confirmation links you ask for, and film updates if you opt in. We aren't soliciting or selling anything beyond what you see on this site.</div>
   </div>
 </div>
 
@@ -1668,7 +1736,8 @@
       <div class="wlabel">YOUR NUMBER</div><input id="nameNum" inputmode="numeric" maxlength="3" placeholder="1-999">
       <div class="wlabel">YOUR EMAIL · OPTIONAL</div>
       <input id="rewardEmail" type="email" placeholder="you@example.com" autocomplete="email">
-      <div class="emailnote">We'll send a one-tap link to confirm it. A confirmed email lets you win prizes, lets the friend who invited you get credit, and gets you back in if you switch phones. We'll never sell it, share it, or send you ads. We'll never contact you for anything except prizes, apart from the sign-in or confirmation links you ask for. We aren't soliciting or selling anything beyond what you see on this site. No password. Skip it if you like: you can add it later.</div>
+      <label class="optin"><input type="checkbox" id="rewardUpdates"> <span>Also send me updates on the film: the teaser, festival screenings and the premiere.</span></label>
+      <div class="emailnote">We'll send a one-tap link to confirm it. A confirmed email lets you win prizes, lets the friend who invited you get credit, and gets you back in if you switch phones. We'll never sell it, share it, or send you ads. We'll never contact you for anything except prizes, apart from the sign-in or confirmation links you ask for, and film updates if you opt in. We aren't soliciting or selling anything beyond what you see on this site. No password. Skip it if you like: you can add it later.</div>
       <div class="npreview">Re will know you as<b id="namePreview"></b></div>
       <div class="nbtns"><button id="confirmName">This is my name</button><button id="surpriseName">Surprise me</button></div>
     </div>
@@ -1993,7 +2062,8 @@
     fb.classList.toggle('on', !!me);
     fb.textContent = me ? 'Following' : 'Follow';
     $('leaveNote').style.display = me ? '' : 'none';
-    fc.textContent = fmt(BASE_FOLLOWERS + fcount);
+    if (visitTotal !== null) fc.textContent = fmt(BASE_FOLLOWERS + visitTotal);
+    if ($('ccount')) $('ccount').textContent = fmt(100 + fcount);
 
     var card = $('reachCard'), side = $('sideRank');
     var committed = !!me && rankFor().name === 'COMMITTED';
@@ -2002,7 +2072,8 @@
     $('chosenBanner').classList.toggle('show', !me);
     $('inviteLine').style.display = store('fy_ref') ? '' : 'none';
     $('monthly').style.display = !me ? 'none' : '';
-    document.querySelectorAll('[data-play]').forEach(function (l) { l.textContent = me ? 'Go to your status →' : 'Join the recruitment →'; });
+    document.body.classList.toggle('is-player', !!me);
+    document.querySelectorAll('.fc-btns [data-play]').forEach(function (l) { l.textContent = me ? 'Go to your status →' : 'Join the recruitment →'; });
     $('alreadyCount').textContent = fmt(fcount); $('alreadyLine').style.display = fcount >= 20 ? '' : 'none';
     if (committed && !store('fy_seen_re')) openReveal();
     var climbC = $('climbCard');
@@ -2129,7 +2200,9 @@
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) { $('rbMsg').textContent = "That email doesn't look right."; return; }
     var b = this; b.disabled = true; $('rbMsg').textContent = 'Sending...';
     sendConfirm(em, $('rbMsg'), function () { b.disabled = false; });
+    if ($('rbUpdates').checked) addUpdates(em, 'status');
   };
+  function addUpdates(em, src) { if (db) db.from('updates').insert({ email: String(em).toLowerCase().slice(0, 200), source: src }).then(function () {}); }
   function drawStreak() {
     var best = +(store('fy_streak7') || 0);
     if (streak >= 7 && !best) { store('fy_streak7', '1'); best = 1; }
@@ -2394,7 +2467,7 @@
       me = { leader: key, handle: handle }; fcount += 1;
       picker.classList.remove('show');
       var em = ($('rewardEmail').value || '').trim();
-      if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) { sendConfirm(em, $('rbMsg')); }
+      if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) { sendConfirm(em, $('rbMsg')); if ($('rewardUpdates').checked) addUpdates(em, 'join'); }
       ensureSecret(); store('fy_last', new Date().toISOString());
       loadMonth();
       var r = store('fy_ref');
@@ -2707,7 +2780,7 @@
 
   // ---------- "See more" on long posts: show two paragraphs, fold the rest ----------
   document.querySelectorAll('main .post[data-post]:not(#story)').forEach(function (post) {
-    var ps = Array.prototype.filter.call(post.querySelectorAll(':scope > p, :scope > .split > div > p'), function (c) { return !c.classList.contains('fc-by') && !c.classList.contains('rewarded') && !c.classList.contains('muted'); });
+    var ps = Array.prototype.filter.call(post.querySelectorAll(':scope > p, :scope > .split > div > p'), function (c) { return !c.classList.contains('fc-by') && !c.classList.contains('rewarded') && !c.classList.contains('muted') && !c.classList.contains('finep'); });
     if (ps.length < 3) return;
     ps.slice(2).forEach(function (p) { p.classList.add('seemore-p'); });
     var b = document.createElement('button'); b.type = 'button'; b.className = 'seemore-btn'; b.textContent = 'See more ▾';
@@ -2717,25 +2790,48 @@
   $('confirmNudge').addEventListener('click', function () { $('returnFold').open = true; });
 
   // count how many people open the credits fold (no personal info, just a tap count)
-  var storyRead = !!store('fy_storyread');
-  function markRead() { if (!storyRead) { storyRead = true; try { localStorage.setItem('fy_storyread', '1'); } catch (e) {} } }
-  if (window.IntersectionObserver && $('story')) {
-    var sn = document.querySelector('[data-storynext]');
-    if (sn) new IntersectionObserver(function (en) { if (en[0].isIntersecting) markRead(); }).observe(sn);
-  }
   document.querySelectorAll('[data-play]').forEach(function (l) { l.addEventListener('click', function (e) {
     e.preventDefault();
-    if (!me && !storyRead) { $('story').scrollIntoView({ behavior: 'smooth', block: 'start' }); toast('Read the story first. It takes a minute, and then the game makes sense.'); return; }
     if ($('reachCard').offsetParent) { $('reachCard').scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }
     if ($('goLive')) $('goLive').open = true;
     var b = $('inviteBanner').classList.contains('show') ? $('acceptBtn') : $('claimBtn');
     if (b) b.click();
   }); });
   document.querySelectorAll('a[href="#credits"]').forEach(function (l) { l.addEventListener('click', function () { $('creditsFold').open = true; }); });
-  document.querySelectorAll('[data-storynext]').forEach(function (l) { l.addEventListener('click', function (e) {
-    e.preventDefault(); var t = $('chosenBanner').classList.contains('show') ? $('chosenBanner') : $('climbCard');
-    t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  document.querySelectorAll('a[href="#story"]').forEach(function (l) { l.addEventListener('click', function (e) {
+    e.preventDefault();
+    if ($('chosenBanner').classList.contains('show')) { $('goLive').open = true; $('story').open = true; $('story').scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    else $('kdoor').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }); });
+  // ---------- "play the game" link under every story post ----------
+  (function () {
+    var first = $('post1'); if (!first) return;
+    document.querySelectorAll('main .post').forEach(function (post) {
+      if (post !== first && !(first.compareDocumentPosition(post) & Node.DOCUMENT_POSITION_FOLLOWING)) return;
+      var acts = post.querySelector(':scope > .actions'); if (!acts) return;
+      var a = document.createElement('button'); a.type = 'button'; a.className = 'backgame';
+      a.innerHTML = '<span class="bg-new">Commit</span><span class="bg-me">Your status</span>';
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        var t = $('chosenBanner').classList.contains('show') ? $('chosenBanner') : $('reachCard');
+        t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (t.id === 'chosenBanner' && $('goLive')) setTimeout(function () { $('goLive').open = true; }, 500);
+      });
+      acts.appendChild(a);
+    });
+  })();
+
+  // ---------- Katey's door ----------
+  var kdoorCounted = false;
+  function openKdoor() {
+    var d = $('kdoor'); if (!d) return;
+    if (!d.classList.contains('open') && db && !kdoorCounted) { kdoorCounted = true; db.from('clicks').insert({ what: 'kdoor' }).then(function () {}); }
+    d.classList.add('open');
+    setTimeout(function () { var t = $('post1'); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 900);
+  }
+  if ($('kdBtn')) { $('kdBtn').addEventListener('click', openKdoor); $('kdGo').addEventListener('click', openKdoor); }
+  document.querySelectorAll('a[href="#kdoor"]').forEach(function (l) { l.addEventListener('click', function (e) { e.preventDefault(); $('kdoor').scrollIntoView({ behavior: 'smooth', block: 'center' }); }); });
+
   document.querySelectorAll('[data-playnow]').forEach(function (b) { b.addEventListener('click', function () { $('claimBtn').click(); }); });
   var goLiveCounted = false;
   if ($('goLive')) $('goLive').addEventListener('toggle', function () {
@@ -2872,8 +2968,69 @@
     });
   });
 
+  // ---------- approved video wall ----------
+  function vwEmbed(url) {
+    var m;
+    if ((m = url.match(/(?:youtube\.com\/(?:watch\?(?:.*&)?v=|shorts\/|embed\/)|youtu\.be\/)([\w-]{6,})/))) return 'https://www.youtube.com/embed/' + m[1] + '?rel=0&playsinline=1';
+    if ((m = url.match(/tiktok\.com\/@[^\/]+\/video\/(\d+)/))) return 'https://www.tiktok.com/embed/v2/' + m[1];
+    if ((m = url.match(/instagram\.com\/(p|reel|reels|tv)\/([\w-]+)/))) return 'https://www.instagram.com/' + (m[1] === 'p' ? 'p' : 'reel') + '/' + m[2] + '/embed';
+    if (/facebook\.com\/|fb\.watch\//.test(url)) return 'https://www.facebook.com/plugins/video.php?show_text=false&href=' + encodeURIComponent(url);
+    return null;
+  }
+  function esc(t) { return String(t || '').replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function loadVideoWall() {
+    if (!db || !db.rpc) return;
+    db.rpc('approved_videos').then(function (res) {
+      var rows = (res && res.data) || [];
+      if (res.error || !rows.length) return;
+      var html = rows.map(function (r) {
+        var link = String(r.link || ''); if (!/^https?:\/\//.test(link)) return '';
+        var src = vwEmbed(link), host = link.replace(/^https?:\/\/(www\.)?/, '').split('/')[0];
+        var h = (r.handle || '').trim(); if (h && h.charAt(0) !== '@') h = '@' + h;
+        return '<div class="vw-slide"><div class="vw-frame">' +
+          (src ? '<iframe src="' + esc(src) + '" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen title="Video by ' + esc(h || 'a follower') + '"></iframe>'
+               : '<a class="vw-link" href="' + esc(link) + '" target="_blank" rel="noopener nofollow"><b>▶</b>Watch on ' + esc(host) + '</a>') +
+          '</div><div class="vw-by">' + esc(h || 'A follower') + '</div></div>';
+      }).join('');
+      if (!html) return;
+      var track = $('vwTrack'); track.innerHTML = html; $('videoWall').style.display = '';
+      var n = track.children.length; $('vwCount').textContent = n + (n === 1 ? ' video' : ' videos') + ' from the flock · swipe to see more';
+      function step(dir) { var w = (track.children[0].offsetWidth || 260) + 12; var end = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
+        if (dir > 0 && end) track.scrollLeft = 0; else track.scrollBy({ left: dir * w, behavior: 'smooth' }); }
+      var auto = n > 1 ? setInterval(function () { if (document.visibilityState === 'visible') step(1); }, 7000) : null;
+      function stopAuto() { if (auto) { clearInterval(auto); auto = null; } }
+      ['pointerdown', 'touchstart', 'wheel', 'mouseenter', 'focusin'].forEach(function (ev) { $('videoWall').addEventListener(ev, stopAuto, { passive: true }); });
+      $('vwPrev').addEventListener('click', function () { stopAuto(); step(-1); });
+      $('vwNext').addEventListener('click', function () { stopAuto(); step(1); });
+      if (n < 2) { $('vwPrev').style.display = 'none'; $('vwNext').style.display = 'none'; }
+    });
+  }
+
+  // ---------- updates email list ----------
+  if ($('upForm')) $('upForm').addEventListener('submit', function (e) {
+    e.preventDefault(); var em = $('upEmail').value.trim(); $('upErr').textContent = '';
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) { $('upErr').textContent = 'Enter a valid email.'; return; }
+    if (!db) { $('upErr').textContent = 'Something went wrong. Try again later.'; return; }
+    $('upBtn').disabled = true;
+    db.from('updates').insert({ email: em.toLowerCase().slice(0, 200), source: 'site' }).then(function (r) {
+      $('upBtn').disabled = false;
+      if (r.error && !/duplicate|unique/i.test(r.error.message || '') && r.error.code !== '23505') { $('upErr').textContent = 'Something went wrong. Try again.'; return; }
+      $('upForm').style.display = 'none'; $('upDone').style.display = 'block';
+    });
+  });
+
+  var visitTotal = null;
+  function loadVisits() {
+    if (!db || !db.rpc) return;
+    var done = function () { db.rpc('visit_count', { p_page: 'home' }).then(function (r) { if (r && !r.error && r.data != null) { visitTotal = +r.data; fc.textContent = fmt(BASE_FOLLOWERS + visitTotal); } }); };
+    if (store('fy_visit_home')) return done();
+    db.from('visits').insert({ visitor_id: vid, page: 'home' }).then(function () { store('fy_visit_home', '1'); done(); });
+  }
+
   function start() {
     if (!db) { drawFollow(); return; }
+    loadVideoWall();
+    loadVisits();
     loadInviter();
     loadMonth();
     loadCheckins();
